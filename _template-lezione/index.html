@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="[DESCRIZIONE DELLA LEZIONE]">
+  <title>[NUMERO E TITOLO DELLA LEZIONE]</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../assets/idoneita.css">
+
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+
+  <link rel="icon"
+        href="https://mcocciniglia.github.io/common/assets/favicon.svg"
+        type="image/svg+xml">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge first">Programma del primo anno</span>
+        </div>
+
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle"
+                  class="btn btn-theme"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+
+          <button id="contrastToggle"
+                  class="btn btn-outline btn-contrast"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span>
+        <span aria-hidden="true">›</span>
+        <span>Primo anno</span>
+        <span aria-hidden="true">›</span>
+        <span>Lezione [N]</span>
+      </nav>
+
+      <p class="eyebrow">Lezione [N] · Durata prevista: 2 ore</p>
+      <h1>[TITOLO DELLA LEZIONE]</h1>
+
+      <p class="lead">[SOTTOTITOLO O DOMANDA-GUIDA]</p>
+
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ 2 ore</span>
+        <span>📘 Primo anno</span>
+        <span>🎯 [PREREQUISITO BREVE]</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading">
+        <span>Percorso del primo anno</span>
+        <span>Lezione [N] di [TOTALE]</span>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        <div class="progress-value" style="width:[PERCENTUALE]%;"></div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🎯</span>
+        <h2 id="obiettivi">Obiettivi della lezione</h2>
+      </div>
+
+      <p class="section-intro">
+        La lezione contiene esempi e approfondimenti, ma gli elementi davvero
+        indispensabili sono raccolti alla fine nello <strong>Zaino dello studente</strong>.
+      </p>
+
+      <div class="objective-grid">
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>[OBIETTIVO 1]</strong>
+          <small>[DESCRIZIONE BREVE]</small>
+        </article>
+
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>[OBIETTIVO 2]</strong>
+          <small>[DESCRIZIONE BREVE]</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="introduzione">
+      <h2 id="introduzione">[TITOLO DELLA PRIMA SEZIONE]</h2>
+      <p>[TESTO INTRODUTTIVO]</p>
+
+      <div class="definition">
+        <span class="definition-term">[TERMINE]</span>
+        <p>[DEFINIZIONE CHIARA E BREVE]</p>
+      </div>
+    </section>
+
+    <aside class="callout remember" aria-labelledby="ricorda">
+      <div class="callout-icon" aria-hidden="true">💡</div>
+      <div>
+        <p class="callout-label">Ricorda</p>
+        <h3 id="ricorda">[CONCETTO DA RICORDARE]</h3>
+        <p>[SPIEGAZIONE]</p>
+      </div>
+    </aside>
+
+    <aside class="callout error" aria-labelledby="errore">
+      <div class="callout-icon" aria-hidden="true">❌</div>
+      <div>
+        <p class="callout-label">Errore frequente</p>
+        <h3 id="errore">[ERRORE TIPICO]</h3>
+        <p>[COME EVITARLO]</p>
+      </div>
+    </aside>
+
+    <aside class="callout exam" aria-labelledby="domanda-esame">
+      <div class="callout-icon" aria-hidden="true">🎓</div>
+      <div>
+        <p class="callout-label">Possibile domanda d'esame</p>
+        <h3 id="domanda-esame">[DOMANDA]</h3>
+        <p><strong>Per rispondere bene:</strong> [INDICAZIONE]</p>
+      </div>
+    </aside>
+
+    <section class="lab" aria-labelledby="laboratorio">
+      <div class="lab-header">
+        <h2 id="laboratorio">💻 Laboratorio guidato</h2>
+      </div>
+
+      <div class="lab-body">
+        <p><strong>Obiettivo:</strong> [OBIETTIVO OPERATIVO]</p>
+
+        <ol class="steps">
+          <li>
+            <strong>[PASSAGGIO 1]</strong>
+            <p>[ISTRUZIONE SEQUENZIALE]</p>
+          </li>
+          <li>
+            <strong>[PASSAGGIO 2]</strong>
+            <p>[ISTRUZIONE SEQUENZIALE]</p>
+          </li>
+          <li>
+            <strong>[PASSAGGIO 3]</strong>
+            <p>[ISTRUZIONE SEQUENZIALE]</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="quiz" aria-labelledby="quiz">
+      <h2 id="quiz">🧠 Autoverifica</h2>
+      <p>Rispondi senza rileggere subito la spiegazione.</p>
+
+      <div class="self-check">
+        <details>
+          <summary>[DOMANDA 1]</summary>
+          <p>[RISPOSTA]</p>
+        </details>
+
+        <details>
+          <summary>[DOMANDA 2]</summary>
+          <p>[RISPOSTA]</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="glossario">
+      <h2 id="glossario">Glossario essenziale</h2>
+
+      <dl class="glossary-grid">
+        <div class="glossary-card">
+          <dt>[TERMINE 1]</dt>
+          <dd>[SIGNIFICATO]</dd>
+        </div>
+
+        <div class="glossary-card">
+          <dt>[TERMINE 2]</dt>
+          <dd>[SIGNIFICATO]</dd>
+        </div>
+      </dl>
+    </section>
+
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header">
+        <p class="eyebrow">Sintesi essenziale</p>
+        <h2 id="zaino-studente">🎒 Lo zaino dello studente</h2>
+        <p>
+          Se domani dimenticassi quasi tutto, queste sono le idee
+          che dovresti riuscire a ricostruire.
+        </p>
+      </div>
+
+      <div class="student-backpack-grid">
+        <article class="backpack-card">
+          <h3>✅ Le 5 idee fondamentali</h3>
+          <ol class="essential-list">
+            <li>[IDEA FONDAMENTALE 1]</li>
+            <li>[IDEA FONDAMENTALE 2]</li>
+            <li>[IDEA FONDAMENTALE 3]</li>
+            <li>[IDEA FONDAMENTALE 4]</li>
+            <li>[IDEA FONDAMENTALE 5]</li>
+          </ol>
+        </article>
+
+        <article class="backpack-card">
+          <h3>📝 5 parole chiave</h3>
+          <ul class="keyword-list">
+            <li>[PAROLA 1]</li>
+            <li>[PAROLA 2]</li>
+            <li>[PAROLA 3]</li>
+            <li>[PAROLA 4]</li>
+            <li>[PAROLA 5]</li>
+          </ul>
+        </article>
+
+        <article class="backpack-card">
+          <h3>❓ 3 domande da esame</h3>
+          <ol>
+            <li>[DOMANDA 1]</li>
+            <li>[DOMANDA 2]</li>
+            <li>[DOMANDA 3]</li>
+          </ol>
+        </article>
+
+        <article class="backpack-card">
+          <h3>⏱️ Ripasso in 5 minuti</h3>
+          <ol class="mini-review">
+            <li>Chiudi la pagina.</li>
+            <li>Spiega a voce le cinque idee fondamentali.</li>
+            <li>Controlla ciò che hai dimenticato.</li>
+            <li>Ripeti soltanto i punti incerti.</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="review-mission" aria-labelledby="missione-ripasso">
+      <div class="review-mission-icon" aria-hidden="true">🏕️</div>
+      <div>
+        <p class="callout-label">Allenamento distribuito</p>
+        <h2 id="missione-ripasso">Missione di ripasso · 10 minuti al giorno</h2>
+        <p>
+          Non limitarti a rileggere. Prova prima a rispondere senza consultare
+          la pagina, poi controlla e correggi.
+        </p>
+
+        <div class="mission-days">
+          <article>
+            <strong>Giorno 1</strong>
+            <p>[PICCOLA MISSIONE DI RICHIAMO 1]</p>
+          </article>
+
+          <article>
+            <strong>Giorno 2</strong>
+            <p>[PICCOLA MISSIONE DI RICHIAMO 2]</p>
+          </article>
+
+          <article>
+            <strong>Giorno 3</strong>
+            <p>[PICCOLA MISSIONE DI RICHIAMO 3]</p>
+          </article>
+
+          <article>
+            <strong>Giorno 4</strong>
+            <p>[PICCOLA MISSIONE DI RICHIAMO 4]</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../[LEZIONE-PRECEDENTE]/">← Lezione precedente</a>
+      <a href="../[LEZIONE-SUCCESSIVA]/">Lezione successiva →</a>
+    </nav>
+
+    <section class="next-lesson">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2>[TITOLO LEZIONE SUCCESSIVA]</h2>
+      <p>[BREVE ANTICIPAZIONE]</p>
+    </section>
+
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Informatica.</strong></p>
+      <p>
+        Questa pagina è pensata per essere letta anche da studenti DSA:
+        istruzioni sequenziali, font leggibili, contrasti elevati e
+        scorciatoie da tastiera evidenziate.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

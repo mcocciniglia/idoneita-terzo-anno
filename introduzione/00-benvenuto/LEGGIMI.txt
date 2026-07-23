@@ -1,0 +1,18 @@
+LEZIONE 0 — ISTRUZIONI DI PUBBLICAZIONE
+
+Struttura consigliata nel repository:
+
+lezioni/
+└── idoneita-terzo-anno/
+    └── lezione-0/
+        ├── index.html
+        └── idoneita.css
+
+La pagina usa gli asset comuni pubblicati su:
+https://mcocciniglia.github.io/common/assets/
+
+Il collegamento alla Lezione 1 è già predisposto verso:
+../01-che-cos-e-l-informatica/
+
+Se viene scelta una cartella diversa, aggiornare il relativo href
+nell'ultima sezione del file index.html.

@@ -1,0 +1,20 @@
+FONDAMENTA DEL PROGETTO
+
+Contenuto:
+- assets/idoneita.css
+- _template-lezione/index.html
+- docs/componenti.html
+- PROGETTO.md
+
+INTEGRAZIONE CONSIGLIATA
+
+1. Copiare assets/idoneita.css nella cartella assets del repository.
+2. Copiare _template-lezione nella radice del repository.
+3. Copiare docs/componenti.html nella cartella docs.
+4. Copiare PROGETTO.md nella radice.
+
+Prima di modificare la Lezione 0 già pubblicata, controllare la pagina:
+docs/componenti.html
+
+In questo modo si verifica che i nuovi stili siano compatibili con
+style.css e theme.css degli asset comuni.

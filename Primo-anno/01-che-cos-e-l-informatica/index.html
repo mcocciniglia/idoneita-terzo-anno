@@ -1,0 +1,1237 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Lezione introduttiva: che cos'è l'informatica, che cos'è un'informazione e come dati, algoritmi e computer aiutano a risolvere problemi.">
+  <title>01 — Che cos'è l'informatica?</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+
+  <link rel="icon"
+        href="https://mcocciniglia.github.io/common/assets/favicon.svg"
+        type="image/svg+xml">
+
+  <style>
+    .opening-quote{
+      margin:28px 0;
+      padding:24px 26px;
+      border-left:6px solid var(--edu-violet);
+      border-radius:0 18px 18px 0;
+      background:linear-gradient(145deg,var(--edu-violet-soft),var(--panel));
+    }
+
+    .opening-quote blockquote{
+      margin:0;
+      font-size:clamp(1.08rem,2vw,1.35rem);
+      font-weight:750;
+      line-height:1.55;
+    }
+
+    .opening-quote cite{
+      display:block;
+      margin-top:12px;
+      color:var(--muted);
+      font-style:normal;
+    }
+
+    .story-card{
+      margin:24px 0;
+      padding:24px;
+      border:1px solid var(--panel-border);
+      border-radius:20px;
+      background:var(--panel);
+      box-shadow:var(--edu-shadow);
+    }
+
+    .story-card h3{
+      margin-top:0;
+    }
+
+    .library-shelf{
+      display:grid;
+      grid-template-columns:repeat(8,minmax(28px,1fr));
+      gap:8px;
+      margin:22px 0;
+      align-items:end;
+    }
+
+    .book{
+      display:grid;
+      place-items:center;
+      min-height:82px;
+      padding:6px 3px;
+      border:2px solid var(--panel-border);
+      border-radius:5px 5px 2px 2px;
+      background:var(--edu-blue-soft);
+      font-size:.78rem;
+      font-weight:800;
+      writing-mode:vertical-rl;
+      transform:rotate(180deg);
+    }
+
+    .book.target{
+      min-height:108px;
+      border-color:var(--edu-gold);
+      background:var(--edu-gold-soft);
+    }
+
+    .problem-flow{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:10px;
+      align-items:stretch;
+      margin:24px 0;
+    }
+
+    .flow-node{
+      position:relative;
+      display:grid;
+      place-items:center;
+      min-height:112px;
+      padding:14px;
+      border:2px solid var(--edu-blue);
+      border-radius:16px;
+      background:var(--panel);
+      text-align:center;
+      font-weight:800;
+    }
+
+    .flow-node:not(:last-child)::after{
+      content:"→";
+      position:absolute;
+      right:-18px;
+      top:50%;
+      z-index:2;
+      transform:translateY(-50%);
+      padding:2px;
+      background:var(--bg);
+      font-size:1.4rem;
+      color:var(--edu-blue);
+    }
+
+    .flow-node span{
+      display:block;
+      margin-bottom:6px;
+      font-size:1.7rem;
+    }
+
+    .data-info-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+      margin:20px 0;
+    }
+
+    .concept-card{
+      padding:20px;
+      border:1px solid var(--panel-border);
+      border-radius:18px;
+      background:var(--panel);
+    }
+
+    .concept-card h3{
+      margin-top:0;
+    }
+
+    .same-data{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      margin:20px 0;
+    }
+
+    .sorting-card{
+      padding:16px;
+      border:1px solid var(--panel-border);
+      border-radius:15px;
+      background:var(--panel);
+    }
+
+    .sorting-card h3{
+      margin-top:0;
+      font-size:1rem;
+    }
+
+    .sorting-card ol{
+      margin-bottom:0;
+    }
+
+    .computer-role{
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      gap:18px;
+      align-items:center;
+      margin:22px 0;
+      padding:22px;
+      border:2px solid var(--edu-teal);
+      border-radius:20px;
+      background:linear-gradient(145deg,var(--edu-teal-soft),var(--panel));
+    }
+
+    .role-side{
+      padding:16px;
+      border:1px solid var(--panel-border);
+      border-radius:14px;
+      background:var(--panel);
+    }
+
+    .role-arrow{
+      font-size:2rem;
+      font-weight:900;
+    }
+
+    .mini-table{
+      width:100%;
+      border-collapse:collapse;
+      margin:18px 0;
+    }
+
+    .mini-table th,
+    .mini-table td{
+      padding:12px;
+      border:1px solid var(--panel-border);
+      text-align:left;
+      vertical-align:top;
+    }
+
+    .mini-table th{
+      background:var(--edu-blue-soft);
+    }
+
+    .task-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .task-card{
+      padding:18px;
+      border:1px solid var(--panel-border);
+      border-radius:16px;
+      background:var(--panel);
+    }
+
+    .task-card h3{
+      margin-top:0;
+    }
+
+    .student-backpack{
+      margin:36px 0;
+      padding:26px;
+      border:2px solid var(--edu-blue);
+      border-radius:24px;
+      background:linear-gradient(145deg,var(--edu-blue-soft),var(--panel));
+    }
+
+    .student-backpack-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .backpack-card{
+      padding:18px;
+      border:1px solid var(--panel-border);
+      border-radius:16px;
+      background:var(--panel);
+    }
+
+    .backpack-card h3{
+      margin-top:0;
+    }
+
+    .keyword-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+      padding:0;
+      list-style:none;
+    }
+
+    .keyword-list li{
+      padding:7px 11px;
+      border:1px solid var(--edu-blue);
+      border-radius:999px;
+      background:var(--edu-blue-soft);
+      font-weight:800;
+    }
+
+    .review-mission{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:18px;
+      margin:30px 0;
+      padding:24px;
+      border:2px dashed var(--edu-teal);
+      border-radius:22px;
+      background:linear-gradient(145deg,var(--edu-teal-soft),var(--panel));
+    }
+
+    .review-mission-icon{
+      font-size:2rem;
+    }
+
+    .mission-days{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .mission-days article{
+      padding:14px;
+      border:1px solid var(--panel-border);
+      border-radius:14px;
+      background:var(--panel);
+    }
+
+    .timeline{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:12px;
+      margin:20px 0;
+    }
+
+    .timeline article{
+      padding:16px;
+      border-top:5px solid var(--edu-blue);
+      border-radius:12px;
+      background:var(--panel);
+      box-shadow:var(--edu-shadow);
+    }
+
+    .timeline strong{
+      display:block;
+      margin-bottom:5px;
+    }
+
+    @media (max-width:850px){
+      .problem-flow{
+        grid-template-columns:1fr;
+      }
+
+      .flow-node:not(:last-child)::after{
+        content:"↓";
+        right:50%;
+        top:auto;
+        bottom:-21px;
+        transform:translateX(50%);
+      }
+
+      .same-data,
+      .timeline{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+
+    @media (max-width:680px){
+      .data-info-grid,
+      .task-grid,
+      .student-backpack-grid,
+      .mission-days,
+      .same-data,
+      .timeline{
+        grid-template-columns:1fr;
+      }
+
+      .computer-role{
+        grid-template-columns:1fr;
+      }
+
+      .role-arrow{
+        transform:rotate(90deg);
+        text-align:center;
+      }
+
+      .library-shelf{
+        grid-template-columns:repeat(4,minmax(28px,1fr));
+      }
+    }
+
+    @media print{
+      .story-card{
+        box-shadow:none;
+      }
+
+      .student-backpack,
+      .review-mission{
+        background:#fff !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge first">Introduzione al percorso</span>
+        </div>
+
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle"
+                  class="btn btn-theme"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+
+          <button id="contrastToggle"
+                  class="btn btn-outline btn-contrast"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span>
+        <span aria-hidden="true">›</span>
+        <span>Introduzione</span>
+        <span aria-hidden="true">›</span>
+        <span>Lezione 1</span>
+      </nav>
+
+      <p class="eyebrow">Lezione 1 · Durata prevista: 2 ore</p>
+      <h1>Che cos'è l'informatica?</h1>
+
+      <p class="lead">
+        Prima del computer viene un problema. Prima del programma viene
+        l'informazione. Scopriamo da qui il significato dell'informatica.
+      </p>
+
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ 2 ore</span>
+        <span>📘 Lezione introduttiva</span>
+        <span>🎯 Nessun prerequisito tecnico</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading">
+        <span>Introduzione al corso</span>
+        <span>Prima lezione</span>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        <div class="progress-value" style="width:20%;"></div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🎯</span>
+        <h2 id="obiettivi">Obiettivi della lezione</h2>
+      </div>
+
+      <p>
+        Al termine della lezione dovrai riuscire a spiegare i concetti con
+        parole tue, senza limitarti a ripetere una definizione.
+      </p>
+
+      <div class="objective-grid">
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Definire l'informatica</strong>
+          <small>Collegandola all'informazione e alla soluzione dei problemi.</small>
+        </article>
+
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Distinguere dato e informazione</strong>
+          <small>Comprendendo che il significato dipende anche dal contesto.</small>
+        </article>
+
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Riconoscere un'elaborazione</strong>
+          <small>Individuando dati in ingresso, operazioni e risultati.</small>
+        </article>
+
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Descrivere il ruolo del computer</strong>
+          <small>Come strumento che esegue istruzioni, non come fine dell'informatica.</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="opening-quote" aria-label="Citazione introduttiva">
+      <blockquote>
+        «L'informatica non riguarda i computer più di quanto
+        l'astronomia riguardi i telescopi.»
+      </blockquote>
+      <cite>Frase tradizionalmente attribuita a Edsger W. Dijkstra</cite>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="biblioteca">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📚</span>
+        <h2 id="biblioteca">Un milione di libri e una sola richiesta</h2>
+      </div>
+
+      <div class="story-card">
+        <h3>Il problema</h3>
+        <p>
+          Immagina una biblioteca con un milione di libri. Un lettore entra
+          e chiede una copia de <em>I promessi sposi</em>.
+        </p>
+
+        <div class="library-shelf" aria-label="Scaffale di libri">
+          <div class="book">Storia</div>
+          <div class="book">Scienze</div>
+          <div class="book">Narrativa</div>
+          <div class="book">Geografia</div>
+          <div class="book target">I promessi sposi</div>
+          <div class="book">Arte</div>
+          <div class="book">Tecnica</div>
+          <div class="book">Poesia</div>
+        </div>
+
+        <p>
+          Se i libri fossero disposti senza alcun criterio, si potrebbe
+          iniziare dal primo scaffale e controllarli uno alla volta. Prima o
+          poi il libro sarebbe trovato, ma il metodo sarebbe lentissimo.
+        </p>
+
+        <p>
+          Un bibliotecario usa invece un catalogo: ogni libro viene descritto,
+          classificato e associato a una posizione. La ricerca diventa più
+          rapida perché l'informazione è stata <strong>organizzata</strong>.
+        </p>
+      </div>
+
+      <aside class="callout remember" aria-labelledby="prima-idea">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Prima idea fondamentale</p>
+          <h3 id="prima-idea">L'informatica nasce prima del computer</h3>
+          <p>
+            Catalogare, ordinare, confrontare e cercare informazioni sono
+            problemi informatici anche quando vengono svolti su carta.
+          </p>
+        </div>
+      </aside>
+
+      <div class="question-box">
+        <h3>Fermati e ragiona</h3>
+        <p>
+          Quali informazioni dovrebbe contenere la scheda di un libro per
+          permettere al bibliotecario di trovarlo rapidamente?
+        </p>
+        <p>
+          Prova a indicarne almeno cinque prima di continuare.
+        </p>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="definizione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔤</span>
+        <h2 id="definizione">Dal problema alla parola “informatica”</h2>
+      </div>
+
+      <p>
+        La parola <strong>informatica</strong> richiama l'espressione
+        <strong>informazione automatica</strong>: informazioni trattate
+        mediante procedure che possono essere eseguite automaticamente.
+      </p>
+
+      <div class="definition">
+        <span class="definition-term">Informatica</span>
+        <p>
+          Disciplina che studia come rappresentare, organizzare, conservare,
+          elaborare e trasmettere informazioni per risolvere problemi,
+          spesso con l'aiuto di sistemi automatici come i computer.
+        </p>
+      </div>
+
+      <p>
+        La definizione contiene due protagonisti:
+      </p>
+
+      <div class="data-info-grid">
+        <article class="concept-card">
+          <h3>📄 L'informazione</h3>
+          <p>
+            È ciò che ci permette di conoscere qualcosa, prendere una
+            decisione o svolgere un'attività.
+          </p>
+          <p>
+            Esempio: «La biblioteca chiude alle 18:30».
+          </p>
+        </article>
+
+        <article class="concept-card">
+          <h3>⚙️ Il procedimento</h3>
+          <p>
+            È la sequenza ordinata di operazioni che trasforma i dati
+            disponibili in un risultato utile.
+          </p>
+          <p>
+            Esempio: cercare nel catalogo, leggere la collocazione e raggiungere
+            lo scaffale corretto.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="dato-informazione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔎</span>
+        <h2 id="dato-informazione">Dato e informazione non sono la stessa cosa</h2>
+      </div>
+
+      <p>Osserva questo dato:</p>
+
+      <div class="definition">
+        <span class="definition-term">18:30</span>
+        <p>
+          Da solo è un insieme di simboli. Potrebbe indicare un orario,
+          il risultato di una partita, una misura o qualcos'altro.
+        </p>
+      </div>
+
+      <p>
+        Quando aggiungiamo il contesto — «La biblioteca chiude alle 18:30» —
+        il dato acquista un significato preciso e diventa informazione utile.
+      </p>
+
+      <div class="data-info-grid">
+        <article class="concept-card">
+          <h3>Dato</h3>
+          <p>
+            Rappresentazione elementare di un fatto: un numero, una parola,
+            una data, un'immagine, un suono.
+          </p>
+        </article>
+
+        <article class="concept-card">
+          <h3>Informazione</h3>
+          <p>
+            Significato ottenuto interpretando uno o più dati nel loro
+            contesto.
+          </p>
+        </article>
+      </div>
+
+      <table class="mini-table">
+        <thead>
+          <tr>
+            <th>Dato</th>
+            <th>Contesto</th>
+            <th>Informazione ottenuta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>27</td>
+            <td>Temperatura esterna in gradi Celsius</td>
+            <td>Fuori ci sono 27 °C.</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Numero di libri disponibili</td>
+            <td>La biblioteca possiede otto copie.</td>
+          </tr>
+          <tr>
+            <td>Rosso</td>
+            <td>Colore di un semaforo</td>
+            <td>Il veicolo deve fermarsi.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <aside class="callout error" aria-labelledby="errore-dato">
+        <div class="callout-icon" aria-hidden="true">❌</div>
+        <div>
+          <p class="callout-label">Errore frequente</p>
+          <h3 id="errore-dato">Usare “dato” e “informazione” come sinonimi assoluti</h3>
+          <p>
+            Nella lingua comune accade spesso. In informatica, però, è utile
+            distinguere la rappresentazione grezza dal significato che
+            ricaviamo interpretandola.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="operazioni">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧩</span>
+        <h2 id="operazioni">Che cosa facciamo con le informazioni?</h2>
+      </div>
+
+      <p>
+        Un sistema informatico può svolgere operazioni diverse. Le più
+        importanti sono:
+      </p>
+
+      <div class="timeline">
+        <article>
+          <strong>1. Raccogliere</strong>
+          <span>Inserire dati tramite tastiera, sensori, fotocamera o moduli.</span>
+        </article>
+        <article>
+          <strong>2. Organizzare</strong>
+          <span>Classificare, ordinare e collegare i dati.</span>
+        </article>
+        <article>
+          <strong>3. Elaborare</strong>
+          <span>Calcolare, confrontare, cercare e trasformare.</span>
+        </article>
+        <article>
+          <strong>4. Conservare e trasmettere</strong>
+          <span>Salvare i risultati e renderli disponibili ad altri.</span>
+        </article>
+      </div>
+
+      <h3>La stessa informazione può essere organizzata in modi diversi</h3>
+
+      <p>
+        Consideriamo cinque città: Catania, Palermo, Roma, Torino e Bari.
+        Possiamo ordinarle secondo criteri differenti.
+      </p>
+
+      <div class="same-data">
+        <article class="sorting-card">
+          <h3>Ordine alfabetico</h3>
+          <ol>
+            <li>Bari</li>
+            <li>Catania</li>
+            <li>Palermo</li>
+            <li>Roma</li>
+            <li>Torino</li>
+          </ol>
+        </article>
+
+        <article class="sorting-card">
+          <h3>Da nord a sud</h3>
+          <ol>
+            <li>Torino</li>
+            <li>Roma</li>
+            <li>Bari</li>
+            <li>Palermo</li>
+            <li>Catania</li>
+          </ol>
+        </article>
+
+        <article class="sorting-card">
+          <h3>Per lunghezza del nome</h3>
+          <ol>
+            <li>Bari</li>
+            <li>Roma</li>
+            <li>Torino</li>
+            <li>Catania</li>
+            <li>Palermo</li>
+          </ol>
+        </article>
+      </div>
+
+      <p>
+        I dati non sono cambiati. È cambiato il criterio usato per organizzarli.
+        Ogni ordinamento può essere utile per rispondere a una domanda diversa.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="flusso">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">➡️</span>
+        <h2 id="flusso">Dal problema al risultato</h2>
+      </div>
+
+      <p>
+        Una semplice elaborazione informatica può essere rappresentata come
+        una catena di passaggi.
+      </p>
+
+      <div class="problem-flow" aria-label="Flusso dal problema al risultato">
+        <div class="flow-node">
+          <span aria-hidden="true">❓</span>
+          Problema
+        </div>
+        <div class="flow-node">
+          <span aria-hidden="true">📥</span>
+          Dati
+        </div>
+        <div class="flow-node">
+          <span aria-hidden="true">🧠</span>
+          Procedimento
+        </div>
+        <div class="flow-node">
+          <span aria-hidden="true">💻</span>
+          Esecuzione
+        </div>
+        <div class="flow-node">
+          <span aria-hidden="true">✅</span>
+          Risultato
+        </div>
+      </div>
+
+      <div class="story-card">
+        <h3>Esempio: calcolare la media di tre voti</h3>
+        <p><strong>Problema:</strong> conoscere il voto medio.</p>
+        <p><strong>Dati:</strong> 7, 8 e 6.</p>
+        <p><strong>Procedimento:</strong> sommare i voti e dividere per tre.</p>
+        <p><strong>Esecuzione:</strong> una persona o un computer svolge le operazioni.</p>
+        <p><strong>Risultato:</strong> la media è 7.</p>
+      </div>
+
+      <div class="definition">
+        <span class="definition-term">Algoritmo</span>
+        <p>
+          Sequenza finita e ordinata di istruzioni non ambigue che permette
+          di risolvere un problema.
+        </p>
+      </div>
+
+      <p>
+        In questa lezione ci basta riconoscere il ruolo dell'algoritmo.
+        Studieremo in seguito come descriverlo e come trasformarlo in un programma.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="computer">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">💻</span>
+        <h2 id="computer">E il computer?</h2>
+      </div>
+
+      <p>
+        Il computer è una macchina elettronica programmabile. Riceve dati,
+        esegue istruzioni e produce risultati.
+      </p>
+
+      <div class="computer-role">
+        <div class="role-side">
+          <strong>La persona</strong>
+          <p>
+            Definisce il problema, sceglie i dati utili e costruisce il
+            procedimento.
+          </p>
+        </div>
+
+        <div class="role-arrow" aria-hidden="true">→</div>
+
+        <div class="role-side">
+          <strong>Il computer</strong>
+          <p>
+            Esegue rapidamente e con precisione le istruzioni ricevute,
+            ma non decide da solo quale problema risolvere.
+          </p>
+        </div>
+      </div>
+
+      <aside class="callout remember" aria-labelledby="strumento">
+        <div class="callout-icon" aria-hidden="true">🧰</div>
+        <div>
+          <p class="callout-label">Concetto chiave</p>
+          <h3 id="strumento">Il computer è uno strumento dell'informatica</h3>
+          <p>
+            Come il telescopio aiuta l'astronomo, il computer aiuta a trattare
+            grandi quantità di dati e a eseguire rapidamente algoritmi.
+          </p>
+        </div>
+      </aside>
+
+      <h3>Una prima distinzione</h3>
+
+      <div class="data-info-grid">
+        <article class="concept-card">
+          <h3>🧱 Hardware</h3>
+          <p>
+            La parte fisica e tangibile del sistema: schermo, tastiera,
+            processore, memoria, cavi e dispositivi.
+          </p>
+        </article>
+
+        <article class="concept-card">
+          <h3>🧾 Software</h3>
+          <p>
+            L'insieme dei programmi e delle istruzioni che permettono
+            all'hardware di svolgere compiti.
+          </p>
+        </article>
+      </div>
+
+      <p>
+        Per ora è sufficiente conoscere la differenza generale. Hardware e
+        software saranno studiati in modo più approfondito nelle prossime lezioni.
+      </p>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio">
+      <div class="lab-header">
+        <h2 id="laboratorio">💻 Laboratorio guidato — Organizzare informazioni</h2>
+      </div>
+
+      <div class="lab-body">
+        <p>
+          <strong>Obiettivo:</strong> comprendere che la stessa raccolta di dati
+          può essere elaborata in modi diversi a seconda della domanda.
+        </p>
+
+        <p>
+          Usa un foglio di carta oppure un semplice editor di testo. Non
+          occorre un programma particolare.
+        </p>
+
+        <ol class="steps">
+          <li>
+            <strong>Scrivi dieci nomi di città</strong>
+            <p>
+              Scegli liberamente dieci città italiane o straniere. Scrivile
+              inizialmente nell'ordine in cui ti vengono in mente.
+            </p>
+          </li>
+
+          <li>
+            <strong>Ordinale alfabeticamente</strong>
+            <p>
+              Riscrivi la lista dalla A alla Z. Indica il criterio usato:
+              il nome della città.
+            </p>
+          </li>
+
+          <li>
+            <strong>Associa un secondo dato</strong>
+            <p>
+              Accanto a ogni città scrivi lo Stato o la regione. Non è
+              necessario conoscere dati demografici precisi.
+            </p>
+          </li>
+
+          <li>
+            <strong>Crea un nuovo ordinamento</strong>
+            <p>
+              Raggruppa le città per Stato o regione. Osserva che gli elementi
+              sono gli stessi, ma la struttura della lista è cambiata.
+            </p>
+          </li>
+
+          <li>
+            <strong>Formula una domanda</strong>
+            <p>
+              Scrivi una domanda a cui uno dei due ordinamenti permette di
+              rispondere più velocemente. Esempio: «Qual è la prima città in
+              ordine alfabetico?».
+            </p>
+          </li>
+
+          <li>
+            <strong>Descrivi il procedimento</strong>
+            <p>
+              In tre o quattro frasi, spiega quali dati hai raccolto, quale
+              elaborazione hai svolto e quale risultato hai ottenuto.
+            </p>
+          </li>
+        </ol>
+
+        <aside class="callout exam" aria-labelledby="consegna-orale">
+          <div class="callout-icon" aria-hidden="true">🗣️</div>
+          <div>
+            <p class="callout-label">Esposizione orale</p>
+            <h3 id="consegna-orale">Racconta l'attività in un minuto</h3>
+            <p>
+              Usa le parole <strong>dato</strong>, <strong>criterio</strong>,
+              <strong>elaborazione</strong> e <strong>risultato</strong>.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esercizi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">✍️</span>
+        <h2 id="esercizi">Esercizi di consolidamento</h2>
+      </div>
+
+      <div class="task-grid">
+        <article class="task-card">
+          <h3>1. Dato o informazione?</h3>
+          <p>
+            Spiega perché il numero «12» da solo è un dato ambiguo. Scrivi
+            tre contesti diversi che gli attribuiscono significati differenti.
+          </p>
+        </article>
+
+        <article class="task-card">
+          <h3>2. Ingresso, elaborazione, uscita</h3>
+          <p>
+            Descrivi questi tre elementi per una calcolatrice che esegue
+            l'addizione di due numeri.
+          </p>
+        </article>
+
+        <article class="task-card">
+          <h3>3. Informatica senza computer</h3>
+          <p>
+            Individua un'attività quotidiana nella quale organizzi o elabori
+            informazioni senza usare strumenti elettronici.
+          </p>
+        </article>
+
+        <article class="task-card">
+          <h3>4. Procedimento ambiguo</h3>
+          <p>
+            Spiega perché l'istruzione «metti un po' di zucchero» non è adatta
+            a un algoritmo destinato a una macchina.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="quiz" aria-labelledby="quiz">
+      <h2 id="quiz">🧠 Autoverifica</h2>
+      <p>Rispondi prima a voce. Apri la risposta soltanto dopo.</p>
+
+      <div class="self-check">
+        <details>
+          <summary>1. L'informatica coincide con l'uso del computer?</summary>
+          <p>
+            No. L'informatica studia il trattamento delle informazioni e i
+            procedimenti per risolvere problemi. Il computer è uno degli
+            strumenti usati per automatizzare tali procedimenti.
+          </p>
+        </details>
+
+        <details>
+          <summary>2. Qual è la differenza tra dato e informazione?</summary>
+          <p>
+            Il dato è una rappresentazione elementare; l'informazione è il
+            significato che ricaviamo interpretando uno o più dati in un contesto.
+          </p>
+        </details>
+
+        <details>
+          <summary>3. Che cos'è un'elaborazione?</summary>
+          <p>
+            È l'insieme delle operazioni che trasformano i dati in un risultato
+            utile: per esempio ordinare, confrontare, calcolare o cercare.
+          </p>
+        </details>
+
+        <details>
+          <summary>4. Che ruolo ha un algoritmo?</summary>
+          <p>
+            Descrive in modo ordinato e non ambiguo le istruzioni necessarie
+            per risolvere un problema.
+          </p>
+        </details>
+
+        <details>
+          <summary>5. Hardware e software sono la stessa cosa?</summary>
+          <p>
+            No. L'hardware è la parte fisica del sistema; il software è
+            l'insieme dei programmi e delle istruzioni.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <aside class="callout exam" aria-labelledby="domanda-esame">
+      <div class="callout-icon" aria-hidden="true">🎓</div>
+      <div>
+        <p class="callout-label">Possibile domanda d'esame</p>
+        <h3 id="domanda-esame">Che cos'è l'informatica?</h3>
+        <p>
+          <strong>Per rispondere bene:</strong> parla dell'informazione, della
+          soluzione dei problemi, delle operazioni sui dati e del computer
+          come strumento. Evita di dire soltanto «è la scienza dei computer».
+        </p>
+        <p>
+          <strong>Possibile risposta:</strong> l'informatica è la disciplina
+          che studia come rappresentare, organizzare, elaborare, conservare e
+          trasmettere informazioni per risolvere problemi, spesso attraverso
+          sistemi automatici come i computer.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="glossario">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📖</span>
+        <h2 id="glossario">Glossario essenziale</h2>
+      </div>
+
+      <dl class="glossary-grid">
+        <div class="glossary-card">
+          <dt>Dato</dt>
+          <dd>Rappresentazione elementare di un fatto o di un valore.</dd>
+        </div>
+
+        <div class="glossary-card">
+          <dt>Informazione</dt>
+          <dd>Significato ricavato interpretando dati in un contesto.</dd>
+        </div>
+
+        <div class="glossary-card">
+          <dt>Elaborazione</dt>
+          <dd>Operazione o insieme di operazioni che trasformano dati.</dd>
+        </div>
+
+        <div class="glossary-card">
+          <dt>Algoritmo</dt>
+          <dd>Sequenza finita, ordinata e non ambigua di istruzioni.</dd>
+        </div>
+
+        <div class="glossary-card">
+          <dt>Hardware</dt>
+          <dd>Componenti fisici di un sistema informatico.</dd>
+        </div>
+
+        <div class="glossary-card">
+          <dt>Software</dt>
+          <dd>Programmi e istruzioni eseguiti dal sistema.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div>
+        <p class="eyebrow">Sintesi essenziale</p>
+        <h2 id="zaino-studente">🎒 Lo zaino dello studente</h2>
+        <p>
+          Questi sono i concetti che dovresti riuscire a ricostruire anche
+          dopo qualche giorno.
+        </p>
+      </div>
+
+      <div class="student-backpack-grid">
+        <article class="backpack-card">
+          <h3>✅ Le 5 idee fondamentali</h3>
+          <ol>
+            <li>L'informatica nasce per affrontare problemi legati all'informazione.</li>
+            <li>Un dato acquista significato quando viene interpretato in un contesto.</li>
+            <li>Le informazioni possono essere raccolte, organizzate, elaborate, conservate e trasmesse.</li>
+            <li>Un algoritmo descrive una sequenza ordinata di istruzioni.</li>
+            <li>Il computer è uno strumento che esegue istruzioni e tratta dati.</li>
+          </ol>
+        </article>
+
+        <article class="backpack-card">
+          <h3>📝 5 parole chiave</h3>
+          <ul class="keyword-list">
+            <li>dato</li>
+            <li>informazione</li>
+            <li>elaborazione</li>
+            <li>algoritmo</li>
+            <li>computer</li>
+          </ul>
+        </article>
+
+        <article class="backpack-card">
+          <h3>❓ 3 domande da esame</h3>
+          <ol>
+            <li>Che cos'è l'informatica?</li>
+            <li>Qual è la differenza tra dato e informazione?</li>
+            <li>Qual è il ruolo del computer in un sistema informatico?</li>
+          </ol>
+        </article>
+
+        <article class="backpack-card">
+          <h3>⏱️ Ripasso in 5 minuti</h3>
+          <ol>
+            <li>Chiudi la pagina.</li>
+            <li>Spiega a voce che cos'è l'informatica.</li>
+            <li>Fai un esempio di dato che cambia significato con il contesto.</li>
+            <li>Ricostruisci la catena problema → dati → procedimento → risultato.</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="review-mission" aria-labelledby="missione-ripasso">
+      <div class="review-mission-icon" aria-hidden="true">🏕️</div>
+      <div>
+        <p class="callout-label">Allenamento distribuito</p>
+        <h2 id="missione-ripasso">Missione di ripasso · 10 minuti al giorno</h2>
+        <p>
+          Prova prima a rispondere senza leggere. Controlla la pagina solo
+          alla fine.
+        </p>
+
+        <div class="mission-days">
+          <article>
+            <strong>Giorno 1</strong>
+            <p>
+              Scrivi una definizione personale di informatica in non più di
+              tre righe.
+            </p>
+          </article>
+
+          <article>
+            <strong>Giorno 2</strong>
+            <p>
+              Trova tre dati nella vita quotidiana e indica il contesto che
+              li trasforma in informazioni.
+            </p>
+          </article>
+
+          <article>
+            <strong>Giorno 3</strong>
+            <p>
+              Descrivi ingresso, elaborazione e uscita di una macchinetta
+              automatica per bevande.
+            </p>
+          </article>
+
+          <article>
+            <strong>Giorno 4</strong>
+            <p>
+              Rispondi a voce alla domanda «Che cos'è l'informatica?» come se
+              fossi davanti alla commissione.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-lesson">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2>Come rappresentiamo le informazioni?</h2>
+      <p>
+        Il computer lavora con testi, immagini, suoni e numeri. Nella prossima
+        lezione inizieremo a capire come realtà così diverse possano essere
+        trasformate in dati.
+      </p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../../introduzione/00-benvenuto/index.html">← Introduzione</a>
+      <a href="../02-rappresentazione-dell-informazione/">Lezione successiva →</a>
+    </nav>
+
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Informatica.</strong></p>
+      <p>
+        Questa pagina è pensata per essere letta anche da studenti DSA:
+        istruzioni sequenziali, font leggibili, contrasti elevati e
+        scorciatoie da tastiera evidenziate.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

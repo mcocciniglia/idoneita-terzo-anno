@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Lezione su rappresentazione digitale, sistema binario, bit, byte e semplici conversioni tra numeri decimali e binari.">
+  <title>02 — Rappresentazione dell'informazione</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+
+  <link rel="icon"
+        href="https://mcocciniglia.github.io/common/assets/favicon.svg"
+        type="image/svg+xml">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge first">Programma del primo anno</span>
+        </div>
+
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle"
+                  class="btn btn-theme"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+
+          <button id="contrastToggle"
+                  class="btn btn-outline btn-contrast"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span>
+        <span aria-hidden="true">›</span>
+        <span>Primo anno</span>
+        <span aria-hidden="true">›</span>
+        <span>Lezione 2</span>
+      </nav>
+
+      <p class="eyebrow">Lezione 2 · Durata prevista: 2 ore</p>
+      <h1>Rappresentazione dell'informazione</h1>
+
+      <p class="lead">
+        Testi, numeri, immagini e suoni sono molto diversi per noi.
+        Come può un computer rappresentarli usando soltanto due simboli?
+      </p>
+
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ 2 ore</span>
+        <span>📘 Primo anno</span>
+        <span>🎯 Dato, informazione ed elaborazione</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading">
+        <span>Percorso del primo anno</span>
+        <span>Lezione 2 di 18</span>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        <div class="progress-value"></div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🎯</span>
+        <h2 id="obiettivi">Obiettivi della lezione</h2>
+      </div>
+
+      <p>
+        Al termine della lezione dovrai saper collegare le informazioni
+        della vita quotidiana alla loro rappresentazione digitale.
+      </p>
+
+      <div class="objective-grid">
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Spiegare la codifica</strong>
+          <small>Distinguendo l'informazione dalla sua rappresentazione.</small>
+        </article>
+
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Riconoscere bit e byte</strong>
+          <small>Comprendendo il ruolo delle unità fondamentali dei dati.</small>
+        </article>
+
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Leggere un numero binario</strong>
+          <small>Usando il valore delle posizioni occupate da 0 e 1.</small>
+        </article>
+
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Eseguire semplici conversioni</strong>
+          <small>Passando da decimale a binario e viceversa.</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="interruttori">
+      <h2 id="interruttori">Una stanza piena di interruttori</h2>
+      <p>
+        Immagina una fila di lampade. Ogni lampada può essere soltanto
+        <strong>spenta</strong> oppure <strong>accesa</strong>. Se assegniamo
+        0 allo stato spento e 1 allo stato acceso, la sequenza
+        <strong>0 1 1 0</strong> descrive senza ambiguità lo stato delle
+        quattro lampade.
+      </p>
+      <p>
+        Anche i circuiti elettronici di un computer distinguono con grande
+        affidabilità due stati. Per questo l'informazione viene rappresentata
+        mediante sequenze di <strong>0</strong> e <strong>1</strong>.
+      </p>
+
+      <div class="process-flow" aria-label="Dall'informazione alla rappresentazione digitale">
+        <div class="process-node">
+          <strong>Informazione</strong>
+          <span>Un numero, una parola, un'immagine o un suono</span>
+        </div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node">
+          <strong>Codifica</strong>
+          <span>Applicazione di regole condivise</span>
+        </div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node">
+          <strong>Dati binari</strong>
+          <span>Una sequenza di 0 e 1</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="codifica">
+      <h2 id="codifica">Rappresentare significa scegliere un codice</h2>
+      <p>
+        La stessa informazione può essere rappresentata in modi diversi.
+        Il numero cinque, per esempio, può essere scritto come
+        <strong>5</strong>, con cinque tacche oppure con la parola
+        <strong>cinque</strong>. Cambia la forma, non il significato.
+      </p>
+
+      <div class="definition">
+        <span class="definition-term">Codifica</span>
+        <p>
+          È l'operazione con cui un'informazione viene rappresentata usando
+          simboli e regole stabilite.
+        </p>
+      </div>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Il mittente codifica</h3>
+          <p>Trasforma l'informazione in una rappresentazione.</p>
+        </article>
+        <article class="info-card">
+          <h3>Il destinatario decodifica</h3>
+          <p>Interpreta la rappresentazione applicando le stesse regole.</p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="callout remember" aria-labelledby="regole-condivise">
+      <div class="callout-icon" aria-hidden="true">💡</div>
+      <div>
+        <p class="callout-label">Ricorda</p>
+        <h3 id="regole-condivise">Un codice funziona solo se le regole sono note</h3>
+        <p>
+          La sequenza 10 può significare dieci nel sistema decimale oppure due
+          nel sistema binario. Per interpretarla serve conoscere il sistema
+          usato.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="bit-byte">
+      <h2 id="bit-byte">Bit e byte: i mattoni dei dati</h2>
+
+      <div class="definition">
+        <span class="definition-term">Bit</span>
+        <p>
+          Il bit è la più piccola unità di informazione digitale. Può assumere
+          uno di due valori: 0 oppure 1. Il nome deriva da
+          <em>binary digit</em>, cioè cifra binaria.
+        </p>
+      </div>
+
+      <div class="definition">
+        <span class="definition-term">Byte</span>
+        <p>
+          Un byte è un gruppo di 8 bit. Per esempio,
+          <strong>01000001</strong> è una sequenza composta da un byte.
+        </p>
+      </div>
+
+      <p>
+        Con un solo bit si possono descrivere 2 combinazioni. Con 2 bit le
+        combinazioni diventano 4; con 3 bit diventano 8; con 8 bit sono 256.
+        Ogni bit aggiunto raddoppia il numero delle combinazioni possibili.
+      </p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>1 bit</h3>
+          <p>2 combinazioni: 0, 1</p>
+        </article>
+        <article class="info-card">
+          <h3>2 bit</h3>
+          <p>4 combinazioni: 00, 01, 10, 11</p>
+        </article>
+        <article class="info-card">
+          <h3>3 bit</h3>
+          <p>8 combinazioni, da 000 a 111</p>
+        </article>
+        <article class="info-card">
+          <h3>8 bit</h3>
+          <p>256 combinazioni: un byte</p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="callout error" aria-labelledby="bit-byte-errore">
+      <div class="callout-icon" aria-hidden="true">❌</div>
+      <div>
+        <p class="callout-label">Errore frequente</p>
+        <h3 id="bit-byte-errore">Confondere bit e byte</h3>
+        <p>
+          Non sono sinonimi: <strong>1 byte equivale a 8 bit</strong>.
+          Di solito il simbolo del bit è una b minuscola, mentre quello del
+          byte è una B maiuscola.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="binario">
+      <h2 id="binario">Il sistema binario</h2>
+      <p>
+        Nel sistema decimale usiamo dieci cifre, da 0 a 9. Nel sistema binario
+        usiamo soltanto 0 e 1. Entrambi sono sistemi <strong>posizionali</strong>:
+        il valore di una cifra dipende anche dalla posizione.
+      </p>
+      <p>
+        Nel numero decimale 352, le posizioni valgono 100, 10 e 1.
+        Nel numero binario 1101, procedendo da destra verso sinistra, le
+        posizioni valgono 1, 2, 4 e 8.
+      </p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Posizioni binarie</h3>
+          <p>8 · 4 · 2 · 1</p>
+        </article>
+        <article class="info-card">
+          <h3>Cifre di 1101</h3>
+          <p>1 · 1 · 0 · 1</p>
+        </article>
+      </div>
+
+      <p>
+        Moltiplichiamo ogni cifra per il valore della sua posizione:
+        <strong>(1 × 8) + (1 × 4) + (0 × 2) + (1 × 1) = 13</strong>.
+        Quindi il numero binario 1101 rappresenta il numero decimale 13.
+      </p>
+    </section>
+
+    <aside class="callout tip" aria-labelledby="potenze-due">
+      <div class="callout-icon" aria-hidden="true">✅</div>
+      <div>
+        <p class="callout-label">Strategia utile</p>
+        <h3 id="potenze-due">Costruisci le posizioni raddoppiando</h3>
+        <p>
+          Parti da 1 sulla destra e raddoppia verso sinistra:
+          1, 2, 4, 8, 16, 32. In questo modo non devi imparare una tabella
+          separata per ogni conversione.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="conversioni">
+      <h2 id="conversioni">Convertire numeri semplici</h2>
+
+      <h3>Da binario a decimale</h3>
+      <ol class="steps">
+        <li>
+          <strong>Scrivi il valore delle posizioni.</strong>
+          <p>Da destra: 1, 2, 4, 8 e così via.</p>
+        </li>
+        <li>
+          <strong>Osserva dove compare 1.</strong>
+          <p>Le posizioni con cifra 0 non contribuiscono al risultato.</p>
+        </li>
+        <li>
+          <strong>Somma i valori selezionati.</strong>
+          <p>Per 10110: 16 + 4 + 2 = 22.</p>
+        </li>
+      </ol>
+
+      <h3>Da decimale a binario</h3>
+      <p>
+        Per numeri piccoli possiamo scomporre il numero come somma di valori
+        1, 2, 4, 8, 16 e così via. Convertiamo 11:
+        <strong>11 = 8 + 2 + 1</strong>. Nelle posizioni 8, 4, 2, 1
+        scriviamo quindi 1, 0, 1, 1. Il risultato è
+        <strong>1011</strong>.
+      </p>
+    </section>
+
+    <aside class="callout exam" aria-labelledby="domanda-esame">
+      <div class="callout-icon" aria-hidden="true">🎓</div>
+      <div>
+        <p class="callout-label">Possibile domanda d'esame</p>
+        <h3 id="domanda-esame">Perché il computer usa il sistema binario?</h3>
+        <p>
+          <strong>Per rispondere bene:</strong> collega i due simboli 0 e 1
+          ai due stati distinguibili dei circuiti elettronici, poi cita bit,
+          byte e codifica.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="informazioni-diverse">
+      <h2 id="informazioni-diverse">Dati binari, significati diversi</h2>
+      <p>
+        Una sequenza di bit, da sola, non rivela che cosa rappresenta.
+        Potrebbe descrivere un numero, una lettera, il colore di un punto di
+        un'immagine o una parte di un suono. È il
+        <strong>formato</strong>, cioè l'insieme delle regole usate, a
+        permettere al software di interpretarla.
+      </p>
+      <p>
+        Nelle lezioni successive vedremo in modo specifico come vengono
+        codificati caratteri, immagini, audio e video. Per ora è sufficiente
+        ricordare che, all'interno del computer, tutte queste informazioni
+        diventano sequenze di bit.
+      </p>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio">
+      <div class="lab-header">
+        <h2 id="laboratorio">💻 Laboratorio guidato — Il codice delle lampade</h2>
+      </div>
+
+      <div class="lab-body">
+        <p>
+          <strong>Obiettivo:</strong> rappresentare numeri con cinque bit e
+          verificare semplici conversioni.
+        </p>
+
+        <ol class="steps">
+          <li>
+            <strong>Prepara le posizioni.</strong>
+            <p>Su un foglio scrivi, da sinistra a destra: 16, 8, 4, 2, 1.</p>
+          </li>
+          <li>
+            <strong>Rappresenta il numero 19.</strong>
+            <p>Scomponilo come 16 + 2 + 1 e scrivi 1 sotto queste posizioni.</p>
+          </li>
+          <li>
+            <strong>Completa gli zeri.</strong>
+            <p>Sotto 8 e 4 scrivi 0. Dovresti ottenere 10011.</p>
+          </li>
+          <li>
+            <strong>Verifica il risultato.</strong>
+            <p>Riconverti 10011 sommando 16 + 2 + 1.</p>
+          </li>
+          <li>
+            <strong>Ripeti in autonomia.</strong>
+            <p>Converti 6, 13, 17 e 25, poi controlla facendo il percorso inverso.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esercizi">
+      <h2 id="esercizi">Esercizi di consolidamento</h2>
+      <div class="question-grid">
+        <article class="quiz-question">
+          <h3>1. Quante combinazioni?</h3>
+          <p>Scrivi tutte le combinazioni possibili con 3 bit.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>2. Binario → decimale</h3>
+          <p>Converti 101, 1001, 1110 e 10101.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>3. Decimale → binario</h3>
+          <p>Converti 3, 7, 12 e 20 usando le potenze di due.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>4. Spiega il codice</h3>
+          <p>Fai un esempio quotidiano di codifica e decodifica.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="quiz" aria-labelledby="quiz">
+      <h2 id="quiz">🧠 Autoverifica</h2>
+      <p>Rispondi senza rileggere subito la spiegazione.</p>
+
+      <div class="self-check">
+        <details>
+          <summary>Che cosa può rappresentare un bit?</summary>
+          <p>Uno di due valori possibili: 0 oppure 1.</p>
+        </details>
+        <details>
+          <summary>Quanti bit formano un byte?</summary>
+          <p>Un byte è formato da 8 bit.</p>
+        </details>
+        <details>
+          <summary>Quanto vale 1011 in decimale?</summary>
+          <p>Vale 11, perché 8 + 2 + 1 = 11.</p>
+        </details>
+        <details>
+          <summary>Come si rappresenta 14 in binario?</summary>
+          <p>14 = 8 + 4 + 2, quindi si rappresenta come 1110.</p>
+        </details>
+        <details>
+          <summary>Perché una sequenza di bit deve essere interpretata?</summary>
+          <p>Perché il suo significato dipende dalle regole di codifica usate.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="glossario">
+      <h2 id="glossario">Glossario essenziale</h2>
+      <dl class="glossary-grid">
+        <div class="glossary-card">
+          <dt>Codifica</dt>
+          <dd>Rappresentazione di un'informazione mediante simboli e regole.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Bit</dt>
+          <dd>Cifra binaria che può assumere valore 0 oppure 1.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Byte</dt>
+          <dd>Gruppo formato da 8 bit.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Sistema binario</dt>
+          <dd>Sistema di numerazione posizionale che usa le cifre 0 e 1.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Conversione</dt>
+          <dd>Passaggio da un sistema di rappresentazione a un altro.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Decodifica</dt>
+          <dd>Interpretazione di dati secondo le regole del codice usato.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header">
+        <p class="eyebrow">Sintesi essenziale</p>
+        <h2 id="zaino-studente">🎒 Lo zaino dello studente</h2>
+        <p>
+          Se domani dimenticassi quasi tutto, queste sono le idee che dovresti
+          riuscire a ricostruire.
+        </p>
+      </div>
+
+      <div class="student-backpack-grid">
+        <article class="backpack-card">
+          <h3>✅ Le 5 idee fondamentali</h3>
+          <ol class="essential-list">
+            <li>Il computer rappresenta le informazioni con 0 e 1.</li>
+            <li>La codifica associa informazioni a simboli secondo regole.</li>
+            <li>Un bit vale 0 o 1; un byte contiene 8 bit.</li>
+            <li>Nel sistema binario ogni posizione vale il doppio della precedente.</li>
+            <li>Una sequenza di bit acquista significato solo se sappiamo come interpretarla.</li>
+          </ol>
+        </article>
+
+        <article class="backpack-card">
+          <h3>📝 5 parole chiave</h3>
+          <ul class="keyword-list">
+            <li>Codifica</li>
+            <li>Binario</li>
+            <li>Bit</li>
+            <li>Byte</li>
+            <li>Conversione</li>
+          </ul>
+        </article>
+
+        <article class="backpack-card">
+          <h3>❓ 3 domande da esame</h3>
+          <ol>
+            <li>Perché il computer usa il sistema binario?</li>
+            <li>Qual è la differenza tra bit e byte?</li>
+            <li>Come si converte un numero binario in decimale?</li>
+          </ol>
+        </article>
+
+        <article class="backpack-card">
+          <h3>⏱️ Ripasso in 5 minuti</h3>
+          <ol class="mini-review">
+            <li>Chiudi la pagina.</li>
+            <li>Spiega a voce le cinque idee fondamentali.</li>
+            <li>Converti 1011 in decimale.</li>
+            <li>Controlla e ripeti soltanto i punti incerti.</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="review-mission" aria-labelledby="missione-ripasso">
+      <div class="review-mission-icon" aria-hidden="true">🏕️</div>
+      <div>
+        <p class="callout-label">Allenamento distribuito</p>
+        <h2 id="missione-ripasso">Missione di ripasso · 10 minuti al giorno</h2>
+        <p>
+          Prova prima a rispondere senza consultare la pagina, poi controlla
+          e correggi.
+        </p>
+
+        <div class="mission-days">
+          <article>
+            <strong>Giorno 1</strong>
+            <p>Spiega bit, byte e codifica usando un esempio concreto.</p>
+          </article>
+          <article>
+            <strong>Giorno 2</strong>
+            <p>Converti 5, 9 e 15 dal sistema decimale al binario.</p>
+          </article>
+          <article>
+            <strong>Giorno 3</strong>
+            <p>Converti 110, 1010 e 10001 dal binario al decimale.</p>
+          </article>
+          <article>
+            <strong>Giorno 4</strong>
+            <p>Rispondi a voce alle tre domande da esame dello zaino.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-lesson">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2>Software</h2>
+      <p>
+        Dopo aver capito come il computer rappresenta i dati, scopriremo che
+        cosa sono i programmi e distingueremo software di base e applicativo.
+      </p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../01-che-cos-e-l-informatica/index.html">← Lezione precedente</a>
+      <a href="../../introduzione/00%20-benvenuto/index.html">Torna all'indice</a>
+      <a aria-disabled="true">Lezione successiva non disponibile →</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Informatica.</strong></p>
+      <p>
+        Questa pagina è pensata per essere letta anche da studenti DSA:
+        istruzioni sequenziali, font leggibili, contrasti elevati e
+        scorciatoie da tastiera evidenziate.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

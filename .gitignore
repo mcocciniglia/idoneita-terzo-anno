@@ -1,0 +1,16 @@
+# File di sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Visual Studio Code
+.vscode/
+
+# File temporanei
+*.tmp
+*.bak
+*.swp
+*~
+
+# File locali
+.env
