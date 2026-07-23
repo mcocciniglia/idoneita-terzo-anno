@@ -773,3 +773,183 @@ html[data-theme="dark"] .quiz-question{
     background:#fff !important;
   }
 }
+
+/* ---------- Homepage del corso ---------- */
+
+.home-hero .lead{
+  max-width:820px;
+}
+
+.home-actions{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:24px;
+}
+
+.home-actions .btn{
+  text-decoration:none;
+}
+
+.home-primary-action{
+  color:#fff !important;
+  background:var(--edu-blue) !important;
+}
+
+.progress-2-of-18{
+  width:11.111%;
+}
+
+.home-course-list{
+  display:grid;
+  gap:12px;
+  padding:0;
+  list-style:none;
+  counter-reset:none;
+}
+
+.home-lesson-card{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:18px;
+  align-items:center;
+  padding:18px;
+  border:1px solid var(--panel-border);
+  border-radius:var(--edu-radius);
+  background:var(--panel);
+}
+
+.home-lesson-card.is-available{
+  border-left:6px solid var(--edu-green);
+  box-shadow:var(--edu-shadow);
+}
+
+.home-lesson-card h3{
+  display:inline;
+  margin:0;
+  font-size:1.08rem;
+}
+
+.home-lesson-card p{
+  margin:.45rem 0 0;
+  color:var(--muted);
+}
+
+.home-lesson-number{
+  display:inline-block;
+  min-width:2.2rem;
+  margin-right:8px;
+  color:var(--edu-blue);
+  font-weight:900;
+}
+
+.home-lesson-card a{
+  text-underline-offset:.18em;
+}
+
+.home-status{
+  padding:6px 10px;
+  border:1px solid var(--panel-border);
+  border-radius:999px;
+  color:var(--muted);
+  background:var(--bg);
+  font-size:.82rem;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.home-status.available{
+  border-color:var(--edu-green);
+  color:var(--edu-green);
+  background:var(--edu-green-soft);
+}
+
+.home-feature-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+
+.home-accessibility-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  padding:0;
+  list-style:none;
+}
+
+.home-accessibility-list li{
+  position:relative;
+  padding:14px 14px 14px 46px;
+  border:1px solid var(--panel-border);
+  border-radius:14px;
+  background:var(--panel);
+}
+
+.home-accessibility-list li::before{
+  content:"✓";
+  position:absolute;
+  left:16px;
+  color:var(--edu-green);
+  font-weight:900;
+}
+
+.home-light-action,
+.home-light-action:link,
+.home-light-action:visited,
+.home-light-action:hover,
+.home-light-action:focus,
+html[data-theme="dark"] .home-light-action,
+html[data-theme="dark"] .home-light-action:link,
+html[data-theme="dark"] .home-light-action:visited,
+html[data-theme="dark"] .home-light-action:hover,
+html[data-theme="dark"] .home-light-action:focus{
+  color:#203a72 !important;
+  -webkit-text-fill-color:#203a72;
+  background:#fff !important;
+}
+
+.home-secondary-link{
+  color:#fff !important;
+  font-weight:800;
+}
+
+html[data-theme="dark"] .home-lesson-card,
+html[data-theme="dark"] .home-accessibility-list li{
+  background:var(--panel);
+}
+
+@media (max-width:780px){
+  .home-feature-grid,
+  .home-accessibility-list{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:560px){
+  .home-actions{
+    align-items:stretch;
+    flex-direction:column;
+  }
+
+  .home-actions .btn{
+    width:100%;
+    text-align:center;
+  }
+
+  .home-lesson-card{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .home-status{
+    justify-self:start;
+  }
+}
+
+@media print{
+  .home-actions{
+    display:none !important;
+  }
+}

@@ -32,7 +32,6 @@ Legenda
 | N. | Lezione | Stato | Note |
 |----|----------|--------|------|
 | 00 | Benvenuto | ✅ | Presentazione del corso e modalità di utilizzo |
-| 01 | Cos'è l'informatica | ✅ | Concetti fondamentali, dato, informazione, elaborazione |
 
 ---
 
@@ -40,7 +39,8 @@ Legenda
 
 | N. | Lezione | Stato | Dipende da | Note |
 |----|----------|--------|------------|------|
-| 02 | Rappresentazione dell'informazione | 🟡 | 01 | Sistema binario, bit, byte, conversioni |
+| 01 | Che cos'è l'informatica | ✅ | 00 | Concetti fondamentali, dato, informazione, elaborazione |
+| 02 | Rappresentazione dell'informazione | ✅ | 01 | Sistema binario, bit, byte, conversioni |
 | 03 | Software | ⚪ | 02 | Software di base e applicativo |
 | 04 | Hardware | ⚪ | 03 | Componenti principali del computer |
 | 05 | Sistema operativo | ⚪ | 04 | Funzioni principali |

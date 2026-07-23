@@ -127,7 +127,6 @@ In particolare:
 - istruzioni sequenziali;
 - compatibilità con tema chiaro e tema scuro.
 
-Per i dettagli consultare `docs/accessibilita.md`.
 
 ---
 

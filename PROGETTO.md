@@ -7,7 +7,7 @@
 
 # Finalità del progetto
 
-Questo repository raccoglie un corso completo di Informatica destinato agli studenti che devono sostenere l'esame di idoneità alla classe terza di un Istituto Tecnico ad indirizzo Informatica.
+Questo repository raccoglie un corso completo di Informatica destinato agli studenti che devono sostenere l'esame di idoneità alla classe terza del Liceo Scientifico, opzione Scienze applicate.
 
 L'obiettivo non è semplicemente fornire una raccolta di pagine HTML, ma costruire un percorso di apprendimento progressivo, coerente e facilmente consultabile.
 
