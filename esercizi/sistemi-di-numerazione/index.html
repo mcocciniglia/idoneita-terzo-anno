@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Quaderno di allenamento sui sistemi di numerazione: conversioni, addizioni e sottrazioni binarie con soluzioni.">
+  <title>Quaderno di allenamento — Sistemi di numerazione</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+
+  <link rel="icon"
+        href="https://mcocciniglia.github.io/common/assets/favicon.svg"
+        type="image/svg+xml">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge first">Materiale integrativo</span>
+        </div>
+
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle"
+                  class="btn btn-theme"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+
+          <button id="contrastToggle"
+                  class="btn btn-outline btn-contrast"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Materiali integrativi</span>
+        <span aria-hidden="true">›</span>
+        <span>Collegato alla Lezione 02</span>
+      </nav>
+
+      <p class="eyebrow">Quaderno di allenamento</p>
+      <h1>Quaderno di allenamento<br>Sistemi di numerazione</h1>
+
+      <p class="lead">
+        Allenati con conversioni, addizioni e sottrazioni binarie. Procedi
+        in ordine e consulta le soluzioni soltanto alla fine.
+      </p>
+
+      <div class="lesson-meta" aria-label="Informazioni sul quaderno">
+        <span>📘 Collegato alla Lezione 02</span>
+        <span>📈 Difficoltà crescente</span>
+        <span>✅ Soluzioni incluse</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <aside class="callout remember" aria-labelledby="natura-quaderno">
+      <div class="callout-icon" aria-hidden="true">📒</div>
+      <div>
+        <p class="callout-label">Prima di cominciare</p>
+        <h2 id="natura-quaderno">Questo quaderno non è una nuova lezione</h2>
+        <p>
+          Serve ad allenare e consolidare quanto studiato. Tieni vicino un
+          foglio per i passaggi e indica sempre la base dei numeri.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="istruzioni">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧭</span>
+        <h2 id="istruzioni">Come lavorare</h2>
+      </div>
+
+      <ol class="steps">
+        <li>
+          <strong>Ripassa soltanto ciò che ti serve.</strong>
+          <p>Usa il richiamo teorico per recuperare regole e procedimenti.</p>
+        </li>
+        <li>
+          <strong>Segui gli esempi guidati.</strong>
+          <p>Controlla un passaggio alla volta e osserva sempre la base.</p>
+        </li>
+        <li>
+          <strong>Svolgi gli esercizi in ordine.</strong>
+          <p>Le attività diventano gradualmente più impegnative.</p>
+        </li>
+        <li>
+          <strong>Controlla solo alla fine.</strong>
+          <p>Apri le soluzioni dopo avere scritto tutti i passaggi.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="richiamo">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧠</span>
+        <h2 id="richiamo">Richiamo teorico essenziale</h2>
+      </div>
+
+      <p class="section-intro">
+        Questa sezione raccoglie soltanto le regole necessarie per svolgere
+        gli esercizi.
+      </p>
+
+      <h3>Sistemi posizionali</h3>
+      <p>
+        In un sistema posizionale il valore di una cifra dipende dalla sua
+        posizione. Nel sistema binario le posizioni, da destra verso sinistra,
+        valgono 1, 2, 4, 8, 16, 32 e così via.
+      </p>
+
+      <div class="definition">
+        <span class="definition-term">La base</span>
+        <p>
+          La base indica quante cifre usa il sistema: dieci nel decimale,
+          due nel binario e sedici nell'esadecimale. Useremo i pedici
+          ₁₀, ₂ e ₁₆ per distinguerli.
+        </p>
+      </div>
+
+      <h3>Da decimale a binario</h3>
+      <p>
+        Dividi ripetutamente il numero per 2, annota ogni resto e leggi i
+        resti dal basso verso l'alto.
+      </p>
+
+      <h3>Da binario a decimale</h3>
+      <p>
+        Associa a ogni cifra il valore della sua posizione e somma soltanto
+        i valori delle posizioni occupate da 1.
+      </p>
+
+      <h3>Tra binario ed esadecimale</h3>
+      <p>
+        Una cifra esadecimale corrisponde esattamente a quattro bit. Dal
+        binario, raggruppa i bit a gruppi di quattro partendo da destra.
+        Dall'esadecimale, sostituisci ogni cifra con il gruppo corrispondente.
+      </p>
+
+      <table aria-label="Corrispondenza tra cifre esadecimali e gruppi di quattro bit">
+        <thead>
+          <tr>
+            <th scope="col">Esadecimale</th>
+            <th scope="col">Binario</th>
+            <th scope="col">Esadecimale</th>
+            <th scope="col">Binario</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td><code>0000</code></td><td>8</td><td><code>1000</code></td></tr>
+          <tr><td>1</td><td><code>0001</code></td><td>9</td><td><code>1001</code></td></tr>
+          <tr><td>2</td><td><code>0010</code></td><td>A</td><td><code>1010</code></td></tr>
+          <tr><td>3</td><td><code>0011</code></td><td>B</td><td><code>1011</code></td></tr>
+          <tr><td>4</td><td><code>0100</code></td><td>C</td><td><code>1100</code></td></tr>
+          <tr><td>5</td><td><code>0101</code></td><td>D</td><td><code>1101</code></td></tr>
+          <tr><td>6</td><td><code>0110</code></td><td>E</td><td><code>1110</code></td></tr>
+          <tr><td>7</td><td><code>0111</code></td><td>F</td><td><code>1111</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Conversioni tra decimale ed esadecimale</h3>
+      <p>
+        Per passare dal decimale all'esadecimale usa divisioni successive per
+        16 e leggi i resti dal basso verso l'alto. Nel percorso inverso usa i
+        valori posizionali delle potenze di 16.
+      </p>
+
+      <h3>Regole essenziali dell'addizione binaria</h3>
+      <div class="card-grid">
+        <article class="info-card">
+          <p><code>0 + 0 = 0</code></p>
+          <p><code>0 + 1 = 1</code></p>
+        </article>
+        <article class="info-card">
+          <p><code>1 + 0 = 1</code></p>
+          <p><code>1 + 1 = 10</code>: scrivi 0 e riporta 1.</p>
+        </article>
+      </div>
+
+      <h3>Regole essenziali della sottrazione binaria</h3>
+      <div class="card-grid">
+        <article class="info-card">
+          <p><code>0 − 0 = 0</code></p>
+          <p><code>1 − 0 = 1</code></p>
+        </article>
+        <article class="info-card">
+          <p><code>1 − 1 = 0</code></p>
+          <p><code>0 − 1</code>: prendi in prestito 1 dalla posizione a sinistra.</p>
+        </article>
+      </div>
+
+      <aside class="callout warning" aria-labelledby="sottrazioni-positive">
+        <div class="callout-icon" aria-hidden="true">⚠️</div>
+        <div>
+          <p class="callout-label">Limite del quaderno</p>
+          <h3 id="sottrazioni-positive">Solo risultati non negativi</h3>
+          <p>
+            In tutte le sottrazioni il minuendo è maggiore o uguale al
+            sottraendo. Non useremo numeri con segno.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esempi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔎</span>
+        <h2 id="esempi">Esempi guidati</h2>
+      </div>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>45₁₀ → binario</h3>
+          <p>
+            Divisioni per 2, con resti: 45 r1, 22 r0, 11 r1, 5 r1,
+            2 r0, 1 r1.
+          </p>
+          <p>Leggendo i resti al contrario: <strong>45₁₀ = 101101₂</strong>.</p>
+        </article>
+
+        <article class="info-card">
+          <h3>10110₂ → decimale</h3>
+          <p><code>16 + 0 + 4 + 2 + 0 = 22</code></p>
+          <p>Quindi <strong>10110₂ = 22₁₀</strong>.</p>
+        </article>
+
+        <article class="info-card">
+          <h3>11010110₂ → esadecimale</h3>
+          <p>Raggruppa: <code>1101 0110</code>.</p>
+          <p><code>1101 = D</code> e <code>0110 = 6</code>: <strong>D6₁₆</strong>.</p>
+        </article>
+
+        <article class="info-card">
+          <h3>3A₁₆ → binario</h3>
+          <p><code>3 = 0011</code> e <code>A = 1010</code>.</p>
+          <p>Quindi <strong>3A₁₆ = 00111010₂</strong>.</p>
+        </article>
+
+        <article class="info-card">
+          <h3>47₁₀ → esadecimale</h3>
+          <p><code>47 ÷ 16 = 2</code> con resto 15, cioè F.</p>
+          <p>Quindi <strong>47₁₀ = 2F₁₆</strong>.</p>
+        </article>
+
+        <article class="info-card">
+          <h3>4C₁₆ → decimale</h3>
+          <p><code>(4 × 16) + 12 = 64 + 12 = 76</code>.</p>
+          <p>Quindi <strong>4C₁₆ = 76₁₀</strong>.</p>
+        </article>
+      </div>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Addizione con riporto</h3>
+          <pre><code>  1011
++ 0101
+------
+ 10000</code></pre>
+          <p><strong>Verifica:</strong> 11₁₀ + 5₁₀ = 16₁₀.</p>
+        </article>
+
+        <article class="info-card">
+          <h3>Sottrazione con prestito</h3>
+          <pre><code>  10110
+− 00101
+-------
+  10001</code></pre>
+          <p><strong>Verifica:</strong> 22₁₀ − 5₁₀ = 17₁₀.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="dec-bin">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">1</span>
+        <h2 id="dec-bin">Decimale → binario</h2>
+      </div>
+      <p>Converti e indica la base nel risultato.</p>
+      <ol>
+        <li>6₁₀</li>
+        <li>9₁₀</li>
+        <li>13₁₀</li>
+        <li>18₁₀</li>
+        <li>25₁₀</li>
+        <li>37₁₀</li>
+        <li>52₁₀</li>
+        <li>73₁₀</li>
+      </ol>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="bin-dec">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">2</span>
+        <h2 id="bin-dec">Binario → decimale</h2>
+      </div>
+      <p>Scrivi la somma dei valori posizionali prima del risultato.</p>
+      <ol>
+        <li>101₂</li>
+        <li>1110₂</li>
+        <li>10011₂</li>
+        <li>11001₂</li>
+        <li>101101₂</li>
+        <li>1001101₂</li>
+      </ol>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="bin-hex">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">3</span>
+        <h2 id="bin-hex">Binario → esadecimale</h2>
+      </div>
+      <p>Forma gruppi di quattro bit partendo da destra.</p>
+      <ol>
+        <li>1010₂</li>
+        <li>1111₂</li>
+        <li>101101₂</li>
+        <li>11001010₂</li>
+        <li>111100001011₂</li>
+      </ol>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="hex-bin">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">4</span>
+        <h2 id="hex-bin">Esadecimale → binario</h2>
+      </div>
+      <p>Sostituisci ogni cifra con quattro bit.</p>
+      <ol>
+        <li>7₁₆</li>
+        <li>A₁₆</li>
+        <li>F₁₆</li>
+        <li>2D₁₆</li>
+        <li>5B₁₆</li>
+        <li>C3₁₆</li>
+        <li>1AF₁₆</li>
+      </ol>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="dec-hex">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">5</span>
+        <h2 id="dec-hex">Decimale ↔ esadecimale</h2>
+      </div>
+      <p>Usa le divisioni per 16 oppure i valori posizionali.</p>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Da decimale a esadecimale</h3>
+          <ol>
+            <li>26₁₀</li>
+            <li>47₁₀</li>
+            <li>75₁₀</li>
+            <li>156₁₀</li>
+          </ol>
+        </article>
+        <article class="info-card">
+          <h3>Da esadecimale a decimale</h3>
+          <ol>
+            <li>1C₁₆</li>
+            <li>3A₁₆</li>
+            <li>64₁₆</li>
+            <li>B7₁₆</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="addizioni">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">6</span>
+        <h2 id="addizioni">Addizioni binarie</h2>
+      </div>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Senza riporto</h3>
+          <ol>
+            <li>1000₂ + 0011₂</li>
+            <li>10100₂ + 00011₂</li>
+            <li>10010₂ + 00101₂</li>
+            <li>101000₂ + 010101₂</li>
+          </ol>
+        </article>
+
+        <article class="info-card">
+          <h3>Con riporto</h3>
+          <ol>
+            <li>0101₂ + 0001₂</li>
+            <li>1010₂ + 0011₂</li>
+            <li>10110₂ + 00101₂</li>
+          </ol>
+        </article>
+
+        <article class="info-card">
+          <h3>Con riporti multipli</h3>
+          <ol>
+            <li>1111₂ + 0001₂</li>
+            <li>10111₂ + 01101₂</li>
+            <li>11101₂ + 10111₂</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="sottrazioni">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">7</span>
+        <h2 id="sottrazioni">Sottrazioni binarie</h2>
+      </div>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Senza prestito</h3>
+          <ol>
+            <li>1111₂ − 0101₂</li>
+            <li>11010₂ − 01010₂</li>
+            <li>10111₂ − 00101₂</li>
+          </ol>
+        </article>
+
+        <article class="info-card">
+          <h3>Con prestito</h3>
+          <ol>
+            <li>1010₂ − 0001₂</li>
+            <li>1101₂ − 0010₂</li>
+            <li>10110₂ − 00101₂</li>
+          </ol>
+        </article>
+
+        <article class="info-card">
+          <h3>Con prestiti consecutivi</h3>
+          <ol>
+            <li>10000₂ − 00001₂</li>
+            <li>10010₂ − 00111₂</li>
+            <li>101000₂ − 001101₂</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="quiz" aria-labelledby="misti">
+      <h2 id="misti">Esercizi misti finali</h2>
+      <p>
+        Scegli il procedimento adatto senza consultare il richiamo teorico.
+      </p>
+
+      <ol>
+        <li>Converti 29₁₀ in binario.</li>
+        <li>Converti 101011₂ in decimale.</li>
+        <li>Converti 11011110₂ in esadecimale.</li>
+        <li>Converti 4B₁₆ in binario.</li>
+        <li>Calcola 10101₂ + 00111₂.</li>
+        <li>Calcola 11000₂ − 00101₂.</li>
+        <li>Converti 2F₁₆ in binario.</li>
+        <li>Converti 31₁₀ in binario e aggiungi 1₂.</li>
+      </ol>
+    </section>
+
+    <section class="quiz" aria-labelledby="soluzioni">
+      <h2 id="soluzioni">Soluzioni</h2>
+      <p>
+        Apri una sezione soltanto dopo avere completato gli esercizi
+        corrispondenti.
+      </p>
+
+      <div class="self-check">
+        <details>
+          <summary>1. Decimale → binario</summary>
+          <ol>
+            <li>6₁₀ = 110₂</li>
+            <li>9₁₀ = 1001₂</li>
+            <li>13₁₀ = 1101₂</li>
+            <li>18₁₀ = 10010₂</li>
+            <li>25₁₀ = 11001₂</li>
+            <li>37₁₀ = 100101₂</li>
+            <li>52₁₀ = 110100₂</li>
+            <li>73₁₀ = 1001001₂</li>
+          </ol>
+        </details>
+
+        <details>
+          <summary>2. Binario → decimale</summary>
+          <ol>
+            <li>101₂ = 5₁₀</li>
+            <li>1110₂ = 14₁₀</li>
+            <li>10011₂ = 19₁₀</li>
+            <li>11001₂ = 25₁₀</li>
+            <li>101101₂ = 45₁₀</li>
+            <li>1001101₂ = 77₁₀</li>
+          </ol>
+        </details>
+
+        <details>
+          <summary>3. Binario → esadecimale</summary>
+          <ol>
+            <li>1010₂ = A₁₆</li>
+            <li>1111₂ = F₁₆</li>
+            <li>101101₂ = 2D₁₆</li>
+            <li>11001010₂ = CA₁₆</li>
+            <li>111100001011₂ = F0B₁₆</li>
+          </ol>
+        </details>
+
+        <details>
+          <summary>4. Esadecimale → binario</summary>
+          <ol>
+            <li>7₁₆ = 0111₂</li>
+            <li>A₁₆ = 1010₂</li>
+            <li>F₁₆ = 1111₂</li>
+            <li>2D₁₆ = 0010 1101₂</li>
+            <li>5B₁₆ = 0101 1011₂</li>
+            <li>C3₁₆ = 1100 0011₂</li>
+            <li>1AF₁₆ = 0001 1010 1111₂</li>
+          </ol>
+        </details>
+
+        <details>
+          <summary>5. Decimale ↔ esadecimale</summary>
+          <p><strong>Da decimale:</strong></p>
+          <ol>
+            <li>26₁₀ = 1A₁₆</li>
+            <li>47₁₀ = 2F₁₆</li>
+            <li>75₁₀ = 4B₁₆</li>
+            <li>156₁₀ = 9C₁₆</li>
+          </ol>
+          <p><strong>Da esadecimale:</strong></p>
+          <ol>
+            <li>1C₁₆ = 28₁₀</li>
+            <li>3A₁₆ = 58₁₀</li>
+            <li>64₁₆ = 100₁₀</li>
+            <li>B7₁₆ = 183₁₀</li>
+          </ol>
+        </details>
+
+        <details>
+          <summary>6. Addizioni binarie</summary>
+          <p><strong>Senza riporto:</strong></p>
+          <ol>
+            <li>1000₂ + 0011₂ = 1011₂</li>
+            <li>10100₂ + 00011₂ = 10111₂</li>
+            <li>10010₂ + 00101₂ = 10111₂</li>
+            <li>101000₂ + 010101₂ = 111101₂</li>
+          </ol>
+          <p><strong>Con riporto:</strong></p>
+          <ol>
+            <li>0101₂ + 0001₂ = 0110₂</li>
+            <li>1010₂ + 0011₂ = 1101₂</li>
+            <li>10110₂ + 00101₂ = 11011₂</li>
+          </ol>
+          <p><strong>Con riporti multipli:</strong></p>
+          <ol>
+            <li>1111₂ + 0001₂ = 10000₂</li>
+            <li>10111₂ + 01101₂ = 100100₂</li>
+            <li>11101₂ + 10111₂ = 110100₂</li>
+          </ol>
+        </details>
+
+        <details>
+          <summary>7. Sottrazioni binarie</summary>
+          <p><strong>Senza prestito:</strong></p>
+          <ol>
+            <li>1111₂ − 0101₂ = 1010₂</li>
+            <li>11010₂ − 01010₂ = 10000₂</li>
+            <li>10111₂ − 00101₂ = 10010₂</li>
+          </ol>
+          <p><strong>Con prestito:</strong></p>
+          <ol>
+            <li>1010₂ − 0001₂ = 1001₂</li>
+            <li>1101₂ − 0010₂ = 1011₂</li>
+            <li>10110₂ − 00101₂ = 10001₂</li>
+          </ol>
+          <p><strong>Con prestiti consecutivi:</strong></p>
+          <ol>
+            <li>10000₂ − 00001₂ = 01111₂</li>
+            <li>10010₂ − 00111₂ = 01011₂</li>
+            <li>101000₂ − 001101₂ = 011011₂</li>
+          </ol>
+        </details>
+
+        <details>
+          <summary>8. Esercizi misti finali</summary>
+          <ol>
+            <li>29₁₀ = 11101₂</li>
+            <li>101011₂ = 43₁₀</li>
+            <li>11011110₂ = DE₁₆</li>
+            <li>4B₁₆ = 0100 1011₂</li>
+            <li>10101₂ + 00111₂ = 11100₂</li>
+            <li>11000₂ − 00101₂ = 10011₂</li>
+            <li>2F₁₆ = 0010 1111₂</li>
+            <li>31₁₀ = 11111₂; 11111₂ + 1₂ = 100000₂</li>
+          </ol>
+        </details>
+      </div>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione del quaderno">
+      <a href="../../Primo-anno/02-rappresentazione-dell-informazione/index.html">
+        Torna alla Lezione 02
+      </a>
+      <a href="../index.html">Indice dei materiali integrativi</a>
+      <a href="../../index.html">Homepage del corso</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>
+        Questa pagina è pensata per essere letta anche da studenti DSA:
+        istruzioni sequenziali, font leggibili, contrasti elevati e
+        scorciatoie da tastiera evidenziate.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
