@@ -41,7 +41,7 @@ Legenda
 |----|----------|--------|------------|------|
 | 01 | Che cos'è l'informatica | ✅ | 00 | Concetti fondamentali, dato, informazione, elaborazione |
 | 02 | Rappresentazione dell'informazione | ✅ | 01 | Sistema binario, bit, byte, conversioni |
-| 03 | Software | ⚪ | 02 | Software di base e applicativo |
+| 03 | Il software: i programmi del computer | ✅ | 02 | Software di base e applicativo |
 | 04 | Hardware | ⚪ | 03 | Componenti principali del computer |
 | 05 | Sistema operativo | ⚪ | 04 | Funzioni principali |
 | 06 | File e cartelle | ⚪ | 05 | Organizzazione dei dati |
@@ -102,3 +102,11 @@ Quando una lezione viene completata:
 La roadmap è un documento dinamico e può essere aggiornata nel corso dello sviluppo del progetto.
 
 Eventuali modifiche alla sequenza degli argomenti devono essere valutate prima di creare nuove lezioni.
+## Materiale integrativo
+
+Il materiale integrativo consolida argomenti già affrontati e rimane separato
+dalla progressione numerata delle lezioni.
+
+| Codice | Materiale | Collegato a | Stato | Contenuti |
+|--------|-----------|-------------|-------|-----------|
+| Q01 | Quaderno di allenamento – Sistemi di numerazione | Lezione 02 | ✅ | Conversioni, addizioni e sottrazioni binarie; nelle sottrazioni il minuendo è sempre maggiore o uguale al sottraendo; divisioni binarie non comprese |

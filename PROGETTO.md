@@ -95,6 +95,12 @@ Le lezioni devono essere fruibili anche da studenti con differenti stili di appr
 
 # Organizzazione del corso
 
+Il repository comprende tre tipologie distinte di contenuti:
+
+- lezioni, che sviluppano il percorso didattico;
+- materiali integrativi, che consolidano argomenti già affrontati;
+- simulazioni, che verificano le competenze.
+
 Il corso è suddiviso in moduli progressivi.
 
 La sequenza degli argomenti è descritta nel documento:
@@ -102,6 +108,14 @@ La sequenza degli argomenti è descritta nel documento:
 ROADMAP.md
 
 La roadmap rappresenta il riferimento ufficiale per la pianificazione delle lezioni.
+
+---
+
+## Quaderni di allenamento
+
+I quaderni di allenamento non modificano la sequenza delle lezioni e non
+introducono nuovi argomenti. Propongono esercizi graduati per consolidare
+quanto già studiato e mantengono gli stessi criteri di accessibilità del corso.
 
 ---
 

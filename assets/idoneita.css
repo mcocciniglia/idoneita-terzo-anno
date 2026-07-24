@@ -801,6 +801,10 @@ html[data-theme="dark"] .quiz-question{
   width:11.111%;
 }
 
+.progress-3-of-18{
+  width:16.667%;
+}
+
 .home-course-list{
   display:grid;
   gap:12px;
