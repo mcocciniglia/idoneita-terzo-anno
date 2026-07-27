@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Pagina non trovata del corso di Informatica per l'idoneità alla classe terza.">
+  <title>Pagina non trovata — Corso di Informatica</title>
+  <base href="/idoneita-terzo-anno/">
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="assets/idoneita.css">
+
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+
+  <link rel="icon"
+        href="https://mcocciniglia.github.io/common/assets/favicon.svg"
+        type="image/svg+xml">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line" aria-label="Identificazione del corso">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge first">Corso di Informatica</span>
+        </div>
+
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle"
+                  class="btn btn-theme"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+
+          <button id="contrastToggle"
+                  class="btn btn-outline btn-contrast"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Corso di Informatica</span>
+        <span aria-hidden="true">›</span>
+        <span>Pagina non trovata</span>
+      </nav>
+
+      <p class="eyebrow">Ritorna al percorso</p>
+      <h1>Pagina non trovata</h1>
+
+      <p class="lead">
+        L'indirizzo richiesto non corrisponde a una pagina disponibile del
+        corso.
+      </p>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <aside class="callout warning" aria-labelledby="cosa-fare">
+      <div class="callout-icon" aria-hidden="true">🧭</div>
+      <div>
+        <p class="callout-label">Puoi continuare</p>
+        <h2 id="cosa-fare">Scegli una pagina disponibile</h2>
+        <p>
+          Controlla l'indirizzo oppure torna alla homepage per riprendere il
+          percorso dal punto che preferisci.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="destinazioni">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🏠</span>
+        <h2 id="destinazioni">Torna al corso</h2>
+      </div>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Homepage del corso</h3>
+          <p>Consulta le lezioni e i materiali già disponibili.</p>
+          <p><a href="index.html">Vai alla homepage</a></p>
+        </article>
+
+        <article class="info-card">
+          <h3>Indice del percorso</h3>
+          <p>Controlla quali lezioni del primo anno sono state pubblicate.</p>
+          <p><a href="index.html#percorso">Vai all'indice del primo anno</a></p>
+        </article>
+      </div>
+    </section>
+
+    <aside id="lesson-fallback"
+           class="callout remember"
+           aria-labelledby="lezione-prevista"
+           hidden>
+      <div class="callout-icon" aria-hidden="true">🚧</div>
+      <div>
+        <p class="callout-label">Lezione prevista</p>
+        <h2 id="lezione-prevista">La lezione è in preparazione</h2>
+        <p>
+          Se il reindirizzamento non avviene automaticamente,
+          <a id="lesson-fallback-link" href="in-costruzione/index.html">
+            apri la pagina del contenuto in preparazione
+          </a>.
+        </p>
+      </div>
+    </aside>
+
+    <noscript>
+      <aside class="callout remember" aria-labelledby="javascript-disabilitato">
+        <div class="callout-icon" aria-hidden="true">🚧</div>
+        <div>
+          <p class="callout-label">Lezioni in preparazione</p>
+          <h2 id="javascript-disabilitato">JavaScript non è attivo</h2>
+          <p>
+            Se stavi cercando una lezione prevista ma non ancora pubblicata,
+            <a href="in-costruzione/index.html">apri la pagina dei contenuti
+            in preparazione</a>.
+          </p>
+        </div>
+      </aside>
+    </noscript>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>
+        Questa pagina è pensata per essere letta anche da studenti DSA:
+        istruzioni sequenziali, font leggibili, contrasti elevati e
+        scorciatoie da tastiera evidenziate.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const lessons = {
+        "01": { slug: "01-che-cos-e-l-informatica", title: "Che cos'è l'informatica" },
+        "02": { slug: "02-rappresentazione-dell-informazione", title: "Rappresentazione dell'informazione" },
+        "03": { slug: "03-software", title: "Il software: i programmi del computer" },
+        "04": { slug: "04-hardware", title: "Hardware" },
+        "05": { slug: "05-sistema-operativo", title: "Sistema operativo" },
+        "06": { slug: "06-file-e-cartelle", title: "File e cartelle" },
+        "07": { slug: "07-memorie", title: "Memorie" },
+        "08": { slug: "08-cpu", title: "CPU" },
+        "09": { slug: "09-periferiche", title: "Periferiche" },
+        "10": { slug: "10-reti-informatiche", title: "Reti informatiche" },
+        "11": { slug: "11-internet-e-web", title: "Internet e Web" },
+        "12": { slug: "12-sicurezza-informatica", title: "Sicurezza informatica" },
+        "13": { slug: "13-sistemi-di-numerazione", title: "Sistemi di numerazione" },
+        "14": { slug: "14-codifica-dei-caratteri", title: "Codifica dei caratteri" },
+        "15": { slug: "15-immagini-digitali", title: "Immagini digitali" },
+        "16": { slug: "16-audio-digitale", title: "Audio digitale" },
+        "17": { slug: "17-video-digitale", title: "Video digitale" },
+        "18": { slug: "18-ripasso-generale", title: "Ripasso generale" }
+      };
+      const siteRoot = "/idoneita-terzo-anno/";
+      const lessonRoot = `${siteRoot}Primo-anno/`;
+      const requestedPath = window.location.pathname;
+      const matchedLesson = Object.entries(lessons).find(([, lesson]) => {
+        const directoryPath = `${lessonRoot}${lesson.slug}/`;
+        const pagePath = `${directoryPath}index.html`;
+        return requestedPath === directoryPath || requestedPath === pagePath;
+      });
+
+      if (!matchedLesson) {
+        return;
+      }
+
+      const [number, lesson] = matchedLesson;
+      const parameters = new URLSearchParams({
+        lezione: number,
+        titolo: lesson.title
+      });
+      const destination =
+        `${siteRoot}in-costruzione/index.html?${parameters.toString()}`;
+      const fallback = document.getElementById("lesson-fallback");
+      const fallbackLink = document.getElementById("lesson-fallback-link");
+
+      fallback.hidden = false;
+      fallbackLink.href = destination;
+      fallbackLink.textContent =
+        `apri Lezione ${number} — ${lesson.title}`;
+      window.location.replace(destination);
+    })();
+  </script>
+</body>
+</html>
