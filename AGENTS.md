@@ -225,7 +225,9 @@ Ogni lezione deve contenere:
 - collegamento all'indice del corso;
 - collegamento alla lezione successiva.
 
-Se la lezione successiva non esiste il pulsante deve risultare disabilitato.
+Anche se la lezione successiva non è ancora pubblicata, il collegamento deve
+puntare al percorso reale previsto per quella lezione. Il fallback viene
+gestito dalla pagina `404.html`.
 
 I materiali integrativi devono contenere almeno:
 
@@ -234,6 +236,34 @@ I materiali integrativi devono contenere almeno:
 - collegamento alla homepage del corso.
 
 I materiali integrativi non devono utilizzare la numerazione progressiva delle lezioni.
+
+## Collegamenti a contenuti non ancora disponibili
+
+I collegamenti di navigazione tra lezioni devono puntare sempre ai percorsi
+reali previsti, anche quando la destinazione non è ancora pubblicata. Non
+inserire manualmente nei pulsanti di navigazione collegamenti alla pagina
+placeholder.
+
+Il fallback per una lezione prevista ma non ancora pubblicata è gestito dalla
+pagina personalizzata `404.html` di GitHub Pages. Questa pagina riconosce
+esclusivamente gli slug ufficiali delle lezioni presenti nella roadmap e
+reindirizza a:
+
+`in-costruzione/index.html`
+
+La pagina comune può ricevere i parametri `lezione` e `titolo` per
+personalizzare il messaggio mostrato allo studente.
+
+Un URL che non corrisponde esattamente a uno slug ufficiale deve rimanere un
+vero errore 404. File mancanti, immagini mancanti, percorsi generici e nomi
+scritti in modo errato non devono essere interpretati come lezioni in
+preparazione.
+
+Quando si aggiunge o si modifica una lezione nella roadmap, verificare che la
+mappa degli slug ufficiali in `404.html` rimanga coerente.
+
+Non creare pagine placeholder duplicate per ogni singola lezione, salvo
+richiesta esplicita del docente.
 ---
 
 # Cosa NON modificare

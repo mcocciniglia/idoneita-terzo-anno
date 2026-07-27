@@ -42,7 +42,7 @@ Legenda
 | 01 | Che cos'è l'informatica | ✅ | 00 | Concetti fondamentali, dato, informazione, elaborazione |
 | 02 | Rappresentazione dell'informazione | ✅ | 01 | Sistema binario, bit, byte, conversioni |
 | 03 | Il software: i programmi del computer | ✅ | 02 | Software di base e applicativo |
-| 04 | Hardware | ⚪ | 03 | Componenti principali del computer |
+| 04 | Hardware | ✅ | 03 | Componenti principali del computer |
 | 05 | Sistema operativo | ⚪ | 04 | Funzioni principali |
 | 06 | File e cartelle | ⚪ | 05 | Organizzazione dei dati |
 | 07 | Memorie | ⚪ | 03 | RAM, ROM, SSD, HDD |
@@ -110,3 +110,4 @@ dalla progressione numerata delle lezioni.
 | Codice | Materiale | Collegato a | Stato | Contenuti |
 |--------|-----------|-------------|-------|-----------|
 | Q01 | Quaderno di allenamento – Sistemi di numerazione | Lezione 02 | ✅ | Conversioni, addizioni e sottrazioni binarie; nelle sottrazioni il minuendo è sempre maggiore o uguale al sottraendo; divisioni binarie non comprese |
+| Q02 | Quaderno di allenamento – Hardware e software | Lezioni 03 e 04 | ✅ | Distinzione e collaborazione tra hardware e software; input, elaborazione e output |

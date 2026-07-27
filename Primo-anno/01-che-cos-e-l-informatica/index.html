@@ -428,11 +428,16 @@
 
     <section class="progress-card" aria-label="Avanzamento del percorso">
       <div class="progress-heading">
-        <span>Introduzione al corso</span>
-        <span>Prima lezione</span>
+        <span>Percorso del primo anno</span>
+        <span>Lezione 1 di 18</span>
       </div>
-      <div class="progress-track" aria-hidden="true">
-        <div class="progress-value" style="width:20%;"></div>
+      <div class="progress-track"
+           role="progressbar"
+           aria-label="Avanzamento del percorso"
+           aria-valuemin="0"
+           aria-valuemax="18"
+           aria-valuenow="1">
+        <div class="progress-value" style="--progress:5.56%;"></div>
       </div>
     </section>
 

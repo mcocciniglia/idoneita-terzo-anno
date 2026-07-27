@@ -196,6 +196,7 @@ kbd{
 }
 
 .progress-value{
+  width:var(--progress, 0%);
   height:100%;
   border-radius:inherit;
   background:linear-gradient(90deg,var(--edu-blue),var(--edu-teal));
@@ -795,14 +796,6 @@ html[data-theme="dark"] .quiz-question{
 .home-primary-action{
   color:#fff !important;
   background:var(--edu-blue) !important;
-}
-
-.progress-2-of-18{
-  width:11.111%;
-}
-
-.progress-3-of-18{
-  width:16.667%;
 }
 
 .home-course-list{
