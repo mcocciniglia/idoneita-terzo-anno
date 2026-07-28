@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Lezione sul software: programmi, istruzioni, software di base e software applicativo, con esempi, laboratorio ed esercizi.">
+  <title>03 — Il software: i programmi del computer</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+
+  <link rel="icon"
+        href="https://mcocciniglia.github.io/common/assets/favicon.svg"
+        type="image/svg+xml">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge first">Programma del primo anno</span>
+        </div>
+
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle"
+                  class="btn btn-theme"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+
+          <button id="contrastToggle"
+                  class="btn btn-outline btn-contrast"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span>
+        <span aria-hidden="true">›</span>
+        <span>Primo anno</span>
+        <span aria-hidden="true">›</span>
+        <span>Lezione 3</span>
+      </nav>
+
+      <p class="eyebrow">Lezione 3 · Durata prevista: 2 ore</p>
+      <h1>Il software: i programmi del computer</h1>
+
+      <p class="lead">
+        Un computer può rappresentare dati con 0 e 1, ma chi gli indica
+        quali operazioni eseguire? Scopriamo il ruolo dei programmi.
+      </p>
+
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ 2 ore</span>
+        <span>📘 Primo anno</span>
+        <span>🎯 Dati binari, bit e byte</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading">
+        <span>Percorso del primo anno</span>
+        <span>Lezione 3 di 18</span>
+      </div>
+      <div class="progress-track"
+           role="progressbar"
+           aria-label="Avanzamento del percorso"
+           aria-valuemin="0"
+           aria-valuemax="18"
+           aria-valuenow="3">
+        <div class="progress-value" style="--progress:16.67%;"></div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ripasso">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">↩️</span>
+        <h2 id="ripasso">Prima di iniziare: richiamiamo la Lezione 02</h2>
+      </div>
+
+      <p>
+        Nella lezione precedente hai scoperto che il computer rappresenta
+        numeri, testi, immagini e suoni mediante sequenze di
+        <strong>bit</strong>. Un bit può valere 0 oppure 1 e otto bit formano
+        un byte.
+      </p>
+      <p>
+        I dati binari, però, non indicano da soli che cosa deve fare il
+        computer. Servono programmi formati da istruzioni che stabiliscano
+        come elaborare quei dati.
+      </p>
+
+      <aside class="callout remember" aria-labelledby="ponte">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Collegamento tra le lezioni</p>
+          <h3 id="ponte">Dai dati alle istruzioni</h3>
+          <p>
+            I dati rappresentano le informazioni. Il software è formato da
+            programmi e ogni programma contiene istruzioni per lavorare con
+            quei dati.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🎯</span>
+        <h2 id="obiettivi">Obiettivi della lezione</h2>
+      </div>
+
+      <p>
+        Al termine della lezione dovrai saper riconoscere il software e
+        classificare semplici esempi in base alla loro funzione.
+      </p>
+
+      <div class="objective-grid">
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Spiegare che cos'è il software</strong>
+          <small>Collegando programmi e istruzioni.</small>
+        </article>
+
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Riconoscere un programma</strong>
+          <small>Distinguendolo dal documento su cui lavora.</small>
+        </article>
+
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Distinguere due categorie</strong>
+          <small>Software di base e software applicativo.</small>
+        </article>
+
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Classificare esempi concreti</strong>
+          <small>Motivando la scelta con la funzione svolta.</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="giornata">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📱</span>
+        <h2 id="giornata">Una mattina con molti programmi</h2>
+      </div>
+
+      <p>
+        La sveglia del telefono suona. Controlli le previsioni del tempo,
+        scrivi un messaggio, apri il browser e prepari una presentazione.
+        Il dispositivo fisico è sempre lo stesso, ma svolge compiti diversi.
+      </p>
+      <p>
+        A cambiare è il programma utilizzato. L'app della sveglia controlla
+        l'orario; il browser mostra pagine web; il programma di presentazione
+        consente di organizzare testi e immagini in diapositive.
+      </p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Sveglia</h3>
+          <p>Confronta l'orario impostato con quello corrente e produce un avviso.</p>
+        </article>
+        <article class="info-card">
+          <h3>Browser</h3>
+          <p>Permette di consultare e usare contenuti del Web.</p>
+        </article>
+        <article class="info-card">
+          <h3>Editor di testo</h3>
+          <p>Permette di scrivere, correggere e organizzare un testo.</p>
+        </article>
+        <article class="info-card">
+          <h3>Calcolatrice</h3>
+          <p>Riceve numeri e operazioni e restituisce un risultato.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="definizione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧾</span>
+        <h2 id="definizione">Dagli esempi alla definizione</h2>
+      </div>
+
+      <div class="definition">
+        <span class="definition-term">Software</span>
+        <p>
+          È la parte logica del computer ed è costituito dall'insieme dei
+          programmi.
+        </p>
+      </div>
+
+      <div class="definition">
+        <span class="definition-term">Programma</span>
+        <p>
+          Sequenza di istruzioni che permette al computer di svolgere uno
+          specifico compito.
+        </p>
+      </div>
+
+      <p>
+        Nel linguaggio comune, “programma” e “applicazione” sono spesso usati
+        come sinonimi. In questa lezione li considereremo equivalenti.
+      </p>
+
+      <p>
+        Il software è la parte logica e non si può toccare. L'hardware è
+        invece la parte fisica. Software e hardware lavorano sempre insieme:
+        quando avviamo un programma, il computer ne esegue le istruzioni.
+      </p>
+    </section>
+
+    <aside class="callout error" aria-labelledby="programma-documento">
+      <div class="callout-icon" aria-hidden="true">❌</div>
+      <div>
+        <p class="callout-label">Errore frequente</p>
+        <h3 id="programma-documento">Confondere il programma con il documento</h3>
+        <p>
+          Un editor di testo è un programma; la relazione scritta con
+          quell'editor è un documento. Il programma permette di lavorare,
+          mentre il documento contiene i dati prodotti dall'utente.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="collaborazione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔄</span>
+        <h2 id="collaborazione">Software, utente e computer collaborano</h2>
+      </div>
+
+      <p>
+        Consideriamo una calcolatrice. L'utente inserisce due numeri e sceglie
+        un'operazione. Il programma indica quali calcoli eseguire. Il computer
+        esegue le istruzioni e mostra il risultato.
+      </p>
+
+      <div class="process-flow" aria-label="Collaborazione tra utente, programma e computer">
+        <div class="process-node">
+          <strong>Utente</strong>
+          <span>Inserisce dati e sceglie un comando</span>
+        </div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node">
+          <strong>Programma → Computer</strong>
+          <span>Il computer esegue le istruzioni del programma</span>
+        </div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node">
+          <strong>Risultato</strong>
+          <span>Viene restituito all'utente</span>
+        </div>
+      </div>
+
+      <p>
+        Lo stesso computer può quindi svolgere compiti differenti perché può
+        eseguire programmi differenti. Senza software, non saprebbe quale
+        attività svolgere.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="categorie">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🗂️</span>
+        <h2 id="categorie">Due grandi categorie di software</h2>
+      </div>
+
+      <p>
+        Possiamo classificare il software osservando la sua funzione. Alcuni
+        programmi rendono utilizzabile il sistema e sostengono il suo
+        funzionamento; altri aiutano l'utente a svolgere attività specifiche.
+      </p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Software di base</h3>
+          <p>
+            Gestisce le funzioni generali del sistema e crea le condizioni
+            necessarie per eseguire gli altri programmi.
+          </p>
+          <p>
+            Esempi: sistema operativo e programmi di utilità.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Software applicativo</h3>
+          <p>
+            Aiuta l'utente a svolgere un compito specifico.
+          </p>
+          <p>
+            Esempi: browser, editor di testo, foglio di calcolo, lettore
+            multimediale e programma di disegno.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="callout remember" aria-labelledby="criterio">
+      <div class="callout-icon" aria-hidden="true">💡</div>
+      <div>
+        <p class="callout-label">Criterio di classificazione</p>
+        <h3 id="criterio">Chiediti quale funzione svolge</h3>
+        <p>
+          Se serve al funzionamento generale del sistema, è software di base.
+          Se serve all'utente per un'attività specifica, è software applicativo.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="base">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">⚙️</span>
+        <h2 id="base">Il software di base</h2>
+      </div>
+
+      <p>
+        Quando accendi un dispositivo, alcuni programmi preparano l'ambiente
+        necessario per usarlo. Coordinano le funzioni generali e permettono
+        alle applicazioni di lavorare.
+      </p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Sistema operativo</h3>
+          <p>
+            È il principale software di base e rende possibile l'uso
+            organizzato del sistema. Sarà studiato in una lezione dedicata.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Strumenti di sistema</h3>
+          <p>
+            Aiutano a gestire le funzioni generali del computer.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Programmi di utilità</h3>
+          <p>
+            Svolgono attività di supporto e manutenzione del sistema.
+          </p>
+        </article>
+      </div>
+
+      <p>
+        In questa lezione è sufficiente riconoscere lo scopo generale di
+        questi programmi. Il funzionamento dettagliato del sistema operativo
+        verrà affrontato più avanti.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="applicativo">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧰</span>
+        <h2 id="applicativo">Il software applicativo</h2>
+      </div>
+
+      <p>
+        Le applicazioni rispondono a esigenze concrete dell'utente. Una stessa
+        attività può essere svolta da programmi diversi: esistono, per esempio,
+        molti browser e molti editor di testo.
+      </p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Comunicare</h3>
+          <p>Posta elettronica, messaggistica e videoconferenza.</p>
+        </article>
+        <article class="info-card">
+          <h3>Produrre contenuti</h3>
+          <p>Scrittura, presentazioni, disegno e montaggio multimediale.</p>
+        </article>
+        <article class="info-card">
+          <h3>Calcolare e organizzare</h3>
+          <p>Calcolatrice, foglio di calcolo e gestione di dati.</p>
+        </article>
+        <article class="info-card">
+          <h3>Consultare contenuti</h3>
+          <p>Browser, lettori di documenti e riproduttori multimediali.</p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="callout warning" aria-labelledby="nomi-commerciali">
+      <div class="callout-icon" aria-hidden="true">⚠️</div>
+      <div>
+        <p class="callout-label">Attenzione</p>
+        <h3 id="nomi-commerciali">La categoria non coincide con il nome del prodotto</h3>
+        <p>
+          “Browser” indica una funzione; il nome di uno specifico browser
+          identifica un prodotto. All'esame è importante saper spiegare prima
+          la funzione e poi fornire un esempio.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="scelta">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧭</span>
+        <h2 id="scelta">Scegliere il programma adatto</h2>
+      </div>
+
+      <p>
+        Non esiste un programma migliore per ogni situazione. La scelta
+        dipende dal compito da svolgere.
+      </p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Devo scrivere una relazione</h3>
+          <p>Scelgo un editor o elaboratore di testi.</p>
+        </article>
+        <article class="info-card">
+          <h3>Devo fare calcoli su una tabella</h3>
+          <p>Scelgo un foglio di calcolo.</p>
+        </article>
+        <article class="info-card">
+          <h3>Devo consultare un sito</h3>
+          <p>Scelgo un browser.</p>
+        </article>
+        <article class="info-card">
+          <h3>Devo presentare un argomento</h3>
+          <p>Scelgo un programma per presentazioni.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio">
+      <div class="lab-header">
+        <h2 id="laboratorio">💻 Laboratorio guidato — Mappa del software</h2>
+      </div>
+
+      <div class="lab-body">
+        <p>
+          <strong>Obiettivo:</strong> osservare programmi realmente disponibili,
+          riconoscerne la funzione e classificarli con una motivazione.
+        </p>
+        <p>
+          Usa il computer a disposizione e un foglio di carta oppure un editor
+          di testo. Non installare né rimuovere programmi.
+        </p>
+
+        <ol class="steps">
+          <li>
+            <strong>Individua sei programmi.</strong>
+            <p>
+              Cerca programmi già presenti: per esempio browser, calcolatrice,
+              editor di testo, programma di disegno o lettore multimediale.
+            </p>
+          </li>
+          <li>
+            <strong>Annota nome e funzione.</strong>
+            <p>
+              Per ogni programma scrivi quale compito permette di svolgere.
+              Evita definizioni come “serve per il computer”: sii specifico.
+            </p>
+          </li>
+          <li>
+            <strong>Classifica gli esempi.</strong>
+            <p>
+              Indica se ciascun programma è software di base o applicativo e
+              aggiungi una breve motivazione.
+            </p>
+          </li>
+          <li>
+            <strong>Osserva un'applicazione.</strong>
+            <p>
+              Apri la calcolatrice o un editor di testo. Individua i dati che
+              inserisci, il comando scelto e il risultato restituito.
+            </p>
+          </li>
+          <li>
+            <strong>Confronta due applicazioni.</strong>
+            <p>
+              Scegli due programmi applicativi e spiega perché sono adatti a
+              compiti diversi.
+            </p>
+          </li>
+          <li>
+            <strong>Prepara una sintesi orale.</strong>
+            <p>
+              In un minuto presenta un esempio di software di base e uno di
+              software applicativo, motivando la classificazione.
+            </p>
+          </li>
+        </ol>
+
+        <aside class="callout tip" aria-labelledby="tabella-laboratorio">
+          <div class="callout-icon" aria-hidden="true">✅</div>
+          <div>
+            <p class="callout-label">Suggerimento operativo</p>
+            <h3 id="tabella-laboratorio">Usa quattro colonne</h3>
+            <p>
+              Organizza il lavoro con: nome, funzione, categoria e motivazione.
+              La motivazione è la parte più importante.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esercizi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">✍️</span>
+        <h2 id="esercizi">Esercizi di consolidamento</h2>
+      </div>
+
+      <div class="question-grid">
+        <article class="quiz-question">
+          <h3>1. Trova l'intruso</h3>
+          <p>
+            Browser, editor di testo, sistema operativo, programma di disegno:
+            individua l'elemento di categoria diversa e spiega perché.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>2. Programma o dato?</h3>
+          <p>
+            Classifica: editor di testo, relazione scolastica, browser,
+            fotografia digitale, calcolatrice.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>3. Scegli lo strumento</h3>
+          <p>
+            Indica il tipo di applicazione adatto per scrivere una relazione,
+            fare calcoli in tabella e consultare un sito.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>4. Motiva la categoria</h3>
+          <p>
+            Spiega perché un sistema operativo è software di base e un browser
+            è software applicativo.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="quiz" aria-labelledby="quiz">
+      <h2 id="quiz">🧠 Autoverifica</h2>
+      <p>Rispondi prima a voce. Apri la risposta soltanto dopo.</p>
+
+      <div class="self-check">
+        <details>
+          <summary>1. Che cos'è il software?</summary>
+          <p>
+            È la parte logica del computer ed è costituito dall'insieme dei
+            programmi.
+          </p>
+        </details>
+        <details>
+          <summary>2. Qual è la differenza tra programma e documento?</summary>
+          <p>
+            Il programma contiene istruzioni e permette di svolgere un
+            compito; il documento contiene dati prodotti o usati dall'utente.
+          </p>
+        </details>
+        <details>
+          <summary>3. A che cosa serve il software di base?</summary>
+          <p>
+            Gestisce le funzioni generali del sistema e permette agli altri
+            programmi di essere eseguiti.
+          </p>
+        </details>
+        <details>
+          <summary>4. A che cosa serve il software applicativo?</summary>
+          <p>
+            Permette all'utente di svolgere compiti specifici, come scrivere,
+            calcolare, comunicare o consultare contenuti.
+          </p>
+        </details>
+        <details>
+          <summary>5. Perché la funzione è utile per classificare un programma?</summary>
+          <p>
+            Perché consente di capire se il programma sostiene il
+            funzionamento generale del sistema oppure svolge un compito
+            specifico per l'utente.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <aside class="callout exam" aria-labelledby="domanda-esame">
+      <div class="callout-icon" aria-hidden="true">🎓</div>
+      <div>
+        <p class="callout-label">Possibile domanda d'esame</p>
+        <h3 id="domanda-esame">Che cos'è il software e come si classifica?</h3>
+        <p>
+          <strong>Per rispondere bene:</strong> parti dalla definizione di
+          software, distingui software di base e applicativo, spiega il criterio
+          usato e fornisci almeno un esempio per categoria.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="glossario">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📖</span>
+        <h2 id="glossario">Glossario essenziale</h2>
+      </div>
+
+      <dl class="glossary-grid">
+        <div class="glossary-card">
+          <dt>Software</dt>
+          <dd>Parte logica del computer, costituita dall'insieme dei programmi.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Programma</dt>
+          <dd>Sequenza di istruzioni destinata a uno specifico compito.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Software di base</dt>
+          <dd>Software che sostiene il funzionamento generale del sistema.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Software applicativo</dt>
+          <dd>Software destinato a uno specifico compito dell'utente.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Applicazione</dt>
+          <dd>Programma progettato per svolgere una specifica attività.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Parte logica</dt>
+          <dd>Componente non fisica del computer, costituita dal software.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header">
+        <p class="eyebrow">Sintesi essenziale</p>
+        <h2 id="zaino-studente">🎒 Lo zaino dello studente</h2>
+        <p>
+          Se domani dimenticassi quasi tutto, queste sono le idee che dovresti
+          riuscire a ricostruire.
+        </p>
+      </div>
+
+      <div class="student-backpack-grid">
+        <article class="backpack-card">
+          <h3>✅ Le 5 idee fondamentali</h3>
+          <ol class="essential-list">
+            <li>Il software è la parte logica ed è formato da programmi.</li>
+            <li>Ogni programma contiene istruzioni per uno specifico compito.</li>
+            <li>Programmi e documenti non sono la stessa cosa.</li>
+            <li>Il software di base sostiene il funzionamento del sistema.</li>
+            <li>Il software applicativo aiuta l'utente in compiti specifici.</li>
+          </ol>
+        </article>
+
+        <article class="backpack-card">
+          <h3>📝 5 parole chiave</h3>
+          <ul class="keyword-list">
+            <li>Software</li>
+            <li>Programma</li>
+            <li>Istruzione</li>
+            <li>Base</li>
+            <li>Applicazione</li>
+          </ul>
+        </article>
+
+        <article class="backpack-card">
+          <h3>❓ 3 domande da esame</h3>
+          <ol>
+            <li>Che cos'è il software?</li>
+            <li>Qual è la differenza tra software di base e applicativo?</li>
+            <li>Qual è la differenza tra un programma e un documento?</li>
+          </ol>
+        </article>
+
+        <article class="backpack-card">
+          <h3>⏱️ Ripasso in 5 minuti</h3>
+          <ol class="mini-review">
+            <li>Chiudi la pagina.</li>
+            <li>Spiega a voce la definizione di software.</li>
+            <li>Fornisci due esempi per ciascuna categoria.</li>
+            <li>Controlla e ripeti soltanto i punti incerti.</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="review-mission" aria-labelledby="missione-ripasso">
+      <div class="review-mission-icon" aria-hidden="true">🏕️</div>
+      <div>
+        <p class="callout-label">Allenamento distribuito</p>
+        <h2 id="missione-ripasso">Missione di ripasso · 10 minuti al giorno</h2>
+        <p>
+          Prova prima a rispondere senza consultare la pagina, poi controlla
+          e correggi.
+        </p>
+
+        <div class="mission-days">
+          <article>
+            <strong>Giorno 1</strong>
+            <p>Spiega la differenza tra programma e documento con un esempio.</p>
+          </article>
+          <article>
+            <strong>Giorno 2</strong>
+            <p>Elenca quattro applicazioni e indica la funzione di ciascuna.</p>
+          </article>
+          <article>
+            <strong>Giorno 3</strong>
+            <p>Classifica sei esempi di software e motiva ogni scelta.</p>
+          </article>
+          <article>
+            <strong>Giorno 4</strong>
+            <p>Rispondi a voce alle tre domande da esame dello zaino.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-lesson">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2>Hardware</h2>
+      <p>
+        Ora sappiamo che il software è formato da programmi e che ogni
+        programma contiene istruzioni. Nella prossima lezione osserveremo le
+        componenti fisiche che rendono possibile eseguirle.
+      </p>
+    </section>
+
+    <aside class="callout tip" aria-labelledby="allenamento-hardware-software">
+      <div class="callout-icon" aria-hidden="true">📒</div>
+      <div>
+        <p class="callout-label">Materiale integrativo</p>
+        <h2 id="allenamento-hardware-software">Allenati su hardware e software</h2>
+        <p>
+          Dopo avere completato anche la Lezione 04, usa il
+          <a href="../../esercizi/hardware-software/index.html">Quaderno di
+          allenamento — Hardware e software</a> per consolidare i concetti.
+        </p>
+      </div>
+    </aside>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../02-rappresentazione-dell-informazione/index.html">← Lezione precedente</a>
+      <a href="../../index.html">Torna all'indice</a>
+      <a href="../04-hardware/index.html">Lezione 04 — Hardware →</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Informatica.</strong></p>
+      <p>
+        Questa pagina è pensata per essere letta anche da studenti DSA:
+        istruzioni sequenziali, font leggibili, contrasti elevati e
+        scorciatoie da tastiera evidenziate.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

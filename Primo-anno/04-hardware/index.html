@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Lezione introduttiva sull'hardware: componenti fisici interni ed esterni e collaborazione tra le parti del computer.">
+  <title>04 — Hardware</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+
+  <link rel="icon"
+        href="https://mcocciniglia.github.io/common/assets/favicon.svg"
+        type="image/svg+xml">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge first">Programma del primo anno</span>
+        </div>
+
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle"
+                  class="btn btn-theme"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+
+          <button id="contrastToggle"
+                  class="btn btn-outline btn-contrast"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span>
+        <span aria-hidden="true">›</span>
+        <span>Primo anno</span>
+        <span aria-hidden="true">›</span>
+        <span>Lezione 4</span>
+      </nav>
+
+      <p class="eyebrow">Lezione 4 · Durata prevista: 2 ore</p>
+      <h1>Hardware</h1>
+
+      <p class="lead">
+        Che cosa c'è realmente dentro un computer? Osserviamo le sue parti
+        fisiche e scopriamo come collaborano per eseguire i programmi.
+      </p>
+
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ 2 ore</span>
+        <span>📘 Primo anno</span>
+        <span>🎯 Software e programmi</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading">
+        <span>Percorso del primo anno</span>
+        <span>Lezione 4 di 18</span>
+      </div>
+      <div class="progress-track"
+           role="progressbar"
+           aria-label="Avanzamento del percorso"
+           aria-valuemin="0"
+           aria-valuemax="18"
+           aria-valuenow="4">
+        <div class="progress-value" style="--progress:22.22%;"></div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ripasso">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">↩️</span>
+        <h2 id="ripasso">Prima di iniziare: richiamiamo la Lezione 03</h2>
+      </div>
+
+      <p>
+        Nella lezione precedente hai imparato che il <strong>software</strong>
+        è la parte logica del computer ed è costituito da programmi. Un
+        programma contiene istruzioni che indicano al computer quale compito
+        svolgere.
+      </p>
+      <p>
+        Il software non può però agire da solo: per eseguire le istruzioni ha
+        bisogno di parti fisiche. Queste parti formano
+        l'<strong>hardware</strong>. Hardware e software sono diversi, ma
+        lavorano sempre insieme.
+      </p>
+
+      <aside class="callout remember" aria-labelledby="ponte">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Collegamento tra le lezioni</p>
+          <h3 id="ponte">Dalle istruzioni alle parti che le eseguono</h3>
+          <p>
+            Il software dice che cosa fare. L'hardware rende possibile
+            svolgere concretamente quel compito.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🎯</span>
+        <h2 id="obiettivi">Obiettivi della lezione</h2>
+      </div>
+
+      <p>
+        Al termine della lezione dovrai saper riconoscere l'hardware,
+        descrivere il ruolo generale delle sue componenti principali e
+        spiegare perché devono collaborare.
+      </p>
+
+      <div class="objective-grid">
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Definire l'hardware</strong>
+          <small>Riconoscendolo come parte fisica del computer.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Distinguere interno ed esterno</strong>
+          <small>Individuando esempi vicini alla tua esperienza.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Riconoscere le componenti principali</strong>
+          <small>Descrivendone il ruolo generale.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Spiegare la collaborazione</strong>
+          <small>Collegando hardware, software e attività dell'utente.</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="dentro-computer">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔎</span>
+        <h2 id="dentro-computer">Che cosa c'è realmente dentro un computer?</h2>
+      </div>
+
+      <p>
+        Quando usi un computer vedi subito lo schermo, la tastiera e il mouse.
+        Se osservassi anche l'interno del suo contenitore, troveresti altre
+        parti: una scheda madre, un processore, moduli di memoria, un'unità di
+        archiviazione e un alimentatore.
+      </p>
+      <p>
+        Alcune parti ricevono le azioni dell'utente, altre elaborano,
+        conservano o mostrano dati. Nessuna di esse, da sola, svolge tutto il
+        lavoro: il computer funziona perché componenti differenti
+        <strong>collaborano</strong>.
+      </p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Parti che puoi vedere</h3>
+          <p>
+            Tastiera, mouse, monitor e altri dispositivi esterni sono elementi
+            fisici che puoi osservare e toccare.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Parti racchiuse nel computer</h3>
+          <p>
+            Scheda madre, CPU, RAM, archiviazione e alimentatore si trovano
+            normalmente all'interno del contenitore.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="definizione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧾</span>
+        <h2 id="definizione">Dall'osservazione alla definizione</h2>
+      </div>
+
+      <div class="definition">
+        <span class="definition-term">Hardware</span>
+        <p>
+          È l'insieme di tutti i componenti fisici del computer.
+        </p>
+      </div>
+
+      <p>
+        Fanno parte dell'hardware sia i componenti
+        <strong>interni</strong>, racchiusi nel computer, sia quelli
+        <strong>esterni</strong>, collegati e utilizzati dall'utente.
+        “Fisico” significa che il componente è un oggetto reale: può essere
+        visto e, in condizioni sicure, toccato.
+      </p>
+    </section>
+
+    <aside class="callout error" aria-labelledby="contenitore">
+      <div class="callout-icon" aria-hidden="true">❌</div>
+      <div>
+        <p class="callout-label">Errore frequente</p>
+        <h3 id="contenitore">Pensare che l'hardware sia soltanto il contenitore</h3>
+        <p>
+          L'hardware non è soltanto la “scatola” del computer. Comprende tutte
+          le parti fisiche interne ed esterne, compresi monitor, tastiera e
+          mouse.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="componenti">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧩</span>
+        <h2 id="componenti">Le componenti principali: una panoramica</h2>
+      </div>
+
+      <p>
+        Per capire l'insieme, assegniamo a ogni componente un ruolo generale.
+        Nelle lezioni successive alcune di queste parti saranno studiate più
+        da vicino.
+      </p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Scheda madre</h3>
+          <p>
+            È la scheda principale sulla quale sono collocate o collegate
+            molte componenti. Permette loro di essere unite e di collaborare.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>CPU</h3>
+          <p>
+            È la componente che esegue le istruzioni dei programmi e coordina
+            le operazioni necessarie. Il suo funzionamento sarà approfondito
+            in una lezione dedicata.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Memoria RAM</h3>
+          <p>
+            Mantiene temporaneamente a disposizione dati e programmi mentre
+            il computer li sta usando. La studieremo meglio parlando di
+            memorie.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Archiviazione: SSD o HDD</h3>
+          <p>
+            Conserva programmi e dati anche quando il computer non li sta
+            usando. Per ora è sufficiente riconoscerne la funzione comune.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Alimentatore</h3>
+          <p>
+            Fornisce alle componenti l'energia elettrica necessaria per
+            funzionare. Senza alimentazione nessuna componente del computer
+            potrebbe funzionare.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Periferiche</h3>
+          <p>
+            Sono dispositivi collegati al computer che permettono di
+            interagire con esso. Tastiera, mouse e monitor sono esempi comuni.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="callout remember" aria-labelledby="insieme">
+      <div class="callout-icon" aria-hidden="true">🤝</div>
+      <div>
+        <p class="callout-label">Idea fondamentale</p>
+        <h3 id="insieme">Ruoli diversi, un unico compito</h3>
+        <p>
+          Un componente può ricevere dati, un altro elaborarli, un altro
+          mantenerli disponibili o conservarli. Il risultato nasce dalla loro
+          collaborazione, non dall'azione di una sola parte.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="collaborazione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔄</span>
+        <h2 id="collaborazione">Come collaborano le componenti</h2>
+      </div>
+
+      <p>
+        Immagina di aprire un programma e chiedergli di lavorare su un dato.
+        Possiamo descrivere ciò che accade con tre idee semplici: il computer
+        riceve un <strong>input</strong>, lo elabora e produce un
+        <strong>output</strong>.
+      </p>
+
+      <ol class="steps"
+          aria-label="Schema concettuale: utente, input, elaborazione mediante CPU e RAM, output">
+        <li>
+          <strong>Utente</strong>
+          <p>Avvia un'attività. <span aria-hidden="true">↓</span></p>
+        </li>
+        <li>
+          <strong>Input</strong>
+          <p>
+            Il computer riceve un comando o un dato.
+            <span aria-hidden="true">↓</span>
+          </p>
+        </li>
+        <li>
+          <strong>Elaborazione — CPU + RAM</strong>
+          <p>
+            CPU e RAM collaborano mentre il programma è in esecuzione.
+            <span aria-hidden="true">↓</span>
+          </p>
+        </li>
+        <li>
+          <strong>Output</strong>
+          <p>Il computer restituisce un risultato.</p>
+        </li>
+      </ol>
+
+      <p>
+        Questo è soltanto un modello mentale: non descrive una sequenza
+        tecnica dettagliata. In particolare, CPU e RAM non lavorano una dopo
+        l'altra, ma collaborano durante l'elaborazione. Nelle lezioni
+        successive riprenderemo i concetti di input e output.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="hardware-software">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔗</span>
+        <h2 id="hardware-software">Hardware e software lavorano insieme</h2>
+      </div>
+
+      <p>
+        Riprendiamo l'esempio della calcolatrice della Lezione 03. Il
+        programma stabilisce quali operazioni devono essere svolte; tastiera o
+        mouse permettono di inserire i dati; le componenti interne eseguono il
+        lavoro; il monitor mostra il risultato.
+      </p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Il software indica</h3>
+          <p>
+            I programmi dicono al computer che cosa fare attraverso le loro
+            istruzioni.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>L'hardware esegue</h3>
+          <p>
+            Le componenti fisiche svolgono concretamente le operazioni
+            necessarie.
+          </p>
+        </article>
+      </div>
+
+      <div class="definition">
+        <span class="definition-term">Insieme</span>
+        <p>
+          Senza hardware un programma non può essere eseguito; senza software
+          l'hardware non riceve le istruzioni per svolgere i compiti richiesti.
+          Uno senza l'altro non è utile.
+        </p>
+      </div>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio">
+      <div class="lab-header">
+        <h2 id="laboratorio">💻 Laboratorio guidato — Osserva l'hardware</h2>
+      </div>
+
+      <div class="lab-body">
+        <p>
+          <strong>Obiettivo:</strong> osservare il computer che stai
+          utilizzando e distinguere gli elementi hardware visibili.
+        </p>
+
+        <ol class="steps">
+          <li>
+            <strong>Osserva senza smontare.</strong>
+            <p>
+              Guarda il computer e i dispositivi collegati. Non aprire il
+              contenitore e non scollegare cavi.
+            </p>
+          </li>
+          <li>
+            <strong>Elenca gli elementi fisici.</strong>
+            <p>
+              Scrivi i nomi delle parti che puoi vedere, per esempio monitor,
+              tastiera, mouse o webcam.
+            </p>
+          </li>
+          <li>
+            <strong>Indica il ruolo generale.</strong>
+            <p>
+              Per ogni elemento annota in una frase che cosa permette di fare.
+            </p>
+          </li>
+          <li>
+            <strong>Ricorda le parti interne.</strong>
+            <p>
+              Aggiungi all'elenco le componenti interne studiate, anche se non
+              sono visibili.
+            </p>
+          </li>
+          <li>
+            <strong>Spiega la collaborazione.</strong>
+            <p>
+              Scegli un'attività, come scrivere una parola, e racconta quali
+              elementi hardware possono collaborare per ottenere il risultato.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esercizi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">✍️</span>
+        <h2 id="esercizi">Esercizi di consolidamento</h2>
+      </div>
+
+      <div class="question-grid">
+        <article class="quiz-question">
+          <h3>1. Interno o esterno?</h3>
+          <p>
+            Classifica scheda madre, mouse, CPU, monitor, RAM e tastiera.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>2. Associa il ruolo</h3>
+          <p>
+            Collega CPU, RAM, archiviazione e alimentatore alla loro funzione
+            generale.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>3. Trova l'intruso</h3>
+          <p>
+            Tastiera, browser, monitor, SSD: individua l'elemento che non è
+            hardware e motiva la scelta.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>4. Racconta una collaborazione</h3>
+          <p>
+            Spiega con un esempio perché il computer non funziona grazie a una
+            sola componente.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="quiz" aria-labelledby="quiz">
+      <h2 id="quiz">🧠 Autoverifica</h2>
+      <p>Rispondi prima a voce. Apri la risposta soltanto dopo.</p>
+
+      <div class="self-check">
+        <details>
+          <summary>1. Che cos'è l'hardware?</summary>
+          <p>È l'insieme di tutti i componenti fisici del computer.</p>
+        </details>
+        <details>
+          <summary>2. Hardware e software sono la stessa cosa?</summary>
+          <p>
+            No. L'hardware comprende le parti fisiche; il software è la parte
+            logica ed è costituito dai programmi.
+          </p>
+        </details>
+        <details>
+          <summary>3. La tastiera è hardware o software?</summary>
+          <p>
+            È hardware, perché è un dispositivo fisico collegato al computer.
+          </p>
+        </details>
+        <details>
+          <summary>4. Un programma può funzionare senza hardware?</summary>
+          <p>
+            No. Il programma ha bisogno delle componenti fisiche che eseguono
+            le sue istruzioni.
+          </p>
+        </details>
+        <details>
+          <summary>5. Quali sono alcune componenti interne del computer?</summary>
+          <p>
+            Scheda madre, CPU, RAM, unità di archiviazione e alimentatore.
+          </p>
+        </details>
+        <details>
+          <summary>6. Perché le componenti hardware devono collaborare?</summary>
+          <p>
+            Perché svolgono ruoli differenti e il risultato richiede il
+            contributo di più parti.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <aside class="callout exam" aria-labelledby="domanda-esame">
+      <div class="callout-icon" aria-hidden="true">🎓</div>
+      <div>
+        <p class="callout-label">Possibile domanda d'esame</p>
+        <h3 id="domanda-esame">Che cos'è l'hardware e quali sono le sue componenti principali?</h3>
+        <p>
+          <strong>Per rispondere bene:</strong> parti dalla definizione,
+          distingui componenti interni ed esterni, presenta alcuni esempi con
+          il loro ruolo e concludi spiegando che collaborano tra loro e con il
+          software.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="glossario">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📖</span>
+        <h2 id="glossario">Glossario essenziale</h2>
+      </div>
+
+      <dl class="glossary-grid">
+        <div class="glossary-card">
+          <dt>Hardware</dt>
+          <dd>Insieme di tutti i componenti fisici del computer.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Scheda madre</dt>
+          <dd>Scheda principale che unisce e collega molte componenti.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>CPU</dt>
+          <dd>Componente che esegue le istruzioni dei programmi.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>RAM</dt>
+          <dd>Memoria che mantiene disponibili dati e programmi in uso.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Archiviazione</dt>
+          <dd>Componente che conserva programmi e dati.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Periferica</dt>
+          <dd>Dispositivo collegato al computer che permette di interagire con esso.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header">
+        <p class="eyebrow">Sintesi essenziale</p>
+        <h2 id="zaino-studente">🎒 Lo zaino dello studente</h2>
+        <p>
+          Se domani dimenticassi quasi tutto, queste sono le idee che dovresti
+          riuscire a ricostruire.
+        </p>
+      </div>
+
+      <div class="student-backpack-grid">
+        <article class="backpack-card">
+          <h3>✅ Le 5 idee fondamentali</h3>
+          <ol class="essential-list">
+            <li>L'hardware comprende tutti i componenti fisici.</li>
+            <li>Esistono componenti interni ed esterni.</li>
+            <li>Ogni componente svolge un ruolo generale differente.</li>
+            <li>Le componenti collaborano per ottenere un risultato.</li>
+            <li>Hardware e software sono diversi ma lavorano insieme.</li>
+          </ol>
+        </article>
+
+        <article class="backpack-card">
+          <h3>📝 5 parole chiave</h3>
+          <ul class="keyword-list">
+            <li>Hardware</li>
+            <li>Componente</li>
+            <li>CPU</li>
+            <li>Memoria</li>
+            <li>Periferica</li>
+          </ul>
+        </article>
+
+        <article class="backpack-card">
+          <h3>❓ 3 domande da esame</h3>
+          <ol>
+            <li>Che cos'è l'hardware?</li>
+            <li>Quali sono le principali componenti di un computer?</li>
+            <li>Perché hardware e software devono lavorare insieme?</li>
+          </ol>
+        </article>
+
+        <article class="backpack-card">
+          <h3>⏱️ Ripasso in 5 minuti</h3>
+          <ol class="mini-review">
+            <li>Chiudi la pagina.</li>
+            <li>Spiega a voce la definizione di hardware.</li>
+            <li>Nomina cinque componenti e il loro ruolo generale.</li>
+            <li>Descrivi un esempio di collaborazione.</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="review-mission" aria-labelledby="missione-ripasso">
+      <div class="review-mission-icon" aria-hidden="true">🏕️</div>
+      <div>
+        <p class="callout-label">Allenamento distribuito</p>
+        <h2 id="missione-ripasso">Missione di ripasso · 10 minuti al giorno</h2>
+        <p>
+          Prova prima a rispondere senza consultare la pagina, poi controlla
+          e correggi.
+        </p>
+
+        <div class="mission-days">
+          <article>
+            <strong>Giorno 1</strong>
+            <p>Elenca gli elementi hardware visibili sulla tua postazione.</p>
+          </article>
+          <article>
+            <strong>Giorno 2</strong>
+            <p>Nomina cinque componenti interne e spiegane il ruolo generale.</p>
+          </article>
+          <article>
+            <strong>Giorno 3</strong>
+            <p>Spiega con un esempio come collaborano più componenti.</p>
+          </article>
+          <article>
+            <strong>Giorno 4</strong>
+            <p>Confronta hardware e software senza consultare la lezione.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-lesson">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2>Sistema operativo</h2>
+      <p>
+        Ora sappiamo che l'hardware esegue concretamente le operazioni e che
+        il software contiene i programmi. Nella prossima lezione conosceremo
+        il software più importante del computer: il sistema operativo.
+      </p>
+    </section>
+
+    <aside class="callout tip" aria-labelledby="allenamento-hardware-software">
+      <div class="callout-icon" aria-hidden="true">📒</div>
+      <div>
+        <p class="callout-label">Materiale integrativo</p>
+        <h2 id="allenamento-hardware-software">Allenati su hardware e software</h2>
+        <p>
+          Consolida le Lezioni 03 e 04 con il
+          <a href="../../esercizi/hardware-software/index.html">Quaderno di
+          allenamento — Hardware e software</a>.
+        </p>
+      </div>
+    </aside>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../03-software/index.html">← Lezione 03 — Software</a>
+      <a href="../../index.html">Torna all'indice</a>
+      <a href="../05-sistema-operativo/index.html">
+        Lezione 05 — Sistema operativo (in preparazione) →
+      </a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Informatica.</strong></p>
+      <p>
+        Questa pagina è pensata per essere letta anche da studenti DSA:
+        istruzioni sequenziali, font leggibili, contrasti elevati e
+        scorciatoie da tastiera evidenziate.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

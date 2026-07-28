@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Pagina informativa per una lezione o un contenuto del corso non ancora pubblicato.">
+  <title>Contenuto in preparazione — Corso di Informatica</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../assets/idoneita.css">
+
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+
+  <link rel="icon"
+        href="https://mcocciniglia.github.io/common/assets/favicon.svg"
+        type="image/svg+xml">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line" aria-label="Identificazione del corso">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge first">Contenuto in preparazione</span>
+        </div>
+
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle"
+                  class="btn btn-theme"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+
+          <button id="contrastToggle"
+                  class="btn btn-outline btn-contrast"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Corso di Informatica</span>
+        <span aria-hidden="true">›</span>
+        <span id="breadcrumb-current">Contenuto in preparazione</span>
+      </nav>
+
+      <p class="eyebrow">Una tappa del percorso</p>
+      <h1 id="page-title">Contenuto in preparazione</h1>
+
+      <p class="lead">
+        Questa lezione è prevista nel percorso, ma non è ancora disponibile.
+      </p>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <aside class="callout remember" aria-labelledby="pubblicazione">
+      <div class="callout-icon" aria-hidden="true">🚧</div>
+      <div>
+        <p class="callout-label">Prossimamente</p>
+        <h2 id="pubblicazione">Questa lezione sarà pubblicata a breve</h2>
+        <p>
+          Il percorso viene pubblicato progressivamente. Nel frattempo puoi
+          consolidare quanto hai già studiato ripassando le lezioni
+          disponibili e completando i quaderni di allenamento.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="azioni">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧭</span>
+        <h2 id="azioni">Dove puoi andare ora</h2>
+      </div>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Homepage del corso</h3>
+          <p>Ritorna alla pagina principale e consulta le risorse disponibili.</p>
+          <p><a href="../index.html">Vai alla homepage</a></p>
+        </article>
+
+        <article class="info-card">
+          <h3>Indice del primo anno</h3>
+          <p>Controlla quali lezioni del percorso sono già state pubblicate.</p>
+          <p><a href="../index.html#percorso">Vai all'indice del primo anno</a></p>
+        </article>
+
+        <article class="info-card">
+          <h3>Materiali integrativi</h3>
+          <p>Allenati sugli argomenti già affrontati nelle lezioni disponibili.</p>
+          <p><a href="../esercizi/index.html">Apri i materiali integrativi</a></p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="callout tip" aria-labelledby="suggerimenti">
+      <div class="callout-icon" aria-hidden="true">✅</div>
+      <div>
+        <p class="callout-label">Continua ad allenarti</p>
+        <h2 id="suggerimenti">Tre suggerimenti per proseguire</h2>
+        <ul>
+          <li>Ripassa l'ultima lezione disponibile.</li>
+          <li>Svolgi un quaderno di allenamento.</li>
+          <li>Torna all'indice per scegliere un altro argomento.</li>
+        </ul>
+      </div>
+    </aside>
+
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>
+        Questa pagina è pensata per essere letta anche da studenti DSA:
+        istruzioni sequenziali, font leggibili, contrasti elevati e
+        scorciatoie da tastiera evidenziate.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const parameters = new URLSearchParams(window.location.search);
+      const lesson = (parameters.get("lezione") || "").trim();
+      const title = (parameters.get("titolo") || "").trim();
+      let visibleTitle = "Contenuto in preparazione";
+
+      if (lesson && title) {
+        visibleTitle = `Lezione ${lesson} — ${title}`;
+      } else if (lesson) {
+        visibleTitle = `Lezione ${lesson}`;
+      } else if (title) {
+        visibleTitle = title;
+      }
+
+      document.getElementById("page-title").textContent = visibleTitle;
+      document.getElementById("breadcrumb-current").textContent = visibleTitle;
+      document.title = `${visibleTitle} — Corso di Informatica`;
+    })();
+  </script>
+</body>
+</html>
