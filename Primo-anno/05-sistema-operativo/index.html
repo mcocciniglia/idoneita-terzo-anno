@@ -1,0 +1,1003 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Lezione introduttiva sul sistema operativo: ruolo, funzioni principali, interfaccia, avvio, applicazioni ed esempi comuni.">
+  <title>05 — Sistema operativo</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+
+  <link rel="icon"
+        href="https://mcocciniglia.github.io/common/assets/favicon.svg"
+        type="image/svg+xml">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge first">Programma del primo anno</span>
+        </div>
+
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle"
+                  class="btn btn-theme"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+
+          <button id="contrastToggle"
+                  class="btn btn-outline btn-contrast"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span>
+        <span aria-hidden="true">›</span>
+        <span>Primo anno</span>
+        <span aria-hidden="true">›</span>
+        <span>Lezione 5</span>
+      </nav>
+
+      <p class="eyebrow">Lezione 5 · Durata prevista: 2 ore</p>
+      <h1>Sistema operativo</h1>
+
+      <p class="lead">
+        Chi coordina hardware, programmi e azioni dell'utente quando
+        accendiamo e utilizziamo un computer?
+      </p>
+
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ 2 ore</span>
+        <span>📘 Primo anno</span>
+        <span>🎯 Hardware, software e programmi</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading">
+        <span>Percorso del primo anno</span>
+        <span>Lezione 5 di 18</span>
+      </div>
+      <div class="progress-track"
+           role="progressbar"
+           aria-label="Avanzamento del percorso"
+           aria-valuemin="0"
+           aria-valuemax="18"
+           aria-valuenow="5">
+        <div class="progress-value" style="--progress:27.78%;"></div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ripasso">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">↩️</span>
+        <h2 id="ripasso">Prima di iniziare: richiamiamo la Lezione 04</h2>
+      </div>
+
+      <p>
+        Nella lezione precedente hai imparato che l'<strong>hardware</strong>
+        è l'insieme dei componenti fisici del computer. CPU, RAM,
+        archiviazione, alimentatore e periferiche hanno ruoli diversi, ma
+        collaborano per ottenere un risultato.
+      </p>
+      <p>
+        Il <strong>software</strong> è invece la parte logica ed è costituito
+        da programmi. Ogni programma contiene istruzioni. L'hardware esegue
+        concretamente le operazioni, mentre il software indica quali compiti
+        svolgere: In un sistema informatico hardware e software devono collaborare
+        per svolgere le attività richieste dall’utente.
+      </p>
+
+      <aside class="callout remember" aria-labelledby="domanda-ponte">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Collegamento tra le lezioni</p>
+          <h3 id="domanda-ponte">Chi organizza questa collaborazione?</h3>
+          <p>
+            Quando accendiamo il computer, chi prepara l'ambiente di lavoro,
+            avvia i programmi e coordina l'uso delle componenti hardware?
+            Questo è il ruolo generale del sistema operativo.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🎯</span>
+        <h2 id="obiettivi">Obiettivi della lezione</h2>
+      </div>
+
+      <p>
+        Al termine della lezione dovrai saper spiegare il ruolo del sistema
+        operativo e riconoscerlo nelle attività quotidiane.
+      </p>
+
+      <div class="objective-grid">
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Definire il sistema operativo</strong>
+          <small>Riconoscendolo come principale software di base.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Spiegarne la necessità</strong>
+          <small>Collegando utente, applicazioni e hardware.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Descriverne le funzioni</strong>
+          <small>Usando esempi semplici e un linguaggio corretto.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Distinguere sistema e applicazioni</strong>
+          <small>Osservando la diversa funzione svolta.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Riconoscere esempi comuni</strong>
+          <small>Su computer e dispositivi mobili.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Raccontare una collaborazione</strong>
+          <small>Descrivendo un'attività concreta dall'utente al risultato.</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="accensione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">💻</span>
+        <h2 id="accensione">Che cosa accade quando inizi a lavorare?</h2>
+      </div>
+
+      <p>
+        Premi il pulsante di accensione. Dopo poco compare un ambiente
+        organizzato con sfondo, icone, menu e una barra. Muovi il mouse,
+        selezioni un'applicazione, scrivi con la tastiera e osservi il
+        risultato sullo schermo.
+      </p>
+      <p>
+        Queste azioni sembrano naturali, ma richiedono coordinamento. Un
+        programma deve essere avviato, le componenti hardware devono essere
+        utilizzate e i comandi dell'utente devono essere ricevuti. Serve un
+        software che organizzi il funzionamento generale del dispositivo.
+      </p>
+
+      <div class="definition">
+        <span class="definition-term">Sistema operativo</span>
+        <p>
+          È il principale software di base. Gestisce le risorse del
+          dispositivo e permette all'utente e alle applicazioni di utilizzare
+          l'hardware.
+        </p>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="necessario">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧩</span>
+        <h2 id="necessario">Perché è necessario?</h2>
+      </div>
+
+      <p>
+        Immagina di dover usare direttamente ogni componente, senza menu,
+        finestre o regole comuni. Anche una semplice operazione richiederebbe
+        conoscenze tecniche molto specifiche.
+      </p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Un ambiente per l'utente</h3>
+          <p>
+            Il sistema operativo offre strumenti organizzati per impartire
+            comandi, avviare attività e osservare risultati.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Servizi per le applicazioni</h3>
+          <p>
+            Le applicazioni possono richiedere l'uso di schermo, memoria,
+            archiviazione e altri dispositivi attraverso regole comuni.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Risorse coordinate</h3>
+          <p>
+            Il sistema operativo organizza l'uso delle diverse componenti
+            affinché le attività possano svolgersi in modo ordinato.
+          </p>
+        </article>
+      </div>
+
+      <p>
+        Esistono dispositivi speciali che svolgono compiti limitati con
+        software molto semplice. Nei computer e nei dispositivi di uso
+        comune, però, il sistema operativo rende possibile un utilizzo
+        organizzato e flessibile.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="funzioni">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">⚙️</span>
+        <h2 id="funzioni">Le funzioni principali</h2>
+      </div>
+
+      <p>
+        Partiamo da attività che compiamo ogni giorno e colleghiamole alle
+        funzioni generali del sistema operativo.
+      </p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>1. Fornire un'interfaccia</h3>
+          <p>
+            <strong>Esempio:</strong> selezioni un'icona e apri un menu.
+            Il sistema operativo offre un ambiente attraverso il quale
+            comunicare con il dispositivo.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>2. Avviare e gestire i programmi</h3>
+          <p>
+            <strong>Esempio:</strong> apri un browser e poi una calcolatrice.
+            Il sistema avvia le applicazioni e ne organizza l'esecuzione.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>3. Coordinare l'hardware</h3>
+          <p>
+            <strong>Esempio:</strong> digiti una parola e la vedi sullo
+            schermo. Il sistema coordina l'uso delle risorse coinvolte.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>4. Gestire l'uso della memoria</h3>
+          <p>
+            <strong>Esempio:</strong> più applicazioni restano aperte.
+            Il sistema organizza, a livello generale, la memoria necessaria
+            alle attività in corso.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>5. Gestire le periferiche</h3>
+          <p>
+            <strong>Esempio:</strong> usi tastiera, mouse, schermo o
+            stampante. Il sistema consente ai programmi di comunicare con
+            questi dispositivi.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>6. Organizzare file e cartelle</h3>
+          <p>
+            <strong>Esempio:</strong> un'applicazione apre o salva un
+            documento. Il sistema organizza l'accesso ai dati conservati.
+            File e cartelle saranno studiati nella prossima lezione.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>7. Gestire utenti e impostazioni</h3>
+          <p>
+            <strong>Esempio:</strong> ogni utente può avere un proprio
+            ambiente e alcune autorizzazioni. Il sistema gestisce anche
+            impostazioni essenziali del dispositivo.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="callout remember" aria-labelledby="coordinatore">
+      <div class="callout-icon" aria-hidden="true">💡</div>
+      <div>
+        <p class="callout-label">Idea fondamentale</p>
+        <h3 id="coordinatore">Un coordinatore, non una singola applicazione</h3>
+        <p>
+          Il sistema operativo non svolge un solo compito specifico: rende
+          possibile e organizza il funzionamento generale del dispositivo.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="interfaccia">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🖥️</span>
+        <h2 id="interfaccia">L'interfaccia utente</h2>
+      </div>
+
+      <p>
+        Quando interagisci con il computer, utilizzi una
+        <strong>interfaccia utente</strong>: l'insieme degli strumenti che
+        permettono di impartire comandi e ricevere informazioni.
+      </p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Finestre</h3>
+          <p>Mostrano le applicazioni e permettono di organizzarle sullo schermo.</p>
+        </article>
+        <article class="info-card">
+          <h3>Icone</h3>
+          <p>Rappresentano visivamente programmi, comandi o elementi disponibili.</p>
+        </article>
+        <article class="info-card">
+          <h3>Menu</h3>
+          <p>Raccolgono comandi e scelte in un ordine comprensibile.</p>
+        </article>
+        <article class="info-card">
+          <h3>Barra delle applicazioni o dock</h3>
+          <p>Aiuta ad avviare applicazioni e a passare tra quelle aperte.</p>
+        </article>
+        <article class="info-card">
+          <h3>Puntatore</h3>
+          <p>Mostra sullo schermo la posizione controllata dal mouse o dal touchpad.</p>
+        </article>
+        <article class="info-card">
+          <h3>Comandi testuali</h3>
+          <p>
+            Alcuni sistemi offrono anche un'interfaccia a riga di comando,
+            nella quale si scrivono comandi. Qui è sufficiente sapere che
+            esiste come alternativa.
+          </p>
+        </article>
+      </div>
+
+      <div class="definition">
+        <span class="definition-term">Interfaccia grafica</span>
+        <p>
+          Interfaccia che usa elementi visivi, come finestre, icone, menu e
+          puntatore, per facilitare l'interazione con il dispositivo.
+        </p>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="avvio">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">⏻</span>
+        <h2 id="avvio">L'avvio del sistema, in generale</h2>
+      </div>
+
+      <p>
+        All'accensione si svolgono diverse operazioni. Per ora ci interessa
+        soltanto la sequenza generale percepita dall'utente.
+      </p>
+
+      <ol class="steps">
+        <li>
+          <strong>Accensione del dispositivo.</strong>
+          <p>L'utente preme il pulsante di accensione.</p>
+        </li>
+        <li>
+          <strong>Controllo iniziale dell'hardware.</strong>
+          <p>Il dispositivo verifica in modo generale le risorse necessarie.</p>
+        </li>
+        <li>
+          <strong>Caricamento del sistema operativo.</strong>
+          <p>Il software necessario al funzionamento generale viene preparato.</p>
+        </li>
+        <li>
+          <strong>Comparsa dell'ambiente di lavoro.</strong>
+          <p>L'utente vede l'interfaccia e può iniziare a interagire.</p>
+        </li>
+        <li>
+          <strong>Avvio delle applicazioni.</strong>
+          <p>Il sistema è pronto a eseguire i programmi scelti dall'utente.</p>
+        </li>
+      </ol>
+
+      <p>
+        Questa descrizione è volutamente generale. Non analizziamo qui i
+        meccanismi tecnici che precedono il caricamento del sistema operativo.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="sistema-applicazioni">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔍</span>
+        <h2 id="sistema-applicazioni">Sistema operativo o applicazione?</h2>
+      </div>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Sistema operativo</h3>
+          <p>
+            Gestisce il funzionamento generale del dispositivo, offre
+            l'ambiente di lavoro e coordina l'uso delle risorse.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Software applicativo</h3>
+          <p>
+            Permette all'utente di svolgere un'attività specifica, come
+            navigare, scrivere, calcolare o comunicare.
+          </p>
+        </article>
+      </div>
+
+      <div class="question-grid">
+        <article class="quiz-question">
+          <h3>Windows e browser</h3>
+          <p>Windows è il sistema operativo; il browser è un'applicazione.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>Android e messaggistica</h3>
+          <p>Android è il sistema operativo; il programma di messaggistica è un'applicazione.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>macOS e videoscrittura</h3>
+          <p>macOS è il sistema operativo; il programma di videoscrittura è un'applicazione.</p>
+        </article>
+      </div>
+
+      <p>
+        Le applicazioni vengono eseguite nell'ambiente messo a disposizione
+        dal sistema operativo e ne utilizzano i servizi per accedere alle
+        risorse del dispositivo.
+      </p>
+    </section>
+
+    <aside class="callout error" aria-labelledby="errore-computer">
+      <div class="callout-icon" aria-hidden="true">❌</div>
+      <div>
+        <p class="callout-label">Errore frequente</p>
+        <h3 id="errore-computer">Confondere il sistema operativo con il computer</h3>
+        <p>
+          Il computer è un sistema formato da hardware e software. 
+		  Il sistema operativo fa parte del software e gestisce il funzionamento generale del dispositivo.
+        </p>
+      </div>
+    </aside>
+
+    <aside class="callout error" aria-labelledby="errore-unico">
+      <div class="callout-icon" aria-hidden="true">❌</div>
+      <div>
+        <p class="callout-label">Errore frequente</p>
+        <h3 id="errore-unico">Pensare che Windows sia l'unico sistema operativo</h3>
+        <p>
+          Windows è un esempio. Esistono altri sistemi operativi per computer
+          e dispositivi mobili.
+        </p>
+      </div>
+    </aside>
+
+    <aside class="callout error" aria-labelledby="errore-applicazione">
+      <div class="callout-icon" aria-hidden="true">❌</div>
+      <div>
+        <p class="callout-label">Errore frequente</p>
+        <h3 id="errore-applicazione">Confondere sistema operativo e applicazione</h3>
+        <p>
+          Il sistema operativo gestisce il funzionamento generale;
+          un'applicazione serve a uno specifico compito dell'utente.
+        </p>
+      </div>
+    </aside>
+
+    <aside class="callout error" aria-labelledby="errore-interfaccia">
+      <div class="callout-icon" aria-hidden="true">❌</div>
+      <div>
+        <p class="callout-label">Errore frequente</p>
+        <h3 id="errore-interfaccia">Considerare finestre e icone come hardware</h3>
+        <p>
+          Finestre, icone e menu sono elementi dell'interfaccia software.
+          Lo schermo che li visualizza è hardware.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="esempi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🌐</span>
+        <h2 id="esempi">Esempi di sistemi operativi</h2>
+      </div>
+
+      <p>
+        Dispositivi differenti possono usare sistemi operativi diversi.
+        Le interfacce possono cambiare, ma le funzioni generali restano simili.
+      </p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Computer</h3>
+          <ul>
+            <li>Microsoft Windows;</li>
+            <li>macOS;</li>
+            <li>distribuzioni GNU/Linux.</li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <h3>Dispositivi mobili</h3>
+          <ul>
+            <li>Android;</li>
+            <li>iOS.</li>
+          </ul>
+        </article>
+      </div>
+
+      <p>
+        L'obiettivo non è stabilire quale sia migliore. È importante
+        riconoscere che tutti svolgono funzioni generali analoghe, pur
+        presentando strumenti e interfacce differenti.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="collaborazione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔄</span>
+        <h2 id="collaborazione">Un esempio di collaborazione</h2>
+      </div>
+
+      <p>
+        Immagina di aprire un programma di videoscrittura, digitare una frase
+        e vederla comparire sullo schermo. Possiamo rappresentare l'attività
+        con uno schema semplificato.
+      </p>
+
+      <ol class="steps"
+          aria-label="Schema semplificato della collaborazione tra utente, sistema operativo, applicazione e hardware">
+        <li>
+          <strong>Utente</strong>
+          <p>Avvia l'attività e impartisce un comando.</p>
+        </li>
+        <li>
+          <strong>Sistema operativo</strong>
+          <p>Riceve o coordina la richiesta e mette a disposizione l'ambiente.</p>
+        </li>
+        <li>
+          <strong>Applicazione</strong>
+          <p>Svolge il compito specifico richiesto dall'utente.</p>
+        </li>
+        <li>
+          <strong>Risorse hardware</strong>
+          <p>Vengono utilizzate in modo organizzato per eseguire le operazioni.</p>
+        </li>
+        <li>
+          <strong>Risultato restituito all'utente</strong>
+          <p>La frase appare nell'interfaccia sullo schermo.</p>
+        </li>
+      </ol>
+
+      <p>
+        Lo schema non rappresenta un unico passaggio lineare. Durante
+        l'attività avvengono molti scambi: il sistema operativo coordina le
+        richieste, permette all'applicazione di usare le risorse e organizza
+        l'interazione con l'hardware.
+      </p>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio">
+      <div class="lab-header">
+        <h2 id="laboratorio">💻 Laboratorio guidato — Riconosci il sistema operativo</h2>
+      </div>
+
+      <div class="lab-body">
+        <p>
+          <strong>Durata:</strong> circa 25–35 minuti.
+          <strong>Obiettivo:</strong> riconoscere il sistema operativo,
+          osservare la sua interfaccia e descriverne il ruolo.
+        </p>
+
+        <aside class="callout warning" aria-labelledby="sicurezza">
+          <div class="callout-icon" aria-hidden="true">⚠️</div>
+          <div>
+            <p class="callout-label">Regole di sicurezza</p>
+            <h3 id="sicurezza">Osserva senza modificare</h3>
+            <ul>
+              <li>Non modificare impostazioni.</li>
+              <li>Non installare o disinstallare programmi.</li>
+              <li>Non cancellare file.</li>
+              <li>Non inserire o mostrare dati personali.</li>
+              <li>Non utilizzare account di altre persone.</li>
+            </ul>
+          </div>
+        </aside>
+
+        <ol class="steps">
+          <li>
+            <strong>Identifica il sistema operativo.</strong>
+            <p>
+              Osserva l'interfaccia e individua il nome del sistema. Se puoi
+              farlo senza cambiare nulla, consulta la pagina informativa delle
+              impostazioni e annota nome o edizione. Non raccogliere dati
+              personali.
+            </p>
+          </li>
+          <li>
+            <strong>Riconosci quattro elementi dell'interfaccia.</strong>
+            <p>
+              Cerca, per esempio, finestre, icone, menu, barra delle
+              applicazioni o dock e puntatore.
+            </p>
+          </li>
+          <li>
+            <strong>Apri un'applicazione.</strong>
+            <p>
+              Usa un programma già presente, come calcolatrice o editor di
+              testo. Osserva come compare la sua finestra.
+            </p>
+          </li>
+          <li>
+            <strong>Apri una seconda applicazione.</strong>
+            <p>
+              Passa dall'una all'altra e osserva come il sistema mantiene
+              organizzate le finestre.
+            </p>
+          </li>
+          <li>
+            <strong>Compila la tabella.</strong>
+            <p>
+              Per almeno quattro elementi scrivi il nome, la funzione
+              generale e un esempio concreto.
+            </p>
+          </li>
+          <li>
+            <strong>Spiega la collaborazione.</strong>
+            <p>
+              In poche righe racconta come sistema operativo, applicazione e
+              hardware hanno collaborato durante una delle attività.
+            </p>
+          </li>
+        </ol>
+
+        <table aria-label="Tabella di osservazione dell'interfaccia del sistema operativo">
+          <thead>
+            <tr>
+              <th scope="col">Elemento osservato</th>
+              <th scope="col">Funzione</th>
+              <th scope="col">Esempio concreto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>________________</td>
+              <td>________________</td>
+              <td>________________</td>
+            </tr>
+            <tr>
+              <td>________________</td>
+              <td>________________</td>
+              <td>________________</td>
+            </tr>
+            <tr>
+              <td>________________</td>
+              <td>________________</td>
+              <td>________________</td>
+            </tr>
+            <tr>
+              <td>________________</td>
+              <td>________________</td>
+              <td>________________</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <aside class="callout tip" aria-labelledby="scorciatoie">
+          <div class="callout-icon" aria-hidden="true">⌨️</div>
+          <div>
+            <p class="callout-label">Suggerimento operativo</p>
+            <h3 id="scorciatoie">Scorciatoie utili, se usi Windows</h3>
+            <p>
+              <kbd>Windows</kbd> + <kbd>I</kbd> apre le impostazioni;
+              <kbd>Alt</kbd> + <kbd>Tab</kbd> passa tra applicazioni;
+              <kbd>Windows</kbd> + <kbd>D</kbd> mostra il desktop.
+            </p>
+            <p>
+              Su macOS o GNU/Linux usa gli strumenti equivalenti già
+              disponibili. Su un dispositivo mobile osserva schermata
+              iniziale, icone, applicazioni recenti e impostazioni
+              informative, senza modificarle.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esercizi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">✍️</span>
+        <h2 id="esercizi">Esercizi di consolidamento</h2>
+      </div>
+
+      <p>Puoi svolgere gli esercizi sul quaderno oppure rispondere a voce.</p>
+
+      <div class="question-grid">
+        <article class="quiz-question">
+          <h3>1. Sistema operativo o applicazione?</h3>
+          <p>
+            Classifica: Android, browser, macOS, programma di disegno,
+            GNU/Linux, applicazione musicale.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>2. Associa funzione ed esempio</h3>
+          <p>
+            Collega: interfaccia, gestione programmi, coordinamento hardware
+            e organizzazione dei dati agli esempi studiati.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>3. Individua e correggi l'errore</h3>
+          <p>
+            “Il monitor è un sistema operativo”; “un browser gestisce tutto
+            l'hardware”; “Windows è l'unico sistema operativo”.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>4. Completa lo schema</h3>
+          <p>
+            Utente → __________ → Applicazione → __________ → Risultato.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>5. Spiega una collaborazione</h3>
+          <p>
+            Descrivi come sistema operativo, applicazione e hardware
+            collaborano quando scrivi una frase.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>6. Una situazione concreta</h3>
+          <p>
+            Sara apre un'applicazione musicale e ascolta un brano. Individua
+            il ruolo dell'utente, del sistema operativo, dell'applicazione e
+            delle risorse hardware.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="quiz" aria-labelledby="quiz">
+      <h2 id="quiz">🧠 Autoverifica</h2>
+      <p>Rispondi prima a voce. Apri la risposta soltanto dopo.</p>
+
+      <div class="self-check">
+        <details>
+          <summary>1. Che cos'è un sistema operativo?</summary>
+          <p>
+            È il principale software di base. Gestisce le risorse del
+            dispositivo e permette all'utente e alle applicazioni di
+            utilizzare l'hardware.
+          </p>
+        </details>
+        <details>
+          <summary>2. Perché è software di base?</summary>
+          <p>
+            Perché sostiene e organizza il funzionamento generale del
+            dispositivo e crea l'ambiente nel quale vengono eseguite le
+            applicazioni.
+          </p>
+        </details>
+        <details>
+          <summary>3. Quali sono le sue funzioni principali?</summary>
+          <p>
+            Fornisce l'interfaccia, gestisce programmi, risorse hardware,
+            memoria e periferiche, organizza l'accesso ai dati e gestisce
+            utenti e impostazioni essenziali.
+          </p>
+        </details>
+        <details>
+          <summary>4. Qual è la differenza tra sistema operativo e applicazione?</summary>
+          <p>
+            Il sistema operativo gestisce il funzionamento generale;
+            l'applicazione permette di svolgere uno specifico compito.
+          </p>
+        </details>
+        <details>
+          <summary>5. Che cosa accade, in generale, quando si accende un computer?</summary>
+          <p>
+            Dopo l'accensione viene effettuato un controllo iniziale
+            dell'hardware, si carica il sistema operativo, compare l'ambiente
+            di lavoro e diventa possibile avviare applicazioni.
+          </p>
+        </details>
+        <details>
+          <summary>6. Quali sistemi operativi conosci?</summary>
+          <p>
+            Esempi per computer sono Microsoft Windows, macOS e le
+            distribuzioni GNU/Linux; per dispositivi mobili Android e iOS.
+          </p>
+        </details>
+        <details>
+          <summary>7. In che modo il sistema operativo permette di utilizzare l'hardware?</summary>
+          <p>
+            Coordina le richieste dell'utente e delle applicazioni e organizza
+            l'uso delle risorse fisiche necessarie.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <aside class="callout exam" aria-labelledby="domanda-esame">
+      <div class="callout-icon" aria-hidden="true">🎓</div>
+      <div>
+        <p class="callout-label">Possibile domanda d'esame</p>
+        <h3 id="domanda-esame">Che cos'è il sistema operativo e quali funzioni svolge?</h3>
+        <p>
+          <strong>Per rispondere bene:</strong> presenta la definizione,
+          colloca il sistema operativo nel software di base, indica le
+          funzioni principali, fornisci uno o due esempi e concludi collegando
+          utente, applicazioni e hardware.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="glossario">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📖</span>
+        <h2 id="glossario">Glossario essenziale</h2>
+      </div>
+
+      <dl class="glossary-grid">
+        <div class="glossary-card">
+          <dt>Sistema operativo</dt>
+          <dd>Software che gestisce il funzionamento generale del dispositivo.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Software di base</dt>
+          <dd>Software che sostiene e organizza le funzioni generali del sistema.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Interfaccia utente</dt>
+          <dd>Strumenti attraverso i quali l'utente impartisce comandi e riceve informazioni.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Interfaccia grafica</dt>
+          <dd>Interfaccia basata su elementi visivi come finestre, icone e menu.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Applicazione</dt>
+          <dd>Programma progettato per uno specifico compito dell'utente.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Risorsa hardware</dt>
+          <dd>Componente fisica utilizzata durante un'attività del computer.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Avvio</dt>
+          <dd>Fase che prepara il sistema operativo e l'ambiente di lavoro.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Multitasking</dt>
+          <dd>Capacità del sistema di gestire più attività o applicazioni nello stesso periodo.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header">
+        <p class="eyebrow">Sintesi essenziale</p>
+        <h2 id="zaino-studente">🎒 Lo zaino dello studente</h2>
+        <p>
+          Se domani dimenticassi quasi tutto, queste sono le idee che dovresti
+          riuscire a ricostruire.
+        </p>
+      </div>
+
+      <div class="student-backpack-grid">
+        <article class="backpack-card">
+          <h3>✅ Le 5 idee fondamentali</h3>
+          <ol class="essential-list">
+            <li>Il sistema operativo è il principale software di base.</li>
+            <li>Offre l'ambiente attraverso il quale l'utente usa il dispositivo.</li>
+            <li>Avvia applicazioni e coordina le risorse hardware.</li>
+            <li>Sistema operativo e applicazioni svolgono funzioni diverse.</li>
+            <li>Sistemi diversi hanno interfacce differenti ma funzioni generali simili.</li>
+          </ol>
+        </article>
+
+        <article class="backpack-card">
+          <h3>📝 5 parole chiave</h3>
+          <ul class="keyword-list">
+            <li>Sistema operativo</li>
+            <li>Interfaccia</li>
+            <li>Applicazione</li>
+            <li>Risorsa</li>
+            <li>Avvio</li>
+          </ul>
+        </article>
+
+        <article class="backpack-card">
+          <h3>❓ 3 domande da esame</h3>
+          <ol>
+            <li>Che cos'è un sistema operativo?</li>
+            <li>Quali funzioni principali svolge?</li>
+            <li>Come collega utente, applicazioni e hardware?</li>
+          </ol>
+        </article>
+
+        <article class="backpack-card">
+          <h3>⏱️ Ripasso in 5 minuti</h3>
+          <ol class="mini-review">
+            <li>Chiudi la pagina.</li>
+            <li>Spiega la definizione e tre funzioni.</li>
+            <li>Confronta sistema operativo e applicazione.</li>
+            <li>Controlla e ripeti soltanto i punti incerti.</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="review-mission" aria-labelledby="missione-ripasso">
+      <div class="review-mission-icon" aria-hidden="true">🏕️</div>
+      <div>
+        <p class="callout-label">Allenamento distribuito</p>
+        <h2 id="missione-ripasso">Missione di ripasso · 10 minuti al giorno</h2>
+        <p>
+          Prova prima a rispondere senza consultare la pagina, poi controlla
+          e correggi.
+        </p>
+
+        <div class="mission-days">
+          <article>
+            <strong>Giorno 1</strong>
+            <p>Spiega la definizione e la funzione generale del sistema operativo.</p>
+          </article>
+          <article>
+            <strong>Giorno 2</strong>
+            <p>Ricostruisci le sette funzioni principali con un esempio per ciascuna.</p>
+          </article>
+          <article>
+            <strong>Giorno 3</strong>
+            <p>Confronta sistema operativo e applicazione usando due esempi.</p>
+          </article>
+          <article>
+            <strong>Giorno 4</strong>
+            <p>Esponi oralmente l'intera lezione senza consultare la pagina.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-lesson">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2>File e cartelle</h2>
+      <p>
+        Abbiamo visto che il sistema operativo permette di organizzare e
+        utilizzare i dati conservati nel dispositivo. Nella prossima lezione
+        scopriremo che cosa sono file e cartelle e come vengono organizzati.
+      </p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../04-hardware/index.html">← Lezione 04 — Hardware</a>
+      <a href="../../index.html">Torna all'indice</a>
+      <a href="../06-file-e-cartelle/index.html">
+        Lezione 06 — File e cartelle (in preparazione) →
+      </a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>
+        Questa pagina è pensata per essere letta anche da studenti DSA:
+        istruzioni sequenziali, font leggibili, contrasti elevati e
+        scorciatoie da tastiera evidenziate.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
