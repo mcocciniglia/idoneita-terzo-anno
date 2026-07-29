@@ -1,0 +1,1049 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Lezione su file e cartelle: nomi, estensioni, struttura gerarchica, percorsi e operazioni fondamentali di organizzazione.">
+  <title>06 — File e cartelle</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+
+  <link rel="icon"
+        href="https://mcocciniglia.github.io/common/assets/favicon.svg"
+        type="image/svg+xml">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge first">Programma del primo anno</span>
+        </div>
+
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle"
+                  class="btn btn-theme"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+
+          <button id="contrastToggle"
+                  class="btn btn-outline btn-contrast"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span>
+        <span aria-hidden="true">›</span>
+        <span>Primo anno</span>
+        <span aria-hidden="true">›</span>
+        <span>Lezione 6</span>
+      </nav>
+
+      <p class="eyebrow">Lezione 6 · Durata prevista: 2 ore</p>
+      <h1>File e cartelle</h1>
+
+      <p class="lead">
+        Abbiamo salvato un documento. Dove si trova? Come possiamo
+        riconoscerlo, ritrovarlo e organizzarlo senza confonderlo con gli altri?
+      </p>
+
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ 2 ore</span>
+        <span>📘 Primo anno</span>
+        <span>🎯 File, cartelle e percorsi</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading">
+        <span>Percorso del primo anno</span>
+        <span>Lezione 6 di 18</span>
+      </div>
+      <div class="progress-track"
+           role="progressbar"
+           aria-label="Avanzamento del percorso"
+           aria-valuemin="0"
+           aria-valuemax="18"
+           aria-valuenow="6">
+        <div class="progress-value" style="--progress:33.33%;"></div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ripasso">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">↩️</span>
+        <h2 id="ripasso">Prima di iniziare: richiamiamo la Lezione 05</h2>
+      </div>
+
+      <p>
+        Il <strong>sistema operativo</strong> gestisce le risorse del
+        dispositivo, organizza l'ambiente di lavoro e permette alle
+        applicazioni di accedere ai dati. Quando scriviamo una relazione o
+        creiamo un'immagine, l'applicazione può affidare al sistema operativo
+        il compito di salvarla.
+      </p>
+      <p>
+        Salvare non basta: dobbiamo anche assegnare un nome chiaro, scegliere
+        una posizione e saper ritrovare il documento. Per farlo utilizziamo
+        file, cartelle e un'organizzazione comprensibile.
+      </p>
+
+      <aside class="callout remember" aria-labelledby="domanda-ponte">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Collegamento tra le lezioni</p>
+          <h3 id="domanda-ponte">Dal salvataggio all'organizzazione</h3>
+          <p>
+            Il sistema operativo consente di salvare e ritrovare documenti.
+            Ora impariamo come riconoscere gli elementi conservati e come
+            organizzarli in modo ordinato.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🎯</span>
+        <h2 id="obiettivi">Obiettivi della lezione</h2>
+      </div>
+
+      <p>
+        Al termine della lezione dovrai saper riconoscere, organizzare e
+        descrivere semplici strutture di file e cartelle.
+      </p>
+
+      <div class="objective-grid">
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Distinguere file e cartella</strong>
+          <small>Riconoscendone il ruolo in esempi concreti.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Leggere nome ed estensione</strong>
+          <small>Collegando estensioni comuni ai tipi di contenuto.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Comprendere una gerarchia</strong>
+          <small>Individuando cartelle, sottocartelle e file.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Leggere un percorso</strong>
+          <small>Descrivendo la posizione di un elemento.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Organizzare gli elementi</strong>
+          <small>Creando, rinominando, copiando e spostando.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Descrivere le operazioni</strong>
+          <small>Spiegando le scelte con un linguaggio preciso.</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="problema">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔎</span>
+        <h2 id="problema">Una scrivania piena di documenti</h2>
+      </div>
+
+      <p>
+        Immagina di salvare ogni attività scolastica con nomi come
+        <code>documento1</code>, <code>nuovo</code> o
+        <code>finale_finale</code>, tutte nella stessa posizione. Dopo qualche
+        settimana sarebbe difficile capire quale elemento aprire.
+      </p>
+      <p>
+        Anche nel computer serve un criterio: I documenti e molti altri contenuti
+        vengono conservati in file, che possono essere raccolti in cartelle.. Nomi chiari e
+        una struttura ordinata rendono più semplice ritrovare ciò che serve.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="definizioni">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧾</span>
+        <h2 id="definizioni">Dall'esempio alle definizioni</h2>
+      </div>
+
+      <div class="definition">
+        <span class="definition-term">File</span>
+        <p>
+          Un insieme di dati conservato con un nome. Può contenere, per
+          esempio, testo, immagini, audio, video o istruzioni di un programma.
+        </p>
+      </div>
+
+      <div class="definition">
+        <span class="definition-term">Cartella</span>
+        <p>
+          Un contenitore usato per organizzare file e altre cartelle.
+        </p>
+      </div>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Un file contiene dati</h3>
+          <p>
+            <code>relazione.docx</code> può contenere il testo di una
+            relazione; <code>foto.jpg</code> può contenere un'immagine.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Una cartella organizza</h3>
+          <p>
+            La cartella <code>Italiano</code> può contenere relazioni e
+            sottocartelle dedicate a diversi argomenti.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="callout error" aria-labelledby="errore-file-cartella">
+      <div class="callout-icon" aria-hidden="true">❌</div>
+      <div>
+        <p class="callout-label">Errore frequente</p>
+        <h3 id="errore-file-cartella">Confondere file e cartella</h3>
+        <p>
+          Un file conserva dati; una cartella serve a organizzare file e
+          altre cartelle. Le icone possono essere simili, ma la funzione è
+          diversa.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="nome-estensione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🏷️</span>
+        <h2 id="nome-estensione">Nome ed estensione</h2>
+      </div>
+
+      <p>
+        Osserva il nome <code>relazione_scienze.docx</code>. La parte
+        <code>relazione_scienze</code> descrive il contenuto; la parte
+        <code>.docx</code>, dopo l'ultimo punto, è l'estensione.
+      </p>
+
+      <div class="definition">
+        <span class="definition-term">Estensione</span>
+        <p>
+          Parte finale del nome di un file che aiuta il sistema operativo a
+          riconoscerne il tipo e ad associarlo a un'applicazione adatta.
+        </p>
+      </div>
+
+      <p>
+        L'estensione fornisce un'indicazione utile, ma non garantisce da sola
+        quale sia il contenuto effettivo. Cambiare soltanto l'estensione non
+        converte un file in un altro formato.
+      </p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Testi e documenti</h3>
+          <ul>
+            <li><code>.txt</code>: testo semplice;</li>
+            <li><code>.pdf</code>: documento a impaginazione stabile;</li>
+            <li><code>.docx</code>: documento di videoscrittura.</li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <h3>Dati e presentazioni</h3>
+          <ul>
+            <li><code>.xlsx</code>: foglio di calcolo;</li>
+            <li><code>.pptx</code>: presentazione.</li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <h3>Immagini</h3>
+          <ul>
+            <li><code>.jpg</code>: immagine;</li>
+            <li><code>.png</code>: immagine.</li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <h3>Contenuti multimediali e Web</h3>
+          <ul>
+            <li><code>.mp3</code>: audio;</li>
+            <li><code>.mp4</code>: video;</li>
+            <li><code>.html</code>: pagina Web.</li>
+          </ul>
+        </article>
+      </div>
+
+      <p>
+        Il sistema operativo può associare ciascun tipo di file a
+        un'applicazione. Per esempio, un file <code>.pdf</code> può essere
+        aperto con un lettore di documenti e un file <code>.jpg</code> con un
+        visualizzatore di immagini.
+      </p>
+    </section>
+
+    <aside class="callout error" aria-labelledby="errore-estensione">
+      <div class="callout-icon" aria-hidden="true">❌</div>
+      <div>
+        <p class="callout-label">Errore frequente</p>
+        <h3 id="errore-estensione">Pensare che rinominare l'estensione converta il file</h3>
+        <p>
+          Sostituire <code>.jpg</code> con <code>.png</code> nel nome non
+          modifica il modo in cui i dati sono stati creati. Per convertire un
+          formato serve un'applicazione adatta.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="gerarchia">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🌳</span>
+        <h2 id="gerarchia">Cartelle, sottocartelle e gerarchia</h2>
+      </div>
+
+      <p>
+        Una cartella può contenere file e altre cartelle, chiamate
+        <strong>sottocartelle</strong>. In questo modo si crea una struttura
+        gerarchica: si parte da una cartella più generale e si procede verso
+        elementi sempre più specifici.
+      </p>
+
+      <pre aria-label="Esempio di struttura gerarchica di cartelle e file"><code>Documenti
+└── Scuola
+    ├── Italiano
+    │   └── relazione.docx
+    ├── Matematica
+    │   └── esercizi.pdf
+    └── Informatica
+        ├── lezioni
+        └── verifiche</code></pre>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Cartella principale</h3>
+          <p><code>Documenti</code> è il punto di partenza dello schema.</p>
+        </article>
+        <article class="info-card">
+          <h3>Sottocartelle</h3>
+          <p>
+            <code>Scuola</code>, <code>Italiano</code> e
+            <code>Matematica</code> sono cartelle contenute in altre cartelle.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>File</h3>
+          <p>
+            <code>relazione.docx</code> ed <code>esercizi.pdf</code> sono
+            file collocati nelle rispettive cartelle.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Posizione</h3>
+          <p>
+            La posizione di un elemento dipende dalla sequenza di cartelle da
+            attraversare per raggiungerlo.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="callout error" aria-labelledby="errore-contenuto-cartella">
+      <div class="callout-icon" aria-hidden="true">❌</div>
+      <div>
+        <p class="callout-label">Errore frequente</p>
+        <h3 id="errore-contenuto-cartella">Pensare che una cartella contenga soltanto file</h3>
+        <p>
+          Una cartella può contenere sia file sia altre cartelle. Le
+          sottocartelle permettono di creare livelli di organizzazione.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="percorso-file">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧭</span>
+        <h2 id="percorso-file">Il percorso di un elemento</h2>
+      </div>
+
+      <div class="definition">
+        <span class="definition-term">Percorso</span>
+        <p>
+          Sequenza di cartelle che indica come raggiungere un file o una
+          cartella partendo da una posizione iniziale.
+        </p>
+      </div>
+
+      <p>
+        Nello schema precedente, per raggiungere
+        <code>relazione.docx</code> si attraversano:
+      </p>
+
+      <div class="process-flow" aria-label="Percorso dal contenitore principale al file relazione">
+        <div class="process-node">
+          <strong>Documenti</strong>
+          <span>Cartella iniziale</span>
+        </div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node">
+          <strong>Scuola → Italiano</strong>
+          <span>Sottocartelle</span>
+        </div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node">
+          <strong>relazione.docx</strong>
+          <span>File cercato</span>
+        </div>
+      </div>
+
+      <p>
+        Possiamo descriverlo come:
+        <code>Documenti → Scuola → Italiano → relazione.docx</code>.
+      </p>
+
+      <p>
+        In Windows, le diverse parti del percorso sono spesso separate dal
+        carattere <code>\</code>:
+      </p>
+
+      <pre aria-label="Esempio di percorso Windows"><code>Documenti\Scuola\Italiano\relazione.docx</code></pre>
+
+      <p>
+        Altri sistemi operativi possono utilizzare separatori differenti.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="operazioni">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🛠️</span>
+        <h2 id="operazioni">Operazioni fondamentali</h2>
+      </div>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Creare</h3>
+          <p>
+            Aggiungere una nuova cartella o produrre un nuovo file mediante
+            un'applicazione.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Rinominare</h3>
+          <p>
+            Cambiare il nome di un elemento senza modificarne il contenuto o
+            la posizione.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Copiare</h3>
+          <p>
+            Creare una seconda copia in un'altra posizione. L'originale
+            rimane dove si trovava.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Spostare</h3>
+          <p>
+            Trasferire l'elemento in una nuova posizione. Nella posizione
+            iniziale non rimane l'originale.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Eliminare</h3>
+          <p>
+            Rimuovere un elemento dalla sua posizione. Spesso viene spostato
+            nel cestino e può essere ripristinato finché il cestino non viene
+            svuotato.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="callout remember" aria-labelledby="copia-spostamento">
+      <div class="callout-icon" aria-hidden="true">💡</div>
+      <div>
+        <p class="callout-label">Differenza essenziale</p>
+        <h3 id="copia-spostamento">Copiare non significa spostare</h3>
+        <p>
+          Dopo una copia esistono due elementi, in due posizioni. Dopo uno
+          spostamento lo stesso elemento si trova soltanto nella nuova
+          posizione.
+        </p>
+      </div>
+    </aside>
+
+    <aside class="callout error" aria-labelledby="errore-copia">
+      <div class="callout-icon" aria-hidden="true">❌</div>
+      <div>
+        <p class="callout-label">Errore frequente</p>
+        <h3 id="errore-copia">Confondere copia e spostamento</h3>
+        <p>
+          Prima di eseguire l'operazione, chiediti se vuoi conservare anche
+          l'elemento nella posizione iniziale. Se sì, devi copiarlo.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="collegamenti">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔗</span>
+        <h2 id="collegamenti">Originale e collegamento</h2>
+      </div>
+
+      <p>
+        Un <strong>collegamento</strong> è un elemento che rimanda a un file,
+        a una cartella o a un'applicazione collocati altrove. Non è una
+        seconda copia completa dell'originale.
+      </p>
+      <p>
+        Se elimini soltanto il collegamento, l'originale normalmente rimane
+        nella sua posizione. Se l'originale viene spostato o eliminato, il
+        collegamento potrebbe non riuscire più ad aprirlo.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="buoni-nomi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">✅</span>
+        <h2 id="buoni-nomi">Nomi chiari e organizzazione coerente</h2>
+      </div>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Descrivi il contenuto</h3>
+          <p>
+            Preferisci <code>relazione_scienze</code> a
+            <code>documento1</code>.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Usa un criterio stabile</h3>
+          <p>
+            Mantieni lo stesso ordine, per esempio materia, argomento e data
+            quando serve.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Evita versioni confuse</h3>
+          <p>
+            Sostituisci <code>finale_finale</code> con un nome che indichi
+            chiaramente versione o data.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Crea cartelle utili</h3>
+          <p>
+            Usa pochi livelli comprensibili. Troppe cartelle possono rendere
+            più difficile ritrovare gli elementi.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="callout error" aria-labelledby="errore-nomi">
+      <div class="callout-icon" aria-hidden="true">❌</div>
+      <div>
+        <p class="callout-label">Errore frequente</p>
+        <h3 id="errore-nomi">Usare nomi generici o contraddittori</h3>
+        <p>
+          Nomi come <code>nuovo</code>, <code>documento1</code> o
+          <code>finale_finale</code> non aiutano a riconoscere il contenuto.
+          Scegli parole brevi ma descrittive.
+        </p>
+      </div>
+    </aside>
+
+    <aside class="callout error" aria-labelledby="errore-eliminazione">
+      <div class="callout-icon" aria-hidden="true">❌</div>
+      <div>
+        <p class="callout-label">Errore frequente</p>
+        <h3 id="errore-eliminazione">Confondere salvataggio ed eliminazione</h3>
+        <p>
+          Salvare conserva le modifiche; eliminare rimuove un elemento dalla
+          sua posizione. Sono operazioni con scopi opposti.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lab" aria-labelledby="laboratorio">
+      <div class="lab-header">
+        <h2 id="laboratorio">💻 Laboratorio guidato — Organizza file e cartelle</h2>
+      </div>
+
+      <div class="lab-body">
+        <p>
+          <strong>Durata:</strong> circa 30–40 minuti.
+          <strong>Obiettivo:</strong> creare e controllare una struttura
+          ordinata, svolgendo le principali operazioni in sicurezza.
+        </p>
+
+        <aside class="callout warning" aria-labelledby="sicurezza">
+          <div class="callout-icon" aria-hidden="true">⚠️</div>
+          <div>
+            <p class="callout-label">Regole di sicurezza</p>
+            <h3 id="sicurezza">Lavora soltanto nello spazio assegnato</h3>
+            <ul>
+              <li>Lavora soltanto nella cartella indicata dal docente.</li>
+              <li>Non modificare o cancellare file di altre persone.</li>
+              <li>Non usare dati personali nei file di prova.</li>
+              <li>Non cambiare impostazioni del computer.</li>
+              <li>Non svuotare il cestino.</li>
+              <li>
+                Chiedi al docente prima di eliminare elementi non creati
+                durante l'attività.
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+        <p>Crea questa struttura nella posizione indicata dal docente:</p>
+
+        <pre aria-label="Struttura da creare durante il laboratorio"><code>Laboratorio_file
+├── Documenti
+│   ├── Italiano
+│   └── Informatica
+├── Immagini
+└── Consegna</code></pre>
+
+        <ol class="steps">
+          <li>
+            <strong>Crea la cartella principale.</strong>
+            <p>
+              Crea <code>Laboratorio_file</code>. In molti sistemi Windows
+              puoi usare <kbd>Ctrl</kbd> + <kbd>Shift</kbd> +
+              <kbd>N</kbd> per creare una nuova cartella.
+            </p>
+          </li>
+          <li>
+            <strong>Crea cartelle e sottocartelle.</strong>
+            <p>
+              Riproduci esattamente la struttura indicata, controllando ogni
+              nome prima di proseguire.
+            </p>
+          </li>
+          <li>
+            <strong>Prepara file di prova.</strong>
+            <p>
+              Crea con un'applicazione due semplici file senza dati personali,
+              oppure usa i file forniti dal docente. Salvali in
+              <code>Documenti</code>.
+            </p>
+          </li>
+          <li>
+            <strong>Assegna nomi chiari.</strong>
+            <p>
+              Usa nomi che descrivano il contenuto, per esempio
+              <code>appunti_italiano</code> e
+              <code>schema_informatica</code>.
+            </p>
+          </li>
+          <li>
+            <strong>Rinomina un file.</strong>
+            <p>
+              Cambia il nome senza alterare l'estensione. In Windows puoi
+              selezionare l'elemento e usare <kbd>F2</kbd>.
+            </p>
+          </li>
+          <li>
+            <strong>Copia un file.</strong>
+            <p>
+              Copia un file in <code>Consegna</code> con
+              <kbd>Ctrl</kbd> + <kbd>C</kbd> e
+              <kbd>Ctrl</kbd> + <kbd>V</kbd>. Verifica che l'originale sia
+              ancora presente.
+            </p>
+          </li>
+          <li>
+            <strong>Sposta un altro file.</strong>
+            <p>
+              Spostalo nella sottocartella adatta con
+              <kbd>Ctrl</kbd> + <kbd>X</kbd> e
+              <kbd>Ctrl</kbd> + <kbd>V</kbd>. Verifica che non sia più nella
+              posizione iniziale.
+            </p>
+          </li>
+          <li>
+            <strong>Confronta le operazioni.</strong>
+            <p>
+              Spiega con una frase perché dopo la copia esistono due elementi,
+              mentre dopo lo spostamento l'elemento cambia posizione.
+            </p>
+          </li>
+          <li>
+            <strong>Elimina e ripristina un file di prova.</strong>
+            <p>
+              Solo se il docente lo consente, elimina un file creato durante
+              l'attività con <kbd>Canc</kbd> e ripristinalo dal cestino. Non
+              svuotare il cestino. Se necessario, annulla con
+              <kbd>Ctrl</kbd> + <kbd>Z</kbd>.
+            </p>
+          </li>
+          <li>
+            <strong>Segui un percorso.</strong>
+            <p>
+              Individua il file indicato dal docente partendo da
+              <code>Laboratorio_file</code> e descrivi tutte le cartelle
+              attraversate.
+            </p>
+          </li>
+          <li>
+            <strong>Controlla il risultato.</strong>
+            <p>
+              Confronta la struttura finale con la consegna. Correggi soltanto
+              gli elementi creati da te.
+            </p>
+          </li>
+        </ol>
+
+        <aside class="callout tip" aria-labelledby="scorciatoie">
+          <div class="callout-icon" aria-hidden="true">⌨️</div>
+          <div>
+            <p class="callout-label">Suggerimento operativo</p>
+            <h3 id="scorciatoie">Le scorciatoie possono variare</h3>
+            <p>
+              Le combinazioni indicate sono comuni in Windows. In macOS,
+              GNU/Linux e altri sistemi possono essere differenti: usa i
+              comandi equivalenti mostrati dal sistema o indicati dal docente.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esercizi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">✍️</span>
+        <h2 id="esercizi">Esercizi di consolidamento</h2>
+      </div>
+
+      <p>Puoi svolgere gli esercizi sul quaderno oppure rispondere a voce.</p>
+
+      <div class="question-grid">
+        <article class="quiz-question">
+          <h3>1. File o cartella?</h3>
+          <p>
+            Classifica: <code>Immagini</code>, <code>foto.png</code>,
+            <code>Scuola</code>, <code>relazione.pdf</code>,
+            <code>Informatica</code>.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>2. Riconosci il contenuto</h3>
+          <p>
+            Associa <code>.mp3</code>, <code>.pptx</code>,
+            <code>.jpg</code>, <code>.xlsx</code> e <code>.html</code> al
+            tipo di contenuto più probabile.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>3. Leggi la struttura</h3>
+          <p>
+            Nello schema della cartella <code>Documenti</code>, indica la
+            cartella principale, tre sottocartelle e due file.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>4. Ricostruisci il percorso</h3>
+          <p>
+            Scrivi il percorso per raggiungere <code>esercizi.pdf</code>
+            partendo da <code>Documenti</code>.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>5. Scegli un nome chiaro</h3>
+          <p>
+            Migliora i nomi <code>nuovo.docx</code>,
+            <code>documento1.pdf</code> e
+            <code>finale_finale.pptx</code>, spiegando il criterio scelto.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>6. Copia o spostamento?</h3>
+          <p>
+            Vuoi conservare un file nella cartella originale e averlo anche
+            in <code>Consegna</code>. Quale operazione scegli e perché?
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>7. Individua l'errore</h3>
+          <p>
+            “Per trasformare una foto in un PDF basta sostituire
+            <code>.jpg</code> con <code>.pdf</code>”. Correggi la frase.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>8. Descrivi le operazioni</h3>
+          <p>
+            Spiega in ordine come creeresti una cartella, rinomineresti un
+            file e lo sposteresti nella nuova cartella.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="quiz" aria-labelledby="quiz">
+      <h2 id="quiz">🧠 Autoverifica</h2>
+      <p>Rispondi prima a voce. Apri la risposta soltanto dopo.</p>
+
+      <div class="self-check">
+        <details>
+          <summary>1. Che cos'è un file?</summary>
+          <p>
+            È un insieme di dati conservato con un nome. Può contenere testo,
+            immagini, audio, video o altri tipi di dati.
+          </p>
+        </details>
+        <details>
+          <summary>2. Che cos'è una cartella?</summary>
+          <p>
+            È un contenitore usato per organizzare file e altre cartelle.
+          </p>
+        </details>
+        <details>
+          <summary>3. A che cosa serve l'estensione?</summary>
+          <p>
+            Aiuta il sistema operativo a riconoscere il tipo di file e ad
+            associarlo a un'applicazione adatta. Non garantisce da sola il
+            contenuto effettivo.
+          </p>
+        </details>
+        <details>
+          <summary>4. Che cos'è una struttura gerarchica?</summary>
+          <p>
+            È un'organizzazione a livelli nella quale una cartella può
+            contenere sottocartelle e file.
+          </p>
+        </details>
+        <details>
+          <summary>5. Che cos'è un percorso?</summary>
+          <p>
+            È la sequenza di cartelle che indica come raggiungere un elemento
+            partendo da una posizione iniziale.
+          </p>
+        </details>
+        <details>
+          <summary>6. Qual è la differenza tra copiare e spostare?</summary>
+          <p>
+            Copiare crea un secondo elemento e lascia l'originale al suo
+            posto; spostare trasferisce l'elemento in una nuova posizione.
+          </p>
+        </details>
+        <details>
+          <summary>7. Cambiare estensione converte il formato?</summary>
+          <p>
+            No. Cambiare soltanto il nome non modifica il modo in cui i dati
+            sono stati creati. Serve un'applicazione adatta alla conversione.
+          </p>
+        </details>
+        <details>
+          <summary>8. Perché è utile scegliere nomi chiari?</summary>
+          <p>
+            Per riconoscere più facilmente il contenuto e ritrovare gli
+            elementi senza doverli aprire uno per uno.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <aside class="callout exam" aria-labelledby="domanda-esame">
+      <div class="callout-icon" aria-hidden="true">🎓</div>
+      <div>
+        <p class="callout-label">Possibile domanda d'esame</p>
+        <h3 id="domanda-esame">Che cosa sono file e cartelle e come si organizzano?</h3>
+        <p>
+          <strong>Per rispondere bene:</strong> definisci file e cartella,
+          spiega nome ed estensione, descrivi gerarchia e percorso e concludi
+          distinguendo copia e spostamento con un esempio.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="glossario">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📖</span>
+        <h2 id="glossario">Glossario essenziale</h2>
+      </div>
+
+      <dl class="glossary-grid">
+        <div class="glossary-card">
+          <dt>File</dt>
+          <dd>Insieme di dati conservato con un nome.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Cartella</dt>
+          <dd>Contenitore che organizza file e altre cartelle.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Estensione</dt>
+          <dd>Parte finale del nome che aiuta a riconoscere il tipo di file.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Sottocartella</dt>
+          <dd>Cartella contenuta all'interno di un'altra cartella.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Gerarchia</dt>
+          <dd>Organizzazione a livelli di cartelle, sottocartelle e file.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Percorso</dt>
+          <dd>Sequenza di cartelle necessaria per raggiungere un elemento.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Copia</dt>
+          <dd>Secondo esemplare di un elemento conservato in un'altra posizione.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Spostamento</dt>
+          <dd>Trasferimento di un elemento dalla posizione iniziale a una nuova.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Cestino</dt>
+          <dd>Area in cui spesso vengono collocati temporaneamente gli elementi eliminati.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Collegamento</dt>
+          <dd>Elemento che rimanda a un originale collocato altrove.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header">
+        <p class="eyebrow">Sintesi essenziale</p>
+        <h2 id="zaino-studente">🎒 Lo zaino dello studente</h2>
+        <p>
+          Se domani dimenticassi quasi tutto, queste sono le idee che dovresti
+          riuscire a ricostruire.
+        </p>
+      </div>
+
+      <div class="student-backpack-grid">
+        <article class="backpack-card">
+          <h3>✅ Le 5 idee fondamentali</h3>
+          <ol class="essential-list">
+            <li>Un file conserva dati; una cartella organizza elementi.</li>
+            <li>Nome ed estensione aiutano a riconoscere un file.</li>
+            <li>Cartelle e sottocartelle formano una gerarchia.</li>
+            <li>Il percorso descrive come raggiungere un elemento.</li>
+            <li>Copia, spostamento ed eliminazione hanno effetti differenti.</li>
+          </ol>
+        </article>
+
+        <article class="backpack-card">
+          <h3>📝 5 parole chiave</h3>
+          <ul class="keyword-list">
+            <li>File</li>
+            <li>Cartella</li>
+            <li>Estensione</li>
+            <li>Percorso</li>
+            <li>Organizzazione</li>
+          </ul>
+        </article>
+
+        <article class="backpack-card">
+          <h3>❓ 3 domande da esame</h3>
+          <ol>
+            <li>Qual è la differenza tra file e cartella?</li>
+            <li>Che cosa indicano estensione e percorso?</li>
+            <li>Qual è la differenza tra copia e spostamento?</li>
+          </ol>
+        </article>
+
+        <article class="backpack-card">
+          <h3>⏱️ Ripasso in 5 minuti</h3>
+          <ol class="mini-review">
+            <li>Chiudi la pagina.</li>
+            <li>Definisci file, cartella, estensione e percorso.</li>
+            <li>Disegna una piccola struttura gerarchica.</li>
+            <li>Confronta copia, spostamento ed eliminazione.</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="review-mission" aria-labelledby="missione-ripasso">
+      <div class="review-mission-icon" aria-hidden="true">🏕️</div>
+      <div>
+        <p class="callout-label">Allenamento distribuito</p>
+        <h2 id="missione-ripasso">Missione di ripasso · 10 minuti al giorno</h2>
+        <p>
+          Prova prima a rispondere senza consultare la pagina, poi controlla
+          e correggi.
+        </p>
+
+        <div class="mission-days">
+          <article>
+            <strong>Giorno 1</strong>
+            <p>Spiega la differenza tra file e cartella con due esempi.</p>
+          </article>
+          <article>
+            <strong>Giorno 2</strong>
+            <p>Associa dieci estensioni ai tipi di contenuto studiati.</p>
+          </article>
+          <article>
+            <strong>Giorno 3</strong>
+            <p>Disegna una gerarchia e scrivi il percorso di due file.</p>
+          </article>
+          <article>
+            <strong>Giorno 4</strong>
+            <p>Esponi la lezione e spiega copia, spostamento ed eliminazione.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-lesson">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2>Memorie</h2>
+      <p>
+        Ora sappiamo come il sistema operativo organizza file e cartelle.
+        Nella prossima lezione osserveremo, a livello introduttivo, le memorie
+        utilizzate dal computer per mantenere disponibili o conservare dati e
+        programmi.
+      </p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../05-sistema-operativo/index.html">← Lezione 05 — Sistema operativo</a>
+      <a href="../../index.html">Torna all'indice</a>
+      <a href="../07-memorie/index.html">
+        Lezione 07 — Memorie (in preparazione) →
+      </a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>
+        Questa pagina è pensata per essere letta anche da studenti DSA:
+        istruzioni sequenziali, font leggibili, contrasti elevati e
+        scorciatoie da tastiera evidenziate.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
