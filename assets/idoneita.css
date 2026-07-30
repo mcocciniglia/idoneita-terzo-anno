@@ -371,6 +371,82 @@ kbd{
   font-weight:900;
 }
 
+.process-flow-four{
+  grid-template-columns:
+    minmax(0,1fr) auto
+    minmax(0,1fr) auto
+    minmax(0,1fr) auto
+    minmax(0,1fr);
+  align-items:stretch;
+  gap:.75rem;
+}
+
+.process-flow-four .process-node{
+  min-width:0;
+  width:auto;
+}
+
+.process-flow-four .process-arrow{
+  align-self:center;
+  text-align:center;
+}
+
+/* ---------- Tabelle comparative ---------- */
+
+.table-wrapper{
+  max-width:100%;
+  margin:24px 0;
+  overflow-x:auto;
+  border-radius:12px;
+}
+
+.comparison-table{
+  width:100%;
+  min-width:42rem;
+  margin:0;
+  border-collapse:collapse;
+  border:1px solid var(--edu-line);
+  background:var(--panel);
+}
+
+.comparison-table caption{
+  padding:0 0 .75rem;
+  color:var(--text);
+  text-align:left;
+  font-weight:800;
+}
+
+.comparison-table th,
+.comparison-table td{
+  padding:.85rem 1rem;
+  border:1px solid var(--edu-line);
+  text-align:left;
+  vertical-align:top;
+}
+
+.comparison-table thead th{
+  background:var(--edu-blue-soft);
+  font-weight:850;
+}
+
+.comparison-table tbody tr:nth-child(even){
+  background:var(--bg);
+}
+
+.comparison-table tbody th[scope="row"]{
+  background:var(--edu-blue-soft);
+  font-weight:850;
+}
+
+.cpu-parts-table{
+  min-width:0;
+  table-layout:fixed;
+}
+
+.cpu-parts-table th:first-child{
+  width:30%;
+}
+
 /* ---------- Laboratorio ---------- */
 
 .lab{
@@ -586,6 +662,10 @@ html[data-theme="dark"] .quiz-question{
   }
 
   .process-flow{
+    grid-template-columns:1fr;
+  }
+
+  .process-flow-four{
     grid-template-columns:1fr;
   }
 

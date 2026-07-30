@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Lezione introduttiva sulla CPU: ruolo del processore, unità di controllo, ALU, registri, ciclo di esecuzione, clock e core.">
+  <title>08 — CPU: il processore</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+
+  <link rel="icon"
+        href="https://mcocciniglia.github.io/common/assets/favicon.svg"
+        type="image/svg+xml">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge first">Programma del primo anno</span>
+        </div>
+
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle"
+                  class="btn btn-theme"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+
+          <button id="contrastToggle"
+                  class="btn btn-outline btn-contrast"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span>
+        <span aria-hidden="true">›</span>
+        <span>Primo anno</span>
+        <span aria-hidden="true">›</span>
+        <span>Lezione 8</span>
+      </nav>
+
+      <p class="eyebrow">Lezione 8 · Durata prevista: 2 ore</p>
+      <h1>CPU: il processore</h1>
+
+      <p class="lead">
+        Scrivi <strong>7 + 5</strong> nella calcolatrice e ottieni 12:
+        che cosa accade dentro il processore tra il comando e il risultato?
+      </p>
+
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ 2 ore</span>
+        <span>📘 Primo anno</span>
+        <span>🎯 CPU, ciclo di esecuzione, clock e core</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading">
+        <span>Percorso del primo anno</span>
+        <span>Lezione 8 di 18</span>
+      </div>
+      <div class="progress-track"
+           role="progressbar"
+           aria-label="Avanzamento del percorso"
+           aria-valuemin="0"
+           aria-valuemax="18"
+           aria-valuenow="8">
+        <div class="progress-value" style="--progress:44.44%;"></div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ripasso">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">↩️</span>
+        <h2 id="ripasso">Prima di iniziare: richiamiamo la Lezione 07</h2>
+      </div>
+      <p>
+        SSD e HDD conservano programmi e file. Quando utilizziamo un
+        programma, i dati e le istruzioni necessari vengono caricati nella
+        RAM. La CPU li preleva dalla memoria e li esegue.
+      </p>
+      <p>
+        Le tre componenti hanno quindi funzioni differenti e collaborano:
+        l'archiviazione conserva, la RAM mantiene temporaneamente ciò che è in
+        uso e la CPU lo elabora.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="situazione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔎</span>
+        <h2 id="situazione">Dal comando al risultato</h2>
+      </div>
+      <p>
+        Uno studente apre la Calcolatrice e scrive <strong>7 + 5</strong>. Il
+        programma e i dati necessari vengono mantenuti nella RAM. La CPU
+        riceve le istruzioni, esegue il calcolo e produce il risultato 12.
+      </p>
+      <aside class="callout remember" aria-labelledby="domanda-guida">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Domanda guida</p>
+          <h3 id="domanda-guida">Che cosa accade dentro il processore?</h3>
+          <p>
+            Per rispondere costruiremo un modello semplice: individueremo le
+            parti funzionali della CPU e seguiremo un'istruzione dal prelievo
+            fino alla memorizzazione del risultato.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🎯</span>
+        <h2 id="obiettivi">Obiettivi della lezione</h2>
+      </div>
+      <div class="objective-grid">
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Spiegare la sigla CPU</strong>
+          <small>E descrivere il ruolo generale del processore.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Distinguere le componenti</strong>
+          <small>CPU, RAM e archiviazione svolgono funzioni diverse.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Riconoscere le parti</strong>
+          <small>Unità di controllo, ALU e registri.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Descrivere il ciclo</strong>
+          <small>Prelievo, decodifica, esecuzione e memorizzazione.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Interpretare le caratteristiche</strong>
+          <small>Frequenza, core fisici e processori logici.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Osservare il proprio PC</strong>
+          <small>Leggendo i dati della CPU in Gestione attività.</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="cpu">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">⚙️</span>
+        <h2 id="cpu">Che cos'è la CPU</h2>
+      </div>
+      <div class="definition">
+        <span class="definition-term">CPU</span>
+        <p>
+          Significa <em>Central Processing Unit</em>, in italiano
+          <strong>Unità centrale di elaborazione</strong>. È il processore che
+          esegue le istruzioni dei programmi ed elabora i dati.
+        </p>
+      </div>
+      <p>La CPU:</p>
+      <ul>
+        <li>esegue le istruzioni dei programmi;</li>
+        <li>elabora dati;</li>
+        <li>esegue operazioni aritmetiche e logiche;</li>
+        <li>coordina molte operazioni del computer;</li>
+        <li>collabora continuamente con RAM e altre componenti.</li>
+      </ul>
+      <aside class="callout warning" aria-labelledby="cervello">
+        <div class="callout-icon" aria-hidden="true">⚠️</div>
+        <div>
+          <p class="callout-label">Analogia da usare con cautela</p>
+          <h3 id="cervello">La CPU non è “tutto il cervello” del computer</h3>
+          <p>
+            Chiamarla cervello può aiutare come prima immagine, ma è una
+            semplificazione. Un computer funziona grazie alla collaborazione
+            tra processore, memorie, archiviazione e altre componenti.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="collaborazione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔄</span>
+        <h2 id="collaborazione">CPU, RAM e archiviazione</h2>
+      </div>
+      <div class="process-flow"
+           role="img"
+           aria-label="SSD o HDD caricano programmi e dati nella RAM; CPU e RAM si scambiano dati, istruzioni e risultati">
+        <div class="process-node">
+          <strong>SSD o HDD</strong>
+          <span>Conservano programmi e dati</span>
+        </div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node">
+          <strong>RAM</strong>
+          <span>Mantiene dati, istruzioni e risultati temporanei</span>
+        </div>
+        <div class="process-arrow" aria-hidden="true">⇄</div>
+        <div class="process-node">
+          <strong>CPU</strong>
+          <span>Preleva, elabora e restituisce i risultati</span>
+        </div>
+      </div>
+      <p>
+        Dopo l'elaborazione, i risultati possono tornare nella RAM. Quando
+        richiesto, possono poi essere salvati nell'unità di archiviazione.
+        Questo schema è un <strong>modello semplificato</strong>: serve a
+        distinguere i compiti, non descrive ogni comunicazione interna.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="parti">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧩</span>
+        <h2 id="parti">Le parti principali della CPU</h2>
+      </div>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Unità di controllo</h3>
+          <p>
+            Preleva e interpreta le istruzioni, coordina la loro esecuzione e
+            invia segnali alle parti interessate.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>ALU</h3>
+          <p>
+            <em>Arithmetic Logic Unit</em>: esegue calcoli, confronti e
+            operazioni logiche, per esempio <strong>7 + 5</strong> oppure la
+            verifica che 10 sia maggiore di 8.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Registri</h3>
+          <p>
+            Piccole memorie interne alla CPU, molto veloci e di capacità molto
+            ridotta. Mantengono temporaneamente dati, istruzioni, indirizzi o
+            risultati necessari nell'immediato.
+          </p>
+        </article>
+      </div>
+
+      <div class="table-wrapper"
+           tabindex="0"
+           role="region"
+           aria-label="Tabella delle parti fondamentali della CPU">
+        <table class="mini-table comparison-table cpu-parts-table">
+          <caption>Parti fondamentali della CPU e loro funzione</caption>
+          <thead>
+            <tr>
+              <th scope="col">Parte</th>
+              <th scope="col">Funzione principale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Unità di controllo</th>
+              <td>Interpreta e coordina</td>
+            </tr>
+            <tr>
+              <th scope="row">ALU</th>
+              <td>Esegue calcoli e operazioni logiche</td>
+            </tr>
+            <tr>
+              <th scope="row">Registri</th>
+              <td>Mantengono temporaneamente dati immediatamente necessari</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ciclo">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔁</span>
+        <h2 id="ciclo">Il ciclo di esecuzione</h2>
+      </div>
+      <p>
+        Torniamo all'istruzione <strong>SOMMA 7 E 5</strong>. In un modello
+        semplificato, la CPU ripete continuamente quattro passaggi.
+      </p>
+      <ol class="steps">
+        <li>
+          <strong>Prelievo.</strong>
+          <p>La CPU preleva dalla RAM l'istruzione da eseguire.</p>
+        </li>
+        <li>
+          <strong>Decodifica.</strong>
+          <p>L'unità di controllo interpreta l'istruzione.</p>
+        </li>
+        <li>
+          <strong>Esecuzione.</strong>
+          <p>La CPU svolge l'operazione richiesta, usando la ALU per la somma.</p>
+        </li>
+        <li>
+          <strong>Memorizzazione del risultato.</strong>
+          <p>Il risultato 12 viene conservato temporaneamente in un registro o nella RAM.</p>
+        </li>
+      </ol>
+
+      <div class="process-flow process-flow-four"
+           role="img"
+           aria-label="Ciclo di esecuzione: preleva, decodifica, esegue e memorizza">
+        <div class="process-node"><strong>Preleva</strong><span>Dalla RAM</span></div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node"><strong>Decodifica</strong><span>Interpreta</span></div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node"><strong>Esegue</strong><span>Svolge l'operazione</span></div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node"><strong>Memorizza</strong><span>Conserva il risultato</span></div>
+      </div>
+      <p>
+        Questo ciclo viene ripetuto continuamente e molto rapidamente. Nella
+        realtà il funzionamento è più complesso, ma i quattro passaggi
+        descrivono il modello utile per questa lezione.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="clock">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">⏱️</span>
+        <h2 id="clock">La frequenza di clock</h2>
+      </div>
+      <p>
+        Il <strong>clock</strong> fornisce un ritmo alle attività del
+        processore. La sua frequenza si misura in hertz:
+      </p>
+      <ul>
+        <li><strong>Hz</strong>: hertz;</li>
+        <li><strong>MHz</strong>: megahertz, milioni di cicli al secondo;</li>
+        <li><strong>GHz</strong>: gigahertz, miliardi di cicli al secondo.</li>
+      </ul>
+      <div class="definition">
+        <span class="definition-term">1 GHz</span>
+        <p>
+          Indica circa un miliardo di cicli di clock al secondo. Un ciclo di
+          clock, però, <strong>non corrisponde necessariamente a
+          un'istruzione completa</strong>.
+        </p>
+      </div>
+      <p>
+        Una frequenza maggiore non garantisce da sola un processore migliore.
+        Due CPU con gli stessi GHz possono avere prestazioni differenti:
+        incidono anche architettura, numero di core, memoria, software e tipo
+        di attività. Inoltre la frequenza mostrata dal sistema può cambiare
+        durante l'uso.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="core">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">⚙️</span>
+        <h2 id="core">Core fisici e processori logici</h2>
+      </div>
+      <div class="definition">
+        <span class="definition-term">Core</span>
+        <p>Un'unità di elaborazione presente all'interno della CPU.</p>
+      </div>
+      <p>
+        Una CPU può avere uno, due, quattro o più core. Più core possono
+        permettere di svolgere contemporaneamente più attività, ma il vantaggio
+        dipende dal programma e dal lavoro eseguito: quattro core non rendono
+        sempre il computer quattro volte più veloce.
+      </p>
+      <p>
+        Il sistema operativo può mostrare più <strong>processori
+        logici</strong> che core fisici. Alcune tecnologie permettono infatti a
+        un core di gestire più flussi di istruzioni. Core fisici e processori
+        logici, quindi, non sono necessariamente la stessa cosa.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="calore">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🌡️</span>
+        <h2 id="calore">Temperatura e raffreddamento</h2>
+      </div>
+      <p>
+        Durante il funzionamento la CPU produce calore. Secondo il dispositivo,
+        il sistema di raffreddamento può comprendere dissipatore, ventola,
+        pasta termica e altre soluzioni progettate dal produttore.
+      </p>
+      <aside class="callout warning" aria-labelledby="ventilazione">
+        <div class="callout-icon" aria-hidden="true">⚠️</div>
+        <div>
+          <p class="callout-label">Lavora in sicurezza</p>
+          <h3 id="ventilazione">Lascia libere le aperture di ventilazione</h3>
+          <p>
+            Un aumento dell'attività può far salire temporaneamente la
+            temperatura e la velocità delle ventole. Non coprire le aperture e
+            non smontare il computer.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="errori">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">❌</span>
+        <h2 id="errori">Errori frequenti da correggere</h2>
+      </div>
+      <div class="question-grid">
+        <article class="quiz-question">
+          <h3>“La CPU conserva permanentemente i miei file”</h3>
+          <p>No. I file vengono conservati nell'archiviazione, per esempio su SSD o HDD.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>“CPU e RAM sono la stessa cosa”</h3>
+          <p>No. La CPU elabora; la RAM mantiene temporaneamente dati e istruzioni in uso.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>“La CPU è tutto il computer”</h3>
+          <p>No. È una componente fondamentale che collabora con molte altre.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>“Più GHz significa sempre maggiore velocità”</h3>
+          <p>No. La frequenza è soltanto uno dei fattori che incidono sulle prestazioni.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>“Quattro core rendono sempre il computer quattro volte più veloce”</h3>
+          <p>No. Il vantaggio dipende anche dal programma e dal tipo di attività.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>“Core e processori logici sono necessariamente la stessa cosa”</h3>
+          <p>No. Un core fisico può contribuire alla gestione di più flussi di istruzioni.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>“Se la CPU arriva al 100%, significa che è guasta”</h3>
+          <p>
+            No. Significa che in quel momento la capacità di elaborazione
+            disponibile è fortemente utilizzata; non dimostra da solo un
+            guasto, la presenza di malware o un surriscaldamento.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>“La velocità indicata deve rimanere sempre uguale”</h3>
+          <p>No. La velocità corrente può variare durante il funzionamento.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio">
+      <div class="lab-header">
+        <h2 id="laboratorio">💻 Laboratorio guidato — Osserva la CPU in Windows</h2>
+      </div>
+      <div class="lab-body">
+        <p>
+          <strong>Obiettivo:</strong> leggere le informazioni principali sulla
+          CPU e distinguere i valori stabili da quelli che cambiano durante
+          l'uso.
+        </p>
+        <aside class="callout warning" aria-labelledby="sicurezza">
+          <div class="callout-icon" aria-hidden="true">⚠️</div>
+          <div>
+            <p class="callout-label">Attività osservativa</p>
+            <h3 id="sicurezza">Osserva senza modificare</h3>
+            <p>
+              Non terminare processi, non modificare impostazioni, non
+              installare programmi e non eseguire benchmark o stress test.
+              Alcuni dati o comandi possono cambiare secondo la versione di
+              Windows e la configurazione del computer.
+            </p>
+          </div>
+        </aside>
+
+        <ol class="steps">
+          <li>
+            <strong>Apri Gestione attività.</strong>
+            <p>Premi <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Esc</kbd>.</p>
+          </li>
+          <li>
+            <strong>Apri Prestazioni e seleziona CPU.</strong>
+            <p>Se necessario, amplia la finestra per vedere tutte le informazioni.</p>
+          </li>
+          <li>
+            <strong>Individua i dati disponibili.</strong>
+            <p>
+              Cerca nome del processore, utilizzo, velocità corrente, velocità
+              di base, socket, core e processori logici. Alcuni dati potrebbero
+              non essere mostrati.
+            </p>
+          </li>
+          <li>
+            <strong>Osserva il grafico per circa 30 secondi.</strong>
+            <p>Non aprire nuovi programmi e nota che i valori cambiano rapidamente.</p>
+          </li>
+          <li>
+            <strong>Apri un'applicazione già installata.</strong>
+            <p>Usa per esempio Calcolatrice o Esplora file.</p>
+          </li>
+          <li>
+            <strong>Osserva di nuovo.</strong>
+            <p>Controlla se il grafico, l'utilizzo e la velocità corrente cambiano.</p>
+          </li>
+          <li>
+            <strong>Chiudi l'applicazione e completa la scheda.</strong>
+            <table class="mini-table">
+              <caption>Scheda di osservazione della CPU</caption>
+              <tbody>
+                <tr><th scope="row">Modello CPU</th><td>________________</td></tr>
+                <tr><th scope="row">Utilizzo a riposo</th><td>________________</td></tr>
+                <tr><th scope="row">Utilizzo dopo l'apertura di un programma</th><td>________________</td></tr>
+                <tr><th scope="row">Velocità osservata</th><td>________________</td></tr>
+                <tr><th scope="row">Velocità di base, se mostrata</th><td>________________</td></tr>
+                <tr><th scope="row">Socket, se mostrati</th><td>________________</td></tr>
+                <tr><th scope="row">Core</th><td>________________</td></tr>
+                <tr><th scope="row">Processori logici</th><td>________________</td></tr>
+                <tr><th scope="row">Che cosa è cambiato?</th><td>________________</td></tr>
+                <tr><th scope="row">Che cosa è rimasto invariato?</th><td>________________</td></tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <strong>Classifica i valori.</strong>
+            <p>
+              Spiega quali descrivono la configurazione del processore e quali
+              possono cambiare durante il funzionamento.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="simulazione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🎭</span>
+        <h2 id="simulazione">Simulazione del ciclo di esecuzione</h2>
+      </div>
+      <p>
+        Formate un gruppo di quattro studenti. Assegnate i ruoli
+        <strong>RAM</strong>, <strong>unità di controllo</strong>,
+        <strong>ALU</strong> e <strong>registro</strong>. Usate un foglio con
+        l'istruzione <strong>SOMMA 7 E 5</strong>.
+      </p>
+      <ol class="steps">
+        <li><strong>RAM:</strong><p>conserva e consegna l'istruzione.</p></li>
+        <li><strong>Unità di controllo:</strong><p>preleva e interpreta la richiesta.</p></li>
+        <li><strong>ALU:</strong><p>esegue la somma e produce 12.</p></li>
+        <li><strong>Registro:</strong><p>mantiene temporaneamente il risultato.</p></li>
+      </ol>
+      <p>
+        Al termine, pronunciate insieme la sequenza:
+        <strong>preleva → decodifica → esegue → memorizza</strong>. La
+        simulazione è concettuale: non occorre spostare o smontare componenti
+        reali.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esercizi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">✍️</span>
+        <h2 id="esercizi">Esercizi progressivi</h2>
+      </div>
+      <div class="question-grid">
+        <article class="quiz-question">
+          <h3>1. Associa</h3>
+          <p>
+            Associa unità di controllo, ALU, registri, RAM e SSD alla funzione
+            corretta: coordina; calcola; mantiene dati immediati; mantiene ciò
+            che è in uso; conserva file.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>2. Riordina</h3>
+          <p>
+            Metti in ordine: esecuzione, prelievo, memorizzazione, decodifica.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>3. Completa lo schema</h3>
+          <p>
+            Inserisci SSD o HDD, RAM e CPU negli spazi:
+            ______ conserva → ______ mantiene in uso → ______ elabora.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>4. Correggi</h3>
+          <p>
+            Riscrivi correttamente: “Più GHz significa sempre più velocità” e
+            “Quattro core rendono sempre il computer quattro volte più veloce”.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>5. Interpreta</h3>
+          <p>
+            Aprendo più programmi, l'utilizzo della CPU passa dal 6% al 70%.
+            Che cosa indica? Che cosa non permette di concludere?
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>6. Spiega il ciclo</h3>
+          <p>
+            Descrivi con parole tue che cosa accade quando la CPU esegue una
+            semplice istruzione.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>7. Distingui i valori</h3>
+          <p>
+            Separa i dati che possono cambiare — utilizzo e velocità corrente —
+            da quelli che normalmente identificano la configurazione — modello,
+            core e processori logici.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="quiz" aria-labelledby="quiz">
+      <h2 id="quiz">🧠 Autoverifica</h2>
+      <p>Rispondi prima a voce. Apri la risposta soltanto dopo.</p>
+      <div class="self-check">
+        <details>
+          <summary>1. Che cosa significa CPU?</summary>
+          <p><em>Central Processing Unit</em>, in italiano Unità centrale di elaborazione.</p>
+        </details>
+        <details>
+          <summary>2. Qual è il compito principale della CPU?</summary>
+          <p>Eseguire le istruzioni dei programmi ed elaborare i dati.</p>
+        </details>
+        <details>
+          <summary>3. Qual è la differenza tra CPU e RAM?</summary>
+          <p>La CPU elabora; la RAM mantiene temporaneamente dati e istruzioni in uso.</p>
+        </details>
+        <details>
+          <summary>4. Che cosa fa l'unità di controllo?</summary>
+          <p>Preleva e interpreta le istruzioni e coordina la loro esecuzione.</p>
+        </details>
+        <details>
+          <summary>5. Quali operazioni svolge la ALU?</summary>
+          <p>Esegue operazioni aritmetiche, confronti e operazioni logiche.</p>
+        </details>
+        <details>
+          <summary>6. A che cosa servono i registri?</summary>
+          <p>
+            Mantengono per breve tempo dati, istruzioni, indirizzi o risultati
+            necessari immediatamente alla CPU.
+          </p>
+        </details>
+        <details>
+          <summary>7. Quali sono le fasi principali del ciclo di esecuzione?</summary>
+          <p>Prelievo, decodifica, esecuzione e memorizzazione del risultato.</p>
+        </details>
+        <details>
+          <summary>8. Che cosa misura la frequenza di clock?</summary>
+          <p>
+            Misura il ritmo dei cicli di clock del processore, espresso in
+            hertz. Un ciclo non equivale necessariamente a un'istruzione completa.
+          </p>
+        </details>
+        <details>
+          <summary>9. Perché non possiamo confrontare due CPU usando soltanto i GHz?</summary>
+          <p>
+            Perché le prestazioni dipendono anche da architettura, core,
+            memoria, software e tipo di attività.
+          </p>
+        </details>
+        <details>
+          <summary>10. Che differenza può esserci tra core e processori logici?</summary>
+          <p>
+            I core sono unità fisiche di elaborazione; alcune tecnologie
+            permettono a un core di gestire più flussi, quindi il sistema può
+            mostrare più processori logici che core.
+          </p>
+        </details>
+        <details>
+          <summary>11. Un utilizzo della CPU al 100% indica necessariamente un guasto?</summary>
+          <p>
+            No. Indica che in quel momento la capacità disponibile è fortemente
+            utilizzata, ma da solo non dimostra un guasto.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <aside class="callout exam" aria-labelledby="domanda-esame">
+      <div class="callout-icon" aria-hidden="true">🎓</div>
+      <div>
+        <p class="callout-label">Possibile domanda d'esame</p>
+        <h3 id="domanda-esame">Come esegue un'istruzione la CPU?</h3>
+        <p>
+          <strong>Per rispondere bene:</strong> spiega il ruolo di unità di
+          controllo, ALU e registri, poi descrivi in ordine prelievo,
+          decodifica, esecuzione e memorizzazione.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="glossario">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📖</span>
+        <h2 id="glossario">Glossario essenziale</h2>
+      </div>
+      <dl class="glossary-grid">
+        <div class="glossary-card">
+          <dt>CPU</dt>
+          <dd>Unità centrale di elaborazione che esegue istruzioni ed elabora dati.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Unità di controllo</dt>
+          <dd>Parte che interpreta le istruzioni e coordina l'esecuzione.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>ALU</dt>
+          <dd>Parte che esegue operazioni aritmetiche e logiche.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Registro</dt>
+          <dd>Piccola memoria interna, molto veloce, usata per dati immediati.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Clock</dt>
+          <dd>Segnale che fornisce il ritmo alle attività del processore.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Core</dt>
+          <dd>Unità fisica di elaborazione presente nella CPU.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Processore logico</dt>
+          <dd>Unità di elaborazione riconosciuta dal sistema operativo.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="zaino">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🎒</span>
+        <h2 id="zaino">Zaino dello studente</h2>
+      </div>
+      <ul>
+        <li>L'archiviazione conserva programmi e file.</li>
+        <li>La RAM mantiene temporaneamente dati e istruzioni in uso.</li>
+        <li>La CPU preleva, interpreta ed esegue le istruzioni.</li>
+        <li>Unità di controllo, ALU e registri svolgono funzioni differenti.</li>
+        <li>GHz, core e processori logici descrivono aspetti diversi: un solo numero non basta per giudicare una CPU.</li>
+      </ul>
+    </section>
+
+    <section class="next-lesson">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2>Periferiche</h2>
+      <p>
+        Archiviazione, RAM e CPU collaborano per produrre un risultato.
+        <strong>Come entrano dati e comandi nel computer e come riceviamo i
+        risultati?</strong> La prossima lezione partirà da questa domanda.
+      </p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../07-memorie/index.html">← Lezione 07 — Memorie</a>
+      <a href="../../index.html">Torna all'indice</a>
+      <a href="../09-periferiche/index.html">Lezione 09 — Periferiche (In preparazione) →</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>
+        Questa pagina è pensata per essere letta anche da studenti DSA:
+        istruzioni sequenziali, font leggibili, contrasti elevati e
+        scorciatoie da tastiera evidenziate.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Lezione introduttiva sulle memorie del computer: RAM, memoria del firmware, SSD, HDD, volatilità e archiviazione.">
+  <title>07 — Memorie</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+
+  <link rel="icon"
+        href="https://mcocciniglia.github.io/common/assets/favicon.svg"
+        type="image/svg+xml">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge first">Programma del primo anno</span>
+        </div>
+
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle"
+                  class="btn btn-theme"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+
+          <button id="contrastToggle"
+                  class="btn btn-outline btn-contrast"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span>
+        <span aria-hidden="true">›</span>
+        <span>Primo anno</span>
+        <span aria-hidden="true">›</span>
+        <span>Lezione 7</span>
+      </nav>
+
+      <p class="eyebrow">Lezione 7 · Durata prevista: 2 ore</p>
+      <h1>Memorie</h1>
+
+      <p class="lead">
+        Apri un documento, modificalo e spegni il computer: perché il file
+        salvato rimane, mentre ciò che era nella memoria di lavoro scompare?
+      </p>
+
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ 2 ore</span>
+        <span>📘 Primo anno</span>
+        <span>🎯 RAM, firmware, SSD e HDD</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading">
+        <span>Percorso del primo anno</span>
+        <span>Lezione 7 di 18</span>
+      </div>
+      <div class="progress-track"
+           role="progressbar"
+           aria-label="Avanzamento del percorso"
+           aria-valuemin="0"
+           aria-valuemax="18"
+           aria-valuenow="7">
+        <div class="progress-value" style="--progress:38.89%;"></div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ripasso">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">↩️</span>
+        <h2 id="ripasso">Prima di iniziare: richiamiamo la Lezione 06</h2>
+      </div>
+      <p>
+        Nella lezione precedente abbiamo imparato che file e cartelle
+        organizzano i dati. Salvare un file significa conservarlo con un nome
+        in una posizione, così da poterlo ritrovare anche in seguito.
+      </p>
+      <p>
+        Ora dobbiamo capire <strong>dove</strong> programmi e file vengono
+        conservati e dove sono mantenuti temporaneamente mentre li utilizziamo.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="situazione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔎</span>
+        <h2 id="situazione">Che cosa accade quando apri un documento?</h2>
+      </div>
+      <p>
+        Immagina che uno studente apra una relazione salvata, aggiunga un
+        paragrafo, salvi e poi spenga il computer. Il documento viene letto
+        dall'unità di archiviazione e caricato nella RAM per essere utilizzato.
+        Quando viene salvato, le modifiche sono conservate nuovamente
+        nell'archiviazione.
+      </p>
+
+      <div class="process-flow"
+           role="img"
+           aria-label="Il documento passa dall'unità SSD o HDD alla RAM, dove i dati sono disponibili per l'elaborazione">
+        <div class="process-node">
+          <strong>SSD o HDD</strong>
+          <span>Conserva il file</span>
+        </div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node">
+          <strong>RAM</strong>
+          <span>Mantiene dati e programma in uso</span>
+        </div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node">
+          <strong>Elaborazione</strong>
+          <span>La CPU lavora sui dati</span>
+        </div>
+      </div>
+
+      <aside class="callout remember" aria-labelledby="perche-diverse">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Idea fondamentale</p>
+          <h3 id="perche-diverse">Funzioni diverse richiedono memorie diverse</h3>
+          <p>
+            Alcune memorie devono offrire rapidamente dati e istruzioni
+            durante il lavoro; altre devono conservarli anche dopo lo
+            spegnimento. Nessuna singola memoria svolge allo stesso modo
+            entrambi i compiti.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🎯</span>
+        <h2 id="obiettivi">Obiettivi della lezione</h2>
+      </div>
+      <div class="objective-grid">
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Distinguere le funzioni</strong>
+          <small>Memoria di lavoro e archiviazione.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Riconoscere la volatilità</strong>
+          <small>Memorie volatili e non volatili.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Descrivere RAM e firmware</strong>
+          <small>Spiegandone il ruolo generale.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Confrontare SSD e HDD</strong>
+          <small>Struttura, caratteristiche e possibili usi.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Correggere gli equivoci</strong>
+          <small>RAM e spazio di archiviazione non coincidono.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Osservare il proprio PC</strong>
+          <small>Leggendo RAM e spazio disponibile in Windows.</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="volatilita">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">⚡</span>
+        <h2 id="volatilita">Memoria volatile e non volatile</h2>
+      </div>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Memoria volatile</h3>
+          <p>
+            Ha bisogno dell'alimentazione per mantenere il proprio contenuto.
+            Quando il computer viene spento, il contenuto si perde. La RAM è
+            l'esempio principale in questa lezione.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Memoria non volatile</h3>
+          <p>
+            Conserva i dati anche senza alimentazione. SSD, HDD e memoria che
+            contiene il firmware sono esempi di memoria non volatile.
+          </p>
+        </article>
+      </div>
+
+      <aside class="callout warning" aria-labelledby="volatile-affidabile">
+        <div class="callout-icon" aria-hidden="true">⚠️</div>
+        <div>
+          <p class="callout-label">Attenzione alle parole</p>
+          <h3 id="volatile-affidabile">“Volatile” non significa “poco affidabile”</h3>
+          <p>
+            Indica soltanto che i dati non rimangono quando manca
+            l'alimentazione. La RAM è progettata proprio per il lavoro
+            temporaneo durante l'uso del computer.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ram">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧠</span>
+        <h2 id="ram">RAM: la memoria di lavoro</h2>
+      </div>
+
+      <div class="definition">
+        <span class="definition-term">RAM</span>
+        <p>
+          Memoria veloce e volatile che contiene temporaneamente programmi,
+          dati e istruzioni in uso durante il funzionamento del computer.
+        </p>
+      </div>
+
+      <p>
+        La capacità della RAM è normalmente espressa in GB. Quando apri un
+        programma o un documento, ciò che serve per lavorare viene mantenuto
+        nella RAM e reso disponibile alla CPU, la componente che elabora dati
+        e istruzioni.
+      </p>
+
+      <aside class="callout remember" aria-labelledby="scrivania">
+        <div class="callout-icon" aria-hidden="true">🗒️</div>
+        <div>
+          <p class="callout-label">Analogia</p>
+          <h3 id="scrivania">La RAM assomiglia al piano di una scrivania</h3>
+          <p>
+            Una scrivania più ampia permette di tenere aperto più materiale
+            mentre lavori. Finito il lavoro, però, i documenti importanti
+            devono essere riposti nell'archivio: la scrivania non è il luogo
+            di conservazione permanente.
+          </p>
+        </div>
+      </aside>
+
+      <p>
+        Una maggiore quantità di RAM può aiutare quando molti programmi o
+        molti dati sono in uso, ma <strong>non rende automaticamente più
+        veloce ogni operazione</strong>. Le prestazioni dipendono anche da
+        altre componenti e dal compito svolto.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="firmware">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔒</span>
+        <h2 id="firmware">ROM e memoria del firmware</h2>
+      </div>
+
+      <p>
+        Per avviarsi, un dispositivo ha bisogno di alcune istruzioni
+        fondamentali conservate anche quando è spento. Queste istruzioni fanno
+        parte del <strong>firmware</strong>, software strettamente collegato
+        all'hardware.
+      </p>
+
+      <div class="definition">
+        <span class="definition-term">ROM</span>
+        <p>
+          Significa <em>Read Only Memory</em>, cioè memoria di sola lettura.
+          Storicamente il termine indicava memorie destinate a essere lette e
+          non modificate durante il normale utilizzo.
+        </p>
+      </div>
+
+      <p>
+        Nei dispositivi moderni il firmware è spesso conservato in una memoria
+        flash non volatile che può essere aggiornata. Perciò non è sempre
+        corretto immaginare la ROM moderna come un componente che non possa
+        mai cambiare.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="archiviazione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🗄️</span>
+        <h2 id="archiviazione">SSD e HDD: memoria di archiviazione</h2>
+      </div>
+
+      <p>
+        SSD e HDD conservano in modo non volatile sistema operativo, programmi
+        e file. Sono quindi unità di archiviazione, non memoria di lavoro.
+      </p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>HDD</h3>
+          <ul>
+            <li>usa dischi magnetici e parti meccaniche;</li>
+            <li>offre normalmente molta capacità;</li>
+            <li>è generalmente più lento di un SSD;</li>
+            <li>può essere più sensibile a urti e movimenti mentre funziona.</li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <h3>SSD</h3>
+          <ul>
+            <li>usa memoria flash;</li>
+            <li>non ha parti meccaniche in movimento;</li>
+            <li>è generalmente più veloce e silenzioso di un HDD;</li>
+            <li>può contenere sistema operativo, programmi e file.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="confronto-generale">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📊</span>
+        <h2 id="confronto-generale">Confronto tra le memorie</h2>
+      </div>
+
+      <div class="table-wrapper"
+           tabindex="0"
+           role="region"
+           aria-label="Tabella comparativa delle memorie">
+        <table class="mini-table comparison-table memory-table">
+          <caption>Funzioni e caratteristiche generali delle memorie studiate</caption>
+          <thead>
+            <tr>
+              <th scope="col">Memoria</th>
+              <th scope="col">Funzione</th>
+              <th scope="col">Volatilità</th>
+              <th scope="col">Esempio di contenuto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">RAM</th>
+              <td>Mantiene temporaneamente dati e programmi in uso</td>
+              <td>Volatile</td>
+              <td>Documento aperto</td>
+            </tr>
+            <tr>
+              <th scope="row">Memoria del firmware / ROM</th>
+              <td>Conserva istruzioni necessarie all'avvio</td>
+              <td>Non volatile</td>
+              <td>Firmware</td>
+            </tr>
+            <tr>
+              <th scope="row">SSD</th>
+              <td>Archivia programmi e file</td>
+              <td>Non volatile</td>
+              <td>Sistema operativo e documenti</td>
+            </tr>
+            <tr>
+              <th scope="row">HDD</th>
+              <td>Archivia programmi e file</td>
+              <td>Non volatile</td>
+              <td>Raccolta di file</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ssd-hdd">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">⚖️</span>
+        <h2 id="ssd-hdd">Confronto diretto tra SSD e HDD</h2>
+      </div>
+
+      <div class="table-wrapper"
+           tabindex="0"
+           role="region"
+           aria-label="Tabella di confronto tra SSD e HDD">
+        <table class="mini-table comparison-table storage-table">
+          <caption>Vantaggi, svantaggi e possibili usi</caption>
+          <thead>
+            <tr>
+              <th scope="col">Unità</th>
+              <th scope="col">Vantaggi</th>
+              <th scope="col">Svantaggi</th>
+              <th scope="col">Possibili usi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">SSD</th>
+              <td>Rapido, silenzioso, senza parti meccaniche in movimento</td>
+              <td>A parità di capacità può costare più di un HDD</td>
+              <td>Sistema operativo, programmi e file usati spesso</td>
+            </tr>
+            <tr>
+              <th scope="row">HDD</th>
+              <td>Normalmente offre molta capacità a costo contenuto</td>
+              <td>Più lento, meno silenzioso e sensibile agli urti durante l'uso</td>
+              <td>Grandi raccolte di file e dati consultati meno spesso</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        La scelta dipende dalle necessità: non esiste un'unità migliore in
+        assoluto per ogni situazione.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="unita">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📏</span>
+        <h2 id="unita">Byte, MB, GB e TB</h2>
+      </div>
+      <p>
+        Abbiamo già incontrato il <strong>byte</strong> e i suoi multipli.
+        MB, GB e TB sono usati per indicare quantità di dati e capacità. In
+        genere la RAM è espressa in GB, mentre SSD e HDD possono essere
+        espressi in GB o TB.
+      </p>
+      <aside class="callout remember" aria-labelledby="stessa-unita">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Ricorda</p>
+          <h3 id="stessa-unita">Stessa unità, funzione diversa</h3>
+          <p>
+            RAM e archiviazione possono essere entrambe misurate in GB, ma la
+            RAM mantiene temporaneamente ciò che è in uso; SSD e HDD
+            conservano stabilmente programmi e file.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="errori">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">❌</span>
+        <h2 id="errori">Errori frequenti da correggere</h2>
+      </div>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>“RAM e spazio del disco sono la stessa cosa”</h3>
+          <p>No: la RAM è memoria di lavoro; il disco è archiviazione.</p>
+        </article>
+        <article class="info-card">
+          <h3>“Se elimino un file libero memoria RAM”</h3>
+          <p>Eliminare un file libera spazio di archiviazione, non RAM.</p>
+        </article>
+        <article class="info-card">
+          <h3>“Un SSD è memoria volatile”</h3>
+          <p>Falso: un SSD conserva i dati anche dopo lo spegnimento.</p>
+        </article>
+        <article class="info-card">
+          <h3>“Più RAM rende sempre il computer più veloce”</h3>
+          <p>Non sempre: dipende dal compito e dalle altre componenti.</p>
+        </article>
+        <article class="info-card">
+          <h3>“ROM significa un chip che non cambia mai”</h3>
+          <p>Non necessariamente: il firmware moderno può risiedere in memoria flash aggiornabile.</p>
+        </article>
+        <article class="info-card">
+          <h3>“La memoria è piena”</h3>
+          <p>Bisogna specificare se si parla della RAM o dello spazio di archiviazione.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio">
+      <div class="lab-header">
+        <h2 id="laboratorio">💻 Laboratorio guidato — Osserva le memorie in Windows</h2>
+      </div>
+      <div class="lab-body">
+        <p>
+          <strong>Obiettivo:</strong> leggere la quantità di RAM e lo spazio
+          di archiviazione senza installare programmi e senza modificare
+          configurazioni.
+        </p>
+
+        <aside class="callout warning" aria-labelledby="sicurezza">
+          <div class="callout-icon" aria-hidden="true">⚠️</div>
+          <div>
+            <p class="callout-label">Attività soltanto osservativa</p>
+            <h3 id="sicurezza">Non modificare il computer</h3>
+            <p>
+              Non terminare processi, non formattare unità, non modificare
+              partizioni e non entrare nelle schermate BIOS/UEFI. Leggi e
+              annota soltanto le informazioni richieste.
+            </p>
+          </div>
+        </aside>
+
+        <ol class="steps">
+          <li>
+            <strong>Apri Gestione attività.</strong>
+            <p>Premi <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Esc</kbd>.</p>
+          </li>
+          <li>
+            <strong>Apri la sezione Prestazioni.</strong>
+            <p>La posizione dei comandi può variare secondo la versione di Windows.</p>
+          </li>
+          <li>
+            <strong>Osserva la RAM.</strong>
+            <p>Leggi la quantità installata e quella utilizzata, senza modificare nulla.</p>
+          </li>
+          <li>
+            <strong>Osserva l'unità.</strong>
+            <p>Individua le informazioni disponibili sul disco SSD o HDD.</p>
+          </li>
+          <li>
+            <strong>Apri Esplora file.</strong>
+            <p>Premi <kbd>Win</kbd> + <kbd>E</kbd> e seleziona “Questo PC”.</p>
+          </li>
+          <li>
+            <strong>Leggi lo spazio.</strong>
+            <p>Annota la capacità totale e lo spazio disponibile dell'unità.</p>
+          </li>
+          <li>
+            <strong>Completa la scheda.</strong>
+            <table class="mini-table">
+              <caption>Dati osservati sul computer</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Dato</th>
+                  <th scope="col">Valore osservato</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">RAM installata</th><td>________________</td></tr>
+                <tr><th scope="row">RAM utilizzata</th><td>________________</td></tr>
+                <tr><th scope="row">Tipo di unità mostrato</th><td>________________</td></tr>
+                <tr><th scope="row">Capacità totale</th><td>________________</td></tr>
+                <tr><th scope="row">Spazio disponibile</th><td>________________</td></tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <strong>Spiega la differenza.</strong>
+            <p>
+              Scrivi perché la quantità di RAM è diversa dalla capacità del
+              disco e perché i due valori descrivono funzioni differenti.
+            </p>
+          </li>
+        </ol>
+
+        <p>
+          Le schermate e le etichette possono cambiare leggermente secondo la
+          versione di Windows e la configurazione del computer.
+        </p>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esercizi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">✍️</span>
+        <h2 id="esercizi">Esercizi progressivi</h2>
+      </div>
+
+      <div class="question-grid">
+        <article class="quiz-question">
+          <h3>1. Classifica</h3>
+          <p>Indica la funzione principale di RAM, memoria del firmware, SSD e HDD.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>2. Volatile o non volatile?</h3>
+          <p>Classifica le quattro memorie e spiega il criterio usato.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>3. Scegli la memoria</h3>
+          <p>
+            Associa ogni situazione alla memoria adatta: documento aperto,
+            istruzioni di avvio, file salvato, grande raccolta di video.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>4. Confronta SSD e HDD</h3>
+          <p>Indica due differenze costruttive e due differenze d'uso.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>5. Correggi l'affermazione</h3>
+          <p>“Ho cancellato una foto, quindi ho aumentato la RAM disponibile”.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>6. Segui il documento</h3>
+          <p>
+            Spiega in modo semplice il percorso di un file dall'archiviazione
+            alla RAM quando viene aperto e dove torna quando viene salvato.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>7. Motiva una configurazione</h3>
+          <p>
+            Per un computer scolastico che usa più applicazioni insieme,
+            spiega perché servono sia RAM sia archiviazione. Non indicare
+            marche o modelli.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>8. Usa le parole con precisione</h3>
+          <p>
+            Uno studente dice “la memoria è piena”. Formula due domande per
+            capire se parla di RAM o spazio di archiviazione.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="quiz" aria-labelledby="quiz">
+      <h2 id="quiz">🧠 Autoverifica</h2>
+      <p>Rispondi prima a voce. Apri la risposta soltanto dopo.</p>
+
+      <div class="self-check">
+        <details>
+          <summary>1. Che differenza c'è tra RAM e archiviazione?</summary>
+          <p>
+            La RAM mantiene temporaneamente programmi e dati in uso ed è
+            volatile; l'archiviazione conserva programmi e file anche dopo lo
+            spegnimento.
+          </p>
+        </details>
+        <details>
+          <summary>2. Perché la RAM è detta volatile?</summary>
+          <p>Perché perde il proprio contenuto quando manca l'alimentazione.</p>
+        </details>
+        <details>
+          <summary>3. Che cosa conserva un SSD dopo lo spegnimento?</summary>
+          <p>Conserva i programmi e i file che vi sono stati salvati.</p>
+        </details>
+        <details>
+          <summary>4. Qual è la principale differenza costruttiva tra SSD e HDD?</summary>
+          <p>
+            L'SSD usa memoria flash e non ha parti meccaniche in movimento;
+            l'HDD usa dischi magnetici e parti meccaniche.
+          </p>
+        </details>
+        <details>
+          <summary>5. Quale memoria contiene temporaneamente programmi e dati in uso?</summary>
+          <p>La RAM.</p>
+        </details>
+        <details>
+          <summary>6. Perché non è sempre corretto dire che la ROM moderna non può essere aggiornata?</summary>
+          <p>
+            Perché nei dispositivi moderni il firmware è spesso conservato in
+            memoria flash non volatile che può essere aggiornata.
+          </p>
+        </details>
+        <details>
+          <summary>7. Che cosa accade, in modo semplificato, quando apriamo un file?</summary>
+          <p>
+            Il file viene letto dall'SSD o dall'HDD e i dati necessari vengono
+            caricati nella RAM, dove sono disponibili per l'elaborazione.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <aside class="callout exam" aria-labelledby="domanda-esame">
+      <div class="callout-icon" aria-hidden="true">🎓</div>
+      <div>
+        <p class="callout-label">Possibile domanda d'esame</p>
+        <h3 id="domanda-esame">Perché un computer utilizza memorie differenti?</h3>
+        <p>
+          <strong>Per rispondere bene:</strong> distingui lavoro temporaneo e
+          archiviazione, volatile e non volatile; poi confronta RAM, memoria
+          del firmware, SSD e HDD con esempi.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="glossario">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📖</span>
+        <h2 id="glossario">Glossario essenziale</h2>
+      </div>
+      <dl class="glossary-grid">
+        <div class="glossary-card">
+          <dt>RAM</dt>
+          <dd>Memoria volatile che mantiene temporaneamente ciò che è in uso.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>ROM</dt>
+          <dd>Read Only Memory; termine storico per memorie destinate alla lettura.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Firmware</dt>
+          <dd>Software strettamente collegato all'hardware, necessario anche all'avvio.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>SSD</dt>
+          <dd>Unità non volatile basata su memoria flash.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>HDD</dt>
+          <dd>Unità non volatile con dischi magnetici e parti meccaniche.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Volatile</dt>
+          <dd>Perde il contenuto quando manca l'alimentazione.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Non volatile</dt>
+          <dd>Conserva i dati anche senza alimentazione.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Archiviazione</dt>
+          <dd>Conservazione stabile di programmi e file.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="zaino">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🎒</span>
+        <h2 id="zaino">Zaino dello studente</h2>
+      </div>
+      <ul>
+        <li>La RAM è la memoria di lavoro: veloce, temporanea e volatile.</li>
+        <li>SSD e HDD sono unità di archiviazione non volatile.</li>
+        <li>Il firmware è conservato in memoria non volatile.</li>
+        <li>GB di RAM e GB di archiviazione misurano capacità, ma non la stessa funzione.</li>
+        <li>Quando un file viene aperto, i dati necessari passano dall'archiviazione alla RAM.</li>
+      </ul>
+    </section>
+
+    <section class="next-lesson">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2>CPU</h2>
+      <p>
+        SSD e HDD conservano programmi e file; la RAM mantiene temporaneamente
+        ciò che viene utilizzato; il processore elabora dati e istruzioni.
+        Nella prossima lezione conosceremo più da vicino la CPU, senza
+        anticiparne qui il funzionamento.
+      </p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../06-file-e-cartelle/index.html">← Lezione 06 — File e cartelle</a>
+      <a href="../../index.html">Torna all'indice</a>
+      <a href="../08-cpu/index.html">Lezione 08 — CPU  →</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>
+        Questa pagina è pensata per essere letta anche da studenti DSA:
+        istruzioni sequenziali, font leggibili, contrasti elevati e
+        scorciatoie da tastiera evidenziate.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
