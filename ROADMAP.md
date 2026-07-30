@@ -46,7 +46,7 @@ Legenda
 | 05 | Sistema operativo | ✅ | 04 | Funzioni principali |
 | 06 | File e cartelle | ✅ | 05 | Organizzazione dei dati |
 | 07 | Memorie | ✅ | 03 | RAM, ROM, SSD, HDD |
-| 08 | CPU | ⚪ | 03 | Architettura di base |
+| 08 | CPU | ✅ | 03 | Architettura di base |
 | 09 | Periferiche | ⚪ | 03 | Input, output e I/O |
 | 10 | Reti informatiche | ⚪ | 06 | Concetti introduttivi |
 | 11 | Internet e Web | ⚪ | 10 | Servizi Internet |
