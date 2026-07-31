@@ -48,7 +48,7 @@ Legenda
 | 07 | Memorie | ✅ | 03 | RAM, ROM, SSD, HDD |
 | 08 | CPU | ✅ | 03 | Architettura di base |
 | 09 | Periferiche | ✅ | 03 | Input, output e I/O |
-| 10 | Reti informatiche | ⚪ | 06 | Concetti introduttivi |
+| 10 | Reti informatiche | ✅ | 06 | Concetti introduttivi |
 | 11 | Internet e Web | ⚪ | 10 | Servizi Internet |
 | 12 | Sicurezza informatica | ⚪ | 11 | Password, malware, phishing |
 | 13 | Sistemi di numerazione | ⚪ | 02 | Binario, decimale, esadecimale |

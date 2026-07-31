@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Lezione introduttiva sulle reti informatiche: nodi, risorse condivise, collegamenti cablati e wireless, LAN, WAN, switch, access point, router, client e server.">
+  <title>10 — Reti informatiche: dispositivi che comunicano</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+
+  <link rel="icon"
+        href="https://mcocciniglia.github.io/common/assets/favicon.svg"
+        type="image/svg+xml">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge first">Programma del primo anno</span>
+        </div>
+
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle"
+                  class="btn btn-theme"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+
+          <button id="contrastToggle"
+                  class="btn btn-outline btn-contrast"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span>
+        <span aria-hidden="true">›</span>
+        <span>Primo anno</span>
+        <span aria-hidden="true">›</span>
+        <span>Lezione 10</span>
+      </nav>
+
+      <p class="eyebrow">Lezione 10 · Durata prevista: 2 ore</p>
+      <h1>Reti informatiche: dispositivi che comunicano</h1>
+
+      <p class="lead">
+        In una casa o in un'aula, come possono computer, tablet e una
+        stampante condivisa comunicare e usare risorse comuni?
+      </p>
+
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ 2 ore</span>
+        <span>📘 Primo anno</span>
+        <span>🎯 Nodi, collegamenti e risorse condivise</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading">
+        <span>Percorso del primo anno</span>
+        <span>Lezione 10 di 18</span>
+      </div>
+      <div class="progress-track"
+           role="progressbar"
+           aria-label="Avanzamento del percorso"
+           aria-valuemin="0"
+           aria-valuemax="18"
+           aria-valuenow="10">
+        <div class="progress-value" style="--progress:55.6%;"></div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ripasso">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">↩️</span>
+        <h2 id="ripasso">Prima di iniziare: richiamiamo la Lezione 09</h2>
+      </div>
+      <p>
+        Nella lezione precedente abbiamo seguito lo scambio di dati tra un
+        computer e le sue periferiche. Tastiera, monitor e stampante possono
+        inviare o ricevere dati secondo la funzione svolta.
+      </p>
+      <p>
+        Ora allarghiamo lo sguardo: in una casa o in un'aula ci sono spesso
+        più computer, tablet e dispositivi che devono collaborare e usare
+        risorse comuni.
+      </p>
+      <aside class="callout remember" aria-labelledby="domanda-guida">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Domanda guida</p>
+          <h3 id="domanda-guida">Come possono più dispositivi comunicare e condividere risorse?</h3>
+          <p>
+            Per rispondere riconosceremo i dispositivi collegati, i mezzi di
+            collegamento e le risorse che possono essere messe a disposizione.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="situazione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔎</span>
+        <h2 id="situazione">Una piccola aula che collabora</h2>
+      </div>
+      <p>
+        Immagina un'aula con sei computer fissi, due tablet, una stampante e
+        un computer che contiene documenti per la classe. I computer fissi
+        usano collegamenti via cavo; i tablet comunicano senza cavo. Tutti
+        devono poter inviare un documento alla stampante e consultare i file
+        messi a disposizione.
+      </p>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Dispositivi che comunicano</h3>
+          <p>Computer, tablet, stampante e computer con documenti condivisi.</p>
+        </article>
+        <article class="info-card">
+          <h3>Risorse usate insieme</h3>
+          <p>La stampante e i documenti autorizzati per la condivisione.</p>
+        </article>
+      </div>
+      <p>
+        Questa organizzazione permette di svolgere attività comuni senza
+        spostare fisicamente ogni file da un dispositivo all'altro.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🎯</span>
+        <h2 id="obiettivi">Obiettivi della lezione</h2>
+      </div>
+      <div class="objective-grid">
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Definire una rete</strong>
+          <small>Spiegando perché viene realizzata.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Riconoscere gli elementi</strong>
+          <small>Nodi, collegamenti e risorse condivise.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Distinguere i collegamenti</strong>
+          <small>Cablati e wireless.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Confrontare LAN e WAN</strong>
+          <small>A livello introduttivo.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Spiegare ruoli e dispositivi</strong>
+          <small>Client, server, switch, access point e router.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Leggere uno schema</strong>
+          <small>Descrivendo oralmente un percorso dei dati.</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="rete">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🕸️</span>
+        <h2 id="rete">Che cos'è una rete informatica</h2>
+      </div>
+      <div class="definition">
+        <span class="definition-term">Rete informatica</span>
+        <p>
+          Insieme di dispositivi collegati che possono comunicare, scambiare
+          dati e condividere risorse secondo regole stabilite.
+        </p>
+      </div>
+      <p>Una rete può essere realizzata per:</p>
+      <ul>
+        <li>scambiare dati tra dispositivi;</li>
+        <li>condividere una stampante o altri dispositivi;</li>
+        <li>rendere disponibili documenti autorizzati;</li>
+        <li>permettere a più persone di collaborare.</li>
+      </ul>
+      <aside class="callout remember" aria-labelledby="rete-senza-internet">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Idea fondamentale</p>
+          <h3 id="rete-senza-internet">Una rete locale può funzionare senza Internet</h3>
+          <p>
+            I dispositivi della stessa aula possono continuare a comunicare e
+            usare risorse locali anche se il collegamento verso Internet non è
+            disponibile.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="elementi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧩</span>
+        <h2 id="elementi">Nodi, collegamenti e risorse</h2>
+      </div>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Nodi</h3>
+          <p>
+            Sono i dispositivi collegati alla rete, per esempio computer,
+            tablet, stampanti e dispositivi di rete.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Collegamenti</h3>
+          <p>
+            Permettono ai dati di viaggiare tra i nodi. Possono usare cavi
+            oppure comunicazioni wireless.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Risorse condivise</h3>
+          <p>
+            Sono dispositivi, documenti o servizi resi disponibili ad altri
+            nodi autorizzati della rete.
+          </p>
+        </article>
+      </div>
+      <p>
+        Appartenere alla stessa rete non rende automaticamente accessibili
+        tutti i file. Una risorsa deve essere condivisa e l'accesso deve essere
+        consentito.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="collegamenti">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔗</span>
+        <h2 id="collegamenti">Collegamenti cablati e wireless</h2>
+      </div>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Collegamento cablato</h3>
+          <p>
+            Usa un cavo per collegare il dispositivo alla rete. In una rete
+            locale è comune l'uso di <strong>Ethernet</strong>.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Collegamento wireless</h3>
+          <p>
+            Permette di comunicare senza cavo. Il <strong>Wi-Fi</strong> è una
+            tecnologia usata per collegarsi a una rete locale wireless.
+          </p>
+        </article>
+      </div>
+      <p>
+        Una stessa rete locale può comprendere sia dispositivi cablati sia
+        dispositivi wireless. Ethernet non significa Internet e Wi-Fi non
+        significa Internet: descrivono modalità di collegamento alla rete.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="lan-wan">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🗺️</span>
+        <h2 id="lan-wan">LAN e WAN</h2>
+      </div>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>LAN</h3>
+          <p>
+            <em>Local Area Network</em>: rete locale che collega dispositivi in
+            un'area limitata, come una casa, un laboratorio o un edificio.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>WAN</h3>
+          <p>
+            <em>Wide Area Network</em>: rete geografica che collega reti o
+            dispositivi su aree molto più estese.
+          </p>
+        </article>
+      </div>
+      <p>
+        La distinzione riguarda soprattutto l'estensione della rete. Una LAN
+        non deve usare soltanto cavi: può comprendere anche collegamenti Wi-Fi.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="dispositivi-rete">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">⚙️</span>
+        <h2 id="dispositivi-rete">Switch, access point e router</h2>
+      </div>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Switch</h3>
+          <p>
+            Collega più dispositivi cablati nella stessa rete locale e aiuta a
+            indirizzare le comunicazioni verso il collegamento corretto.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Access point</h3>
+          <p>
+            Permette ai dispositivi wireless di collegarsi alla rete locale e
+            comunicare con i dispositivi cablati.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Router</h3>
+          <p>
+            Collega reti differenti e permette il passaggio dei dati tra esse.
+            Può collegare la rete locale verso l'esterno.
+          </p>
+        </article>
+      </div>
+      <aside class="callout warning" aria-labelledby="ruoli-diversi">
+        <div class="callout-icon" aria-hidden="true">⚠️</div>
+        <div>
+          <p class="callout-label">Non confondere i ruoli</p>
+          <h3 id="ruoli-diversi">Switch, access point e router non sono sinonimi</h3>
+          <p>
+            Lo switch collega soprattutto dispositivi cablati nella LAN;
+            l'access point offre il collegamento wireless; il router collega
+            reti differenti. In alcuni apparecchi domestici più funzioni sono
+            riunite nello stesso dispositivo.
+          </p>
+        </div>
+      </aside>
+      <p>
+        Quando necessario, un <strong>modem</strong> rende possibile il
+        collegamento attraverso la linea fornita dal servizio di comunicazione.
+        Nelle apparecchiature domestiche può essere integrato insieme al router.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="schema">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📐</span>
+        <h2 id="schema">Schema di una piccola rete locale</h2>
+      </div>
+      <p>
+        L’immagine rappresenta una LAN semplificata. Le linee blu indicano
+        i collegamenti cablati Ethernet; il simbolo Wi-Fi indica il
+        collegamento wireless tra il tablet e l’access point.
+      </p>
+      <figure class="figure">
+        <img
+          src="assets/rete-locale-lan.png"
+          alt="Schema di una rete locale: un tablet si collega tramite Wi-Fi a un access point; access point, computer, stampante e server sono collegati tramite Ethernet a uno switch centrale; lo switch è collegato a un router che comunica con altre reti e con Internet."
+          width="1536"
+          height="1024"
+          loading="lazy"
+          decoding="async">
+        <figcaption class="caption">
+          Esempio semplificato di LAN con dispositivi cablati e wireless,
+          uno switch centrale e un router verso altre reti.
+        </figcaption>
+      </figure>
+      <p>
+        Computer, tablet, stampante e server sono nodi della stessa rete
+        locale. Lo switch e l'access point permettono loro di comunicare; il
+        router collega la LAN ad altre reti. Anche senza accesso a Internet, i
+        nodi possono continuare a usare le risorse locali autorizzate.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="client-server">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🤝</span>
+        <h2 id="client-server">Client e server</h2>
+      </div>
+      <div class="definition">
+        <span class="definition-term">Client</span>
+        <p>Dispositivo o programma che richiede una risorsa o un servizio.</p>
+      </div>
+      <div class="definition">
+        <span class="definition-term">Server</span>
+        <p>Dispositivo o programma che mette a disposizione una risorsa o un servizio.</p>
+      </div>
+      <p>
+        Client e server sono <strong>ruoli</strong>, non necessariamente tipi
+        diversi di computer. Un normale computer può offrire documenti alla
+        classe e svolgere il ruolo di server; un altro computer che richiede un
+        documento svolge il ruolo di client. Un server non è quindi sempre un
+        computer enorme.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esempi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔄</span>
+        <h2 id="esempi">Tre percorsi guidati</h2>
+      </div>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>1. Dal computer alla stampante</h3>
+          <p>
+            Il computer invia il documento attraverso il collegamento cablato
+            allo switch; lo switch permette ai dati di raggiungere la stampante
+            condivisa, che produce la stampa.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>2. Dal client al server</h3>
+          <p>
+            Il client richiede un file; la richiesta raggiunge il server nella
+            rete locale; se l'accesso è consentito, il server rende disponibile
+            il documento richiesto.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>3. Dal tablet al computer cablato</h3>
+          <p>
+            Il tablet comunica via Wi-Fi con l'access point; l'access point è
+            collegato alla parte cablata della LAN e permette la comunicazione
+            con il computer autorizzato.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="internet-web">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🌍</span>
+        <h2 id="internet-web">Rete locale, Internet e Web</h2>
+      </div>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Rete locale</h3>
+          <p>
+            Collega dispositivi in un'area limitata e può offrire risorse
+            locali anche senza collegamento esterno.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Internet</h3>
+          <p>È una rete globale che collega moltissime reti e dispositivi.</p>
+        </article>
+        <article class="info-card">
+          <h3>Web</h3>
+          <p>È uno dei servizi che utilizza Internet; non è Internet stesso.</p>
+        </article>
+      </div>
+      <p>
+        Rete, Internet e Web non sono sinonimi. In questa lezione ci fermiamo
+        alla distinzione essenziale; Internet e Web saranno approfonditi nella
+        Lezione 11.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="errori">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">❌</span>
+        <h2 id="errori">Errori frequenti da correggere</h2>
+      </div>
+      <div class="question-grid">
+        <article class="quiz-question">
+          <h3>“Wi-Fi e Internet sono la stessa cosa”</h3>
+          <p>No. Il Wi-Fi collega dispositivi a una rete senza cavo; Internet è una rete globale.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>“Una rete funziona soltanto con Internet”</h3>
+          <p>No. Una LAN può scambiare dati e condividere risorse locali senza Internet.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>“Il router è Internet”</h3>
+          <p>No. Il router è un dispositivo che collega reti differenti.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>“Switch e router fanno la stessa cosa”</h3>
+          <p>No. Lo switch collega nodi nella LAN; il router collega reti differenti.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>“Una LAN deve usare soltanto cavi”</h3>
+          <p>No. Può comprendere collegamenti cablati e wireless.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>“Tutti i file sono automaticamente condivisi”</h3>
+          <p>No. Devono essere messi a disposizione e l'accesso deve essere consentito.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>“Un server è sempre un computer enorme”</h3>
+          <p>No. Server indica un ruolo: offrire una risorsa o un servizio.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>“Internet e Web sono sinonimi”</h3>
+          <p>No. Il Web è uno dei servizi che utilizza Internet.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio">
+      <div class="lab-header">
+        <h2 id="laboratorio">💻 Laboratorio — Progetta la rete di una piccola aula</h2>
+      </div>
+      <div class="lab-body">
+        <p>
+          <strong>Scenario:</strong> sei computer fissi, due tablet, una
+          stampante di rete, un computer o server con documenti condivisi, uno
+          switch, un access point e un router.
+        </p>
+        <aside class="callout warning" aria-labelledby="sicurezza">
+          <div class="callout-icon" aria-hidden="true">⚠️</div>
+          <div>
+            <p class="callout-label">Progettazione su carta</p>
+            <h3 id="sicurezza">Non modificare la rete reale</h3>
+            <p>
+              Svolgi l'attività sul quaderno o in un documento digitale. Non
+              usare indirizzi, password, configurazioni o privilegi
+              amministrativi e non scollegare dispositivi.
+            </p>
+          </div>
+        </aside>
+        <ol class="steps">
+          <li>
+            <strong>Elenca i nodi.</strong>
+            <p>Individua tutti i dispositivi presenti nello scenario.</p>
+          </li>
+          <li>
+            <strong>Distingui i ruoli.</strong>
+            <p>
+              Separa dispositivi finali, dispositivi di rete e risorse da
+              condividere.
+            </p>
+          </li>
+          <li>
+            <strong>Scegli i collegamenti.</strong>
+            <p>
+              Collega i computer fissi via cavo e i tablet via Wi-Fi. Indica
+              chiaramente switch e access point.
+            </p>
+          </li>
+          <li>
+            <strong>Disegna lo schema.</strong>
+            <p>
+              Usa riquadri per i nodi, linee o frecce per i collegamenti ed
+              etichette “cablato” e “wireless”.
+            </p>
+          </li>
+          <li>
+            <strong>Segui la stampa.</strong>
+            <p>Descrivi il percorso dei dati da un computer alla stampante.</p>
+          </li>
+          <li>
+            <strong>Segui il documento.</strong>
+            <p>
+              Descrivi il percorso dal tablet wireless al computer o server
+              che offre il documento condiviso.
+            </p>
+          </li>
+          <li>
+            <strong>Immagina Internet non disponibile.</strong>
+            <p>
+              Indica quali attività locali potrebbero continuare e motiva la
+              risposta.
+            </p>
+          </li>
+          <li>
+            <strong>Presenta il progetto.</strong>
+            <p>
+              In due minuti spiega nodi, collegamenti, dispositivi di rete e
+              due percorsi dei dati.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esercizi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">✍️</span>
+        <h2 id="esercizi">Esercizi progressivi</h2>
+      </div>
+      <div class="question-grid">
+        <article class="quiz-question">
+          <h3>1. Individua gli elementi</h3>
+          <p>
+            In una rete con tre computer e una stampante, indica nodi,
+            collegamenti e risorsa condivisa.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>2. Cablato o wireless?</h3>
+          <p>
+            Classifica: computer collegato allo switch con cavo; tablet
+            collegato all'access point; stampante collegata via cavo.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>3. LAN o WAN?</h3>
+          <p>
+            Classifica una rete di laboratorio e una rete che collega sedi in
+            città differenti. Motiva la scelta usando l'estensione.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>4. Associa il dispositivo</h3>
+          <p>
+            Associa switch, access point e router a: collega nodi cablati nella
+            LAN; collega dispositivi wireless; collega reti differenti.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>5. Client o server?</h3>
+          <p>
+            Un computer richiede un documento e un altro lo mette a
+            disposizione. Indica i due ruoli e spiega perché possono cambiare.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>6. Completa il percorso</h3>
+          <p>
+            Tablet → ______ → switch → ______ condivisa. Inserisci i
+            dispositivi adatti e descrivi il percorso a voce.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>7. Correggi</h3>
+          <p>
+            Riscrivi correttamente: “Se manca Internet, la rete locale non può
+            fare nulla” e “Wi-Fi significa Internet”.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>8. Esposizione orale</h3>
+          <p>
+            Spiega in due minuti che cos'è una LAN usando i termini nodo,
+            collegamento, risorsa, switch e access point.
+          </p>
+        </article>
+      </div>
+      <div class="self-check">
+        <details>
+          <summary>Controlla dispositivi e collegamenti</summary>
+          <p>
+            Lo switch collega i nodi cablati della LAN; l'access point collega
+            i dispositivi wireless; il router collega reti differenti. Cavo ed
+            Ethernet indicano un collegamento cablato, mentre il Wi-Fi permette
+            un collegamento wireless.
+          </p>
+        </details>
+        <details>
+          <summary>Controlla LAN, WAN, client e server</summary>
+          <p>
+            La LAN copre un'area limitata; la WAN un'area molto più estesa. Il
+            client richiede una risorsa e il server la mette a disposizione:
+            sono ruoli che dipendono dall'attività svolta.
+          </p>
+        </details>
+        <details>
+          <summary>Controlla rete, Internet e Web</summary>
+          <p>
+            Una rete locale può funzionare senza Internet. Internet è una rete
+            globale; il Web è uno dei servizi che usa Internet.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <section class="quiz" aria-labelledby="quiz">
+      <h2 id="quiz">🧠 Autoverifica</h2>
+      <p>Formula prima una risposta a voce. Apri la spiegazione soltanto dopo.</p>
+      <div class="self-check">
+        <details>
+          <summary>1. Che cos'è una rete informatica?</summary>
+          <p>
+            È un insieme di dispositivi collegati che possono comunicare,
+            scambiare dati e condividere risorse.
+          </p>
+        </details>
+        <details>
+          <summary>2. Che cosa sono un nodo e una risorsa condivisa?</summary>
+          <p>
+            Un nodo è un dispositivo collegato; una risorsa condivisa è un
+            dispositivo, documento o servizio reso disponibile ai nodi
+            autorizzati.
+          </p>
+        </details>
+        <details>
+          <summary>3. Qual è la differenza tra collegamento cablato e wireless?</summary>
+          <p>Il primo usa un cavo; il secondo permette la comunicazione senza cavo.</p>
+        </details>
+        <details>
+          <summary>4. Qual è la differenza essenziale tra LAN e WAN?</summary>
+          <p>La LAN copre un'area limitata; la WAN un'area molto più estesa.</p>
+        </details>
+        <details>
+          <summary>5. Quali ruoli svolgono switch, access point e router?</summary>
+          <p>
+            Lo switch collega nodi cablati nella LAN, l'access point collega
+            dispositivi wireless e il router collega reti differenti.
+          </p>
+        </details>
+        <details>
+          <summary>6. Perché client e server sono ruoli?</summary>
+          <p>
+            Perché descrivono chi richiede e chi offre una risorsa; non
+            identificano necessariamente tipi differenti di computer.
+          </p>
+        </details>
+        <details>
+          <summary>7. Una LAN può funzionare senza Internet?</summary>
+          <p>Sì. Può continuare a scambiare dati e usare risorse locali.</p>
+        </details>
+        <details>
+          <summary>8. Internet e Web sono sinonimi?</summary>
+          <p>No. Internet è una rete globale; il Web è un servizio che la utilizza.</p>
+        </details>
+        <details>
+          <summary>9. Descrivi a voce il percorso da un tablet a una stampante cablata.</summary>
+          <p>
+            Il tablet comunica via Wi-Fi con l'access point; attraverso la LAN
+            e lo switch, i dati raggiungono la stampante cablata condivisa.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <aside class="callout exam" aria-labelledby="domanda-esame">
+      <div class="callout-icon" aria-hidden="true">🎓</div>
+      <div>
+        <p class="callout-label">Possibile domanda d'esame</p>
+        <h3 id="domanda-esame">Che cos'è una rete informatica e quali sono i suoi elementi principali?</h3>
+        <p>
+          <strong>Per rispondere bene:</strong> segui questo ordine:
+          definizione; scopo; nodi; collegamenti; dispositivi di rete; esempio
+          concreto.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="glossario">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📖</span>
+        <h2 id="glossario">Glossario essenziale</h2>
+      </div>
+      <dl class="glossary-grid">
+        <div class="glossary-card"><dt>Rete informatica</dt><dd>Dispositivi collegati che comunicano e condividono risorse.</dd></div>
+        <div class="glossary-card"><dt>Nodo</dt><dd>Dispositivo collegato a una rete.</dd></div>
+        <div class="glossary-card"><dt>Risorsa condivisa</dt><dd>Elemento reso disponibile ad altri nodi autorizzati.</dd></div>
+        <div class="glossary-card"><dt>Ethernet</dt><dd>Tecnologia comunemente usata per collegamenti di rete cablati.</dd></div>
+        <div class="glossary-card"><dt>Wi-Fi</dt><dd>Tecnologia per collegamenti wireless a una rete locale.</dd></div>
+        <div class="glossary-card"><dt>LAN</dt><dd>Rete che copre un'area limitata.</dd></div>
+        <div class="glossary-card"><dt>WAN</dt><dd>Rete che copre un'area geografica estesa.</dd></div>
+        <div class="glossary-card"><dt>Switch</dt><dd>Dispositivo che collega nodi cablati nella stessa LAN.</dd></div>
+        <div class="glossary-card"><dt>Access point</dt><dd>Dispositivo che collega nodi wireless alla rete locale.</dd></div>
+        <div class="glossary-card"><dt>Router</dt><dd>Dispositivo che collega reti differenti.</dd></div>
+        <div class="glossary-card"><dt>Client</dt><dd>Ruolo di chi richiede una risorsa o un servizio.</dd></div>
+        <div class="glossary-card"><dt>Server</dt><dd>Ruolo di chi mette a disposizione una risorsa o un servizio.</dd></div>
+      </dl>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header">
+        <p class="eyebrow">Sintesi essenziale</p>
+        <h2 id="zaino-studente">🎒 Lo zaino dello studente</h2>
+        <p>
+          Se domani dimenticassi quasi tutto, queste sono le idee che dovresti
+          riuscire a ricostruire.
+        </p>
+      </div>
+      <div class="student-backpack-grid">
+        <article class="backpack-card">
+          <h3>✅ Le 5 idee fondamentali</h3>
+          <ol class="essential-list">
+            <li>Una rete collega nodi per comunicare e condividere risorse.</li>
+            <li>I collegamenti possono essere cablati oppure wireless.</li>
+            <li>Una LAN può usare cavi e Wi-Fi e funzionare senza Internet.</li>
+            <li>Switch, access point e router svolgono funzioni differenti.</li>
+            <li>Internet è una rete globale; il Web è un servizio che la usa.</li>
+          </ol>
+        </article>
+        <article class="backpack-card">
+          <h3>📝 5 parole chiave</h3>
+          <ul class="keyword-list">
+            <li>Rete</li>
+            <li>Nodo</li>
+            <li>LAN</li>
+            <li>Router</li>
+            <li>Client/server</li>
+          </ul>
+        </article>
+        <article class="backpack-card">
+          <h3>❓ 3 domande da esame</h3>
+          <ol>
+            <li>Che cos'è una rete informatica?</li>
+            <li>Quali funzioni hanno switch, access point e router?</li>
+            <li>Come distingui rete locale, Internet e Web?</li>
+          </ol>
+        </article>
+        <article class="backpack-card">
+          <h3>⏱️ Ripasso in 5 minuti</h3>
+          <ol class="mini-review">
+            <li>Chiudi la pagina.</li>
+            <li>Definisci rete, nodo e risorsa.</li>
+            <li>Descrivi lo schema dell'aula.</li>
+            <li>Controlla e correggi soltanto i punti incerti.</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="review-mission" aria-labelledby="missione-ripasso">
+      <div class="review-mission-icon" aria-hidden="true">🏕️</div>
+      <div>
+        <p class="callout-label">Allenamento distribuito</p>
+        <h2 id="missione-ripasso">Missione di ripasso · 10 minuti al giorno</h2>
+        <p>Prova prima senza rileggere, poi controlla e correggi.</p>
+        <div class="mission-days">
+          <article>
+            <strong>Giorno 1 · Elementi</strong>
+            <p>Individua nodi, collegamenti e risorse in una rete vicina.</p>
+          </article>
+          <article>
+            <strong>Giorno 2 · Confronti</strong>
+            <p>Confronta cablato e wireless, LAN e WAN, client e server.</p>
+          </article>
+          <article>
+            <strong>Giorno 3 · Correggi</strong>
+            <p>Correggi a voce quattro errori frequenti della lezione.</p>
+          </article>
+          <article>
+            <strong>Giorno 4 · Esponi</strong>
+            <p>Presenta in tre minuti lo schema di una piccola LAN.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-lesson">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2>Internet e Web</h2>
+      <p>
+        Abbiamo visto che Internet è una rete globale e che il Web è uno dei
+        servizi che utilizza Internet. Nella prossima lezione distingueremo e
+        conosceremo meglio questi due concetti.
+      </p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../09-periferiche/index.html">← Lezione 09 — Periferiche</a>
+      <a href="../../index.html">Torna all'indice</a>
+      <a href="../11-internet-e-web/index.html">Lezione 11 — Internet e Web (In preparazione) →</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>
+        Questa pagina è pensata per essere letta anche da studenti DSA:
+        istruzioni sequenziali, font leggibili, contrasti elevati e
+        scorciatoie da tastiera evidenziate.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
