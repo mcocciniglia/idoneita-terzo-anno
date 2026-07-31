@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Lezione introduttiva su Internet e Web: servizi Internet, pagine e siti Web, browser, motori di ricerca, URL e comunicazione con un server Web.">
+  <title>11 — Internet e Web: reti, servizi e navigazione</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+
+  <link rel="icon"
+        href="https://mcocciniglia.github.io/common/assets/favicon.svg"
+        type="image/svg+xml">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge first">Programma del primo anno</span>
+        </div>
+
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle"
+                  class="btn btn-theme"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+
+          <button id="contrastToggle"
+                  class="btn btn-outline btn-contrast"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span>
+        <span aria-hidden="true">›</span>
+        <span>Primo anno</span>
+        <span aria-hidden="true">›</span>
+        <span>Lezione 11</span>
+      </nav>
+
+      <p class="eyebrow">Lezione 11 · Durata prevista: 2 ore</p>
+      <h1>Internet e Web: reti, servizi e navigazione</h1>
+
+      <p class="lead">
+        Quando apriamo un sito, inviamo un'e-mail, partecipiamo a una
+        videochiamata o salviamo un file nel cloud, stiamo sempre usando il Web?
+      </p>
+
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ 2 ore</span>
+        <span>📘 Primo anno</span>
+        <span>🎯 Internet, Web, browser e URL</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading">
+        <span>Percorso del primo anno</span>
+        <span>Lezione 11 di 18</span>
+      </div>
+      <div class="progress-track"
+           role="progressbar"
+           aria-label="Avanzamento del percorso"
+           aria-valuemin="0"
+           aria-valuemax="18"
+           aria-valuenow="11">
+        <div class="progress-value" style="--progress:61.1%;"></div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ripasso">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">↩️</span>
+        <h2 id="ripasso">Prima di iniziare: richiamiamo la Lezione 10</h2>
+      </div>
+      <p>
+        Una LAN collega dispositivi in un'area limitata e può funzionare anche
+        senza Internet. Il router collega reti differenti; client e server sono
+        ruoli: il client richiede una risorsa, il server la mette a disposizione.
+      </p>
+      <p>
+        Collegando una rete locale ad altre reti possiamo raggiungere
+        un'infrastruttura molto più estesa e utilizzare servizi differenti.
+        Avevamo già anticipato che Internet e Web non sono sinonimi.
+      </p>
+      <div class="process-flow"
+           role="img"
+           aria-label="Passaggio logico dalla rete locale al collegamento con altre reti, poi a Internet e ai servizi disponibili">
+        <div class="process-node"><strong>Rete locale</strong><span>Dispositivi vicini</span></div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node"><strong>Altre reti</strong><span>Reti interconnesse</span></div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node"><strong>Servizi Internet</strong><span>Web e altri servizi</span></div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="situazione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔎</span>
+        <h2 id="situazione">Azioni simili, servizi differenti</h2>
+      </div>
+      <p>
+        Uno studente apre una pagina del corso, invia un messaggio di posta
+        elettronica, partecipa a una videochiamata e salva un documento in uno
+        spazio online. In tutti i casi usa Internet, ma non compie sempre
+        un'attività del Web.
+      </p>
+      <aside class="callout remember" aria-labelledby="domanda-guida">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Domanda guida</p>
+          <h3 id="domanda-guida">Internet e Web indicano la stessa cosa?</h3>
+          <p>
+            No. Internet è l'infrastruttura globale di reti interconnesse; il
+            Web è uno dei servizi che la utilizza. Costruiremo questa
+            distinzione attraverso esempi concreti.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🎯</span>
+        <h2 id="obiettivi">Obiettivi della lezione</h2>
+      </div>
+      <div class="objective-grid">
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Definire Internet</strong><small>Come rete globale di reti interconnesse.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Distinguere Internet e Web</strong><small>Riconoscendo diversi servizi Internet.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Usare termini precisi</strong><small>Browser, motore di ricerca, sito e pagina.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Leggere un URL</strong><small>Riconoscendo modalità, dominio e percorso.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Descrivere uno scambio</strong><small>Dal browser al server Web e ritorno.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Usare il browser</strong><small>Con funzioni essenziali e scorciatoie.</small></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="internet">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🌍</span>
+        <h2 id="internet">Internet: una rete di reti</h2>
+      </div>
+      <div class="definition">
+        <span class="definition-term">Internet</span>
+        <p>
+          Grande infrastruttura globale formata dall'interconnessione di
+          moltissime reti, dispositivi e sistemi distribuiti nel mondo.
+        </p>
+      </div>
+      <p>
+        Internet non è un singolo computer, un singolo servizio o un luogo
+        fisico. Permette a sistemi lontani di comunicare e rende disponibili
+        servizi diversi. I dettagli tecnici del suo funzionamento non sono
+        necessari per comprendere il modello introduttivo di questa lezione.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="servizi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧰</span>
+        <h2 id="servizi">I servizi che utilizzano Internet</h2>
+      </div>
+      <p>
+        Internet sostiene attività differenti: consultare pagine Web, usare la
+        posta elettronica, inviare messaggi, partecipare a videochiamate,
+        archiviare e condividere file nel cloud, seguire contenuti in streaming
+        oppure usare giochi e altri servizi online.
+      </p>
+      <aside class="callout remember" aria-labelledby="web-servizio">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Distinzione essenziale</p>
+          <h3 id="web-servizio">Il Web è un servizio di Internet</h3>
+          <p>
+            Il Web usa Internet, ma Internet non coincide con il Web. Anche
+            posta elettronica, messaggistica e videochiamate usano Internet.
+          </p>
+        </div>
+      </aside>
+      <div class="table-wrapper"
+           tabindex="0"
+           role="region"
+           aria-label="Classificazione di alcuni servizi Internet">
+        <table class="mini-table comparison-table">
+          <caption>Esempi di attività e servizi</caption>
+          <thead>
+            <tr><th scope="col">Servizio</th><th scope="col">Usa Internet?</th><th scope="col">Fa parte del Web?</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Consultazione di pagine Web</th><td>Sì</td><td>Sì</td></tr>
+            <tr><th scope="row">Posta elettronica</th><td>Sì</td><td>Non necessariamente</td></tr>
+            <tr><th scope="row">Messaggistica</th><td>Sì</td><td>Non necessariamente</td></tr>
+            <tr><th scope="row">Videochiamata</th><td>Sì</td><td>Non necessariamente</td></tr>
+            <tr><th scope="row">Streaming</th><td>Sì</td><td>Può essere offerto attraverso il Web</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        <strong>Attività:</strong> aggiungi alla tabella archiviazione cloud e
+        gioco online. Motiva a voce perché usano Internet e perché non basta il
+        nome dell'attività per stabilire che coincidano con il Web.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="web">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🕸️</span>
+        <h2 id="web">Il World Wide Web</h2>
+      </div>
+      <div class="definition">
+        <span class="definition-term">Web</span>
+        <p>
+          Servizio di Internet formato da pagine e risorse collegate tra loro,
+          consultabili attraverso un browser.
+        </p>
+      </div>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Pagina Web</h3>
+          <p>
+            Singola pagina consultabile che può contenere testo, immagini,
+            audio, video e collegamenti.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Sito Web</h3>
+          <p>Insieme organizzato di pagine e risorse Web collegate.</p>
+        </article>
+        <article class="info-card">
+          <h3>Collegamento ipertestuale</h3>
+          <p>
+            Elemento selezionabile che porta a un'altra pagina, a una risorsa
+            o a un punto specifico del contenuto.
+          </p>
+        </article>
+      </div>
+      <p>
+        In sintesi: <strong>sito Web = insieme organizzato di pagine e
+        risorse</strong>; <strong>pagina Web = singola pagina consultabile</strong>.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="browser-ricerca">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔍</span>
+        <h2 id="browser-ricerca">Browser e motore di ricerca</h2>
+      </div>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Browser</h3>
+          <p>
+            Programma usato per richiedere, interpretare e consultare pagine e
+            risorse Web. Chrome, Firefox, Edge e Safari sono esempi di browser.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Motore di ricerca</h3>
+          <p>
+            Servizio Web che aiuta a trovare pagine e contenuti partendo da
+            parole o frasi. Google, Bing e DuckDuckGo sono esempi.
+          </p>
+        </article>
+      </div>
+      <aside class="callout warning" aria-labelledby="programma-servizio">
+        <div class="callout-icon" aria-hidden="true">⚠️</div>
+        <div>
+          <p class="callout-label">Non confondere</p>
+          <h3 id="programma-servizio">Il browser è un programma; il motore di ricerca è un servizio Web</h3>
+          <p>
+            Possiamo usare un browser per aprire direttamente un indirizzo Web
+            oppure per consultare un motore di ricerca. I due strumenti
+            collaborano, ma non sono la stessa cosa.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="url">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📍</span>
+        <h2 id="url">Indirizzo Web e URL</h2>
+      </div>
+      <div class="definition">
+        <span class="definition-term">URL</span>
+        <p>Indirizzo che identifica una risorsa Web e indica come raggiungerla.</p>
+      </div>
+      <p>Consideriamo l'indirizzo di esempio:</p>
+      <p><code>https://www.esempio.it/scuola/lezione</code></p>
+      <div class="card-grid">
+        <article class="info-card"><h3><code>https://</code></h3><p>Modalità o protocollo usato per accedere alla risorsa.</p></article>
+        <article class="info-card"><h3><code>www.esempio.it</code></h3><p>Nome del dominio che identifica il sito.</p></article>
+        <article class="info-card"><h3><code>/scuola/lezione</code></h3><p>Percorso della risorsa all'interno del sito.</p></article>
+      </div>
+      <p>
+        Per questa lezione è sufficiente riconoscere le tre parti. Non occorre
+        approfondire il funzionamento tecnico che permette di raggiungere il
+        server.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="richiesta-web">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔄</span>
+        <h2 id="richiesta-web">Dal browser alla pagina Web</h2>
+      </div>
+      <p>
+        Riprendiamo i ruoli client e server. In questo caso il browser agisce
+        come client e richiede una risorsa a un server Web.
+      </p>
+      <ol class="steps">
+        <li><strong>Indica la risorsa.</strong><p>L'utente inserisce un URL o seleziona un collegamento.</p></li>
+        <li><strong>Invia la richiesta.</strong><p>Il browser richiede la risorsa.</p></li>
+        <li><strong>Attraversa Internet.</strong><p>La richiesta raggiunge il server Web.</p></li>
+        <li><strong>Riceve la richiesta.</strong><p>Il server Web individua la risorsa richiesta.</p></li>
+        <li><strong>Invia la risposta.</strong><p>Il server restituisce i dati della risorsa.</p></li>
+        <li><strong>Mostra la pagina.</strong><p>Il browser interpreta i dati e presenta la pagina all'utente.</p></li>
+      </ol>
+      <figure class="lesson-figure">
+        <img
+          src="assets/flusso-browser-server.png"
+          alt="Schema dello scambio tra browser e server Web. L’utente indica una risorsa; il browser invia una richiesta attraverso Internet al server Web. Il server restituisce i dati attraverso Internet; il browser li interpreta e visualizza la pagina."
+          width="1536"
+          height="1024"
+          loading="lazy"
+          decoding="async">
+        <figcaption>
+          Il browser invia una richiesta al server Web attraverso Internet.
+          Il server restituisce i dati e il browser li interpreta per mostrare
+          la pagina all’utente.
+        </figcaption>
+      </figure>
+      <p>
+        Il server non invia “tutto Internet”: risponde alla richiesta inviando
+        la risorsa necessaria. Il browser non contiene tutte le pagine; le
+        richiede e le presenta quando servono.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="errori">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">❌</span>
+        <h2 id="errori">Errori frequenti da correggere</h2>
+      </div>
+      <div class="question-grid">
+        <article class="quiz-question"><h3>“Internet e Web sono sinonimi”</h3><p>No. Internet è la rete globale; il Web è uno dei servizi che la usa.</p></article>
+        <article class="quiz-question"><h3>“Il Wi-Fi è Internet”</h3><p>No. Il Wi-Fi è una tecnologia per collegarsi senza cavo a una rete.</p></article>
+        <article class="quiz-question"><h3>“Google è Internet”</h3><p>No. <strong>Google Search è un motore di ricerca </strong>, cioè un servizio Web. Internet è l’infrastruttura globale che permette di raggiungerlo.</p></article>
+        <article class="quiz-question"><h3>“Browser e motore di ricerca sono la stessa cosa”</h3><p>No. Il browser è un programma; il motore di ricerca è un servizio Web.</p></article>
+        <article class="quiz-question"><h3>“Chrome è un motore di ricerca”</h3><p>No. Chrome è un browser.</p></article>
+        <article class="quiz-question"><h3>“Un sito Web è sempre formato da una sola pagina”</h3><p>No. Un sito può organizzare molte pagine e risorse.</p></article>
+        <article class="quiz-question"><h3>“Scrivere una ricerca e scrivere un URL sono la stessa operazione”</h3><p>No. L'URL indica una risorsa; una ricerca usa parole o frasi per trovare contenuti.</p></article>
+        <article class="quiz-question"><h3>“La posta elettronica fa necessariamente parte del Web”</h3><p>No. Usa Internet, ma non coincide necessariamente con il servizio Web.</p></article>
+        <article class="quiz-question"><h3>“Il browser contiene tutte le pagine che visualizza”</h3><p>No. Richiede le risorse ai server e le presenta all'utente.</p></article>
+        <article class="quiz-question"><h3>“Il server Web invia sempre l'intero Internet al computer”</h3><p>No. Invia i dati necessari per la risorsa richiesta.</p></article>
+      </div>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio">
+      <div class="lab-header">
+        <h2 id="laboratorio">💻 Laboratorio guidato — Esplora browser, URL e pagine</h2>
+      </div>
+      <div class="lab-body">
+        <p>
+          <strong>Obiettivo:</strong> distinguere indirizzo e ricerca,
+          riconoscere gli elementi di una pagina e usare le funzioni essenziali
+          del browser senza account e senza inserire dati personali.
+        </p>
+        <aside class="callout warning" aria-labelledby="laboratorio-sicuro">
+          <div class="callout-icon" aria-hidden="true">⚠️</div>
+          <div>
+            <p class="callout-label">Attività osservativa</p>
+            <h3 id="laboratorio-sicuro">Usa soltanto contenuti indicati dal docente</h3>
+            <p>
+              Non creare account, non inserire dati personali e non modificare
+              impostazioni del browser o del computer.
+            </p>
+          </div>
+        </aside>
+        <ol class="steps">
+          <li><strong>Apri il browser.</strong><p>Individua la barra degli indirizzi e i controlli principali.</p></li>
+          <li><strong>Seleziona la barra.</strong><p>Premi <kbd>Ctrl</kbd> + <kbd>L</kbd>.</p></li>
+          <li><strong>Inserisci un indirizzo completo.</strong><p>Usa l'indirizzo Web fornito dal docente.</p></li>
+          <li><strong>Osserva l'URL.</strong><p>Individua il dominio e l'eventuale percorso.</p></li>
+          <li><strong>Apri una nuova scheda.</strong><p>Premi <kbd>Ctrl</kbd> + <kbd>T</kbd>.</p></li>
+          <li><strong>Esegui una ricerca.</strong><p>Usa una frase in un motore di ricerca indicato dal docente.</p></li>
+          <li><strong>Confronta.</strong><p>Spiega la differenza tra l'URL completo e la frase usata nella ricerca.</p></li>
+          <li><strong>Usa i controlli.</strong><p>Prova indietro, avanti e aggiorna senza modificare altre impostazioni.</p></li>
+          <li><strong>Osserva una pagina.</strong><p>Individua titolo, collegamento e almeno un contenuto multimediale.</p></li>
+          <li><strong>Chiudi la scheda.</strong><p>Premi <kbd>Ctrl</kbd> + <kbd>W</kbd>.</p></li>
+          <li>
+            <strong>Completa la scheda.</strong>
+            <div class="table-wrapper" tabindex="0" role="region" aria-label="Scheda di osservazione del Web">
+              <table class="mini-table comparison-table">
+                <caption>Termini osservati durante il laboratorio</caption>
+                <thead><tr><th scope="col">Termine</th><th scope="col">Esempio osservato</th><th scope="col">Funzione</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Browser</th><td>________________</td><td>________________</td></tr>
+                  <tr><th scope="row">Motore di ricerca</th><td>________________</td><td>________________</td></tr>
+                  <tr><th scope="row">Sito Web</th><td>________________</td><td>________________</td></tr>
+                  <tr><th scope="row">Pagina Web</th><td>________________</td><td>________________</td></tr>
+                  <tr><th scope="row">Servizio Internet</th><td>________________</td><td>________________</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li><strong>Esponi a voce.</strong><p>In circa due minuti racconta che cosa accade dalla scrittura dell'indirizzo alla comparsa della pagina.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esercizi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">✍️</span>
+        <h2 id="esercizi">Esercizi progressivi</h2>
+      </div>
+      <div class="question-grid">
+        <article class="quiz-question"><h3>1. Classifica i servizi</h3><p>Classifica Web, e-mail, videochiamata, streaming e messaggistica: usano Internet? Coincidono necessariamente con il Web?</p></article>
+        <article class="quiz-question"><h3>2. Associa</h3><p>Associa Internet, Web, browser, motore di ricerca, sito e pagina alle definizioni studiate.</p></article>
+        <article class="quiz-question"><h3>3. Completa</h3><p>Internet è una rete globale di ______; il Web è un ______ di Internet; il browser è un ______.</p></article>
+        <article class="quiz-question"><h3>4. Leggi l'URL</h3><p>In <code>https://www.esempio.it/scuola/lezione</code> individua modalità, dominio e percorso.</p></article>
+        <article class="quiz-question"><h3>5. Confronta</h3><p>Spiega due differenze tra browser e motore di ricerca e fornisci un esempio per ciascuno.</p></article>
+        <article class="quiz-question"><h3>6. Riordina</h3><p>Ordina: il server invia la risorsa; l'utente indica l'URL; il browser mostra la pagina; il browser invia la richiesta; il server riceve la richiesta.</p></article>
+        <article class="quiz-question"><h3>7. Motiva</h3><p>“Una videochiamata usa Internet, quindi è sempre una pagina Web”. Spiega perché la conclusione non è corretta.</p></article>
+        <article class="quiz-question"><h3>8. Esposizione orale</h3><p>In tre minuti distingui Internet, Web, sito, pagina, browser e motore di ricerca.</p></article>
+      </div>
+      <div class="self-check">
+        <details><summary>Controlla le frasi e l'URL</summary><p>Internet è una rete globale di reti; il Web è un servizio di Internet; il browser è un programma. Nell'URL, <code>https://</code> indica la modalità, <code>www.esempio.it</code> il dominio e <code>/scuola/lezione</code> il percorso.</p></details>
+        <details><summary>Controlla l'ordine della richiesta</summary><p>L'utente indica l'URL; il browser invia la richiesta; il server la riceve; il server invia la risorsa; il browser mostra la pagina.</p></details>
+      </div>
+    </section>
+
+    <section class="quiz" aria-labelledby="quiz">
+      <h2 id="quiz">🧠 Autoverifica</h2>
+      <p>Rispondi prima a voce. Apri la soluzione soltanto dopo.</p>
+      <div class="self-check">
+        <details><summary>1. Che cos'è Internet?</summary><p>È una grande infrastruttura globale formata dall'interconnessione di moltissime reti.</p></details>
+        <details><summary>2. Perché Internet e Web non sono sinonimi?</summary><p>Internet è la rete globale; il Web è uno dei servizi che la utilizza.</p></details>
+        <details><summary>3. Quali servizi Internet non coincidono necessariamente con il Web?</summary><p>Per esempio posta elettronica, messaggistica e videochiamate.</p></details>
+        <details><summary>4. Qual è la differenza tra sito e pagina Web?</summary><p>Il sito è un insieme organizzato di pagine e risorse; la pagina è una singola pagina consultabile.</p></details>
+        <details><summary>5. Qual è la differenza tra browser e motore di ricerca?</summary><p>Il browser è un programma per consultare il Web; il motore di ricerca è un servizio Web per trovare contenuti.</p></details>
+        <details><summary>6. Che cos'è un URL?</summary><p>È l'indirizzo di una risorsa Web e indica come raggiungerla.</p></details>
+        <details><summary>7. Quali parti essenziali riconosci nell'URL di esempio?</summary><p>La modalità <code>https://</code>, il dominio <code>www.esempio.it</code> e il percorso <code>/scuola/lezione</code>.</p></details>
+        <details><summary>8. Che cosa accade dopo che il browser invia una richiesta?</summary><p>La richiesta attraversa Internet, il server Web la riceve e invia la risorsa; il browser interpreta i dati e mostra la pagina.</p></details>
+        <details><summary>9. Correggi: “Il browser contiene tutto Internet”.</summary><p>Il browser richiede risorse ai server e le presenta; non contiene tutto Internet.</p></details>
+      </div>
+    </section>
+
+    <aside class="callout exam" aria-labelledby="domanda-esame">
+      <div class="callout-icon" aria-hidden="true">🎓</div>
+      <div>
+        <p class="callout-label">Possibile domanda d'esame</p>
+        <h3 id="domanda-esame">Qual è la differenza tra Internet e Web?</h3>
+        <p><strong>Per rispondere bene:</strong> definisci Internet, presenta il Web come servizio, aggiungi due servizi differenti e concludi con un esempio concreto.</p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="glossario">
+      <div class="section-heading"><span class="icon" aria-hidden="true">📖</span><h2 id="glossario">Glossario essenziale</h2></div>
+      <dl class="glossary-grid">
+        <div class="glossary-card"><dt>Internet</dt><dd>Rete globale formata da moltissime reti interconnesse.</dd></div>
+        <div class="glossary-card"><dt>Web</dt><dd>Servizio Internet formato da pagine e risorse collegate.</dd></div>
+        <div class="glossary-card"><dt>Servizio Internet</dt><dd>Attività o funzione resa disponibile usando Internet.</dd></div>
+        <div class="glossary-card"><dt>Browser</dt><dd>Programma per richiedere e consultare pagine Web.</dd></div>
+        <div class="glossary-card"><dt>Motore di ricerca</dt><dd>Servizio Web che aiuta a trovare pagine e contenuti.</dd></div>
+        <div class="glossary-card"><dt>Sito Web</dt><dd>Insieme organizzato di pagine e risorse Web.</dd></div>
+        <div class="glossary-card"><dt>Pagina Web</dt><dd>Singola pagina consultabile attraverso il browser.</dd></div>
+        <div class="glossary-card"><dt>Collegamento ipertestuale</dt><dd>Elemento selezionabile che conduce a un'altra risorsa.</dd></div>
+        <div class="glossary-card"><dt>URL</dt><dd>Indirizzo di una risorsa Web.</dd></div>
+        <div class="glossary-card"><dt>Dominio</dt><dd>Nome che identifica un sito nell'indirizzo Web.</dd></div>
+        <div class="glossary-card"><dt>Client</dt><dd>Ruolo di chi richiede una risorsa.</dd></div>
+        <div class="glossary-card"><dt>Server Web</dt><dd>Sistema che mette a disposizione risorse Web.</dd></div>
+      </dl>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header">
+        <p class="eyebrow">Sintesi essenziale</p>
+        <h2 id="zaino-studente">🎒 Lo zaino dello studente</h2>
+        <p>Le idee e i confronti da saper ricostruire durante un'esposizione orale.</p>
+      </div>
+      <div class="student-backpack-grid">
+        <article class="backpack-card">
+          <h3>✅ Cinque concetti essenziali</h3>
+          <ol class="essential-list">
+            <li>Internet è una rete globale di reti interconnesse.</li>
+            <li>Il Web è uno dei servizi che usa Internet.</li>
+            <li>Il browser consulta il Web; il motore di ricerca trova contenuti.</li>
+            <li>Un URL identifica una risorsa Web.</li>
+            <li>Browser e server Web scambiano richiesta e risposta.</li>
+          </ol>
+        </article>
+        <article class="backpack-card">
+          <h3>↔️ Tre confronti</h3>
+          <ul class="keyword-list">
+            <li>Internet ≠ Web</li>
+            <li>browser ≠ motore di ricerca</li>
+            <li>sito Web ≠ pagina Web</li>
+          </ul>
+        </article>
+        <article class="backpack-card">
+          <h3>🔢 Una sequenza da raccontare</h3>
+          <ol>
+            <li>L'utente indica un URL.</li>
+            <li>Il browser invia la richiesta.</li>
+            <li>Il server restituisce la risorsa.</li>
+            <li>Il browser mostra la pagina.</li>
+          </ol>
+        </article>
+        <article class="backpack-card">
+          <h3>🎤 Esposizione di 3 minuti</h3>
+          <p>Definisci Internet e Web, confronta browser e motore di ricerca, leggi l'URL di esempio e racconta lo scambio browser-server.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="review-mission" aria-labelledby="missione-ripasso">
+      <div class="review-mission-icon" aria-hidden="true">🏕️</div>
+      <div>
+        <p class="callout-label">Allenamento distribuito</p>
+        <h2 id="missione-ripasso">Missione di ripasso · 10 minuti al giorno</h2>
+        <p>Prova prima senza rileggere, poi controlla e correggi.</p>
+        <div class="mission-days">
+          <article><strong>Giorno 1 · Servizi</strong><p>Classifica servizi Internet e attività del Web.</p></article>
+          <article><strong>Giorno 2 · Termini</strong><p>Distingui browser, motore di ricerca, sito e pagina.</p></article>
+          <article><strong>Giorno 3 · URL</strong><p>Leggi e spiega le tre parti dell'URL di esempio.</p></article>
+          <article><strong>Giorno 4 · Esponi</strong><p>Racconta a voce il percorso browser-server.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-lesson">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2>Sicurezza informatica</h2>
+      <p>
+        Internet offre molti servizi e possibilità. Nella prossima lezione
+        vedremo perché il loro uso richiede attenzione e comportamenti
+        consapevoli.
+      </p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../10-reti-informatiche/index.html">← Lezione 10 — Reti informatiche</a>
+      <a href="../../index.html">Torna all'indice</a>
+      <a href="../12-sicurezza-informatica/index.html">Lezione 12 — Sicurezza informatica (In preparazione) →</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>
+        Questa pagina è pensata per essere letta anche da studenti DSA:
+        istruzioni sequenziali, font leggibili, contrasti elevati e
+        scorciatoie da tastiera evidenziate.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
