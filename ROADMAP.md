@@ -50,7 +50,7 @@ Legenda
 | 09 | Periferiche | ✅ | 03 | Input, output e I/O |
 | 10 | Reti informatiche | ✅ | 06 | Concetti introduttivi |
 | 11 | Internet e Web | ✅ | 10 | Servizi Internet |
-| 12 | Sicurezza informatica | ⚪ | 11 | Password, malware, phishing |
+| 12 | Sicurezza informatica | ✅ | 11 | Password, malware, phishing |
 | 13 | Sistemi di numerazione | ⚪ | 02 | Binario, decimale, esadecimale |
 | 14 | Codifica dei caratteri | ⚪ | 13 | ASCII e Unicode |
 | 15 | Immagini digitali | ⚪ | 13 | Pixel, risoluzione, colore |
@@ -102,6 +102,11 @@ Quando una lezione viene completata:
 La roadmap è un documento dinamico e può essere aggiornata nel corso dello sviluppo del progetto.
 
 Eventuali modifiche alla sequenza degli argomenti devono essere valutate prima di creare nuove lezioni.
+
+Dopo la Lezione 12, lo sviluppo del percorso del primo anno è temporaneamente
+sospeso. Le lezioni 13–18 restano previste; il lavoro proseguirà ora sul
+percorso del secondo anno.
+
 ## Materiale integrativo
 
 Il materiale integrativo consolida argomenti già affrontati e rimane separato
