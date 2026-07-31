@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Lezione sulle periferiche del computer: dispositivi di input, output e input/output, direzione dei dati, collegamenti e driver.">
+  <title>09 — Periferiche: input, output e input/output</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+
+  <link rel="icon"
+        href="https://mcocciniglia.github.io/common/assets/favicon.svg"
+        type="image/svg+xml">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge first">Programma del primo anno</span>
+        </div>
+
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle"
+                  class="btn btn-theme"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+
+          <button id="contrastToggle"
+                  class="btn btn-outline btn-contrast"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span>
+        <span aria-hidden="true">›</span>
+        <span>Primo anno</span>
+        <span aria-hidden="true">›</span>
+        <span>Lezione 9</span>
+      </nav>
+
+      <p class="eyebrow">Lezione 9 · Durata prevista: 2 ore</p>
+      <h1>Periferiche: input, output e input/output</h1>
+
+      <p class="lead">
+        Tastiera, monitor, microfono e touchscreen collaborano con il
+        computer, ma i dati si muovono sempre nella stessa direzione?
+      </p>
+
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ 2 ore</span>
+        <span>📘 Primo anno</span>
+        <span>🎯 Input, output e direzione dei dati</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading">
+        <span>Percorso del primo anno</span>
+        <span>Lezione 9 di 18</span>
+      </div>
+      <div class="progress-track"
+           role="progressbar"
+           aria-label="Avanzamento del percorso"
+           aria-valuemin="0"
+           aria-valuemax="18"
+           aria-valuenow="9">
+        <div class="progress-value" style="--progress:50%;"></div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ripasso">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">↩️</span>
+        <h2 id="ripasso">Prima di iniziare: richiamiamo la Lezione 08</h2>
+      </div>
+      <p>
+        La CPU elabora dati e istruzioni, mentre la RAM mantiene
+        temporaneamente ciò che è in uso. Per lavorare, però, il computer deve
+        anche ricevere dati e comandi e deve restituire i risultati.
+      </p>
+      <p>
+        Quando scriviamo, parliamo durante una videolezione o ascoltiamo un
+        file audio, usiamo dispositivi che mettono in comunicazione il
+        computer con noi e con l'ambiente.
+      </p>
+      <aside class="callout remember" aria-labelledby="domanda-guida">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Domanda guida</p>
+          <h3 id="domanda-guida">Come entrano i dati nel computer e come vengono restituiti i risultati?</h3>
+          <p>
+            Per rispondere osserveremo la direzione in cui si muovono i dati
+            tra il computer e i dispositivi che collaborano con esso.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="situazione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔎</span>
+        <h2 id="situazione">Una postazione, molti dispositivi</h2>
+      </div>
+      <p>
+        Immagina uno studente che partecipa a una videolezione. Digita un
+        messaggio con la tastiera, sposta il puntatore con il touchpad, parla
+        nel microfono, vede il docente sullo schermo e ascolta la voce dagli
+        altoparlanti.
+      </p>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Dati verso il computer</h3>
+          <p>
+            Tastiera, touchpad e microfono inviano rispettivamente caratteri,
+            movimenti o comandi e suoni.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Dati dal computer</h3>
+          <p>
+            Schermo e altoparlanti ricevono immagini e suoni già elaborati e
+            li presentano allo studente.
+          </p>
+        </article>
+      </div>
+      <p>
+        La direzione dei dati ci permette di classificare questi dispositivi.
+        Prima osserviamo che cosa fanno; ora possiamo definirli.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🎯</span>
+        <h2 id="obiettivi">Obiettivi della lezione</h2>
+      </div>
+      <div class="objective-grid">
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Definire una periferica</strong>
+          <small>Spiegandone il ruolo con un esempio concreto.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Classificare i dispositivi</strong>
+          <small>Input, output oppure input/output.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Motivare la classificazione</strong>
+          <small>Osservando la direzione dei dati.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Distinguere la posizione</strong>
+          <small>Periferiche integrate ed esterne.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Usare termini precisi</strong>
+          <small>Periferica, porta, cavo, collegamento e programma.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Descrivere un percorso</strong>
+          <small>Input, elaborazione e output.</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="periferica">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧩</span>
+        <h2 id="periferica">Che cos'è una periferica</h2>
+      </div>
+      <div class="definition">
+        <span class="definition-term">Periferica</span>
+        <p>
+          Dispositivo che collabora con il computer permettendo l'ingresso,
+          l'uscita oppure lo scambio di dati.
+        </p>
+      </div>
+      <p>
+        Una periferica può essere <strong>esterna</strong>, come una stampante
+        collegata al computer, oppure <strong>integrata</strong> nel
+        dispositivo. La webcam, il touchpad e gli altoparlanti incorporati in
+        un notebook restano periferiche.
+      </p>
+      <aside class="callout warning" aria-labelledby="fuori-case">
+        <div class="callout-icon" aria-hidden="true">⚠️</div>
+        <div>
+          <p class="callout-label">Definizione imprecisa</p>
+          <h3 id="fuori-case">Una periferica non è semplicemente “ciò che sta fuori dal case”</h3>
+          <p>
+            La posizione non determina la funzione. Per riconoscere una
+            periferica bisogna chiedersi se permette l'ingresso, l'uscita o lo
+            scambio di dati con il computer.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="input">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">➡️</span>
+        <h2 id="input">Periferiche di input</h2>
+      </div>
+      <p>
+        Le periferiche di <strong>input</strong> trasferiscono dati o comandi
+        <strong>verso il computer</strong>. Il dato acquisito cambia secondo il
+        dispositivo.
+      </p>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Tastiera</h3>
+          <p>Acquisisce caratteri e comandi prodotti premendo i tasti.</p>
+        </article>
+        <article class="info-card">
+          <h3>Mouse e touchpad</h3>
+          <p>Acquisiscono movimenti, selezioni e comandi dell'utente.</p>
+        </article>
+        <article class="info-card">
+          <h3>Microfono</h3>
+          <p>Acquisisce suoni e voce trasformandoli in dati per il computer.</p>
+        </article>
+        <article class="info-card">
+          <h3>Scanner e webcam</h3>
+          <p>Acquisiscono rispettivamente documenti o immagini e riprese video.</p>
+        </article>
+        <article class="info-card">
+          <h3>Lettore di codici</h3>
+          <p>Acquisisce le informazioni rappresentate da un codice.</p>
+        </article>
+        <article class="info-card">
+          <h3>Sensori</h3>
+          <p>Acquisiscono grandezze dell'ambiente, per esempio luce o temperatura.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="output">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">⬅️</span>
+        <h2 id="output">Periferiche di output</h2>
+      </div>
+      <p>
+        Le periferiche di <strong>output</strong> ricevono dati
+        <strong>dal computer</strong> e presentano i risultati all'utente o
+        all'ambiente esterno.
+      </p>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Monitor</h3>
+          <p>Riceve dati dal computer e presenta testi, immagini e video.</p>
+        </article>
+        <article class="info-card">
+          <h3>Stampante</h3>
+          <p>Riceve il documento elaborato e lo riproduce su carta.</p>
+        </article>
+        <article class="info-card">
+          <h3>Altoparlanti e cuffie</h3>
+          <p>Ricevono dati audio e li trasformano in suoni udibili.</p>
+        </article>
+        <article class="info-card">
+          <h3>Videoproiettore</h3>
+          <p>Riceve immagini dal computer e le proietta su una superficie.</p>
+        </article>
+      </div>
+      <p>
+        Non basta imparare un elenco: il monitor è output perché i dati vanno
+        dal computer verso lo schermo, non perché si trova sulla scrivania.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="input-output">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">↔️</span>
+        <h2 id="input-output">Periferiche di input/output</h2>
+      </div>
+      <p>
+        Alcuni dispositivi possono sia inviare dati al computer sia riceverli.
+        Sono periferiche di <strong>input/output</strong>, indicate anche come
+        <strong>I/O</strong>.
+      </p>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Touchscreen</h3>
+          <p>
+            È output quando mostra immagini; è input quando acquisisce il
+            punto toccato e il comando dell'utente.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Stampante multifunzione</h3>
+          <p>
+            È output quando stampa; è input quando usa lo scanner per
+            acquisire un documento.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Unità di memoria esterna</h3>
+          <p>
+            Invia dati al computer durante la lettura e riceve dati durante la
+            scrittura.
+          </p>
+        </article>
+      </div>
+      <aside class="callout remember" aria-labelledby="funzione-direzione">
+        <div class="callout-icon" aria-hidden="true">🧭</div>
+        <div>
+          <p class="callout-label">Metodo di classificazione</p>
+          <h3 id="funzione-direzione">Osserva l'operazione e segui i dati</h3>
+          <p>
+            Quando un dispositivo svolge più funzioni, la classificazione
+            dipende dalle operazioni effettuate e dalle possibili direzioni
+            dei dati.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="percorso">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔄</span>
+        <h2 id="percorso">Il percorso dei dati</h2>
+      </div>
+      <div class="process-flow"
+           role="img"
+           aria-label="Una periferica di input invia dati al computer, dove RAM e CPU collaborano all'elaborazione; una periferica di output presenta il risultato">
+        <div class="process-node">
+          <strong>Periferica di input</strong>
+          <span>Invia dati e comandi</span>
+        </div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node">
+          <strong>RAM e CPU</strong>
+          <span>Mantengono ed elaborano</span>
+        </div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node">
+          <strong>Periferica di output</strong>
+          <span>Presenta il risultato</span>
+        </div>
+      </div>
+      <p>
+        Lo schema <strong>input → elaborazione → output</strong> è un modello
+        semplificato: aiuta a seguire il dato senza descrivere tutte le
+        comunicazioni interne del computer.
+      </p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Tastiera → computer → monitor</h3>
+          <ul>
+            <li><strong>Dato acquisito:</strong> il carattere del tasto premuto.</li>
+            <li><strong>Elaborazione:</strong> il programma interpreta il comando.</li>
+            <li><strong>Risultato:</strong> il carattere appare sul monitor.</li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <h3>Microfono → computer → altoparlanti</h3>
+          <ul>
+            <li><strong>Dato acquisito:</strong> un suono o la voce.</li>
+            <li><strong>Elaborazione:</strong> il programma gestisce i dati audio.</li>
+            <li><strong>Risultato:</strong> il suono viene riprodotto dagli altoparlanti.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="collegamenti">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔌</span>
+        <h2 id="collegamenti">Periferica, porta e collegamento</h2>
+      </div>
+      <p>
+        Dispositivo e mezzo di collegamento non sono la stessa cosa. Usiamo le
+        parole con precisione senza approfondire gli standard tecnici.
+      </p>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Periferica</h3>
+          <p>La tastiera è un dispositivo di input che invia caratteri e comandi.</p>
+        </article>
+        <article class="info-card">
+          <h3>Porta e connettore</h3>
+          <p>
+            La porta è il punto di collegamento; il connettore è la parte che
+            viene inserita o accoppiata. Una porta USB non è una periferica.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Cavo</h3>
+          <p>
+            Trasporta segnali tra dispositivi. Un cavo HDMI non è una
+            periferica.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Tecnologia di collegamento</h3>
+          <p>
+            Bluetooth permette collegamenti senza cavo, ma non è una
+            periferica.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>Programma</h3>
+          <p>
+            Un'applicazione è software e non è una periferica, anche quando
+            utilizza tastiera, webcam o altre periferiche.
+          </p>
+        </article>
+      </div>
+      <div class="definition">
+        <span class="definition-term">Interfaccia</span>
+        <p>
+          In questo contesto, insieme di modalità e regole che rende possibile
+          la comunicazione tra dispositivi o componenti.
+        </p>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="sistema-operativo">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🖥️</span>
+        <h2 id="sistema-operativo">Periferiche e sistema operativo</h2>
+      </div>
+      <p>
+        Come abbiamo visto nella Lezione 05, il sistema operativo riconosce e
+        gestisce le periferiche. In alcuni casi usa un
+        <strong>driver</strong>, cioè un software che permette al sistema
+        operativo di comunicare correttamente con uno specifico dispositivo.
+      </p>
+      <aside class="callout warning" aria-labelledby="driver-limite">
+        <div class="callout-icon" aria-hidden="true">⚠️</div>
+        <div>
+          <p class="callout-label">In questa lezione</p>
+          <h3 id="driver-limite">Riconosci il ruolo del driver</h3>
+          <p>
+            Non occorre installare, cercare o aggiornare driver. È sufficiente
+            comprendere che aiutano il sistema operativo a comunicare con le
+            periferiche.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="errori">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">❌</span>
+        <h2 id="errori">Errori frequenti da correggere</h2>
+      </div>
+      <div class="question-grid">
+        <article class="quiz-question">
+          <h3>“Una periferica deve essere sempre esterna”</h3>
+          <p>No. Webcam, touchpad e altoparlanti possono essere integrati.</p>
+        </article>
+        <article class="quiz-question">
+         <h3>“USB è una periferica”</h3>
+         <p>
+         No. USB è uno standard di comunicazione; una porta USB è un punto
+         di collegamento. La periferica è, per esempio, la tastiera o l'unità
+         esterna collegata attraverso quella porta.
+        </p>
+        </article>
+        <article class="quiz-question">
+          <h3>“Il monitor è un dispositivo di input”</h3>
+          <p>No. Un monitor normale riceve immagini dal computer: è output.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>“Il touchscreen è soltanto un monitor”</h3>
+          <p>No. Mostra immagini e acquisisce il tocco: è input/output.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>“Una stampante multifunzione appartiene a una sola categoria”</h3>
+          <p>No. Stampa in output e acquisisce documenti in input.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>“La CPU è una periferica”</h3>
+          <p>No. La CPU è il componente che elabora dati e istruzioni.</p>
+        </article>
+        <article class="quiz-question">
+          <h3>“Un'applicazione è una periferica”</h3>
+          <p>No. Un'applicazione è software; una periferica è un dispositivo.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio">
+      <div class="lab-header">
+        <h2 id="laboratorio">💻 Laboratorio — Inventario delle periferiche</h2>
+      </div>
+      <div class="lab-body">
+        <p>
+          <strong>Obiettivo:</strong> osservare la propria postazione,
+          classificare almeno otto periferiche e motivare ogni scelta.
+          L'attività può essere svolta anche durante una lezione online.
+        </p>
+        <aside class="callout warning" aria-labelledby="sicurezza">
+          <div class="callout-icon" aria-hidden="true">⚠️</div>
+          <div>
+            <p class="callout-label">Attività osservativa</p>
+            <h3 id="sicurezza">Non modificare la configurazione</h3>
+            <p>
+              Non installare driver, non attivare webcam o microfono, non
+              raccogliere dati personali e non smontare il computer.
+              L'eventuale apertura delle impostazioni dei dispositivi di
+              Windows è facoltativa e serve soltanto per osservare.
+            </p>
+          </div>
+        </aside>
+
+        <ol class="steps">
+          <li>
+            <strong>Osserva la postazione.</strong>
+            <p>Considera sia i dispositivi esterni sia quelli integrati.</p>
+          </li>
+          <li>
+            <strong>Individua almeno otto periferiche.</strong>
+            <p>
+              Puoi includere tastiera, mouse, touchpad, monitor, altoparlanti,
+              cuffie, microfono, webcam, stampante o unità esterna.
+            </p>
+          </li>
+          <li>
+            <strong>Completa l'inventario.</strong>
+            <div class="table-wrapper"
+                 tabindex="0"
+                 role="region"
+                 aria-label="Scheda per l'inventario delle periferiche">
+              <table class="mini-table comparison-table">
+                <caption>Inventario delle periferiche della postazione</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Dispositivo</th>
+                    <th scope="col">Funzione</th>
+                    <th scope="col">Categoria: input, output o I/O</th>
+                    <th scope="col">Integrato o esterno</th>
+                    <th scope="col">Collegamento</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">________________</th><td>________________</td><td>________________</td><td>________________</td><td>________________</td></tr>
+                  <tr><th scope="row">________________</th><td>________________</td><td>________________</td><td>________________</td><td>________________</td></tr>
+                  <tr><th scope="row">________________</th><td>________________</td><td>________________</td><td>________________</td><td>________________</td></tr>
+                  <tr><th scope="row">________________</th><td>________________</td><td>________________</td><td>________________</td><td>________________</td></tr>
+                  <tr><th scope="row">________________</th><td>________________</td><td>________________</td><td>________________</td><td>________________</td></tr>
+                  <tr><th scope="row">________________</th><td>________________</td><td>________________</td><td>________________</td><td>________________</td></tr>
+                  <tr><th scope="row">________________</th><td>________________</td><td>________________</td><td>________________</td><td>________________</td></tr>
+                  <tr><th scope="row">________________</th><td>________________</td><td>________________</td><td>________________</td><td>________________</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li>
+            <strong>Motiva ogni classificazione.</strong>
+            <p>
+              Per ogni riga indica se il dato va verso il computer, dal
+              computer al dispositivo oppure in entrambe le direzioni.
+            </p>
+          </li>
+          <li>
+            <strong>Segui un dato.</strong>
+            <p>
+              Scegli un'azione, per esempio premere un tasto, e descrivi
+              oralmente il percorso dal dispositivo di input all'elaborazione
+              e al risultato mostrato.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esercizi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">✍️</span>
+        <h2 id="esercizi">Esercizi progressivi</h2>
+      </div>
+      <div class="question-grid">
+        <article class="quiz-question">
+          <h3>1. Classifica</h3>
+          <p>
+            Classifica tastiera, mouse, microfono, monitor, stampante,
+            altoparlanti e videoproiettore come input oppure output. Motiva due
+            risposte.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>2. Due direzioni</h3>
+          <p>
+            Spiega perché touchscreen, stampante multifunzione e unità di
+            memoria esterna possono essere classificati come input/output.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>3. Trova gli intrusi</h3>
+          <p>
+            Individua ciò che non è una periferica: tastiera, porta USB,
+            monitor, cavo HDMI, applicazione, webcam, CPU, cuffie.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>4. Completa i percorsi</h3>
+          <p>
+            ______ → computer → monitor; microfono → ______ → altoparlanti.
+            Indica anche il dato acquisito e il risultato.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>5. Risposta orale</h3>
+          <p>
+            Scegli una periferica della tua postazione e presentala in un
+            minuto: funzione, categoria, direzione dei dati e posizione.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>6. Il touchscreen</h3>
+          <p>
+            Uno studente guarda una fotografia e poi tocca un pulsante sullo
+            stesso touchscreen. Descrivi le due diverse direzioni dei dati.
+          </p>
+        </article>
+        <article class="quiz-question">
+          <h3>7. La multifunzione</h3>
+          <p>
+            Una stampante multifunzione acquisisce una pagina e poi ne stampa
+            una copia. Distingui fase di input, elaborazione e fase di output.
+          </p>
+        </article>
+      </div>
+
+      <div class="self-check">
+        <details>
+          <summary>Controlla le classificazioni principali</summary>
+          <p>
+            Tastiera, mouse e microfono sono input; monitor, stampante,
+            altoparlanti e videoproiettore sono output. Touchscreen, stampante
+            multifunzione e unità esterna possono scambiare dati in entrambe
+            le direzioni.
+          </p>
+        </details>
+        <details>
+          <summary>Controlla gli elementi che non sono periferiche</summary>
+          <p>
+            Porta USB, cavo HDMI, applicazione e CPU non sono periferiche:
+            sono rispettivamente un punto di collegamento, un cavo, software e
+            un componente di elaborazione.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <section class="quiz" aria-labelledby="quiz">
+      <h2 id="quiz">🧠 Autoverifica</h2>
+      <p>Formula prima una risposta a voce. Apri la spiegazione soltanto dopo.</p>
+      <div class="self-check">
+        <details>
+          <summary>1. Che cos'è una periferica?</summary>
+          <p>
+            È un dispositivo che collabora con il computer permettendo
+            l'ingresso, l'uscita o lo scambio di dati.
+          </p>
+        </details>
+        <details>
+          <summary>2. Come distingui input e output?</summary>
+          <p>
+            Osservo la direzione dei dati: l'input va verso il computer;
+            l'output va dal computer verso il dispositivo.
+          </p>
+        </details>
+        <details>
+          <summary>3. Perché un touchscreen è input/output?</summary>
+          <p>Mostra immagini in output e acquisisce il tocco in input.</p>
+        </details>
+        <details>
+          <summary>4. Una periferica deve essere esterna?</summary>
+          <p>
+            No. Può essere integrata, come il touchpad o la webcam di un
+            notebook.
+          </p>
+        </details>
+        <details>
+          <summary>5. Qual è la differenza tra una tastiera e una porta USB?</summary>
+          <p>
+            La tastiera è una periferica di input; la porta USB è un punto di
+            collegamento.
+          </p>
+        </details>
+        <details>
+          <summary>6. Descrivi a voce il percorso di un carattere digitato.</summary>
+          <p>
+            La tastiera acquisisce il tasto, il computer elabora il comando e
+            il monitor mostra il carattere.
+          </p>
+        </details>
+        <details>
+          <summary>7. Perché la CPU non è una periferica?</summary>
+          <p>
+            Perché è il componente che elabora dati e istruzioni, non un
+            dispositivo usato per l'ingresso o l'uscita dei dati.
+          </p>
+        </details>
+        <details>
+          <summary>8. Correggi: “Bluetooth è una periferica”.</summary>
+          <p>
+            Bluetooth è una tecnologia di collegamento che può essere usata
+            da periferiche; non è esso stesso una periferica.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <aside class="callout exam" aria-labelledby="domanda-esame">
+      <div class="callout-icon" aria-hidden="true">🎓</div>
+      <div>
+        <p class="callout-label">Possibile domanda d'esame</p>
+        <h3 id="domanda-esame">Come si classificano le periferiche?</h3>
+        <p>
+          <strong>Per rispondere bene:</strong> definisci periferica, spiega la
+          direzione dei dati e presenta un esempio motivato per input, output e
+          input/output.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="glossario">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📖</span>
+        <h2 id="glossario">Glossario essenziale</h2>
+      </div>
+      <dl class="glossary-grid">
+        <div class="glossary-card">
+          <dt>Periferica</dt>
+          <dd>Dispositivo che permette ingresso, uscita o scambio di dati.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Input</dt>
+          <dd>Dati o comandi diretti verso il computer.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Output</dt>
+          <dd>Dati o risultati diretti dal computer verso l'esterno.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Input/output</dt>
+          <dd>Scambio di dati possibile in entrambe le direzioni.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Porta</dt>
+          <dd>Punto attraverso il quale un dispositivo può essere collegato.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Interfaccia</dt>
+          <dd>Modalità e regole che rendono possibile la comunicazione.</dd>
+        </div>
+        <div class="glossary-card">
+          <dt>Driver</dt>
+          <dd>Software che aiuta il sistema operativo a comunicare con un dispositivo.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header">
+        <p class="eyebrow">Sintesi essenziale</p>
+        <h2 id="zaino-studente">🎒 Lo zaino dello studente</h2>
+        <p>
+          Se domani dimenticassi quasi tutto, queste sono le idee che dovresti
+          riuscire a ricostruire.
+        </p>
+      </div>
+      <div class="student-backpack-grid">
+        <article class="backpack-card">
+          <h3>✅ Le 5 idee fondamentali</h3>
+          <ol class="essential-list">
+            <li>Una periferica permette ingresso, uscita o scambio di dati.</li>
+            <li>La classificazione dipende dalla direzione dei dati.</li>
+            <li>Una periferica può essere integrata oppure esterna.</li>
+            <li>Porte, cavi e programmi non sono periferiche.</li>
+            <li>Input, elaborazione e output descrivono un modello fondamentale.</li>
+          </ol>
+        </article>
+        <article class="backpack-card">
+          <h3>📝 5 parole chiave</h3>
+          <ul class="keyword-list">
+            <li>Periferica</li>
+            <li>Input</li>
+            <li>Output</li>
+            <li>Input/output</li>
+            <li>Driver</li>
+          </ul>
+        </article>
+        <article class="backpack-card">
+          <h3>❓ 3 domande da esame</h3>
+          <ol>
+            <li>Che cos'è una periferica?</li>
+            <li>Come distingui input, output e input/output?</li>
+            <li>Descrivi un percorso completo dei dati.</li>
+          </ol>
+        </article>
+        <article class="backpack-card">
+          <h3>⏱️ Ripasso in 5 minuti</h3>
+          <ol class="mini-review">
+            <li>Chiudi la pagina.</li>
+            <li>Spiega la regola della direzione dei dati.</li>
+            <li>Fornisci tre esempi motivati.</li>
+            <li>Controlla e correggi soltanto i punti incerti.</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="review-mission" aria-labelledby="missione-ripasso">
+      <div class="review-mission-icon" aria-hidden="true">🏕️</div>
+      <div>
+        <p class="callout-label">Allenamento distribuito</p>
+        <h2 id="missione-ripasso">Missione di ripasso · 10 minuti al giorno</h2>
+        <p>
+          Prova prima senza rileggere, poi controlla la lezione e correggi le
+          risposte incomplete.
+        </p>
+        <div class="mission-days">
+          <article>
+            <strong>Giorno 1 · Classifica</strong>
+            <p>Classifica otto dispositivi osservando la direzione dei dati.</p>
+          </article>
+          <article>
+            <strong>Giorno 2 · Trova esempi</strong>
+            <p>Trova un esempio reale di input, output e input/output.</p>
+          </article>
+          <article>
+            <strong>Giorno 3 · Correggi</strong>
+            <p>Correggi a voce tre errori frequenti della lezione.</p>
+          </article>
+          <article>
+            <strong>Giorno 4 · Esponi</strong>
+            <p>Presenta in due minuti il percorso completo di un dato.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-lesson">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2>Reti informatiche</h2>
+      <p>
+        Finora abbiamo seguito i dati tra un computer e le sue periferiche.
+        Nella prossima lezione osserveremo come più dispositivi possono
+        comunicare tra loro.
+      </p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../08-cpu/index.html">← Lezione 08 — CPU</a>
+      <a href="../../index.html">Torna all'indice</a>
+      <a href="../10-reti-informatiche/index.html">Lezione 10 — Reti informatiche (In preparazione) →</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>
+        Questa pagina è pensata per essere letta anche da studenti DSA:
+        istruzioni sequenziali, font leggibili, contrasti elevati e
+        scorciatoie da tastiera evidenziate.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
