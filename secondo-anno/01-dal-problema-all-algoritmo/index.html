@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Lezione introduttiva sul passaggio dal problema all'algoritmo: obiettivo, dati di ingresso, output atteso, esecuzione, risultato ottenuto, vincoli e controllo finale.">
+  <title>2.01 — Dal problema all'algoritmo</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line" aria-label="Identificazione del percorso">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge second">Programma del secondo anno</span>
+        </div>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle" class="btn btn-theme" type="button"
+                  aria-pressed="false" aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+          <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button"
+                  aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span>
+        <span aria-hidden="true">›</span>
+        <span>Secondo anno</span>
+        <span aria-hidden="true">›</span>
+        <span>Lezione 2.01</span>
+      </nav>
+
+      <p class="eyebrow">Secondo anno — Lezione 2.01 · Durata prevista: 2 ore</p>
+      <h1>Dal problema all'algoritmo</h1>
+      <p class="lead">Capire la richiesta, ordinare le azioni e controllare il risultato.</p>
+
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ Circa 2 ore</span>
+        <span>📘 Secondo anno</span>
+        <span>🎯 Prerequisito: riconoscere dati e informazioni</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading">
+        <span>Percorso del secondo anno</span>
+        <span>Lezione 1 di 11</span>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        <div class="progress-value" style="--progress:9.09%;"></div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ripasso">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔄</span>
+        <h2 id="ripasso">Prima di iniziare: dati e informazioni</h2>
+      </div>
+      <p>
+        Nel primo anno hai imparato che un <strong>dato</strong> è un elemento grezzo,
+        mentre un'<strong>informazione</strong> è un dato interpretato in un contesto.
+        Per esempio, «4» da solo è un dato; «servono 4 biglietti» è un'informazione utile.
+      </p>
+      <p>
+        Quando affrontiamo un problema dobbiamo riconoscere le informazioni disponibili,
+        capire quali sono utili e collegarle a ciò che vogliamo ottenere. Questo richiamo
+        è il punto di partenza per trasformare una richiesta in un procedimento ordinato.
+      </p>
+      <aside class="callout remember" aria-labelledby="ponte-prerequisiti">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Collegamento con il primo anno</p>
+          <h3 id="ponte-prerequisiti">I dati acquistano significato dentro un problema</h3>
+          <p>Prima di usarli, chiediti sempre che cosa rappresentano e perché sono necessari.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🎯</span>
+        <h2 id="obiettivi">Obiettivi della lezione</h2>
+      </div>
+      <p>Al termine dovrai saper analizzare un problema semplice e presentare a voce la soluzione.</p>
+      <div class="objective-grid">
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Distinguere</strong><small>Problema, soluzione e algoritmo.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Individuare</strong><small>Obiettivo, input, output atteso e vincoli.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Ordinare</strong><small>Azioni chiare, complete ed eseguibili.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Controllare</strong><small>Il risultato ottenuto rispetto all'output atteso.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Esporre</strong><small>L'analisi con parole semplici e precise.</small></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="situazione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📤</span>
+        <h2 id="situazione">Situazione iniziale: consegnare un compito</h2>
+      </div>
+      <p>
+        Hai terminato una relazione e devi consegnarla sulla piattaforma scolastica entro le
+        18:00, in formato PDF e con il nome indicato dal docente. Fare subito clic su
+        «Consegna» non basta: prima devi capire la richiesta.
+      </p>
+      <div class="card-grid">
+        <article class="info-card"><h3>Che cosa ottenere?</h3><p>Una consegna corretta e visibile al docente.</p></article>
+        <article class="info-card"><h3>Quali sono gli input?</h3><p>Il documento, le credenziali e le istruzioni.</p></article>
+        <article class="info-card"><h3>Quali limiti?</h3><p>Scadenza, formato e nome del file.</p></article>
+        <article class="info-card"><h3>Quali azioni?</h3><p>Preparare, caricare, eseguire la consegna e controllare.</p></article>
+      </div>
+      <p>
+        Questa situazione mostra l'idea centrale della lezione: <strong>prima di agire,
+        analizziamo il problema</strong>.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="problema-soluzione-algoritmo">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧩</span>
+        <h2 id="problema-soluzione-algoritmo">Problema, soluzione e algoritmo</h2>
+      </div>
+      <p>Partiamo dall'esempio concreto e diamo un nome ai tre elementi principali.</p>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Problema</h3>
+          <p>Descrive una situazione da risolvere e ciò che deve essere ottenuto.</p>
+        </article>
+        <article class="info-card">
+          <h3>Soluzione</h3>
+          <p>È il modo scelto per affrontare il problema.</p>
+        </article>
+        <article class="info-card">
+          <h3>Algoritmo</h3>
+          <p>È una sequenza ordinata e finita di istruzioni che descrive come trasformare i dati di ingresso nel risultato atteso.</p>
+        </article>
+      </div>
+      <p>
+        Durante l'analisi distinguiamo i <strong>dati di ingresso (input)</strong>
+        dal risultato che vogliamo ottenere, chiamato <strong>risultato atteso
+        (output)</strong>. L'algoritmo descrive i passi necessari per trasformare
+        gli input nell'output atteso. L'esecuzione produce un
+        <strong>risultato ottenuto</strong>, che deve poi essere controllato.
+      </p>
+      <figure class="lesson-figure algorithm-flow-figure">
+        <img
+          src="assets/dal-problema-all-algoritmo.png"
+          alt="Percorso in sei fasi: problema; analisi di obiettivo, dati di ingresso, output atteso e vincoli; algoritmo; esecuzione; risultato ottenuto; controllo con eventuale revisione dei passi."
+          loading="lazy">
+        <figcaption>
+          Il controllo confronta il risultato ottenuto con l'output atteso. Se
+          non coincidono, occorre rivedere l'analisi o i passi dell'algoritmo.
+        </figcaption>
+      </figure>
+      <aside class="callout remember" aria-labelledby="differenza-fondamentale">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Ricorda</p>
+          <h3 id="differenza-fondamentale">Il problema non è la soluzione</h3>
+          <p>Il problema dice che cosa occorre risolvere; la soluzione indica come affrontarlo.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="buon-algoritmo">
+      <div class="section-heading"><span class="icon" aria-hidden="true">✅</span><h2 id="buon-algoritmo">Come deve essere un buon algoritmo</h2></div>
+      <p>Una semplice lista di frasi non è sufficiente. Il procedimento deve avere caratteristiche precise.</p>
+      <div class="card-grid">
+        <article class="info-card"><h3>Ordinato</h3><p>I passi sono nella successione corretta.</p></article>
+        <article class="info-card"><h3>Finito</h3><p>Termina dopo un numero limitato di passi.</p></article>
+        <article class="info-card"><h3>Comprensibile</h3><p>Chi lo legge capisce che cosa deve fare.</p></article>
+        <article class="info-card"><h3>Non ambiguo</h3><p>Ogni istruzione ha un significato preciso.</p></article>
+        <article class="info-card"><h3>Eseguibile</h3><p>Le azioni possono essere svolte con i mezzi disponibili.</p></article>
+        <article class="info-card"><h3>Efficace</h3><p>Conduce al risultato previsto quando viene eseguito correttamente.</p></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="elementi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔎</span><h2 id="elementi">Gli elementi da individuare</h2></div>
+      <p>Per analizzare un problema usa cinque domande-guida.</p>
+      <div class="card-grid">
+        <article class="info-card"><h3>Obiettivo</h3><p>Lo scopo da raggiungere.</p><p><strong>Domanda:</strong> Che cosa devo ottenere?</p></article>
+        <article class="info-card"><h3>Dati di ingresso (input)</h3><p>Le informazioni disponibili all'inizio e necessarie per affrontare il problema.</p><p><strong>Domanda:</strong> Quali dati conosco o ricevo?</p></article>
+        <article class="info-card"><h3>Risultato atteso (output)</h3><p>Ciò che la soluzione deve produrre o comunicare.</p><p><strong>Domanda:</strong> Quale risultato deve uscire dal procedimento?</p></article>
+        <article class="info-card"><h3>Vincoli</h3><p>Le condizioni e i limiti che devono essere rispettati.</p><p><strong>Domanda:</strong> Quali condizioni devo rispettare?</p></article>
+        <article class="info-card"><h3>Passi</h3><p>Le azioni necessarie, espresse nella successione corretta.</p><p><strong>Domanda:</strong> Come trasformo i dati di ingresso nel risultato atteso?</p></article>
+      </div>
+      <aside class="callout tip" aria-labelledby="prima-domanda">
+        <div class="callout-icon" aria-hidden="true">🧭</div>
+        <div><p class="callout-label">Strategia</p><h3 id="prima-domanda">Inizia dall'obiettivo</h3><p>Se non definisci l'output atteso, non puoi scegliere come trasformare i dati di ingresso né ordinare i passi.</p></div>
+      </aside>
+      <aside class="callout remember" aria-labelledby="output-e-risultato">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Distinzione importante</p>
+          <h3 id="output-e-risultato">Output atteso e risultato ottenuto non sono la stessa cosa</h3>
+          <p>L'output atteso viene definito durante l'analisi; il risultato ottenuto compare dopo l'esecuzione. Il controllo serve a verificare che coincidano.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esempio-compito">
+      <div class="section-heading"><span class="icon" aria-hidden="true">📄</span><h2 id="esempio-compito">Primo esempio guidato: consegnare il compito</h2></div>
+      <dl class="glossary-grid">
+        <div class="glossary-card"><dt>Problema</dt><dd>Consegnare correttamente la relazione sulla piattaforma.</dd></div>
+        <div class="glossary-card"><dt>Obiettivo</dt><dd>Fare in modo che il docente riceva il file richiesto entro la scadenza.</dd></div>
+        <div class="glossary-card"><dt>Dati di ingresso (input)</dt><dd>Relazione completata, istruzioni, credenziali e orario di scadenza.</dd></div>
+        <div class="glossary-card"><dt>Output atteso</dt><dd>Consegna registrata con il file corretto.</dd></div>
+        <div class="glossary-card"><dt>Vincoli</dt><dd>Formato PDF, nome richiesto, dimensione accettata e consegna entro le 18:00.</dd></div>
+      </dl>
+      <h3>Passi ordinati in linguaggio naturale</h3>
+      <ol class="steps">
+        <li><strong>Rileggi le istruzioni.</strong><p>Controlla formato, nome e scadenza.</p></li>
+        <li><strong>Apri la relazione.</strong><p>Verifica che il contenuto sia completo.</p></li>
+        <li><strong>Prepara il file.</strong><p>Salvalo in PDF con il nome richiesto.</p></li>
+        <li><strong>Accedi alla piattaforma.</strong><p>Apri l'attività indicata dal docente.</p></li>
+        <li><strong>Carica e consegna.</strong><p>Seleziona il file corretto e conferma.</p></li>
+        <li><strong>Esegui e osserva il risultato.</strong><p>La conferma visualizzata dopo l'invio è il risultato ottenuto.</p></li>
+        <li><strong>Controlla.</strong><p>Confronta la conferma, il nome del file e l'orario con l'output atteso e con i vincoli.</p></li>
+      </ol>
+      <p><strong>Controllo finale:</strong> il risultato ottenuto coincide con l'output atteso? Il file visualizzato è corretto e la consegna risulta registrata prima delle 18:00?</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esempio-biglietti">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎟️</span><h2 id="esempio-biglietti">Secondo esempio guidato: il costo dei biglietti</h2></div>
+      <p><strong>Situazione:</strong> per una visita servono 4 biglietti uguali. Ogni biglietto costa 7 euro. Quanto si spende in totale?</p>
+      <ol class="steps">
+        <li><strong>Individua gli input.</strong><p>Servono 4 biglietti e ciascuno costa 7 euro.</p></li>
+        <li><strong>Definisci l'output atteso.</strong><p>Occorre ottenere il costo complessivo.</p></li>
+        <li><strong>Scegli l'operazione.</strong><p>Moltiplica il numero di biglietti per il costo unitario.</p></li>
+        <li><strong>Esegui il calcolo.</strong><p>4 × 7 = 28. La moltiplicazione equivale all'addizione ripetuta 7 + 7 + 7 + 7.</p></li>
+        <li><strong>Comunica il risultato ottenuto.</strong><p>La spesa complessiva è di 28 euro.</p></li>
+        <li><strong>Controlla.</strong><p>Verifica che 28 euro sia plausibile e che il risultato abbia l'unità di misura.</p></li>
+      </ol>
+      <aside class="callout remember" aria-labelledby="risultato-unita">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div><p class="callout-label">Controllo</p><h3 id="risultato-unita">Un risultato deve essere comunicato chiaramente</h3><p>Scrivere soltanto «28» non basta: occorre specificare che si tratta di 28 euro.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ordine">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔢</span><h2 id="ordine">L'ordine delle istruzioni conta</h2></div>
+      <p>
+        Se provi a caricare la relazione prima di convertirla in PDF, potresti scegliere il
+        file sbagliato. Se comunichi il costo prima di fare il calcolo, non hai ancora un
+        risultato. Cambiare l'ordine può rendere il procedimento inefficace.
+      </p>
+      <aside class="callout warning" aria-labelledby="ordine-errore">
+        <div class="callout-icon" aria-hidden="true">⚠️</div>
+        <div><p class="callout-label">Attenzione</p><h3 id="ordine-errore">Tutti i passi possono essere corretti, ma nell'ordine sbagliato</h3><p>Controlla quali azioni devono avvenire prima e quali dipendono dalle precedenti.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ambigue">
+      <div class="section-heading"><span class="icon" aria-hidden="true">❓</span><h2 id="ambigue">Istruzioni ambigue o incomplete</h2></div>
+      <p>Un'istruzione ambigua permette interpretazioni diverse; un'istruzione incompleta non fornisce ciò che serve per agire.</p>
+      <div class="card-grid">
+        <article class="quiz-question"><h3>«Sistema il file nel posto giusto»</h3><p><strong>Problema:</strong> non indica quale file né quale cartella.</p><p><strong>Più precisa:</strong> «Sposta il file relazione.pdf nella cartella Consegna».</p></article>
+        <article class="quiz-question"><h3>«Fai il calcolo necessario»</h3><p><strong>Problema:</strong> non specifica quali valori usare né che cosa calcolare.</p><p><strong>Più precisa:</strong> «Considera quattro volte il costo di 7 euro».</p></article>
+        <article class="quiz-question"><h3>«Ripeti alcune volte»</h3><p><strong>Problema:</strong> «alcune» non stabilisce quante volte.</p><p><strong>Più precisa:</strong> «Esegui il controllo tre volte».</p></article>
+        <article class="quiz-question"><h3>«Usa un numero abbastanza grande»</h3><p><strong>Problema:</strong> persone diverse possono scegliere numeri diversi.</p><p><strong>Più precisa:</strong> «Usa un numero maggiore di 100».</p></article>
+      </div>
+    </section>
+
+    <section class="lab" aria-labelledby="attivita-guidata">
+      <div class="lab-header"><h2 id="attivita-guidata">🧭 Attività guidata — Preparare lo zaino</h2></div>
+      <div class="lab-body">
+        <p><strong>Situazione:</strong> domani hai educazione fisica alla prima ora e devi preparare lo zaino questa sera.</p>
+        <ol class="steps">
+          <li><strong>Problema.</strong><p>Preparare tutto il necessario senza dimenticare oggetti.</p></li>
+          <li><strong>Obiettivo.</strong><p>Avere uno zaino completo e pronto prima di andare a dormire.</p></li>
+          <li><strong>Dati di ingresso (input).</strong><p>Orario scolastico, elenco del materiale e oggetti presenti in casa.</p></li>
+          <li><strong>Output atteso.</strong><p>Uno zaino con libri, quaderni e materiale per educazione fisica.</p></li>
+          <li><strong>Vincoli.</strong><p>Completa tu: quali limiti di tempo, spazio o disponibilità devi rispettare?</p></li>
+          <li><strong>Passi ordinati.</strong><p>Scrivi quattro o cinque azioni, iniziando dal controllo dell'orario.</p></li>
+          <li><strong>Risultato ottenuto e controllo.</strong><p>Osserva il contenuto dello zaino e confrontalo con l'output atteso, l'orario e l'elenco.</p></li>
+        </ol>
+        <details>
+          <summary>Apri un possibile completamento</summary>
+          <p><strong>Vincoli:</strong> preparare lo zaino entro sera, usare lo spazio disponibile e inserire soltanto il materiale necessario.</p>
+          <p><strong>Passi:</strong> leggere l'orario; elencare il materiale; recuperare gli oggetti; inserirli nello zaino; confrontare il contenuto con l'elenco.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="attivita-autonome">
+      <div class="section-heading"><span class="icon" aria-hidden="true">✍️</span><h2 id="attivita-autonome">Attività autonome</h2></div>
+      <p>Per ogni situazione individua gli elementi, ordina i passi, correggi le ambiguità e poi presenta la soluzione a voce.</p>
+
+      <article class="quiz-question">
+        <h3>1. Inviare una fotografia al docente</h3>
+        <p>La fotografia deve essere leggibile, in formato JPG, nominata «cognome-attivita» e inviata entro domani.</p>
+        <ol>
+          <li>Individua problema, obiettivo, dati di ingresso, output atteso e vincoli.</li>
+          <li>Scrivi cinque passi ordinati in linguaggio naturale.</li>
+          <li>Sostituisci l'istruzione ambigua «manda la foto nel modo giusto».</li>
+          <li>Spiega oralmente la soluzione in un minuto.</li>
+        </ol>
+        <details>
+          <summary>Controlla la tua analisi</summary>
+          <p><strong>Elementi:</strong> l'obiettivo è far ricevere una fotografia corretta; gli input sono fotografia, istruzioni e scadenza; l'output atteso è l'invio registrato con il file corretto; i vincoli sono leggibilità, formato, nome e tempo.</p>
+          <p><strong>Passi possibili:</strong> scattare la foto; controllarne la leggibilità; salvarla in JPG; assegnare il nome richiesto; inviarla. La conferma è il risultato ottenuto, da confrontare con l'output atteso.</p>
+        </details>
+      </article>
+
+      <article class="quiz-question">
+        <h3>2. Acquistare quaderni uguali</h3>
+        <p>Occorrono 5 quaderni. Ogni quaderno costa 3 euro. Quanto si spende?</p>
+        <ol>
+          <li>Individua problema, obiettivo, dati di ingresso, output atteso e vincoli.</li>
+          <li>Descrivi in ordine il ragionamento e il controllo.</li>
+          <li>Rendi precisa l'istruzione «fai il conto».</li>
+          <li>Spiega oralmente la soluzione in un minuto.</li>
+        </ol>
+        <details>
+          <summary>Controlla la tua analisi</summary>
+          <p>Gli input sono 5 quaderni e 3 euro ciascuno; l'output atteso è il costo complessivo. L'esecuzione del calcolo 5 × 3 produce il risultato ottenuto di 15 euro. Il controllo conferma che è plausibile perché cinque oggetti da 3 euro costano più di 3 euro e meno di 20.</p>
+        </details>
+      </article>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="colloquio">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎤</span><h2 id="colloquio">Preparazione al colloquio orale</h2></div>
+      <p>Rispondi prima con una frase chiara, poi aggiungi un esempio.</p>
+      <div class="self-check">
+        <details><summary>Che cos'è un problema?</summary><p>È una situazione che richiede di raggiungere un obiettivo o trovare una risposta.</p></details>
+        <details><summary>Qual è la differenza tra problema e soluzione?</summary><p>Il problema descrive ciò che va risolto; la soluzione è il modo scelto per affrontarlo.</p></details>
+        <details><summary>Che cosa fa l'algoritmo?</summary><p>Descrive con istruzioni ordinate e finite come trasformare i dati di ingresso nell'output atteso.</p></details>
+        <details><summary>Quali caratteristiche deve avere un buon algoritmo?</summary><p>Deve essere ordinato, finito, comprensibile, non ambiguo, eseguibile e capace di condurre al risultato.</p></details>
+        <details><summary>Che cosa sono i dati di ingresso o input?</summary><p>Sono le informazioni disponibili all'inizio e necessarie per affrontare il problema.</p></details>
+        <details><summary>Che cosa si intende per output atteso?</summary><p>È il risultato che definiamo durante l'analisi e che la soluzione deve produrre o comunicare.</p></details>
+        <details><summary>Qual è la differenza tra output atteso e risultato ottenuto?</summary><p>L'output atteso viene definito prima dell'algoritmo; il risultato ottenuto compare dopo la sua esecuzione.</p></details>
+        <details><summary>Che cosa sono i vincoli?</summary><p>Sono condizioni e limiti che la soluzione deve rispettare.</p></details>
+        <details><summary>Perché l'ordine delle istruzioni è importante?</summary><p>Perché alcune azioni dipendono da quelle precedenti; un ordine errato può impedire il risultato.</p></details>
+        <details><summary>Perché un'istruzione ambigua può causare errori?</summary><p>Perché può essere interpretata in modi diversi e produrre azioni o risultati differenti.</p></details>
+        <details><summary>A che cosa serve il controllo finale?</summary><p>Serve a confrontare il risultato ottenuto con l'output atteso e a decidere se occorre rivedere l'analisi o i passi.</p></details>
+      </div>
+
+      <aside class="callout exam" aria-labelledby="traccia-orale">
+        <div class="callout-icon" aria-hidden="true">🎓</div>
+        <div>
+          <p class="callout-label">Traccia per 1–2 minuti</p>
+          <h3 id="traccia-orale">Dal problema al risultato</h3>
+          <ol>
+            <li>Definisci problema, soluzione e algoritmo.</li>
+            <li>Nomina obiettivo, input, output atteso e vincoli.</li>
+            <li>Spiega come l'algoritmo trasforma gli input e perché i passi devono essere ordinati e chiari.</li>
+            <li>Presenta un esempio semplice.</li>
+            <li>Concludi confrontando risultato ottenuto e output atteso.</li>
+          </ol>
+        </div>
+      </aside>
+    </section>
+
+    <section class="quiz" aria-labelledby="autovalutazione">
+      <h2 id="autovalutazione">🧠 Autovalutazione finale</h2>
+      <p>Prova a rispondere senza rileggere. Apri poi le indicazioni.</p>
+      <div class="self-check">
+        <details><summary>So distinguere problema, soluzione e algoritmo?</summary><p>Se sai definirli e applicarli allo stesso esempio, l'obiettivo è raggiunto.</p></details>
+        <details><summary>So riconoscere obiettivo, input, output atteso e vincoli?</summary><p>Prova con una consegna scolastica nuova. Se trovi tutti e quattro gli elementi, l'obiettivo è raggiunto.</p></details>
+        <details><summary>So scrivere passi ordinati e non ambigui?</summary><p>Fai leggere i passi a un'altra persona: deve poterli eseguire senza chiedere chiarimenti.</p></details>
+        <details><summary>So distinguere output atteso e risultato ottenuto?</summary><p>Se sai collocarli rispettivamente prima della costruzione dell'algoritmo e dopo l'esecuzione, la distinzione è chiara.</p></details>
+        <details><summary>So presentare l'analisi a voce?</summary><p>Se riesci a seguire la traccia in uno o due minuti senza leggere un testo completo, sei pronto.</p></details>
+      </div>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header">
+        <p class="eyebrow">Riepilogo finale</p>
+        <h2 id="zaino-studente">🎒 Lo zaino dello studente</h2>
+        <p>Le idee essenziali da portare al colloquio orale.</p>
+      </div>
+      <div class="student-backpack-grid">
+        <article class="backpack-card">
+          <h3>✅ Sintesi</h3>
+          <ol class="essential-list">
+            <li>Un problema presenta un obiettivo da raggiungere.</li>
+            <li>L'analisi individua input, output atteso e vincoli.</li>
+            <li>L'algoritmo descrive una sequenza ordinata e finita di istruzioni.</li>
+            <li>L'esecuzione produce un risultato ottenuto.</li>
+            <li>Il controllo confronta il risultato ottenuto con l'output atteso.</li>
+            <li>Se il controllo fallisce, si rivedono l'analisi o i passi.</li>
+          </ol>
+        </article>
+        <article class="backpack-card"><h3>📝 Parole chiave</h3><ul class="keyword-list"><li>problema</li><li>obiettivo</li><li>input</li><li>output atteso</li><li>vincoli</li><li>algoritmo</li><li>esecuzione</li><li>risultato ottenuto</li><li>controllo</li></ul></article>
+        <article class="backpack-card"><h3>❓ Controllo rapido</h3><ol><li>Qual è l'obiettivo?</li><li>Quali input ricevo?</li><li>Qual è l'output atteso?</li><li>Quali vincoli rispetto?</li><li>Quale risultato produce l'esecuzione?</li><li>Il risultato ottenuto coincide con l'output atteso?</li></ol></article>
+        <article class="backpack-card"><h3>🎤 Ripasso in 2 minuti</h3><p>Scegli un problema quotidiano, individua i suoi elementi e racconta i passi senza usare frasi ambigue.</p></article>
+      </div>
+    </section>
+
+    <section class="next-lesson" aria-labelledby="prossimo-passo">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2 id="prossimo-passo">Rappresentare un algoritmo</h2>
+      <p>Nella Lezione 2.02 studieremo modi più precisi per rappresentare un algoritmo.</p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../../Primo-anno/12-sicurezza-informatica/index.html">← Lezione 12 — Sicurezza informatica</a>
+      <a href="../../index.html#secondo-anno">Torna all'indice</a>
+      <a href="../02-rappresentare-un-algoritmo/index.html">Lezione 2.02 — Rappresentare un algoritmo →</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+    </div>
+  </footer>
+</body>
+</html>

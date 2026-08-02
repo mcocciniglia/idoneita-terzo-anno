@@ -85,7 +85,7 @@ prerequisito per l'avvio di questo percorso.
 
 | Codice | Lezione | Stato | Dipende da | Priorità | Note |
 |--------|---------|-------|------------|----------|------|
-| 2.01 | Dal problema all'algoritmo | ⚪ | 01 | Essenziale | Problema, obiettivo, dati di ingresso, risultati, vincoli e scomposizione in passi |
+| 2.01 | Dal problema all'algoritmo | ✅ | 01 | Essenziale | Problema, obiettivo, dati di ingresso, risultati, vincoli e scomposizione in passi |
 | 2.02 | Rappresentare un algoritmo | ⚪ | 2.01 | Essenziale | Linguaggio naturale, pseudocodice, simboli dei diagrammi di flusso e struttura sequenziale |
 | 2.03 | Dati, variabili e assegnazione | ⚪ | 2.02, 02 | Essenziale | Costanti, variabili, tipi di dato elementari, input, output e operazione di assegnazione |
 | 2.04 | Operatori ed espressioni | ⚪ | 2.03 | Essenziale | Operatori aritmetici e relazionali, ordine delle operazioni e valutazione passo passo |
