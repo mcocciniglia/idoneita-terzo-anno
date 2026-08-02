@@ -166,14 +166,35 @@
         "17": { slug: "17-video-digitale", title: "Video digitale" },
         "18": { slug: "18-ripasso-generale", title: "Ripasso generale" }
       };
+      const secondYearLessons = {
+        "2.02": { slug: "02-rappresentare-un-algoritmo", title: "Rappresentare un algoritmo" },
+        "2.03": { slug: "03-dati-variabili-e-assegnazione", title: "Dati, variabili e assegnazione" },
+        "2.04": { slug: "04-operatori-ed-espressioni", title: "Operatori ed espressioni" },
+        "2.05": { slug: "05-prendere-decisioni-la-selezione", title: "Prendere decisioni: la selezione" },
+        "2.06": { slug: "06-condizioni-composte-e-selezioni-annidate", title: "Condizioni composte e selezioni annidate" },
+        "2.07": { slug: "07-ripetere-operazioni-i-cicli", title: "Ripetere operazioni: i cicli" },
+        "2.08": { slug: "08-verificare-un-algoritmo", title: "Verificare un algoritmo" },
+        "2.09": { slug: "09-organizzare-e-rappresentare-dati", title: "Organizzare e rappresentare dati" },
+        "2.10": { slug: "10-privacy-diritto-autore-e-uso-responsabile", title: "Privacy, diritto d'autore e uso responsabile" },
+        "2.11": { slug: "11-ripasso-del-secondo-anno-e-colloquio-orale", title: "Ripasso del secondo anno e colloquio orale" }
+      };
       const siteRoot = "/idoneita-terzo-anno/";
       const lessonRoot = `${siteRoot}Primo-anno/`;
+      const secondYearRoot = `${siteRoot}Secondo-anno/`;
       const requestedPath = window.location.pathname;
-      const matchedLesson = Object.entries(lessons).find(([, lesson]) => {
+      let matchedLesson = Object.entries(lessons).find(([, lesson]) => {
         const directoryPath = `${lessonRoot}${lesson.slug}/`;
         const pagePath = `${directoryPath}index.html`;
         return requestedPath === directoryPath || requestedPath === pagePath;
       });
+
+      if (!matchedLesson) {
+        matchedLesson = Object.entries(secondYearLessons).find(([, lesson]) => {
+          const directoryPath = `${secondYearRoot}${lesson.slug}/`;
+          const pagePath = `${directoryPath}index.html`;
+          return requestedPath === directoryPath || requestedPath === pagePath;
+        });
+      }
 
       if (!matchedLesson) {
         return;
