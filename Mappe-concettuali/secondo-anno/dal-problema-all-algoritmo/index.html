@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Mappa concettuale manoscritta sul passaggio dal problema all'algoritmo, collegata alla Lezione 2.01.">
+  <title>M04 — Dal problema all'algoritmo</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../../assets/idoneita.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+
+  <style>
+    .concept-map-figure {
+      margin: 1.5rem 0;
+    }
+
+    .concept-map-canvas {
+      padding: 1rem;
+      overflow: hidden;
+      border: 1px solid var(--panel-border);
+      border-radius: 1rem;
+      background: #fff;
+    }
+
+    .concept-map-figure a {
+      display: block;
+    }
+
+    .concept-map-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .concept-map-figure figcaption {
+      margin-top: .75rem;
+      color: var(--muted);
+      font-size: .95rem;
+      text-align: center;
+    }
+
+    .concept-map-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin: 1.5rem 0;
+    }
+
+    .concept-map-actions .btn {
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .concept-transcription article {
+      margin: 1.25rem 0;
+      padding: 1rem 1.25rem;
+      border: 1px solid var(--panel-border);
+      border-radius: 1rem;
+      background: var(--panel);
+      break-inside: avoid;
+    }
+
+    .concept-transcription article h3 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 560px) {
+      .concept-map-canvas {
+        padding: .5rem;
+      }
+
+      .concept-map-actions {
+        flex-direction: column;
+      }
+
+      .concept-map-actions .btn {
+        width: 100%;
+      }
+    }
+
+    @page {
+      size: landscape;
+      margin: 10mm;
+    }
+
+    @media print {
+      .concept-map-actions {
+        display: none !important;
+      }
+
+      .concept-map-figure {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .concept-map-canvas {
+        padding: 0;
+        border: 0;
+        background: #fff !important;
+      }
+
+      .concept-map-figure img {
+        max-width: 100%;
+        max-height: 175mm;
+      }
+
+      .concept-transcription article {
+        color: #000 !important;
+        background: #fff !important;
+        box-shadow: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line" aria-label="Identificazione del materiale">
+          <span class="course-badge">Mappa concettuale M04</span>
+          <span class="year-badge second">Secondo anno</span>
+        </div>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle" class="btn btn-theme" type="button"
+                  aria-pressed="false" aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+          <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button"
+                  aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Materiali integrativi</span>
+        <span aria-hidden="true">›</span>
+        <span>Mappe concettuali</span>
+        <span aria-hidden="true">›</span>
+        <span>M04</span>
+      </nav>
+
+      <p class="eyebrow">Mappa concettuale M04 · Secondo anno</p>
+      <h1>Dal problema all'algoritmo</h1>
+      <p class="lead">
+        Usa questa mappa dopo avere studiato la lezione. Parti dal titolo
+        centrale, segui i rami e prova a spiegare ogni concetto con parole tue.
+      </p>
+      <div class="lesson-meta" aria-label="Informazioni sulla mappa">
+        <span>🗺️ Materiale integrativo</span>
+        <span>✍️ Stile manoscritto</span>
+        <span>📘 Collegata alla Lezione 2.01</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <nav class="lesson-navigation" aria-label="Collegamenti iniziali">
+      <a href="../../index.html">Torna alle mappe concettuali</a>
+      <a href="../../../index.html">Indice generale</a>
+      <a href="../../../secondo-anno/01-dal-problema-all-algoritmo/index.html">Vai alla Lezione 2.01 →</a>
+    </nav>
+
+    <section class="lesson-section" aria-labelledby="mappa-visuale">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🗺️</span>
+        <h2 id="mappa-visuale">Mappa visuale</h2>
+      </div>
+
+      <figure class="figure concept-map-figure">
+        <div class="concept-map-canvas">
+          <a href="mappa-dal-problema-all-algoritmo.png"
+             target="_blank"
+             rel="noopener"
+             aria-label="Apri la mappa concettuale a dimensione completa">
+            <img src="mappa-dal-problema-all-algoritmo.png"
+                 alt="Mappa concettuale manoscritta sul passaggio dal problema all'algoritmo"
+                 width="1402"
+                 height="1122">
+          </a>
+        </div>
+        <figcaption>
+          Mappa concettuale M04 — Dal problema all'algoritmo. Seleziona
+          l'immagine per aprirla a dimensione completa.
+        </figcaption>
+      </figure>
+
+      <div class="concept-map-actions" aria-label="Azioni per la mappa">
+        <a class="btn"
+           href="mappa-dal-problema-all-algoritmo.png"
+           target="_blank"
+           rel="noopener">Apri a dimensione completa</a>
+        <button id="printMap" class="btn" type="button">Stampa la mappa</button>
+        <a class="btn" href="../../../secondo-anno/01-dal-problema-all-algoritmo/index.html">Vai alla Lezione 2.01</a>
+        <a class="btn" href="../../index.html">Torna alle mappe concettuali</a>
+      </div>
+    </section>
+
+    <section class="lesson-section concept-transcription" aria-labelledby="trascrizione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📖</span>
+        <h2 id="trascrizione">Contenuti della mappa in forma testuale</h2>
+      </div>
+
+      <article>
+        <h3>1. Che cos'è un problema?</h3>
+        <p>È una situazione in cui abbiamo un obiettivo da raggiungere ma non sappiamo ancora come farlo.</p>
+        <p><strong>Esempi:</strong> devo consegnare un compito; devo calcolare il costo di alcuni biglietti; devo trovare la media dei voti.</p>
+      </article>
+
+      <article>
+        <h3>2. Problema, soluzione e algoritmo</h3>
+        <ul>
+          <li><strong>Problema:</strong> descrive ciò che deve essere risolto.</li>
+          <li><strong>Soluzione:</strong> è il modo scelto per affrontarlo.</li>
+          <li><strong>Algoritmo:</strong> è una sequenza ordinata e finita di istruzioni che, se eseguite, portano al risultato.</li>
+        </ul>
+        <p>Per risolvere un problema seguiamo un percorso:</p>
+        <ol>
+          <li><strong>Problema:</strong> capiamo che cosa dobbiamo fare.</li>
+          <li><strong>Analisi:</strong> individuiamo obiettivo, dati, vincoli e passi.</li>
+          <li><strong>Passi ordinati:</strong> scriviamo le istruzioni in ordine.</li>
+          <li><strong>Controllo:</strong> verifichiamo che la soluzione sia corretta.</li>
+          <li><strong>Risultato:</strong> otteniamo il risultato atteso.</li>
+        </ol>
+      </article>
+
+      <article>
+        <h3>3. Gli elementi da individuare</h3>
+        <ul>
+          <li><strong>Obiettivo:</strong> che cosa devo ottenere?</li>
+          <li><strong>Dati di ingresso:</strong> quali informazioni conosco?</li>
+          <li><strong>Risultato atteso:</strong> che cosa devo comunicare o produrre?</li>
+          <li><strong>Vincoli:</strong> quali condizioni o limiti devo rispettare?</li>
+          <li><strong>Passi della soluzione:</strong> quali azioni devo svolgere e in quale ordine?</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>4. Caratteristiche di un buon algoritmo</h3>
+        <p>Un algoritmo deve essere:</p>
+        <ul>
+          <li><strong>ordinato:</strong> le istruzioni hanno un ordine preciso;</li>
+          <li><strong>finito:</strong> deve terminare in un numero finito di passi;</li>
+          <li><strong>comprensibile:</strong> chiunque lo legga deve capirlo;</li>
+          <li><strong>non ambiguo:</strong> ogni istruzione ha un solo significato;</li>
+          <li><strong>eseguibile:</strong> le istruzioni possono essere svolte;</li>
+          <li><strong>corretto:</strong> porta al risultato previsto.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>5. Istruzioni ambigue o incomplete</h3>
+        <p>Esempi di istruzioni che non sono buoni algoritmi:</p>
+        <ul>
+          <li>«Sistema il file nel posto giusto».</li>
+          <li>«Fai il calcolo necessario».</li>
+          <li>«Ripeti alcune volte».</li>
+          <li>«Usa un numero abbastanza grande».</li>
+        </ul>
+        <p><strong>Perché sono sbagliate?</strong></p>
+        <ul>
+          <li>Non sono precise.</li>
+          <li>Ognuno può capirle in modo diverso.</li>
+          <li>Possono portare a errori.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>6. Esempio guidato 1 — Consegna del compito scolastico</h3>
+        <ol>
+          <li><strong>Obiettivo:</strong> consegnare il compito al docente.</li>
+          <li><strong>Dati:</strong> compito svolto, data di consegna, aula, docente.</li>
+          <li><strong>Risultato atteso:</strong> il docente riceve il compito.</li>
+          <li><strong>Vincoli:</strong> rispettare la data, consegnare al docente giusto.</li>
+          <li><strong>Passi ordinati:</strong>
+            <ul>
+              <li>controllo la data di consegna;</li>
+              <li>controllo di avere il compito completato;</li>
+              <li>porto il compito a scuola;</li>
+              <li>mi reco in aula dal docente;</li>
+              <li>consegno il compito;</li>
+              <li>attendo la conferma del docente.</li>
+            </ul>
+          </li>
+          <li><strong>Controllo:</strong> il docente ha ricevuto il compito?</li>
+        </ol>
+      </article>
+
+      <article>
+        <h3>7. Esempio guidato 2 — Calcolo del costo di più biglietti uguali</h3>
+        <ol>
+          <li>Capisco il problema: devo sapere quanto costa in totale.</li>
+          <li><strong>Dati:</strong> prezzo di un biglietto, numero di biglietti.</li>
+          <li><strong>Cosa viene richiesto:</strong> il costo complessivo.</li>
+          <li><strong>Operazione necessaria:</strong> moltiplicare prezzo × numero.</li>
+          <li>Eseguo il calcolo.</li>
+          <li>Comunico il risultato.</li>
+          <li><strong>Controllo:</strong> il risultato è plausibile?</li>
+        </ol>
+      </article>
+
+      <article>
+        <h3>8. In sintesi</h3>
+        <ol>
+          <li>Capisco bene il problema.</li>
+          <li>Individuo obiettivo, dati, vincoli.</li>
+          <li>Scrivo i passi in ordine.</li>
+          <li>Controllo la soluzione.</li>
+          <li>Ottengo il risultato.</li>
+        </ol>
+        <p><strong>Da ricordare:</strong> prima di agire, pensiamo! Un buon algoritmo nasce da una buona analisi del problema.</p>
+      </article>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="colloquio">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🎤</span>
+        <h2 id="colloquio">Usa la mappa per il colloquio</h2>
+      </div>
+      <ol>
+        <li>Che cos'è un problema?</li>
+        <li>Che cosa significa analizzare un problema?</li>
+        <li>Quali dati sono disponibili?</li>
+        <li>Quali vincoli devono essere rispettati?</li>
+        <li>Che cos'è un algoritmo?</li>
+        <li>Perché i passi devono essere ordinati?</li>
+        <li>Perché dobbiamo controllare il risultato?</li>
+      </ol>
+      <aside class="callout exam" aria-labelledby="strategia-colloquio">
+        <div class="callout-icon" aria-hidden="true">🎓</div>
+        <div>
+          <p class="callout-label">Strategia per l'esposizione</p>
+          <h3 id="strategia-colloquio">Segui un ramo alla volta</h3>
+          <p>Parti dal titolo centrale. Segui un ramo alla volta: pronuncia la parola chiave e spiegala con una frase semplice.</p>
+        </div>
+      </aside>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione mappa concettuale">
+      <a href="../../../secondo-anno/01-dal-problema-all-algoritmo/index.html">← Vai alla Lezione 2.01</a>
+      <a href="../../index.html">Torna alle mappe concettuali</a>
+      <a href="../../../index.html">Homepage del corso</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('printMap').addEventListener('click', () => window.print());
+  </script>
+</body>
+</html>
