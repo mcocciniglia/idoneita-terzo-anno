@@ -156,3 +156,12 @@ dalla progressione numerata delle lezioni.
 | Q02 | Quaderno di allenamento – Hardware e software | Lezioni 03 e 04 | ✅ | Distinzione e collaborazione tra hardware e software; input, elaborazione e output |
 | Q03 | Quaderno di allenamento – Algoritmi e diagrammi di flusso | Lezioni 2.01-2.04 | ⚪ | Analisi di problemi, sequenze, variabili, assegnazioni ed espressioni |
 | Q04 | Quaderno di allenamento – Selezioni e cicli | Lezioni 2.05-2.08 | ⚪ | Lettura, completamento e verifica di algoritmi con decisioni e ripetizioni |
+
+## Mappe concettuali
+
+| Codice | Mappa concettuale | Collegata a | Stato | Contenuti |
+|--------|-------------------|-------------|-------|-----------|
+| M01 | Hardware e software | Lezioni 03 e 04 | ⚪ | Componenti, programmi e collaborazione tra hardware e software |
+| M02 | Reti, Internet e Web | Lezioni 10 e 11 | ⚪ | Rete, dispositivi, Internet, Web e servizi |
+| M03 | Sicurezza informatica | Lezione 12 | ⚪ | Password, malware, phishing e comportamenti sicuri |
+| M04 | Dal problema all'algoritmo | Lezione 2.01 | ✅ | Problema, analisi, obiettivo, dati, vincoli, algoritmo, controllo e risultato |

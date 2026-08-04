@@ -507,7 +507,6 @@ kbd{
 }
 
 .steps > li::before{
-  counter-increment:step;
   content:counter(step);
   position:absolute;
   left:0;
