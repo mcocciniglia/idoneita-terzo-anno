@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lezione su linguaggio naturale, pseudocodice e diagrammi di flusso per rappresentare semplici algoritmi sequenziali.">
+  <title>2.02 — Rappresentare un algoritmo</title>
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line" aria-label="Identificazione del percorso">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge second">Programma del secondo anno</span>
+        </div>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle" class="btn btn-theme" type="button" aria-pressed="false" aria-label="Cambia tema"><span class="btn-label">Tema</span></button>
+          <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button" aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">Contrasto alto ☀️</button>
+        </div>
+      </div>
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span><span aria-hidden="true">›</span><span>Secondo anno</span><span aria-hidden="true">›</span><span>Lezione 2.02</span>
+      </nav>
+      <p class="eyebrow">Secondo anno — Lezione 2.02 · Durata prevista: 2 ore</p>
+      <h1>Rappresentare un algoritmo</h1>
+      <p class="lead">Dalle istruzioni in linguaggio naturale al pseudocodice e al diagramma di flusso.</p>
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ Circa 2 ore</span><span>📘 Secondo anno</span><span>🎯 Prerequisito: Lezione 2.01</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading"><span>Percorso del secondo anno</span><span>Lezione 2 di 11</span></div>
+      <div class="progress-track" aria-hidden="true"><div class="progress-value" style="--progress:18.18%;"></div></div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ripasso">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔄</span><h2 id="ripasso">Prima di iniziare: dal problema ai passi</h2></div>
+      <p>Un problema presenta un obiettivo. Durante l'analisi individuiamo i dati di ingresso, il risultato atteso e gli eventuali vincoli. Costruiamo poi un algoritmo formato da istruzioni ordinate, finite, chiare ed eseguibili.</p>
+      <p>Dopo l'esecuzione controlliamo che il risultato ottenuto corrisponda a quello atteso. Se un passaggio manca, è ambiguo o si trova nel posto sbagliato, il procedimento può non funzionare.</p>
+      <aside class="callout remember" aria-labelledby="ponte-lezione">
+        <div class="callout-icon" aria-hidden="true">💡</div><div><p class="callout-label">Il nuovo passaggio</p><h3 id="ponte-lezione">Dalla costruzione alla rappresentazione</h3><p>Nella lezione precedente abbiamo costruito algoritmi in linguaggio naturale. Ora impariamo a rappresentarli in forme più precise e facilmente controllabili.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎯</span><h2 id="obiettivi">Obiettivi della lezione</h2></div>
+      <p>Al termine dovrai saper rappresentare e spiegare un semplice algoritmo sequenziale.</p>
+      <div class="objective-grid">
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Distinguere</strong><small>L'algoritmo dal modo in cui viene rappresentato.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Scrivere</strong><small>Istruzioni in linguaggio naturale e pseudocodice.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Riconoscere</strong><small>I simboli necessari a un diagramma sequenziale.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Trasformare</strong><small>Lo stesso algoritmo da una forma all'altra.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Controllare</strong><small>Ordine, frecce e corrispondenza dei passaggi.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Esporre</strong><small>Il flusso a voce in modo chiaro.</small></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="strada">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🗺️</span><h2 id="strada">Una strada, tre modi per descriverla</h2></div>
+      <p>Immagina di dover spiegare a un compagno come raggiungere la biblioteca. Puoi raccontare il percorso a parole, scrivere un elenco ordinato di indicazioni oppure disegnare una mappa con frecce.</p>
+      <p>La strada non cambia: cambia soltanto il modo in cui la comunichi. Accade lo stesso con un algoritmo.</p>
+      <div class="definition"><span class="definition-term">Algoritmo e rappresentazione</span><p>L'<strong>algoritmo</strong> è il procedimento. La <strong>rappresentazione</strong> è il modo scelto per comunicarlo. Rappresentazioni diverse devono conservare lo stesso ordine logico e produrre lo stesso risultato.</p></div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="tre-forme">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🧩</span><h2 id="tre-forme">Tre rappresentazioni dello stesso algoritmo</h2></div>
+      <div class="card-grid">
+        <article class="info-card"><h3>Linguaggio naturale</h3><p>Usa frasi comuni. È immediato, ma può diventare lungo o ambiguo e può essere formulato in modi diversi.</p></article>
+        <article class="info-card"><h3>Pseudocodice</h3><p>Usa parole convenzionali e istruzioni brevi. È leggibile e indipendente da uno specifico linguaggio di programmazione.</p></article>
+        <article class="info-card"><h3>Diagramma di flusso</h3><p>Usa blocchi collegati da frecce. Rende visibili l'ordine e la funzione di ogni passaggio.</p></article>
+      </div>
+      <div class="process-flow" aria-label="Corrispondenza tra le rappresentazioni">
+        <div class="process-node"><strong>Linguaggio naturale</strong><span>Frasi ordinate</span></div><div class="process-arrow" aria-hidden="true">→</div><div class="process-node"><strong>Pseudocodice</strong><span>Istruzioni convenzionali</span></div><div class="process-arrow" aria-hidden="true">→</div><div class="process-node"><strong>Diagramma</strong><span>Blocchi e frecce</span></div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="pseudocodice">
+      <div class="section-heading"><span class="icon" aria-hidden="true">📝</span><h2 id="pseudocodice">Lo pseudocodice</h2></div>
+      <p>Lo pseudocodice descrive l'algoritmo con istruzioni sintetiche. Non possiede una sintassi universale e rigida: è una convenzione pensata per essere comprensibile e controllabile.</p>
+      <dl class="glossary-grid">
+        <div class="glossary-card"><dt><code>INIZIO</code></dt><dd>Avvia l'algoritmo.</dd></div>
+        <div class="glossary-card"><dt><code>LEGGI</code></dt><dd>Acquisisce i dati di ingresso.</dd></div>
+        <div class="glossary-card"><dt><code>CALCOLA</code></dt><dd>Esegue un'elaborazione.</dd></div>
+        <div class="glossary-card"><dt><code>SCRIVI</code></dt><dd>Comunica il risultato.</dd></div>
+        <div class="glossary-card"><dt><code>FINE</code></dt><dd>Conclude l'algoritmo.</dd></div>
+      </dl>
+      <aside class="callout warning" aria-labelledby="non-linguaggio">
+        <div class="callout-icon" aria-hidden="true">⚠️</div><div><p class="callout-label">Attenzione</p><h3 id="non-linguaggio">Non è un programma</h3><p>Lo pseudocodice aiuta a progettare e comunicare la soluzione, ma non è scritto per essere eseguito direttamente dal computer.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="simboli">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔷</span><h2 id="simboli">I simboli del diagramma di flusso</h2></div>
+      <p>In questa lezione usiamo soltanto i simboli necessari alla struttura sequenziale. Forma, testo e descrizione rendono ogni funzione riconoscibile anche senza il colore.</p>
+      <figure class="lesson-figure lesson-figure-wide">
+        <img src="../../simboli_diagramma.png"
+             alt="Schema dei simboli fondamentali del diagramma di flusso: terminatore per inizio e fine, parallelogramma per ingresso e uscita, rettangolo per elaborazione e freccia per indicare la direzione del flusso."
+             width="1402" height="1122" loading="lazy" decoding="async">
+        <figcaption>I simboli fondamentali utilizzati per rappresentare gli algoritmi sequenziali.</figcaption>
+      </figure>
+      <p>Esistono altri simboli, che verranno studiati nelle lezioni successive.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esempio-biglietti">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎟️</span><h2 id="esempio-biglietti">Esempio guidato: il costo dei biglietti</h2></div>
+      <p><strong>Situazione:</strong> calcolare il costo totale conoscendo il numero dei biglietti e il prezzo di ciascun biglietto.</p>
+      <h3>1. Linguaggio naturale</h3>
+      <ol><li>Acquisire il numero dei biglietti.</li><li>Acquisire il prezzo di un biglietto.</li><li>Calcolare il costo totale.</li><li>Comunicare il risultato.</li></ol>
+      <h3>2. Pseudocodice</h3>
+      <pre><code>INIZIO
+  LEGGI numero_biglietti
+  LEGGI prezzo_unitario
+  CALCOLA totale = numero_biglietti × prezzo_unitario
+  SCRIVI totale
+FINE</code></pre>
+      <h3>3. Diagramma di flusso</h3>
+      <figure class="lesson-figure lesson-figure-portrait">
+        <img src="../../esempio_diagramma.png"
+             alt="Diagramma di flusso per calcolare il costo totale dei biglietti: inizio, lettura del numero dei biglietti e del prezzo unitario, calcolo del totale, scrittura del totale e fine."
+             width="1024" height="1536" loading="lazy" decoding="async">
+        <figcaption>Diagramma di flusso sequenziale per il calcolo del costo totale dei biglietti.</figcaption>
+      </figure>
+      <aside class="callout remember" aria-labelledby="corrispondenza">
+        <div class="callout-icon" aria-hidden="true">💡</div><div><p class="callout-label">Controllo</p><h3 id="corrispondenza">Ogni passaggio deve corrispondere</h3><p>I due dati di ingresso, il calcolo e la comunicazione del risultato sono presenti in tutte le rappresentazioni, nello stesso ordine logico. Nel diagramma più istruzioni simili possono essere raccolte nello stesso blocco.</p></div>
+      </aside>
+    </section>
+
+    <section class="lab" aria-labelledby="attivita-guidata">
+      <div class="lab-header"><h2 id="attivita-guidata">📐 Attività guidata — Area del rettangolo</h2></div>
+      <div class="lab-body">
+        <p><strong>Situazione:</strong> calcolare l'area conoscendo <code>base</code> e <code>altezza</code>.</p>
+        <ol class="steps">
+          <li><strong>Riconosci le funzioni.</strong><p>Base e altezza sono ingressi; il calcolo è l'elaborazione; l'area è l'uscita.</p></li>
+          <li><strong>Completa lo pseudocodice.</strong><pre><code>INIZIO
+  LEGGI ______
+  LEGGI ______
+  CALCOLA area = ______ × ______
+  SCRIVI ______
+FINE</code></pre></li>
+          <li><strong>Ordina i blocchi.</strong><p>FINE · Scrivi area · Leggi base e altezza · INIZIO · Calcola area.</p></li>
+          <li><strong>Spiega il flusso.</strong><p>Segui le frecce e nomina ingresso, elaborazione e uscita.</p></li>
+        </ol>
+        <details><summary>Apri la soluzione</summary><pre><code>INIZIO
+  LEGGI base
+  LEGGI altezza
+  CALCOLA area = base × altezza
+  SCRIVI area
+FINE</code></pre><p><strong>Ordine dei blocchi:</strong> INIZIO → Leggi base e altezza → Calcola area → Scrivi area → FINE.</p></details>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="attivita-autonome">
+      <div class="section-heading"><span class="icon" aria-hidden="true">✍️</span><h2 id="attivita-autonome">Attività autonome</h2></div>
+      <article class="quiz-question">
+        <h3>1. Spesa per i quaderni</h3><p>Calcola la spesa complessiva conoscendo il numero dei quaderni e il prezzo unitario.</p>
+        <ol><li>Scrivi il procedimento in linguaggio naturale.</li><li>Trasformalo in pseudocodice.</li><li>Disegna il diagramma usando i simboli corretti.</li><li>Controlla con 4 quaderni da 2 euro.</li></ol>
+        <details><summary>Controlla una possibile soluzione</summary><p><strong>Naturale:</strong> acquisisci quantità e prezzo, calcola il prodotto, comunica la spesa.</p><pre><code>INIZIO
+  LEGGI numero_quaderni
+  LEGGI prezzo_unitario
+  CALCOLA spesa = numero_quaderni × prezzo_unitario
+  SCRIVI spesa
+FINE</code></pre><p>Il diagramma contiene terminatore, ingresso, elaborazione, uscita e terminatore. Con 4 e 2 il risultato è 8 euro.</p></details>
+      </article>
+      <article class="quiz-question">
+        <h3>2. Durata complessiva di tre attività</h3><p>Conosci la durata di studio, esercizio e ripasso. Calcola il tempo complessivo.</p>
+        <ol><li>Individua dati e risultato.</li><li>Ordina acquisizione, calcolo e comunicazione.</li><li>Scegli il simbolo per ogni passaggio.</li><li>Presenta la soluzione a voce in circa un minuto.</li></ol>
+        <details><summary>Controlla una possibile soluzione</summary><p>Gli ingressi sono le tre durate; il risultato è la durata totale. Dopo INIZIO si leggono le durate in un parallelogramma, si calcola la somma in un rettangolo, si scrive il totale in un parallelogramma e si conclude con FINE.</p></details>
+      </article>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="errori">
+      <div class="section-heading"><span class="icon" aria-hidden="true">❌</span><h2 id="errori">Errori frequenti</h2></div>
+      <ul>
+        <li>Confondere l'algoritmo con il suo diagramma.</li><li>Dimenticare <code>INIZIO</code> o <code>FINE</code>.</li><li>Usare un rettangolo per un dato in ingresso o un parallelogramma per un calcolo.</li><li>Disporre i passaggi nell'ordine errato o omettere le frecce.</li><li>Inserire frasi troppo lunghe nei blocchi.</li><li>Aggiungere dati estranei al problema.</li><li>Creare rappresentazioni che non descrivono più lo stesso algoritmo.</li>
+      </ul>
+      <aside class="callout error" aria-labelledby="errore-correggere">
+        <div class="callout-icon" aria-hidden="true">❌</div><div><p class="callout-label">Correggi l'esempio</p><h3 id="errore-correggere">SCRIVI totale → CALCOLA totale → LEGGI i dati</h3><p>L'ordine è capovolto: non possiamo comunicare il totale prima di conoscere i dati e calcolarlo. L'ordine corretto è LEGGI → CALCOLA → SCRIVI.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="colloquio">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎤</span><h2 id="colloquio">Preparazione al colloquio orale</h2></div>
+      <p>Rispondi prima con una frase breve, poi aggiungi l'esempio dei biglietti.</p>
+      <div class="self-check">
+        <details><summary>Che differenza c'è tra algoritmo e rappresentazione?</summary><p>L'algoritmo è il procedimento; la rappresentazione è il modo usato per comunicarlo.</p></details>
+        <details><summary>Quali sono i principali modi studiati?</summary><p>Linguaggio naturale, pseudocodice e diagramma di flusso.</p></details>
+        <details><summary>Che cos'è lo pseudocodice?</summary><p>Una rappresentazione convenzionale con istruzioni brevi, leggibile e indipendente da uno specifico linguaggio.</p></details>
+        <details><summary>Perché non è un vero linguaggio di programmazione?</summary><p>Non ha una sintassi universale rigida e non viene eseguito direttamente dal computer.</p></details>
+        <details><summary>Quali simboli abbiamo usato?</summary><p>Terminatore, parallelogramma, rettangolo e freccia.</p></details>
+        <details><summary>Che cosa rappresenta il rettangolo?</summary><p>Un'elaborazione, per esempio un calcolo.</p></details>
+        <details><summary>Che cosa rappresenta il parallelogramma?</summary><p>L'ingresso o l'uscita dei dati.</p></details>
+        <details><summary>A che cosa servono le frecce?</summary><p>Indicano la direzione e l'ordine di esecuzione.</p></details>
+        <details><summary>Come controlliamo la corrispondenza?</summary><p>Confrontiamo tutti i passaggi e verifichiamo che compaiano nello stesso ordine e conducano allo stesso risultato.</p></details>
+        <details><summary>Quali vantaggi offre il diagramma?</summary><p>Rende visibili il flusso, l'ordine e la funzione dei passaggi.</p></details>
+      </div>
+      <aside class="callout exam" aria-labelledby="traccia-orale">
+        <div class="callout-icon" aria-hidden="true">🎓</div><div><p class="callout-label">Traccia per 1–2 minuti</p><h3 id="traccia-orale">Lo stesso algoritmo in forme diverse</h3><ol><li>Distingui algoritmo e rappresentazione.</li><li>Nomina le tre forme studiate.</li><li>Spiega le parole del pseudocodice.</li><li>Descrivi i quattro simboli del diagramma.</li><li>Concludi con la corrispondenza tra i passaggi.</li></ol></div>
+      </aside>
+    </section>
+
+    <section class="quiz" aria-labelledby="autovalutazione">
+      <h2 id="autovalutazione">🧠 Autovalutazione finale</h2><p>Prova a rispondere senza rileggere, poi apri le indicazioni.</p>
+      <div class="self-check">
+        <details><summary>So distinguere algoritmo e rappresentazione?</summary><p>Se sai spiegare la differenza usando l'esempio della strada, l'obiettivo è raggiunto.</p></details>
+        <details><summary>So trasformare una sequenza nelle tre forme?</summary><p>Controlla che ogni passaggio compaia nello stesso ordine.</p></details>
+        <details><summary>So scegliere i simboli corretti?</summary><p>Devi riconoscere inizio/fine, ingresso/uscita, elaborazione e direzione.</p></details>
+        <details><summary>So individuare un errore nel flusso?</summary><p>Verifica dati mancanti, blocchi invertiti, simboli errati e frecce assenti.</p></details>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="glossario">
+      <div class="section-heading"><span class="icon" aria-hidden="true">📚</span><h2 id="glossario">Glossario essenziale</h2></div>
+      <dl class="glossary-grid">
+        <div class="glossary-card"><dt>Rappresentazione</dt><dd>Modo con cui un algoritmo viene comunicato.</dd></div><div class="glossary-card"><dt>Linguaggio naturale</dt><dd>Descrizione con parole e frasi comuni.</dd></div><div class="glossary-card"><dt>Pseudocodice</dt><dd>Descrizione convenzionale con istruzioni sintetiche.</dd></div><div class="glossary-card"><dt>Diagramma di flusso</dt><dd>Schema con blocchi collegati da frecce.</dd></div><div class="glossary-card"><dt>Blocco</dt><dd>Simbolo che rappresenta una funzione.</dd></div><div class="glossary-card"><dt>Sequenza</dt><dd>Istruzioni eseguite una dopo l'altra nell'ordine indicato.</dd></div>
+      </dl>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header"><p class="eyebrow">Riepilogo finale</p><h2 id="zaino-studente">🎒 Lo zaino dello studente</h2><p>Le idee essenziali da portare al colloquio orale.</p></div>
+      <div class="student-backpack-grid">
+        <article class="backpack-card"><h3>✅ Sintesi</h3><ol class="essential-list"><li>Algoritmo e rappresentazione non sono la stessa cosa.</li><li>Lo stesso algoritmo può essere scritto in forme diverse.</li><li>Pseudocodice e diagramma conservano lo stesso ordine logico.</li><li>Ogni simbolo del diagramma ha una funzione.</li><li>Le frecce mostrano il verso di esecuzione.</li><li>In questa fase usiamo soltanto algoritmi sequenziali.</li></ol></article>
+        <article class="backpack-card"><h3>📝 Parole chiave</h3><ul class="keyword-list"><li>rappresentazione</li><li>linguaggio naturale</li><li>pseudocodice</li><li>diagramma di flusso</li><li>blocco</li><li>freccia</li><li>ingresso</li><li>elaborazione</li><li>uscita</li><li>sequenza</li></ul></article>
+        <article class="backpack-card"><h3>❓ Controllo rapido</h3><ol><li>I passaggi corrispondono?</li><li>L'ordine è invariato?</li><li>I simboli sono corretti?</li><li>Le frecce indicano il verso?</li><li>Il risultato rimane lo stesso?</li></ol></article>
+        <article class="backpack-card"><h3>⏱️ Ripasso in 2 minuti</h3><p>Disegna i quattro simboli, spiegane la funzione e racconta il flusso dei biglietti senza leggere.</p></article>
+      </div>
+    </section>
+
+    <section class="review-mission" aria-labelledby="missione-ripasso">
+      <div class="review-mission-icon" aria-hidden="true">🏕️</div><div><p class="callout-label">Allenamento distribuito</p><h2 id="missione-ripasso">Missione di ripasso · 10 minuti al giorno</h2><div class="mission-days"><article><strong>Giorno 1</strong><p>Spiega la differenza tra algoritmo e rappresentazione.</p></article><article><strong>Giorno 2</strong><p>Riscrivi lo pseudocodice dei biglietti.</p></article><article><strong>Giorno 3</strong><p>Disegna e nomina i quattro simboli.</p></article><article><strong>Giorno 4</strong><p>Trasforma una semplice sequenza nelle tre forme.</p></article></div></div>
+    </section>
+
+    <section class="next-lesson" aria-labelledby="prossimo-passo">
+      <p class="eyebrow">Prossimo passo</p><h2 id="prossimo-passo">Dati, variabili e assegnazione</h2><p>Nella Lezione 2.03 daremo nomi ai dati usati dagli algoritmi e capiremo come conservarli e aggiornarli durante l'esecuzione.</p>
+    </section>
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../01-dal-problema-all-algoritmo/index.html">← Lezione 2.01 — Dal problema all'algoritmo</a><a href="../../index.html#secondo-anno">Torna all'indice</a><a href="../03-dati-variabili-e-assegnazione/index.html">Lezione 2.03 — Dati, variabili e assegnazione →</a>
+    </nav>
+  </main>
+  <footer class="course-footer"><div class="container narrow"><p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p><p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p></div></footer>
+</body>
+</html>

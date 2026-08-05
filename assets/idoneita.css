@@ -412,6 +412,16 @@ kbd{
   text-align:center;
 }
 
+.lesson-figure-wide img{
+  max-width:1100px;
+  margin-inline:auto;
+}
+
+.lesson-figure-portrait img{
+  max-width:760px;
+  margin-inline:auto;
+}
+
 /* ---------- Tabelle comparative ---------- */
 
 .table-wrapper{
