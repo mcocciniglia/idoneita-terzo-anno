@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lezione introduttiva su dati, variabili, costanti, tipi elementari, assegnazione, input, output e tabelle di traccia.">
+  <title>2.03 — Dati, variabili e assegnazione</title>
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line" aria-label="Identificazione del percorso">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge second">Programma del secondo anno</span>
+        </div>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle" class="btn btn-theme" type="button" aria-pressed="false" aria-label="Cambia tema"><span class="btn-label">Tema</span></button>
+          <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button" aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">Contrasto alto ☀️</button>
+        </div>
+      </div>
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span><span aria-hidden="true">›</span><span>Secondo anno</span><span aria-hidden="true">›</span><span>Lezione 2.03</span>
+      </nav>
+      <p class="eyebrow">Secondo anno — Lezione 2.03 · Durata prevista: 2 ore</p>
+      <h1>Dati, variabili e assegnazione</h1>
+      <p class="lead">Come conservare e modificare i dati durante l'esecuzione di un algoritmo.</p>
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ Circa 2 ore</span><span>📘 Secondo anno</span><span>🎯 Prerequisito: Lezione 2.02</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading"><span>Percorso del secondo anno</span><span>Lezione 3 di 11</span></div>
+      <div class="progress-track" aria-hidden="true"><div class="progress-value" style="--progress:27.27%;"></div></div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="percorso-tempi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">⏱️</span><h2 id="percorso-tempi">Come lavoreremo</h2></div>
+      <div class="card-grid">
+        <article class="info-card"><h3>Prima fase · 35 minuti</h3><p>Variabili, costanti, nomi e tipi di dato.</p></article>
+        <article class="info-card"><h3>Seconda fase · 35 minuti</h3><p>Assegnazioni ed esempio completo.</p></article>
+        <article class="info-card"><h3>Terza fase · 40 minuti</h3><p>Attività guidate e autonome.</p></article>
+        <article class="info-card"><h3>Conclusione · 10 minuti</h3><p>Verifica e autovalutazione.</p></article>
+      </div>
+      <p><strong>Attività essenziali:</strong> le Attività 1, 2 e 3 vengono svolte in forma guidata. L'Attività 4 è individuale. L'Attività 5 è il compito principale della lezione. La sfida è facoltativa e si svolge solo se rimane tempo.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ripasso">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔄</span><h2 id="ripasso">Prima di iniziare: che cosa sappiamo già</h2></div>
+      <p>Nella Lezione 2.01 abbiamo analizzato un problema distinguendo obiettivo, dati, risultato, vincoli e passi.</p>
+      <p>Nella Lezione 2.02 abbiamo rappresentato algoritmi sequenziali con linguaggio naturale, pseudocodice e diagrammi di flusso.</p>
+      <aside class="callout remember" aria-labelledby="nuovo-passo">
+        <div class="callout-icon" aria-hidden="true">💡</div><div><p class="callout-label">Il nuovo passaggio</p><h3 id="nuovo-passo">Conservare i dati</h3><p>Ora impariamo come un algoritmo memorizza e modifica i dati durante la sua esecuzione.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎯</span><h2 id="obiettivi">Obiettivi della lezione</h2></div>
+      <div class="objective-grid">
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Distinguere</strong><small>Variabili e costanti.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Scegliere</strong><small>Nomi significativi e coerenti.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Riconoscere</strong><small>Dati numerici, testuali e logici.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Comprendere</strong><small>L'assegnazione e la freccia ←.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Seguire</strong><small>L'evoluzione dei valori in una tabella di traccia.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Rappresentare</strong><small>Un algoritmo sequenziale completo.</small></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="dati-variabili">
+      <div class="section-heading"><span class="icon" aria-hidden="true">📦</span><h2 id="dati-variabili">Dai dati alle variabili</h2></div>
+      <p>Un algoritmo può usare il prezzo di un prodotto, il numero di articoli, il nome di uno studente o il risultato di un calcolo. Questi valori devono essere conservati mentre il procedimento viene eseguito.</p>
+      <div class="definition"><span class="definition-term">Variabile</span><p>Una variabile è uno spazio usato dall'algoritmo per conservare temporaneamente un dato. Ha un nome e contiene un valore che può cambiare.</p></div>
+      <p>Possiamo immaginarla come un contenitore con un'etichetta, ma questa è soltanto un'immagine utile: ciò che conta è che l'algoritmo possa leggere e sostituire il valore conservato.</p>
+      <dl class="glossary-grid">
+        <div class="glossary-card"><dt><code>prezzo</code></dt><dd>Può contenere, per esempio, il valore 2,50.</dd></div>
+        <div class="glossary-card"><dt><code>quantita</code></dt><dd>Può contenere il numero di articoli acquistati.</dd></div>
+        <div class="glossary-card"><dt><code>nome</code></dt><dd>Può contenere un testo, per esempio «Sara».</dd></div>
+        <div class="glossary-card"><dt><code>totale</code></dt><dd>Può conservare il risultato di un calcolo.</dd></div>
+      </dl>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="variabili-costanti">
+      <div class="section-heading"><span class="icon" aria-hidden="true">⚖️</span><h2 id="variabili-costanti">Variabili e costanti</h2></div>
+      <div class="card-grid">
+        <article class="info-card"><h3>Variabile</h3><p>Conserva un valore che può cambiare durante l'esecuzione. Esempi: <code>prezzo</code>, <code>quantita</code>, <code>totale</code>, <code>nome</code>.</p></article>
+        <article class="info-card"><h3>Costante</h3><p>Conserva un valore che deve rimanere invariato nel procedimento. Esempio: <code>IVA</code>, se il suo valore viene fissato per tutto l'algoritmo.</p></article>
+      </div>
+      <aside class="callout warning" aria-labelledby="dipende-problema">
+        <div class="callout-icon" aria-hidden="true">⚠️</div><div><p class="callout-label">Attenzione</p><h3 id="dipende-problema">Osserva il ruolo del dato</h3><p>Lo stesso tipo di valore può avere ruoli diversi. La distinzione dipende dal problema e dal fatto che il valore possa o non possa cambiare.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="nomi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🏷️</span><h2 id="nomi">Come scegliere i nomi</h2></div>
+      <p>Un buon nome permette di capire subito quale dato viene conservato.</p>
+      <ul><li>Usa nomi significativi.</li><li>Evita spazi e nomi troppo generici.</li><li>Non iniziare con un numero.</li><li>Mantieni lo stesso stile in tutto l'algoritmo.</li></ul>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Confronto tra nomi poco chiari e nomi significativi</caption>
+          <thead><tr><th scope="col">Poco chiaro</th><th scope="col">Più chiaro</th><th scope="col">Perché</th></tr></thead>
+          <tbody><tr><td><code>x</code></td><td><code>prezzo</code></td><td>Indica il dato conservato.</td></tr><tr><td><code>a</code></td><td><code>numeroStudenti</code></td><td>Descrive il significato del numero.</td></tr><tr><td><code>cosa</code></td><td><code>totaleSpesa</code></td><td>Fa capire che contiene un risultato.</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="tipi-dato">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔤</span><h2 id="tipi-dato">Tipi elementari di dato</h2></div>
+      <p>Il tipo descrive la natura del valore e aiuta a capire quali operazioni hanno senso.</p>
+      <dl class="glossary-grid">
+        <div class="glossary-card"><dt>Numero intero</dt><dd>Senza parte decimale: <code>4</code>, <code>27</code>, <code>-2</code>.</dd></div>
+        <div class="glossary-card"><dt>Numero decimale</dt><dd>Con parte decimale: <code>2,50</code>, <code>18,7</code>.</dd></div>
+        <div class="glossary-card"><dt>Testo</dt><dd>Parole o frasi: <code>"Sara"</code>, <code>"Roma"</code>.</dd></div>
+        <div class="glossary-card"><dt>Valore logico</dt><dd>Può essere soltanto <code>vero</code> oppure <code>falso</code>.</dd></div>
+      </dl>
+      <aside class="callout tip" aria-labelledby="decimali-punto">
+        <div class="callout-icon" aria-hidden="true">ℹ️</div><div><p class="callout-label">Scrittura dei decimali</p><h3 id="decimali-punto">Virgola nel testo, punto nei programmi</h3><p>Nel testo italiano scriviamo normalmente <code>2,50</code>. Nei linguaggi di programmazione e in programmi come Flowgorithm i numeri decimali vengono spesso scritti usando il punto: <code>2.50</code>.</p></div>
+      </aside>
+      <p>Per ora riconosciamo questi tipi senza studiare dimensioni in memoria, conversioni o regole di uno specifico linguaggio.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="assegnazione">
+      <div class="section-heading"><span class="icon" aria-hidden="true">←</span><h2 id="assegnazione">L'assegnazione</h2></div>
+      <div class="definition"><span class="definition-term">Assegnazione</span><p>È l'operazione che scrive un valore in una variabile, sostituendo quello eventualmente presente.</p></div>
+      <pre><code>prezzo ← 12
+quantita ← 3
+totale ← prezzo × quantita</code></pre>
+      <p>La freccia si legge «riceve». Prima si calcola ciò che si trova a destra; poi il risultato viene conservato nella variabile a sinistra.</p>
+      <h3>Un valore che cambia</h3>
+      <pre><code>numero ← 5
+numero ← numero + 1</code></pre>
+      <ol class="steps"><li><strong>Valore iniziale.</strong><p><code>numero</code> contiene 5.</p></li><li><strong>Lettura.</strong><p>Si legge il valore attuale, cioè 5.</p></li><li><strong>Calcolo.</strong><p>Si calcola 5 + 1 e si ottiene 6.</p></li><li><strong>Sostituzione.</strong><p>Il nuovo valore 6 sostituisce il precedente.</p></li></ol>
+      <aside class="callout error" aria-labelledby="non-uguaglianza">
+        <div class="callout-icon" aria-hidden="true">❌</div><div><p class="callout-label">Errore frequente</p><h3 id="non-uguaglianza">Assegnazione e uguaglianza non sono la stessa cosa</h3><p><code>numero ← numero + 1</code> descrive un aggiornamento. Non afferma che un numero sia matematicamente uguale a se stesso più uno.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="algoritmo-quaderni">
+      <div class="section-heading"><span class="icon" aria-hidden="true">📒</span><h2 id="algoritmo-quaderni">Esempio completo: il costo dei quaderni</h2></div>
+      <p><strong>Problema:</strong> calcolare il costo complessivo conoscendo il prezzo di un quaderno e la quantità acquistata.</p>
+      <pre><code>INIZIO
+  LEGGI prezzo
+  LEGGI quantita
+  totale ← prezzo × quantita
+  SCRIVI totale
+FINE</code></pre>
+      <div class="process-flow process-flow-five" aria-label="Flusso sequenziale completo dell'algoritmo">
+        <div class="process-node"><strong>INIZIO</strong><span>Terminatore</span></div><div class="process-arrow" aria-hidden="true">→</div><div class="process-node"><strong>LEGGI</strong><span>prezzo e quantità</span></div><div class="process-arrow" aria-hidden="true">→</div><div class="process-node"><strong>ELABORA</strong><span>totale ← prezzo × quantita</span></div><div class="process-arrow" aria-hidden="true">→</div><div class="process-node"><strong>SCRIVI</strong><span>totale</span></div><div class="process-arrow" aria-hidden="true">→</div><div class="process-node"><strong>FINE</strong><span>Terminatore</span></div>
+      </div>
+      <p><strong>Forme convenzionali:</strong> il terminatore indica inizio e fine; il parallelogramma indica input e output; il rettangolo indica l'elaborazione.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="tabella-traccia">
+      <div class="section-heading"><span class="icon" aria-hidden="true">📋</span><h2 id="tabella-traccia">La tabella di traccia</h2></div>
+      <p>La tabella di traccia registra il valore delle variabili dopo ogni passaggio. Serve a controllare manualmente il comportamento dell'algoritmo.</p>
+      <div class="table-wrapper"><table class="comparison-table"><caption>Prova con prezzo 2,50 euro e quantità 4</caption><thead><tr><th scope="col">Passaggio</th><th scope="col">prezzo</th><th scope="col">quantita</th><th scope="col">totale</th></tr></thead><tbody><tr><th scope="row">Lettura prezzo</th><td>2,50</td><td>—</td><td>—</td></tr><tr><th scope="row">Lettura quantità</th><td>2,50</td><td>4</td><td>—</td></tr><tr><th scope="row">Calcolo totale</th><td>2,50</td><td>4</td><td>10,00</td></tr><tr><th scope="row">Visualizzazione</th><td>2,50</td><td>4</td><td>10,00</td></tr></tbody></table></div>
+    </section>
+
+    <section class="lab" aria-labelledby="attivita-dati">
+      <div class="lab-header"><h2 id="attivita-dati">Attività 1 — Riconosci i dati</h2></div><div class="lab-body"><p>Per ogni esempio completa il tipo e stabilisci se il valore può cambiare.</p><p>Per stabilire se un dato è una variabile o una costante, considera il ruolo che assume nello specifico algoritmo.</p><div class="table-wrapper"><table class="comparison-table"><caption>Classifica i dati nel loro contesto</caption><thead><tr><th scope="col">Contesto</th><th scope="col">Nome</th><th scope="col">Valore iniziale</th><th scope="col">Tipo</th><th scope="col">Può cambiare durante l'esecuzione?</th></tr></thead><tbody><tr><td>Quantità di prodotti inseriti in un ordine</td><td><code>quantita</code></td><td><code>2</code></td><td>Da completare</td><td>Da completare</td></tr><tr><td>Nome del cliente inserito all'inizio</td><td><code>nomeCliente</code></td><td><code>"Luca"</code></td><td>Da completare</td><td>Da completare</td></tr><tr><td>Presenza dello studente aggiornata durante l'appello</td><td><code>presente</code></td><td><code>vero</code></td><td>Da completare</td><td>Da completare</td></tr><tr><td>Aliquota fissata per tutto il calcolo</td><td><code>ALIQUOTA_IVA</code></td><td><code>22</code></td><td>Da completare</td><td>Da completare</td></tr></tbody></table></div><details><summary>Controlla la soluzione</summary><ul><li><code>quantita</code> è un numero intero e può cambiare.</li><li><code>nomeCliente</code> è un testo e, in questo algoritmo, non cambia dopo l'inserimento.</li><li><code>presente</code> è un valore logico e può cambiare.</li><li><code>ALIQUOTA_IVA</code> è un numero intero e rimane costante durante l'esecuzione.</li></ul><p>Un dato può avere valori differenti in esecuzioni diverse e rimanere comunque costante durante una singola esecuzione.</p></details></div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="attivita-nomi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🏷️</span><h2 id="attivita-nomi">Attività 2 — Scegli il nome migliore</h2></div>
+      <p>Per il prezzo di un prodotto scegli tra <code>x</code>, <code>p</code> e <code>prezzoProdotto</code>. Per il numero degli studenti scegli tra <code>a</code>, <code>n</code> e <code>numeroStudenti</code>.</p>
+      <details><summary>Controlla e confronta la motivazione</summary><p><code>prezzoProdotto</code> e <code>numeroStudenti</code> sono più chiari perché descrivono il dato senza richiedere altre spiegazioni.</p></details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="attivita-assegnazioni">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔎</span><h2 id="attivita-assegnazioni">Attività 3 — Segui le assegnazioni</h2></div>
+      <pre><code>a ← 4
+b ← 3
+a ← a + b
+b ← a × 2</code></pre>
+      <p>Costruisci una tabella con una riga per ogni assegnazione e trova i valori finali di <code>a</code> e <code>b</code>.</p>
+      <details><summary>Apri la soluzione</summary><div class="table-wrapper"><table class="comparison-table"><caption>Evoluzione dei valori di a e b</caption><thead><tr><th scope="col">Passaggio</th><th scope="col">a</th><th scope="col">b</th></tr></thead><tbody><tr><td><code>a ← 4</code></td><td>4</td><td>—</td></tr><tr><td><code>b ← 3</code></td><td>4</td><td>3</td></tr><tr><td><code>a ← a + b</code></td><td>7</td><td>3</td></tr><tr><td><code>b ← a × 2</code></td><td>7</td><td>14</td></tr></tbody></table></div><p>Al termine, <code>a</code> contiene 7 e <code>b</code> contiene 14.</p></details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="attivita-completa">
+      <div class="section-heading"><span class="icon" aria-hidden="true">✏️</span><h2 id="attivita-completa">Attività 4 — Completa l'algoritmo</h2></div>
+      <p>Usa <code>base</code>, <code>altezza</code> e <code>area</code>.</p><pre><code>INIZIO
+  LEGGI __________
+  LEGGI __________
+  area ← __________
+  SCRIVI __________
+FINE</code></pre>
+      <details><summary>Apri la soluzione</summary><pre><code>INIZIO
+  LEGGI base
+  LEGGI altezza
+  area ← base × altezza
+  SCRIVI area
+FINE</code></pre></details>
+    </section>
+
+    <section class="lab" aria-labelledby="attivita-finale">
+      <div class="lab-header"><h2 id="attivita-finale">Attività 5 — Dal problema all'algoritmo</h2></div><div class="lab-body"><p><strong>Problema:</strong> calcolare il totale da pagare conoscendo il prezzo di un biglietto e il numero di biglietti acquistati.</p><ol class="steps"><li><strong>Analizza.</strong><p>Individua input e output.</p></li><li><strong>Scegli.</strong><p>Assegna nomi significativi alle variabili.</p></li><li><strong>Rappresenta.</strong><p>Scrivi lo pseudocodice e realizza il diagramma di flusso.</p></li><li><strong>Prova.</strong><p>Scegli dati realistici ed esegui i passaggi.</p></li><li><strong>Controlla.</strong><p>Compila una tabella di traccia.</p></li></ol><details><summary>Apri un possibile svolgimento</summary><p><strong>Input:</strong> <code>prezzoBiglietto</code>, <code>numeroBiglietti</code>. <strong>Output:</strong> <code>totale</code>.</p><pre><code>INIZIO
+  LEGGI prezzoBiglietto
+  LEGGI numeroBiglietti
+  totale ← prezzoBiglietto × numeroBiglietti
+  SCRIVI totale
+FINE</code></pre><p>Nel diagramma usa terminatore, parallelogramma, rettangolo, parallelogramma e terminatore. Puoi provarlo anche con Flowgorithm, ma carta e penna sono sufficienti.</p></details></div>
+    </section>
+
+    <aside class="callout curiosity" aria-labelledby="sfida">
+      <div class="callout-icon" aria-hidden="true">★</div><div><p class="callout-label">Sfida facoltativa</p><h2 id="sfida">Tre assegnazioni consecutive</h2><pre><code>valore ← 2
+valore ← valore + 5
+valore ← valore × 3</code></pre><p>Qual è il valore finale? Ricostruisci i tre passaggi prima di controllare.</p><details><summary>Mostra la risposta</summary><p>Il valore passa da 2 a 7 e poi a 21.</p></details></div>
+    </aside>
+
+    <section class="quiz" aria-labelledby="verifica">
+      <h2 id="verifica">Controlla ciò che hai imparato</h2>
+      <ol><li>Che cos'è una variabile?</li><li>Qual è la differenza tra variabile e costante?</li><li>Perché <code>prezzoBiglietto</code> è preferibile a <code>x</code>?</li><li>Che cosa significa <code>totale ← prezzo × quantita</code>?</li><li>Perché <code>numero ← numero + 1</code> non è un'uguaglianza matematica?</li><li>A che cosa serve una tabella di traccia?</li></ol>
+      <details><summary>Controlla le risposte</summary><ol><li>È uno spazio con nome che conserva temporaneamente un dato modificabile.</li><li>La variabile può cambiare; la costante rimane invariata.</li><li>Il nome descrive subito il dato.</li><li>Si calcola il prodotto e lo si conserva in <code>totale</code>.</li><li>È un aggiornamento: il nuovo valore sostituisce il precedente.</li><li>Permette di seguire e controllare i valori passo per passo.</li></ol></details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="autovalutazione">
+      <div class="section-heading"><span class="icon" aria-hidden="true">✓</span><h2 id="autovalutazione">Autovalutazione</h2></div>
+      <p>Scegli il livello che descrive meglio il tuo lavoro:</p><ul><li><strong>Devo ancora esercitarmi:</strong> confondo nomi, valori o assegnazioni.</li><li><strong>Ho compreso gli elementi essenziali:</strong> seguo esempi semplici.</li><li><strong>Riesco a lavorare in autonomia:</strong> costruisco algoritmo e tabella di traccia senza aiuto.</li></ul>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header"><p class="eyebrow">Riepilogo finale</p><h2 id="zaino-studente">🎒 Lo zaino dello studente</h2><p>Le idee essenziali da portare al colloquio orale.</p></div>
+      <div class="student-backpack-grid">
+        <article class="backpack-card"><h3>Sintesi</h3><ol class="essential-list"><li>Una variabile conserva temporaneamente un dato.</li><li>Una costante rimane invariata.</li><li>Un nome significativo chiarisce il ruolo del dato.</li><li>La freccia ← indica un'assegnazione.</li><li>La tabella di traccia segue i valori passo per passo.</li></ol></article>
+        <article class="backpack-card"><h3>Parole chiave</h3><ul class="keyword-list"><li>dato</li><li>variabile</li><li>costante</li><li>tipo</li><li>assegnazione</li><li>input</li><li>elaborazione</li><li>output</li><li>tabella di traccia</li></ul></article>
+        <article class="backpack-card"><h3>Controllo rapido</h3><ol><li>Quale dato conservo?</li><li>Può cambiare?</li><li>Il nome è chiaro?</li><li>Qual è il nuovo valore?</li><li>La traccia conferma il risultato?</li></ol></article>
+        <article class="backpack-card"><h3>Ripasso in 2 minuti</h3><p>Spiega la sequenza input → elaborazione e assegnazione → output usando l'esempio dei quaderni.</p></article>
+      </div>
+    </section>
+
+    <section class="next-lesson" aria-labelledby="prossimo-passo">
+      <p class="eyebrow">Prossimo passo</p><h2 id="prossimo-passo">Operatori ed espressioni</h2><p>Nella Lezione 2.04 studieremo come costruire e valutare con precisione le espressioni usate nelle elaborazioni.</p>
+    </section>
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../02-rappresentare-un-algoritmo/index.html">← Lezione 2.02 — Rappresentare un algoritmo</a><a href="../../index.html#secondo-anno">Torna all'indice</a><a href="../04-operatori-ed-espressioni/index.html">Lezione 2.04 — Operatori ed espressioni →</a>
+    </nav>
+  </main>
+  <footer class="course-footer"><div class="container narrow"><p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p><p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p></div></footer>
+</body>
+</html>
