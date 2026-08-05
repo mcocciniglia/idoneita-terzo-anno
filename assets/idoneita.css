@@ -391,8 +391,30 @@ kbd{
   text-align:center;
 }
 
-<<<<<<< HEAD
-=======
+
+
+.process-flow-five{
+  grid-template-columns:
+    minmax(0,1fr) auto
+    minmax(0,1fr) auto
+    minmax(0,1fr) auto
+    minmax(0,1fr) auto
+    minmax(0,1fr);
+  align-items:stretch;
+  gap:.55rem;
+}
+
+.process-flow-five .process-node{
+  min-width:0;
+  padding:14px 10px;
+}
+
+.process-flow-five .process-arrow{
+  align-self:center;
+  text-align:center;
+}
+
+
 /* ---------- Figure delle lezioni ---------- */
 
 .lesson-figure{
@@ -424,7 +446,7 @@ kbd{
   margin-inline:auto;
 }
 
->>>>>>> 244dcce (Integra i diagrammi nella lezione 2.02)
+
 /* ---------- Tabelle comparative ---------- */
 
 .table-wrapper{
