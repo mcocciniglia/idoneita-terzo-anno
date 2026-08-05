@@ -161,7 +161,7 @@ dalla progressione numerata delle lezioni.
 
 | Codice | Mappa concettuale | Collegata a | Stato | Contenuti |
 |--------|-------------------|-------------|-------|-----------|
-| M01 | Hardware e software | Lezioni 03 e 04 | ⚪ | Componenti, programmi e collaborazione tra hardware e software |
+| M01 | Hardware e software | Lezioni 03 e 04 | ✅ | Componenti, programmi e collaborazione tra hardware e software |
 | M02 | Reti, Internet e Web | Lezioni 10 e 11 | ⚪ | Rete, dispositivi, Internet, Web e servizi |
 | M03 | Sicurezza informatica | Lezione 12 | ⚪ | Password, malware, phishing e comportamenti sicuri |
 | M04 | Dal problema all'algoritmo | Lezione 2.01 | ✅ | Problema, analisi, obiettivo, dati, vincoli, algoritmo, controllo e risultato |
