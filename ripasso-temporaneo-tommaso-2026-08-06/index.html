@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Esercizi temporanei di riepilogo per Tommaso sugli argomenti già studiati.">
+  <title>Ripasso temporaneo — Tommaso</title>
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+  <style>
+    .page-shell { width: min(100% - 2rem, 900px); margin-inline: auto; }
+    .topbar, .theme-controls, .actions { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; }
+    .topbar { justify-content: space-between; }
+    .temporary-note, .exercise-card { margin: 1.25rem 0; padding: 1rem 1.25rem; border: 1px solid var(--panel-border); border-radius: 1rem; background: var(--panel); }
+    .temporary-note { border-left: .4rem solid currentColor; }
+    .answer-space { min-height: 5rem; margin: .75rem 0; border: 1px dashed var(--muted); border-radius: .75rem; }
+    .answer-space.tall { min-height: 9rem; }
+    .table-scroll { max-width: 100%; overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; background: var(--panel); }
+    caption { padding: .75rem 0; text-align: left; font-weight: 700; }
+    th, td { padding: .75rem; border: 1px solid var(--panel-border); text-align: left; vertical-align: top; }
+    pre { max-width: 100%; overflow-x: auto; }
+    details { margin: .75rem 0; }
+    .checklist { padding: 0; list-style: none; }
+    .checklist li { margin: .65rem 0; }
+    .check-box { display: inline-block; width: 1.2rem; height: 1.2rem; margin-right: .5rem; border: 2px solid currentColor; vertical-align: -.2rem; }
+    footer { margin-top: 3rem; padding: 1.5rem 0; border-top: 1px solid var(--panel-border); }
+    @media (max-width: 600px) { th, td { padding: .55rem; } .page-shell { width: min(100% - 1rem, 900px); } }
+    @media print { .theme-controls, .actions { display: none !important; } details > * { display: block; } .answer-space { break-inside: avoid; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Salta al contenuto</a>
+  <header class="course-hero">
+    <div class="page-shell">
+      <div class="topbar">
+        <span class="course-badge">Materiale temporaneo</span>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle" class="btn btn-theme" type="button" aria-pressed="false" aria-label="Cambia tema"><span class="btn-label">Tema</span></button>
+          <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button" aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">Contrasto alto ☀️</button>
+        </div>
+      </div>
+      <p class="eyebrow">Allenamento personale · circa due ore</p>
+      <h1>Esercizi di riepilogo</h1>
+      <p class="lead">Ripassiamo ciò che abbiamo già studiato</p>
+    </div>
+  </header>
+
+  <main id="contenuto" class="page-shell">
+    <aside class="temporary-note" aria-labelledby="avvertenza">
+      <h2 id="avvertenza">Prima di cominciare</h2>
+      <p>Questa è una pagina temporanea di allenamento. Gli esercizi non introducono nuovi argomenti. Prova a rispondere senza consultare subito le soluzioni.</p>
+    </aside>
+    <div class="actions"><button type="button" class="btn btn-ghost" onclick="window.print()">Stampa gli esercizi</button></div>
+
+    <section aria-labelledby="come-usare">
+      <h2 id="come-usare">1. Come usare questa pagina</h2>
+      <p>Il percorso completo richiede orientativamente circa due ore. Fermati quando serve e riprendi con calma.</p>
+      <ol><li>Leggi una consegna alla volta.</li><li>Prova a rispondere oralmente o sul quaderno.</li><li>Controlla i passaggi.</li><li>Apri la soluzione soltanto dopo aver tentato.</li><li>Spiega a voce il ragionamento seguito.</li></ol>
+    </section>
+
+    <section aria-labelledby="riscaldamento">
+      <h2 id="riscaldamento">2. Riscaldamento orale</h2>
+      <p>Rispondi con parole tue. Usa un esempio quando puoi.</p>
+      <div class="exercise-card"><h3>Domande</h3><ol><li>Che cos'è un algoritmo?</li><li>Che differenza c'è tra dato di input e risultato di output?</li><li>Perché le istruzioni devono essere ordinate?</li><li>Che cosa rappresenta una variabile?</li><li>Che cosa significa assegnare un valore?</li><li>Perché è utile eseguire un algoritmo con dati conosciuti?</li></ol></div>
+      <details><summary>Controlla le idee essenziali</summary><ol><li>Un algoritmo è una sequenza finita e ordinata di istruzioni.</li><li>L'input è un dato fornito all'algoritmo; l'output è il risultato prodotto.</li><li>L'ordine stabilisce quale passaggio può essere svolto e quando.</li><li>Una variabile conserva temporaneamente un dato.</li><li>Assegnare significa scrivere o sostituire il valore conservato.</li><li>Dati conosciuti permettono di confrontare il risultato ottenuto con quello atteso.</li></ol></details>
+    </section>
+
+    <section aria-labelledby="numerazione">
+      <h2 id="numerazione">3. Sistemi di numerazione</h2>
+      <article class="exercise-card"><h3>A. Da decimale a binario</h3><ol><li>Converti 13₁₀ in binario.</li><li>Converti 18₁₀ in binario.</li></ol><p>Usa divisioni successive per 2 e annota ogni resto.</p><div class="answer-space tall" aria-label="Spazio per i passaggi delle conversioni da decimale a binario"></div><details><summary>Apri la soluzione</summary><p><strong>13:</strong> 13 ÷ 2 = 6 resto 1; 6 ÷ 2 = 3 resto 0; 3 ÷ 2 = 1 resto 1; 1 ÷ 2 = 0 resto 1. Leggendo i resti dal basso: <strong>1101₂</strong>.</p><p><strong>18:</strong> 18 ÷ 2 = 9 resto 0; 9 ÷ 2 = 4 resto 1; 4 ÷ 2 = 2 resto 0; 2 ÷ 2 = 1 resto 0; 1 ÷ 2 = 0 resto 1. Risultato: <strong>10010₂</strong>.</p></details></article>
+      <article class="exercise-card"><h3>B. Da binario a decimale</h3><ol><li>Converti 10110₂ in decimale.</li><li>Converti 11101₂ in decimale.</li></ol><p>Scrivi sotto ogni cifra il valore della sua posizione.</p><div class="answer-space tall" aria-label="Spazio per i passaggi delle conversioni da binario a decimale"></div><details><summary>Apri la soluzione</summary><p><strong>10110₂:</strong> 1×16 + 0×8 + 1×4 + 1×2 + 0×1 = 16 + 4 + 2 = <strong>22₁₀</strong>.</p><p><strong>11101₂:</strong> 1×16 + 1×8 + 1×4 + 0×2 + 1×1 = 16 + 8 + 4 + 1 = <strong>29₁₀</strong>.</p></details></article>
+      <article class="exercise-card"><h3>C. Esercizi misti</h3><ol><li>Converti 25₁₀ in binario.</li><li>Converti 10011₂ in decimale.</li><li>Spiega a voce perché il procedimento cambia nei due versi.</li></ol><div class="answer-space tall" aria-label="Spazio per gli esercizi misti"></div><details><summary>Apri la soluzione</summary><p><strong>25₁₀:</strong> i resti delle divisioni successive per 2, letti dal basso, sono 11001₂.</p><p><strong>10011₂:</strong> 1×16 + 0×8 + 0×4 + 1×2 + 1×1 = <strong>19₁₀</strong>.</p><p>Dal decimale dividiamo ripetutamente per 2; dal binario sommiamo i valori delle posizioni che contengono 1.</p></details></article>
+    </section>
+
+    <section aria-labelledby="ordine">
+      <h2 id="ordine">4. Metti in ordine l'algoritmo</h2>
+      <article class="exercise-card"><h3>A. Preparare una spremuta</h3><p>Numera le istruzioni.</p><ul><li>Versare il succo nel bicchiere.</li><li>Tagliare le arance.</li><li>Lavare le arance.</li><li>Spremere le arance.</li></ul><details><summary>Apri la soluzione</summary><ol><li>Lavare le arance.</li><li>Tagliare le arance.</li><li>Spremere le arance.</li><li>Versare il succo nel bicchiere.</li></ol><p>Prima si prepara il frutto; il succo può essere versato soltanto dopo la spremitura.</p></details></article>
+      <article class="exercise-card"><h3>B. Calcolare l'area di un rettangolo</h3><p>Numera le istruzioni.</p><ul><li>Mostrare l'area.</li><li>Acquisire l'altezza.</li><li>Calcolare area ← base × altezza.</li><li>Acquisire la base.</li></ul><details><summary>Apri la soluzione</summary><ol><li>Acquisire la base.</li><li>Acquisire l'altezza.</li><li>Calcolare <code>area ← base × altezza</code>.</li><li>Mostrare l'area.</li></ol><p>Il calcolo richiede entrambi i dati; l'output può essere mostrato soltanto dopo il calcolo.</p></details></article>
+    </section>
+
+    <section aria-labelledby="input-output">
+      <h2 id="input-output">5. Input, elaborazione e output</h2>
+      <p>Completa le ultime tre colonne.</p>
+      <div class="table-scroll"><table><caption>Analizza quattro problemi sequenziali</caption><thead><tr><th scope="col">Problema</th><th scope="col">Input</th><th scope="col">Elaborazione</th><th scope="col">Output</th></tr></thead><tbody><tr><th scope="row">Area e perimetro del rettangolo</th><td></td><td></td><td></td></tr><tr><th scope="row">Costo di più articoli uguali</th><td></td><td></td><td></td></tr><tr><th scope="row">Media di tre valori</th><td></td><td></td><td></td></tr><tr><th scope="row">Metri in centimetri, usando centimetri = metri × 100</th><td></td><td></td><td></td></tr></tbody></table></div>
+      <details><summary>Apri la soluzione</summary><ul><li><strong>Rettangolo:</strong> base e altezza; prodotto e doppio della somma; area e perimetro.</li><li><strong>Articoli:</strong> prezzo e quantità; prezzo × quantità; costo totale.</li><li><strong>Media:</strong> tre valori; somma divisa per 3; media.</li><li><strong>Conversione:</strong> metri; metri × 100; centimetri.</li></ul></details>
+    </section>
+
+    <section aria-labelledby="passo-passo">
+      <h2 id="passo-passo">6. Esegui passo passo</h2>
+      <article class="exercise-card"><h3>A. Due variabili che cambiano</h3><pre><code>INIZIO
+  a ← 4
+  b ← 3
+  a ← a + b
+  b ← a * 2
+  SCRIVI a + b
+FINE</code></pre><div class="table-scroll"><table><caption>Completa i valori dopo ogni assegnazione</caption><thead><tr><th scope="col">Passaggio</th><th scope="col">a</th><th scope="col">b</th></tr></thead><tbody><tr><th scope="row"><code>a ← 4</code></th><td></td><td>—</td></tr><tr><th scope="row"><code>b ← 3</code></th><td></td><td></td></tr><tr><th scope="row"><code>a ← a + b</code></th><td></td><td></td></tr><tr><th scope="row"><code>b ← a * 2</code></th><td></td><td></td></tr></tbody></table></div><p>Output finale: ______</p><details><summary>Apri la soluzione</summary><p>I valori sono: (4, —), (4, 3), (7, 3), (7, 14). L'output è 7 + 14 = <strong>21</strong>.</p></details></article>
+      <article class="exercise-card"><h3>B. Parentesi e precedenza</h3><pre><code>INIZIO
+  x ← 2
+  y ← 3
+  primo ← x + y * 4
+  secondo ← (x + y) * 4
+  SCRIVI primo
+  SCRIVI secondo
+FINE</code></pre><div class="table-scroll"><table><caption>Segui le espressioni</caption><thead><tr><th scope="col">Passaggio</th><th scope="col">x</th><th scope="col">y</th><th scope="col">primo</th><th scope="col">secondo</th></tr></thead><tbody><tr><th scope="row">Valori iniziali</th><td></td><td></td><td>—</td><td>—</td></tr><tr><th scope="row">Calcolo primo</th><td></td><td></td><td></td><td>—</td></tr><tr><th scope="row">Calcolo secondo</th><td></td><td></td><td></td><td></td></tr></tbody></table></div><details><summary>Apri la soluzione</summary><p><code>x</code> contiene 2 e <code>y</code> contiene 3. <code>primo</code> contiene 14 perché la moltiplicazione viene prima. <code>secondo</code> contiene 20 perché si valuta prima la parentesi. Gli output sono <strong>14</strong> e <strong>20</strong>.</p></details></article>
+    </section>
+
+    <section aria-labelledby="flow-guidato">
+      <h2 id="flow-guidato">7. Laboratorio Flowgorithm guidato</h2>
+      <article class="exercise-card"><h3>Area e perimetro di un rettangolo</h3><ol><li>Dichiara <code>base</code>, <code>altezza</code>, <code>area</code> e <code>perimetro</code> come <code>Real</code>.</li><li>Acquisisci <code>base</code> e <code>altezza</code> con due blocchi Input.</li><li>Usa <code>area ← base * altezza</code>.</li><li>Usa <code>perimetro ← 2 * (base + altezza)</code>.</li><li>Visualizza area e perimetro.</li><li>Inserisci base 5 e altezza 3.</li><li>Controlla di ottenere area 15 e perimetro 16.</li></ol><p>Prima di aprire la soluzione, disegna sul quaderno la sequenza dei blocchi.</p><div class="answer-space tall" aria-label="Spazio per la sequenza Flowgorithm"></div><details><summary>Apri la soluzione</summary><p>Sequenza: Inizio → dichiarazioni → Input base → Input altezza → assegnazione area → assegnazione perimetro → Output area → Output perimetro → Fine.</p><pre><code>INIZIO
+  LEGGI base
+  LEGGI altezza
+  area ← base * altezza
+  perimetro ← 2 * (base + altezza)
+  SCRIVI area
+  SCRIVI perimetro
+FINE</code></pre></details></article>
+    </section>
+
+    <section aria-labelledby="flow-completare">
+      <h2 id="flow-completare">8. Flowgorithm da completare</h2>
+      <article class="exercise-card"><h3>Media aritmetica di tre numeri</h3><ul><li><strong>Variabili consigliate:</strong> <code>a</code>, <code>b</code>, <code>c</code>, <code>media</code>, tutte <code>Real</code>.</li><li><strong>Formula:</strong> <code>media ← (a + b + c) / 3</code>.</li><li><strong>Dati:</strong> 6, 7 e 8.</li><li><strong>Risultato atteso:</strong> 7.</li></ul><p>Stabilisci tu l'ordine corretto di dichiarazioni, input, assegnazione e output.</p><div class="answer-space tall" aria-label="Spazio per la sequenza della media"></div><details><summary>Apri la soluzione</summary><p>Sequenza: Inizio → dichiarazioni → Input a → Input b → Input c → assegnazione media → Output media → Fine.</p></details></article>
+    </section>
+
+    <section aria-labelledby="autonomo">
+      <h2 id="autonomo">9. Esercizio autonomo finale</h2>
+      <article class="exercise-card"><h3>Costo complessivo e resto</h3><p>Calcola il costo di una quantità di prodotti e il resto rispetto alla somma consegnata.</p><p><strong>Dati da usare:</strong> prezzo unitario 4.50 euro; quantità 3; somma consegnata 20 euro. Il resto atteso è 6.50 euro.</p><ol><li>Individua input e output.</li><li>Scegli le variabili.</li><li>Scrivi le formule.</li><li>Costruisci il diagramma sequenziale.</li><li>Eseguilo con i dati indicati.</li><li>Spiega a voce il funzionamento.</li></ol><div class="answer-space tall" aria-label="Spazio per l'esercizio autonomo"></div><details><summary>Apri una possibile soluzione</summary><p><strong>Input:</strong> <code>prezzo</code>, <code>quantita</code>, <code>sommaConsegnata</code>. <strong>Output:</strong> <code>totale</code>, <code>resto</code>.</p><pre><code>INIZIO
+  LEGGI prezzo
+  LEGGI quantita
+  LEGGI sommaConsegnata
+  totale ← prezzo * quantita
+  resto ← sommaConsegnata - totale
+  SCRIVI totale
+  SCRIVI resto
+FINE</code></pre><p>Il totale è 13.50 euro. Il resto è 20 - 13.50 = <strong>6.50 euro</strong>.</p></details></article>
+    </section>
+
+    <section aria-labelledby="orale-finale">
+      <h2 id="orale-finale">10. Ripasso orale conclusivo</h2>
+      <ol><li>Scegli un esercizio svolto e spiegalo dall'input all'output.</li><li>Descrivi la differenza tra input, elaborazione e output.</li><li>Spiega il significato di un'assegnazione.</li><li>Descrivi l'ordine dei blocchi di un algoritmo sequenziale.</li><li>Spiega come controlli se un risultato è plausibile.</li></ol>
+      <details><summary>Apri una traccia essenziale</summary><p>Nomina prima i dati disponibili. Spiega poi il calcolo e le assegnazioni nell'ordine. Concludi indicando l'output e confrontandolo con un risultato calcolato a mano.</p></details>
+    </section>
+
+    <section aria-labelledby="autovalutazione">
+      <h2 id="autovalutazione">11. Autovalutazione</h2>
+      <p>Segna sul foglio le frasi che descrivono ciò che riesci a fare.</p>
+      <ul class="checklist"><li><span class="check-box" aria-hidden="true"></span>So convertire semplici numeri.</li><li><span class="check-box" aria-hidden="true"></span>So riconoscere input ed output.</li><li><span class="check-box" aria-hidden="true"></span>So seguire le assegnazioni passo passo.</li><li><span class="check-box" aria-hidden="true"></span>So costruire un algoritmo sequenziale.</li><li><span class="check-box" aria-hidden="true"></span>So spiegare oralmente il mio procedimento.</li><li><span class="check-box" aria-hidden="true"></span>Devo ancora ripassare alcuni passaggi.</li></ul>
+    </section>
+  </main>
+
+  <footer><div class="page-shell"><p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p><p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p><p><small>Materiale temporaneo di ripasso — 6 agosto 2026.</small></p></div></footer>
+</body>
+</html>
