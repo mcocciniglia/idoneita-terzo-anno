@@ -83,19 +83,19 @@ Per l'attuale percorso di preparazione all'esame di idoneità:
 Le lezioni 13–18 del primo anno rimangono in standby e non costituiscono
 prerequisito per l'avvio di questo percorso.
 
-| Codice | Lezione | Stato | Dipende da | Priorità | Note |
-|--------|---------|-------|------------|----------|------|
-| 2.01 | Dal problema all'algoritmo | ✅ | 01 | Essenziale | Problema, obiettivo, dati di ingresso, risultati, vincoli e scomposizione in passi |
-| 2.02 | Rappresentare un algoritmo | ⚪ | 2.01 | Essenziale | Linguaggio naturale, pseudocodice, simboli dei diagrammi di flusso e struttura sequenziale |
-| 2.03 | Dati, variabili e assegnazione | ⚪ | 2.02, 02 | Essenziale | Costanti, variabili, tipi di dato elementari, input, output e operazione di assegnazione |
-| 2.04 | Operatori ed espressioni | ⚪ | 2.03 | Essenziale | Operatori aritmetici e relazionali, ordine delle operazioni e valutazione passo passo |
-| 2.05 | Prendere decisioni: la selezione | ⚪ | 2.04 | Essenziale | Condizione, vero e falso, selezione semplice e doppia, primi diagrammi con scelta |
-| 2.06 | Condizioni composte e selezioni annidate | ⚪ | 2.05 | Essenziale | AND, OR, NOT; più casi decisionali; lettura e spiegazione orale del flusso |
-| 2.07 | Ripetere operazioni: i cicli | ⚪ | 2.05 | Essenziale | Concetto di iterazione, ciclo a conteggio e ciclo condizionato, contatore e accumulatore |
-| 2.08 | Verificare un algoritmo | ⚪ | 2.06-2.07 | Essenziale | Tabella di traccia, casi di prova, errori logici, previsione e controllo del risultato |
-| 2.09 | Organizzare e rappresentare dati | ⚪ | 06, 2.03 | Complementare | Foglio elettronico: celle, formule elementari, riferimenti, ordinamento dei dati e grafici semplici |
-| 2.10 | Privacy, diritto d'autore e uso responsabile | ⚪ | 11-12 | Complementare | Dati personali, fonti, licenze, copyright, condivisione corretta e rischi della rete |
-| 2.11 | Ripasso del secondo anno e colloquio orale | ⚪ | 2.01-2.10 | Conclusiva | Collegamenti tra gli argomenti, domande d'esame, lettura di semplici algoritmi e simulazione orale |
+| Codice | Lezione                                      | Stato | Dipende da | Priorità      | Note                                                                                                |
+| ------ | -------------------------------------------- | ----- | ---------- | ------------- | --------------------------------------------------------------------------------------------------- |
+| 2.01   | Dal problema all'algoritmo                   | ✅     | 01         | Essenziale    | Problema, obiettivo, dati di ingresso, risultati, vincoli e scomposizione in passi                  |
+| 2.02   | Rappresentare un algoritmo                   | ✅     | 2.01       | Essenziale    | Linguaggio naturale, pseudocodice, simboli dei diagrammi di flusso e struttura sequenziale          |
+| 2.03   | Dati, variabili e assegnazione               | ✅     | 2.02, 02   | Essenziale    | Costanti, variabili, tipi di dato elementari, input, output e operazione di assegnazione            |
+| 2.04   | Operatori ed espressioni                     | ✅     | 2.03       | Essenziale    | Operatori aritmetici e relazionali, ordine delle operazioni e valutazione passo passo               |
+| 2.05   | Prendere decisioni: la selezione             | ✅     | 2.04       | Essenziale    | Condizione, vero e falso, selezione semplice e doppia, primi diagrammi con scelta                   |
+| 2.06   | Condizioni composte e selezioni annidate     | ⚪     | 2.05       | Essenziale    | AND, OR, NOT; più casi decisionali; lettura e spiegazione orale del flusso                          |
+| 2.07   | Ripetere operazioni: i cicli                 | ⚪     | 2.05       | Essenziale    | Concetto di iterazione, ciclo a conteggio e ciclo condizionato, contatore e accumulatore            |
+| 2.08   | Verificare un algoritmo                      | ⚪     | 2.06-2.07  | Essenziale    | Tabella di traccia, casi di prova, errori logici, previsione e controllo del risultato              |
+| 2.09   | Organizzare e rappresentare dati             | ⚪     | 06, 2.03   | Complementare | Foglio elettronico: celle, formule elementari, riferimenti, ordinamento dei dati e grafici semplici |
+| 2.10   | Privacy, diritto d'autore e uso responsabile | ⚪     | 11-12      | Complementare | Dati personali, fonti, licenze, copyright, condivisione corretta e rischi della rete                |
+| 2.11   | Ripasso del secondo anno e colloquio orale   | ⚪     | 2.01-2.10  | Conclusiva    | Collegamenti tra gli argomenti, domande d'esame, lettura di semplici algoritmi e simulazione orale  |
 
 ---
 

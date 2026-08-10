@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lezione sulla selezione, le condizioni semplici e il blocco decisionale nei diagrammi di flusso e in Flowgorithm.">
+  <title>2.05 — Prendere decisioni: la selezione</title>
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line" aria-label="Identificazione del percorso">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge second">Programma del secondo anno</span>
+        </div>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle" class="btn btn-theme" type="button" aria-pressed="false" aria-label="Cambia tema"><span class="btn-label">Tema</span></button>
+          <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button" aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">Contrasto alto ☀️</button>
+        </div>
+      </div>
+      <nav class="breadcrumb" aria-label="Percorso"><span>Idoneità alla classe terza</span><span aria-hidden="true">›</span><span>Secondo anno</span><span aria-hidden="true">›</span><span>Lezione 2.05</span></nav>
+      <p class="eyebrow">Secondo anno — Lezione 2.05 · Durata prevista: 2 ore</p>
+      <h1>Prendere decisioni: la selezione</h1>
+      <p class="lead">Usare una condizione semplice per scegliere quali istruzioni eseguire.</p>
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione"><span>⏱️ Circa 2 ore</span><span>📘 Secondo anno</span><span>🎯 Prerequisito: Lezione 2.04</span></div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading"><span>Percorso del secondo anno</span><span>Lezione 5 di 11</span></div>
+      <div class="progress-track" aria-hidden="true"><div class="progress-value" style="--progress:45.45%;"></div></div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="tempi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">⏱️</span><h2 id="tempi">Come lavoreremo</h2></div>
+      <div class="card-grid">
+        <article class="info-card"><h3>Richiamo · 10 minuti</h3><p>Sequenza, variabili ed espressioni.</p></article>
+        <article class="info-card"><h3>Concetti · 35 minuti</h3><p>Condizione, vero o falso e blocco decisionale.</p></article>
+        <article class="info-card"><h3>Laboratorio · 55 minuti</h3><p>Selezione semplice e doppia in Flowgorithm.</p></article>
+        <article class="info-card"><h3>Conclusione · 20 minuti</h3><p>Esercizio autonomo, colloquio e autoverifica.</p></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="richiamo">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔄</span><h2 id="richiamo">Prima di iniziare: la sequenza</h2></div>
+      <p>Finora i nostri algoritmi hanno eseguito tutte le istruzioni, una dopo l'altra.</p>
+      <pre><code>INIZIO
+  LEGGI prezzo
+  LEGGI quantita
+  totale ← prezzo * quantita
+  SCRIVI totale
+FINE</code></pre>
+      <p>Questa è una <strong>sequenza</strong>: ogni blocco viene eseguito una volta, nell'ordine indicato dalle frecce.</p>
+      <aside class="callout remember" aria-labelledby="espressioni-utili">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div><p class="callout-label">Dalla lezione precedente</p><h3 id="espressioni-utili">Le espressioni producono valori</h3><p>Una condizione è un'espressione il cui risultato può essere vero oppure falso.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎯</span><h2 id="obiettivi">Obiettivi della lezione</h2></div>
+      <div class="objective-grid">
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Capire</strong><small>Quando una sequenza non basta.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Riconoscere</strong><small>Una condizione semplice.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Leggere</strong><small>I rami vero e falso.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Costruire</strong><small>Una selezione in Flowgorithm.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Prevedere</strong><small>Il percorso seguito dall'algoritmo.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Provare</strong><small>Entrambi i possibili comportamenti.</small></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="problema-scelta">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🌡️</span><h2 id="problema-scelta">Una situazione in cui la sequenza non basta</h2></div>
+      <p>Leggiamo una temperatura. Vogliamo mostrare il messaggio <q>Porta la giacca</q> soltanto quando la temperatura è minore di 10 gradi.</p>
+      <p>Una sequenza mostrerebbe sempre il messaggio. Invece l'azione dipende dal dato inserito:</p>
+      <ul>
+        <li>con temperatura 6, il messaggio serve;</li>
+        <li>con temperatura 18, il messaggio non deve apparire.</li>
+      </ul>
+      <div class="definition"><span class="definition-term">Selezione</span><p>Una struttura che permette all'algoritmo di scegliere il percorso da seguire in base al risultato di una condizione.</p></div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="condizione">
+      <div class="section-heading"><span class="icon" aria-hidden="true">❓</span><h2 id="condizione">La condizione: una domanda con due risultati</h2></div>
+      <p>La frase <code>temperatura &lt; 10</code> è una <strong>condizione</strong>. Il suo risultato può essere soltanto:</p>
+      <div class="card-grid">
+        <article class="info-card"><h3>Vero</h3><p>Il dato rispetta la condizione. Con <code>temperatura = 6</code>, la frase <code>6 &lt; 10</code> è vera.</p></article>
+        <article class="info-card"><h3>Falso</h3><p>Il dato non rispetta la condizione. Con <code>temperatura = 18</code>, la frase <code>18 &lt; 10</code> è falsa.</p></article>
+      </div>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Operatori per costruire condizioni semplici</caption>
+          <thead><tr><th scope="col">Significato</th><th scope="col">Operatore</th><th scope="col">Esempio</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Minore di</th><td><code>&lt;</code></td><td><code>temperatura &lt; 10</code></td></tr>
+            <tr><th scope="row">Maggiore di</th><td><code>&gt;</code></td><td><code>numero &gt; 0</code></td></tr>
+            <tr><th scope="row">Uguale a</th><td><code>=</code></td><td><code>numero = 0</code></td></tr>
+            <tr><th scope="row">Minore o uguale a</th><td><code>&lt;=</code></td><td><code>eta &lt;= 14</code></td></tr>
+            <tr><th scope="row">Maggiore o uguale a</th><td><code>&gt;=</code></td><td><code>punteggio &gt;= 6</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <aside class="callout warning" aria-labelledby="una-condizione">
+        <div class="callout-icon" aria-hidden="true">⚠️</div>
+        <div><p class="callout-label">Per questa lezione</p><h3 id="una-condizione">Usa un solo confronto</h3><p>Le condizioni composte e gli operatori logici saranno studiati nella prossima lezione.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="blocco-decisionale">
+      <div class="section-heading"><span class="icon" aria-hidden="true">◇</span><h2 id="blocco-decisionale">Il blocco decisionale</h2></div>
+      <p>Nel diagramma di flusso la decisione è rappresentata da un <strong>rombo</strong>. Al suo interno scriviamo la condizione.</p>
+      <ol class="steps">
+        <li><strong>L'algoritmo raggiunge il rombo.</strong><p>La condizione viene valutata.</p></li>
+        <li><strong>Il risultato è vero.</strong><p>Il flusso segue il ramo indicato con <em>Vero</em>.</p></li>
+        <li><strong>Il risultato è falso.</strong><p>Il flusso segue il ramo indicato con <em>Falso</em>.</p></li>
+        <li><strong>I percorsi si ricongiungono.</strong><p>L'esecuzione continua con i blocchi successivi.</p></li>
+      </ol>
+      <pre><code>SE temperatura &lt; 10 ALLORA
+  SCRIVI "Porta la giacca"
+FINE SE</code></pre>
+      <p>Questa è una <strong>selezione semplice</strong>: contiene un'azione soltanto sul ramo vero. Se la condizione è falsa, quell'azione viene saltata.</p>
+    </section>
+
+    <section class="lab" aria-labelledby="esempio-guidato">
+      <div class="lab-header"><h2 id="esempio-guidato">Laboratorio guidato — Un messaggio per i numeri positivi</h2></div>
+      <div class="lab-body">
+        <p><strong>Problema:</strong> leggere un numero e mostrare <q>Il numero è positivo</q> soltanto quando il numero è maggiore di zero.</p>
+        <ol class="steps">
+          <li><strong>Crea il diagramma.</strong><p>Apri Flowgorithm e prepara un nuovo diagramma.</p></li>
+          <li><strong>Dichiara la variabile.</strong><p>Crea <code>numero</code> di tipo <code>Real</code>.</p></li>
+          <li><strong>Acquisisci il dato.</strong><p>Inserisci un blocco <em>Input</em> per <code>numero</code>.</p></li>
+          <li><strong>Aggiungi la decisione.</strong><p>Inserisci un blocco <em>If</em> e scrivi la condizione <code>numero &gt; 0</code>.</p></li>
+          <li><strong>Completa il ramo vero.</strong><p>Inserisci l'output <code>"Il numero è positivo"</code>.</p></li>
+          <li><strong>Lascia vuoto il ramo falso.</strong><p>Questa selezione esegue un'azione soltanto quando la condizione è vera.</p></li>
+          <li><strong>Prevedi e prova.</strong><p>Prima di avviare il diagramma, completa la tabella seguente.</p></li>
+        </ol>
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <caption>Dati di prova per la selezione semplice</caption>
+            <thead><tr><th scope="col">Numero</th><th scope="col">La condizione è…</th><th scope="col">Output atteso</th></tr></thead>
+            <tbody><tr><td>5</td><td>Vera</td><td>Il numero è positivo</td></tr><tr><td>-2</td><td>Falsa</td><td>Nessun messaggio</td></tr><tr><td>0</td><td>Falsa</td><td>Nessun messaggio</td></tr></tbody>
+          </table>
+        </div>
+        <details><summary>Controlla la sequenza dei simboli</summary><p>Inizio → dichiarazione di <code>numero</code> → input di <code>numero</code> → decisione <code>numero &gt; 0</code> → sul ramo vero, output del messaggio → ricongiungimento → Fine.</p></details>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="traccia">
+      <div class="section-heading"><span class="icon" aria-hidden="true">👣</span><h2 id="traccia">Esecuzione passo per passo</h2></div>
+      <p>Seguiamo lo stesso algoritmo con due dati diversi.</p>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Confronto tra due esecuzioni</caption>
+          <thead><tr><th scope="col">Passaggio</th><th scope="col">Prova con 5</th><th scope="col">Prova con -2</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Input</th><td><code>numero ← 5</code></td><td><code>numero ← -2</code></td></tr>
+            <tr><th scope="row">Condizione</th><td><code>5 &gt; 0</code>: vero</td><td><code>-2 &gt; 0</code>: falso</td></tr>
+            <tr><th scope="row">Percorso</th><td>Ramo vero</td><td>Ramo falso</td></tr>
+            <tr><th scope="row">Output</th><td>Il numero è positivo</td><td>Nessun messaggio</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Lo stesso diagramma può quindi seguire percorsi diversi, perché il risultato della condizione dipende dall'input.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="selezione-doppia">
+      <div class="section-heading"><span class="icon" aria-hidden="true">↔️</span><h2 id="selezione-doppia">Quando entrambi i rami contengono un'azione</h2></div>
+      <p>A volte vogliamo eseguire un'azione quando la condizione è vera e un'altra quando è falsa.</p>
+      <pre><code>SE eta &gt;= 18 ALLORA
+  SCRIVI "Maggiorenne"
+ALTRIMENTI
+  SCRIVI "Minorenne"
+FINE SE</code></pre>
+      <p>Questa è una <strong>selezione doppia</strong>. Viene eseguito un solo ramo: mai entrambi.</p>
+      <aside class="callout tip" aria-labelledby="prova-rami">
+        <div class="callout-icon" aria-hidden="true">✅</div>
+        <div><p class="callout-label">Strategia di controllo</p><h3 id="prova-rami">Prova entrambi i percorsi</h3><p>Usa almeno un dato che renda vera la condizione e uno che la renda falsa. Per esempio, prova 20 e 16.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="attivita-completare">
+      <div class="section-heading"><span class="icon" aria-hidden="true">✏️</span><h2 id="attivita-completare">Attività da completare — Zero oppure diverso da zero</h2></div>
+      <p>Completa la selezione doppia che legge un numero e mostra uno dei due messaggi.</p>
+      <pre><code>INIZIO
+  DICHIARA numero COME Real
+  LEGGI numero
+  SE ____________________ ALLORA
+    SCRIVI "Il numero è zero"
+  ALTRIMENTI
+    SCRIVI "Il numero è diverso da zero"
+  FINE SE
+FINE</code></pre>
+      <ol>
+        <li>Scrivi una condizione semplice.</li>
+        <li>Prevedi il risultato con <code>0</code> e con <code>4</code>.</li>
+        <li>Costruisci il diagramma in Flowgorithm.</li>
+        <li>Esegui entrambe le prove.</li>
+      </ol>
+      <details><summary>Apri la soluzione</summary><p>La condizione è <code>numero = 0</code>. Con 0 viene mostrato <q>Il numero è zero</q>; con 4 viene mostrato <q>Il numero è diverso da zero</q>.</p></details>
+    </section>
+
+    <section class="lab" aria-labelledby="esercizio-autonomo">
+      <div class="lab-header"><h2 id="esercizio-autonomo">Esercizio autonomo — Accesso gratuito</h2></div>
+      <div class="lab-body">
+        <p><strong>Problema:</strong> un museo offre l'ingresso gratuito fino a 12 anni compresi. Leggi l'età e mostra <q>Ingresso gratuito</q> oppure <q>Biglietto ordinario</q>.</p>
+        <ol class="steps">
+          <li><strong>Individua input e output.</strong><p>Scrivili sul quaderno.</p></li>
+          <li><strong>Scegli la variabile.</strong><p>Indica nome e tipo.</p></li>
+          <li><strong>Formula la condizione.</strong><p>Usa un solo confronto.</p></li>
+          <li><strong>Disegna il flusso.</strong><p>Prevedi un'azione sul ramo vero e una sul ramo falso.</p></li>
+          <li><strong>Prevedi i risultati.</strong><p>Usa le età 10, 12 e 15.</p></li>
+          <li><strong>Realizza e prova.</strong><p>Costruisci il diagramma in Flowgorithm e confronta gli output.</p></li>
+          <li><strong>Spiega.</strong><p>Descrivi a voce il percorso seguito in ogni prova.</p></li>
+        </ol>
+        <details><summary>Controlla un possibile svolgimento</summary><p><strong>Input:</strong> <code>eta</code>, di tipo <code>Integer</code>. <strong>Condizione:</strong> <code>eta &lt;= 12</code>.</p><pre><code>SE eta &lt;= 12 ALLORA
+  SCRIVI "Ingresso gratuito"
+ALTRIMENTI
+  SCRIVI "Biglietto ordinario"
+FINE SE</code></pre><p>Con 10 e 12 l'output è <q>Ingresso gratuito</q>. Con 15 è <q>Biglietto ordinario</q>.</p></details>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="errori">
+      <div class="section-heading"><span class="icon" aria-hidden="true">❌</span><h2 id="errori">Errori frequenti</h2></div>
+      <div class="card-grid">
+        <article class="info-card"><h3>Scambiare i rami</h3><p>Leggi la condizione e chiediti quale azione corrisponde al risultato vero.</p></article>
+        <article class="info-card"><h3>Provare un solo dato</h3><p>Una sola esecuzione non controlla entrambi i possibili percorsi.</p></article>
+        <article class="info-card"><h3>Dimenticare il valore limite</h3><p>Con <code>&lt;=</code> e <code>&gt;=</code> prova anche il valore uguale al limite.</p></article>
+        <article class="info-card"><h3>Inserire più confronti</h3><p>Per ora costruisci ogni condizione con un solo confronto.</p></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="colloquio">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎤</span><h2 id="colloquio">Preparazione al colloquio</h2></div>
+      <aside class="callout exam" aria-labelledby="traccia-orale">
+        <div class="callout-icon" aria-hidden="true">🎓</div>
+        <div><p class="callout-label">Domanda possibile</p><h3 id="traccia-orale">Come prende una decisione un algoritmo?</h3><ol><li>Parti dalla differenza tra sequenza e selezione.</li><li>Definisci la condizione.</li><li>Spiega i risultati vero e falso.</li><li>Descrivi il rombo e i due rami.</li><li>Concludi con un esempio semplice.</li></ol></div>
+      </aside>
+    </section>
+
+    <section class="quiz" aria-labelledby="autoverifica">
+      <h2 id="autoverifica">Autoverifica finale</h2>
+      <div class="self-check">
+        <details><summary>Perché una sequenza non basta in tutti i problemi?</summary><p>Perché alcune istruzioni devono essere eseguite soltanto quando si verifica una determinata condizione.</p></details>
+        <details><summary>Che risultato produce una condizione?</summary><p>Produce un valore vero oppure falso.</p></details>
+        <details><summary>Quale simbolo rappresenta una decisione?</summary><p>Il rombo, dal quale partono il ramo vero e il ramo falso.</p></details>
+        <details><summary>Che differenza c'è tra selezione semplice e doppia?</summary><p>La selezione semplice contiene un'azione soltanto su un ramo; quella doppia prevede un'azione alternativa sull'altro ramo.</p></details>
+        <details><summary>Come si scelgono dati di prova utili?</summary><p>Si sceglie almeno un dato che renda vera la condizione e uno che la renda falsa; quando serve, si prova anche il valore limite.</p></details>
+      </div>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header"><p class="eyebrow">Riepilogo finale</p><h2 id="zaino-studente">🎒 Lo zaino dello studente</h2><p>Le idee essenziali da ricordare.</p></div>
+      <div class="student-backpack-grid">
+        <article class="backpack-card"><h3>Sintesi</h3><ol class="essential-list"><li>Una sequenza esegue tutti i passi in ordine.</li><li>Una selezione sceglie un percorso.</li><li>Una condizione produce vero o falso.</li><li>Il rombo rappresenta la decisione.</li><li>La selezione può essere semplice o doppia.</li><li>I dati di prova devono controllare entrambi i rami.</li></ol></article>
+        <article class="backpack-card"><h3>Parole chiave</h3><ul class="keyword-list"><li>sequenza</li><li>selezione</li><li>condizione</li><li>vero</li><li>falso</li><li>confronto</li><li>ramo</li><li>blocco decisionale</li></ul></article>
+        <article class="backpack-card"><h3>Controllo rapido</h3><ol><li>Qual è la condizione?</li><li>Quando è vera?</li><li>Quale ramo viene seguito?</li><li>Quale output viene prodotto?</li><li>Ho provato entrambi i casi?</li></ol></article>
+        <article class="backpack-card"><h3>Ripasso in 2 minuti</h3><p>Disegna un rombo, scrivi <code>numero &gt; 0</code> e spiega i due percorsi senza leggere.</p></article>
+      </div>
+    </section>
+
+    <section class="next-lesson" aria-labelledby="prossimo-passo">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2 id="prossimo-passo">Condizioni composte e selezioni annidate</h2>
+      <p>Nella prossima lezione collegheremo più condizioni e studieremo decisioni organizzate su più livelli.</p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../04-operatori-ed-espressioni/index.html">← Lezione 2.04 — Operatori ed espressioni</a>
+      <a href="../../index.html#secondo-anno">Torna all'indice</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+    </div>
+  </footer>
+</body>
+</html>
