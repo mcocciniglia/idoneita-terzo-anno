@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lezione su operatori aritmetici, operandi, espressioni, parentesi, precedenza e valutazione passo per passo con Flowgorithm.">
+  <title>2.04 — Operatori ed espressioni</title>
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line" aria-label="Identificazione del percorso"><span class="course-badge">Informatica</span><span class="year-badge second">Programma del secondo anno</span></div>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione"><button id="themeToggle" class="btn btn-theme" type="button" aria-pressed="false" aria-label="Cambia tema"><span class="btn-label">Tema</span></button><button id="contrastToggle" class="btn btn-outline btn-contrast" type="button" aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">Contrasto alto ☀️</button></div>
+      </div>
+      <nav class="breadcrumb" aria-label="Percorso"><span>Idoneità alla classe terza</span><span aria-hidden="true">›</span><span>Secondo anno</span><span aria-hidden="true">›</span><span>Lezione 2.04</span></nav>
+      <p class="eyebrow">Secondo anno — Lezione 2.04 · Durata prevista: 2 ore</p>
+      <h1>Operatori ed espressioni</h1>
+      <p class="lead">Costruire formule, rispettare la precedenza e controllare i risultati passo per passo.</p>
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione"><span>⏱️ Circa 2 ore</span><span>📘 Secondo anno</span><span>🎯 Prerequisito: Lezione 2.03</span></div>
+    </div>
+  </header>
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso"><div class="progress-heading"><span>Percorso del secondo anno</span><span>Lezione 4 di 11</span></div><div class="progress-track" aria-hidden="true"><div class="progress-value" style="--progress:36.36%;"></div></div></section>
+
+    <section class="lesson-section" aria-labelledby="tempi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">⏱️</span><h2 id="tempi">Come lavoreremo</h2></div>
+      <div class="card-grid"><article class="info-card"><h3>Richiamo · 10 minuti</h3><p>Variabili, costanti e assegnazione.</p></article><article class="info-card"><h3>Concetti · 35 minuti</h3><p>Operatori, operandi, parentesi e precedenza.</p></article><article class="info-card"><h3>Applicazione · 55 minuti</h3><p>Esempio guidato e laboratorio con Flowgorithm.</p></article><article class="info-card"><h3>Conclusione · 20 minuti</h3><p>Esercizio, colloquio e autoverifica.</p></article></div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ripasso">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔄</span><h2 id="ripasso">Prima di iniziare: valori che cambiano</h2></div>
+      <p>Una <strong>variabile</strong> conserva temporaneamente un dato. Un'assegnazione scrive un nuovo valore nella variabile.</p>
+      <pre><code>prezzo ← 2.50
+quantita ← 4
+totale ← prezzo × quantita</code></pre>
+      <p>Nella terza istruzione, il valore assegnato a <code>totale</code> nasce da un calcolo. Ora studiamo come si costruisce e si valuta quel calcolo.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎯</span><h2 id="obiettivi">Obiettivi della lezione</h2></div>
+      <div class="objective-grid"><article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Riconoscere</strong><small>Operatore, operando ed espressione.</small></article><article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Usare</strong><small>Gli operatori aritmetici di Flowgorithm.</small></article><article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Applicare</strong><small>Parentesi e regole di precedenza.</small></article><article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Valutare</strong><small>Un'espressione passo per passo.</small></article><article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Tradurre</strong><small>Una formula in un'espressione.</small></article><article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Verificare</strong><small>Il risultato con dati di prova.</small></article></div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="parole-nuove">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🧩</span><h2 id="parole-nuove">Operatore, operando ed espressione</h2></div>
+      <p>Considera il calcolo <code>prezzo × quantita</code>. I valori usati e il simbolo che li collega hanno funzioni diverse.</p>
+      <dl class="glossary-grid"><div class="glossary-card"><dt>Operatore</dt><dd>Il simbolo che indica l'operazione: nell'esempio è <code>×</code>.</dd></div><div class="glossary-card"><dt>Operandi</dt><dd>I valori sui quali agisce l'operatore: <code>prezzo</code> e <code>quantita</code>.</dd></div><div class="glossary-card"><dt>Espressione</dt><dd>Una combinazione di valori, variabili, operatori e parentesi che produce un risultato.</dd></div><div class="glossary-card"><dt>Valutare</dt><dd>Eseguire le operazioni nell'ordine corretto fino a ottenere un valore.</dd></div></dl>
+      <div class="definition"><span class="definition-term">Espressione aritmetica</span><p><code>prezzo × quantita</code> è un'espressione. Se <code>prezzo</code> vale 2,50 e <code>quantita</code> vale 4, l'espressione produce 10.</p></div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="operatori">
+      <div class="section-heading"><span class="icon" aria-hidden="true">➗</span><h2 id="operatori">Gli operatori aritmetici</h2></div>
+      <div class="table-wrapper"><table class="comparison-table"><caption>Operatori utilizzabili in Flowgorithm</caption><thead><tr><th scope="col">Operazione</th><th scope="col">Operatore</th><th scope="col">Esempio</th><th scope="col">Risultato</th></tr></thead><tbody><tr><th scope="row">Addizione</th><td><code>+</code></td><td><code>8 + 3</code></td><td>11</td></tr><tr><th scope="row">Sottrazione</th><td><code>-</code></td><td><code>8 - 3</code></td><td>5</td></tr><tr><th scope="row">Moltiplicazione</th><td><code>*</code> oppure <code>×</code></td><td><code>8 * 3</code></td><td>24</td></tr><tr><th scope="row">Divisione</th><td><code>/</code></td><td><code>8 / 3</code></td><td>2,666…; arrotondato a due cifre: 2,67</td></tr><tr><th scope="row">Resto</th><td><code>mod</code> oppure <code>%</code></td><td><code>8 mod 3</code></td><td>2</td></tr></tbody></table></div>
+      <aside class="callout tip" aria-labelledby="resto"><div class="callout-icon" aria-hidden="true">💡</div><div><p class="callout-label">Resto della divisione</p><h3 id="resto">Usiamo <code>mod</code> con interi positivi</h3><p><code>8 mod 3</code> vale 2 perché 8 diviso 3 dà quoziente 2 e resto 2. In questa lezione lo usiamo soltanto con numeri interi positivi.</p></div></aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="divisione">
+      <div class="section-heading"><span class="icon" aria-hidden="true">½</span><h2 id="divisione">La divisione in Flowgorithm</h2></div>
+      <p>In Flowgorithm l'operatore <code>/</code> esegue una divisione reale: il risultato può contenere una parte decimale.</p>
+      <div class="card-grid"><article class="info-card"><h3><code>8 / 4</code></h3><p>Il risultato è 2.</p></article><article class="info-card"><h3><code>8 / 3</code></h3><p>Il risultato è 2,666…; 2,67 è il valore arrotondato a due cifre decimali. Il risultato non viene ridotto automaticamente a 2.</p></article></div>
+      <p>Nel normale testo italiano scriviamo <code>2,67</code>. Quando inseriamo un valore decimale in Flowgorithm usiamo normalmente il punto, per esempio <code>2.67</code>.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="precedenza">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔢</span><h2 id="precedenza">Parentesi e precedenza</h2></div>
+      <p>Quando un'espressione contiene più operatori, le operazioni non vengono eseguite semplicemente da sinistra a destra.</p>
+      <ol class="steps"><li><strong>Parentesi.</strong><p>Si valutano prima le espressioni tra parentesi.</p></li><li><strong>Moltiplicazione, divisione e resto.</strong><p>Hanno precedenza su addizione e sottrazione. A parità di precedenza si procede da sinistra a destra.</p></li><li><strong>Addizione e sottrazione.</strong><p>Si eseguono dopo le operazioni con precedenza maggiore.</p></li></ol>
+      <div class="card-grid"><article class="info-card"><h3><code>2 + 3 * 4</code></h3><p>Prima 3 × 4 = 12; poi 2 + 12 = 14.</p></article><article class="info-card"><h3><code>(2 + 3) * 4</code></h3><p>Prima 2 + 3 = 5; poi 5 × 4 = 20.</p></article></div>
+      <aside class="callout warning" aria-labelledby="parentesi-significato"><div class="callout-icon" aria-hidden="true">⚠️</div><div><p class="callout-label">Attenzione</p><h3 id="parentesi-significato">Le parentesi possono cambiare il risultato</h3><p>Usale quando vuoi rendere esplicito l'ordine delle operazioni o tradurre fedelmente una formula.</p></div></aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="valutazione">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🪜</span><h2 id="valutazione">Valutare un'espressione passo per passo</h2></div>
+      <p>Valutiamo <code>10 + 6 / 2 * 3</code>.</p>
+      <ol class="steps"><li><strong>Individua la precedenza.</strong><p>Divisione e moltiplicazione vengono prima dell'addizione.</p></li><li><strong>Procedi da sinistra a destra.</strong><p><code>6 / 2</code> produce 3.</p></li><li><strong>Continua allo stesso livello.</strong><p><code>3 * 3</code> produce 9.</p></li><li><strong>Completa.</strong><p><code>10 + 9</code> produce 19.</p></li></ol>
+      <div class="table-wrapper"><table class="comparison-table"><caption>Traccia della valutazione</caption><thead><tr><th scope="col">Passaggio</th><th scope="col">Espressione</th><th scope="col">Operazione eseguita</th></tr></thead><tbody><tr><th scope="row">Iniziale</th><td><code>10 + 6 / 2 * 3</code></td><td>—</td></tr><tr><th scope="row">1</th><td><code>10 + 3 * 3</code></td><td><code>6 / 2</code></td></tr><tr><th scope="row">2</th><td><code>10 + 9</code></td><td><code>3 * 3</code></td></tr><tr><th scope="row">3</th><td><code>19</code></td><td><code>10 + 9</code></td></tr></tbody></table></div>
+    </section>
+
+    <section class="lab" aria-labelledby="esempio-guidato">
+      <div class="lab-header"><h2 id="esempio-guidato">Esempio guidato — Perimetro e area del rettangolo</h2></div>
+      <div class="lab-body"><p><strong>Dati:</strong> base e altezza. <strong>Risultati:</strong> perimetro e area.</p><p><strong>Formule matematiche:</strong> perimetro = 2 × (base + altezza); area = base × altezza.</p><pre><code>INIZIO
+  LEGGI base
+  LEGGI altezza
+  perimetro ← 2 * (base + altezza)
+  area ← base * altezza
+  SCRIVI perimetro
+  SCRIVI area
+FINE</code></pre><ol class="steps"><li><strong>Crea le variabili.</strong><p>Dichiara <code>base</code>, <code>altezza</code>, <code>perimetro</code> e <code>area</code> come <code>Real</code>, perché una prova usa il valore decimale <code>2.5</code>.</p></li><li><strong>Acquisisci i dati.</strong><p>Inserisci due blocchi di input.</p></li><li><strong>Assegna i risultati.</strong><p>Inserisci le due espressioni nei blocchi di assegnazione.</p></li><li><strong>Mostra e prova.</strong><p>Con base 5 e altezza 3 devi ottenere perimetro 16 e area 15.</p></li></ol></div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="formule">
+      <div class="section-heading"><span class="icon" aria-hidden="true">📝</span><h2 id="formule">Dalla formula all'espressione</h2></div>
+      <div class="table-wrapper"><table class="comparison-table"><caption>Tradurre formule per Flowgorithm</caption><thead><tr><th scope="col">Obiettivo</th><th scope="col">Formula</th><th scope="col">Espressione</th></tr></thead><tbody><tr><th scope="row">Media di tre valori</th><td>(a + b + c) diviso 3</td><td><code>(a + b + c) / 3</code></td></tr><tr><th scope="row">Minuti complessivi</th><td>ore × 60 + minuti</td><td><code>ore * 60 + minuti</code></td></tr><tr><th scope="row">Prezzo totale</th><td>prezzo × quantità</td><td><code>prezzo * quantita</code></td></tr><tr><th scope="row">Resto</th><td>resto della divisione per divisore</td><td><code>numero mod divisore</code></td></tr></tbody></table></div>
+      <aside class="callout error" aria-labelledby="media-parentesi"><div class="callout-icon" aria-hidden="true">❌</div><div><p class="callout-label">Errore frequente</p><h3 id="media-parentesi">Dimenticare le parentesi nella media</h3><p><code>a + b + c / 3</code> divide soltanto <code>c</code>. Per dividere l'intera somma devi scrivere <code>(a + b + c) / 3</code>.</p></div></aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="prove">
+      <div class="section-heading"><span class="icon" aria-hidden="true">📋</span><h2 id="prove">Verificare con dati di prova</h2></div>
+      <p>Prima di considerare corretto un algoritmo, scegli dati semplici e calcola a mano il risultato atteso.</p>
+      <div class="table-wrapper"><table class="comparison-table"><caption>Prove per il rettangolo</caption><thead><tr><th scope="col">Base</th><th scope="col">Altezza</th><th scope="col">Perimetro atteso</th><th scope="col">Area attesa</th></tr></thead><tbody><tr><td>5</td><td>3</td><td>16</td><td>15</td></tr><tr><td>4</td><td>4</td><td>16</td><td>16</td></tr><tr><td>2,5</td><td>2</td><td>9</td><td>5</td></tr></tbody></table></div>
+      <p>In Flowgorithm inserisci l'ultimo valore come <code>2.5</code>. Confronta l'output con la tabella.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="attivita-completare">
+      <div class="section-heading"><span class="icon" aria-hidden="true">✏️</span><h2 id="attivita-completare">Attività da completare — Media di tre valori</h2></div>
+      <p>Dichiara <code>a</code>, <code>b</code>, <code>c</code> e <code>media</code> come <code>Real</code>. Completa l'espressione e prova i valori 6, 7 e 8.</p><pre><code>INIZIO
+  LEGGI a
+  LEGGI b
+  LEGGI c
+  media ← ____________________
+  SCRIVI media
+FINE</code></pre>
+      <details><summary>Apri la soluzione</summary><p>L'espressione corretta è <code>(a + b + c) / 3</code>. Con 6, 7 e 8 il risultato è 7.</p></details>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio">
+      <div class="lab-header"><h2 id="laboratorio">Laboratorio Flowgorithm — L'ordine cambia il risultato</h2></div>
+      <div class="lab-body"><ol class="steps"><li><strong>Crea una variabile numerica.</strong><p>Chiamala <code>risultato</code>.</p></li><li><strong>Prima prova.</strong><p>Assegna <code>risultato ← 2 + 3 * 4</code> e mostra il valore.</p></li><li><strong>Seconda prova.</strong><p>Modifica in <code>risultato ← (2 + 3) * 4</code>.</p></li><li><strong>Confronta.</strong><p>Spiega perché ottieni prima 14 e poi 20.</p></li><li><strong>Controlla.</strong><p>Ricostruisci a mano l'ordine delle operazioni.</p></li></ol></div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esercizio-autonomo">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🧭</span><h2 id="esercizio-autonomo">Esercizio autonomo — Durata totale</h2></div>
+      <p>Costruisci un algoritmo che legga ore e minuti e calcoli i minuti complessivi. Dichiara <code>ore</code>, <code>minuti</code> e <code>minutiTotali</code> come <code>Integer</code>.</p><ul><li><strong>Input:</strong> <code>ore</code>, <code>minuti</code>.</li><li><strong>Output:</strong> <code>minutiTotali</code>.</li><li><strong>Espressione:</strong> costruiscila senza consultare subito la soluzione.</li><li><strong>Prove:</strong> 2 ore e 15 minuti; 1 ora e 45 minuti.</li></ul>
+      <details><summary>Controlla la soluzione</summary><pre><code>INIZIO
+  LEGGI ore
+  LEGGI minuti
+  minutiTotali ← ore * 60 + minuti
+  SCRIVI minutiTotali
+FINE</code></pre><p>I risultati attesi sono 135 e 105 minuti.</p></details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="colloquio">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎤</span><h2 id="colloquio">Preparazione al colloquio</h2></div>
+      <aside class="callout exam" aria-labelledby="traccia-orale"><div class="callout-icon" aria-hidden="true">🎓</div><div><p class="callout-label">Domanda possibile</p><h3 id="traccia-orale">Che cos'è un'espressione e come viene valutata?</h3><p>Un'espressione combina operandi, operatori e parentesi per produrre un valore. Prima si valutano le parentesi, poi moltiplicazione, divisione e resto, infine addizione e sottrazione. A parità di precedenza si procede da sinistra a destra. Un esempio è <code>2 + 3 * 4</code>, che produce 14.</p></div></aside>
+    </section>
+
+    <section class="quiz" aria-labelledby="autoverifica">
+      <h2 id="autoverifica">Autoverifica finale</h2><div class="self-check"><details><summary>Che differenza c'è tra operatore e operando?</summary><p>L'operatore indica l'operazione; gli operandi sono i valori sui quali viene eseguita.</p></details><details><summary>Che cosa viene valutato per primo?</summary><p>Prima le parentesi; poi moltiplicazione, divisione e resto; infine addizione e sottrazione.</p></details><details><summary>Quanto vale <code>5 + 2 * 3</code>?</summary><p>Vale 11, perché prima si calcola 2 × 3.</p></details><details><summary>Quanto vale <code>(5 + 2) * 3</code>?</summary><p>Vale 21, perché la parentesi viene valutata per prima.</p></details><details><summary>Perché usiamo dati di prova?</summary><p>Per confrontare l'output dell'algoritmo con un risultato atteso calcolato in anticipo.</p></details></div>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente"><div class="student-backpack-header"><p class="eyebrow">Riepilogo finale</p><h2 id="zaino-studente">🎒 Lo zaino dello studente</h2><p>Le idee essenziali da ricordare.</p></div><div class="student-backpack-grid"><article class="backpack-card"><h3>Sintesi</h3><ol class="essential-list"><li>Un operatore agisce su uno o più operandi.</li><li>Un'espressione produce un valore.</li><li>Le parentesi vengono valutate per prime.</li><li>Moltiplicazione, divisione e resto precedono somma e differenza.</li><li>I dati di prova aiutano a controllare il risultato.</li></ol></article><article class="backpack-card"><h3>Parole chiave</h3><ul class="keyword-list"><li>operatore</li><li>operando</li><li>espressione</li><li>parentesi</li><li>precedenza</li><li>valutazione</li><li>resto</li></ul></article><article class="backpack-card"><h3>Controllo rapido</h3><ol><li>Quali sono gli operandi?</li><li>Quale operazione viene prima?</li><li>Servono parentesi?</li><li>Quale risultato mi aspetto?</li></ol></article><article class="backpack-card"><h3>Ripasso in 2 minuti</h3><p>Valuta a voce <code>10 + 6 / 2 * 3</code> e spiega ogni passaggio.</p></article></div></section>
+
+    <section class="next-lesson" aria-labelledby="prossimo-passo"><p class="eyebrow">Prossimo passo</p><h2 id="prossimo-passo">Prendere decisioni: la selezione</h2><p>Nella prossima lezione useremo espressioni e confronti per permettere all'algoritmo di prendere decisioni.</p></section>
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni"><a href="../03-dati-variabili-assegnazione/index.html">← Lezione 2.03 — Dati, variabili e assegnazione</a><a href="../../index.html#secondo-anno">Torna all'indice</a><a href="../05-prendere-decisioni-la-selezione/index.html">Lezione 2.05 — Prendere decisioni: la selezione →</a></nav>
+  </main>
+  <footer class="course-footer"><div class="container narrow"><p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p><p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p></div></footer>
+</body>
+</html>
