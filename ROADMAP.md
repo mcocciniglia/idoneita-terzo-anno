@@ -88,7 +88,7 @@ prerequisito per l'avvio di questo percorso.
 | 2.01   | Dal problema all'algoritmo                   | ✅     | 01         | Essenziale    | Problema, obiettivo, dati di ingresso, risultati, vincoli e scomposizione in passi                  |
 | 2.02   | Rappresentare un algoritmo                   | ✅     | 2.01       | Essenziale    | Linguaggio naturale, pseudocodice, simboli dei diagrammi di flusso e struttura sequenziale          |
 | 2.03   | Dati, variabili e assegnazione               | ✅     | 2.02, 02   | Essenziale    | Costanti, variabili, tipi di dato elementari, input, output e operazione di assegnazione            |
-| 2.04   | Operatori ed espressioni                     | ✅     | 2.03       | Essenziale    | Operatori aritmetici e relazionali, ordine delle operazioni e valutazione passo passo               |
+| 2.04   | Operatori ed espressioni                     | ✅     | 2.03       | Essenziale    | Operatori aritmetici, parentesi, ordine delle operazioni e valutazione passo passo                  |
 | 2.05   | Prendere decisioni: la selezione             | ✅     | 2.04       | Essenziale    | Condizione, vero e falso, selezione semplice e doppia, primi diagrammi con scelta                   |
 | 2.06   | Condizioni composte e selezioni annidate     | ⚪     | 2.05       | Essenziale    | AND, OR, NOT; più casi decisionali; lettura e spiegazione orale del flusso                          |
 | 2.07   | Ripetere operazioni: i cicli                 | ⚪     | 2.05       | Essenziale    | Concetto di iterazione, ciclo a conteggio e ciclo condizionato, contatore e accumulatore            |
@@ -154,7 +154,7 @@ dalla progressione numerata delle lezioni.
 |--------|-----------|-------------|-------|-----------|
 | Q01 | Quaderno di allenamento – Sistemi di numerazione | Lezione 02 | ✅ | Conversioni, addizioni e sottrazioni binarie; nelle sottrazioni il minuendo è sempre maggiore o uguale al sottraendo; divisioni binarie non comprese |
 | Q02 | Quaderno di allenamento – Hardware e software | Lezioni 03 e 04 | ✅ | Distinzione e collaborazione tra hardware e software; input, elaborazione e output |
-| Q03 | Quaderno di allenamento – Algoritmi e diagrammi di flusso | Lezioni 2.01-2.04 | ⚪ | Analisi di problemi, sequenze, variabili, assegnazioni ed espressioni |
+| Q03 | Quaderno di allenamento – Algoritmi e diagrammi di flusso | Lezioni 2.01-2.04 | ✅ | Analisi di problemi, sequenze, variabili, assegnazioni ed espressioni |
 | Q04 | Quaderno di allenamento – Selezioni e cicli | Lezioni 2.05-2.08 | ⚪ | Lettura, completamento e verifica di algoritmi con decisioni e ripetizioni |
 
 ## Mappe concettuali
