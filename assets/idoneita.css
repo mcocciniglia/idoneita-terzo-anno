@@ -391,8 +391,6 @@ kbd{
   text-align:center;
 }
 
-
-
 .process-flow-five{
   grid-template-columns:
     minmax(0,1fr) auto
@@ -413,7 +411,6 @@ kbd{
   align-self:center;
   text-align:center;
 }
-
 
 /* ---------- Figure delle lezioni ---------- */
 
@@ -445,7 +442,6 @@ kbd{
   max-width:760px;
   margin-inline:auto;
 }
-
 
 /* ---------- Tabelle comparative ---------- */
 

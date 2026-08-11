@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by Flowgorithm 3.4.2 (http://flowgorithm.org) -->
+
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="650" height="1250">
+	<rect x="0" y="0" width="650" height="1250" fill="#FFFFFF"/>
+	<g>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="325,200 325,261"/>
+		<polygon fill="#404040" stroke="none" points="325,275 338,250 311,250"/>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="325,975 325,1036"/>
+		<polygon fill="#404040" stroke="none" points="325,1050 338,1025 311,1025"/>
+		<g>
+			<path fill="#F0E0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 225,100 A 50 50, 0, 0 0, 225 200 L 425,200 A 50 50, 0, 0 0, 425 100 Z"/>
+			<text x="325" y="115" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="325" dy="50" unicode-bidi="embed">Inizio</tspan>
+			</text>
+		</g>
+		<g>
+			<path fill="#F0E0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 225,1050 A 50 50, 0, 0 0, 225 1150 L 425,1150 A 50 50, 0, 0 0, 425 1050 Z"/>
+			<text x="325" y="1065" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="325" dy="50" unicode-bidi="embed">Fine</tspan>
+			</text>
+		</g>
+		<g>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="325,450 325,511"/>
+			<polygon fill="#404040" stroke="none" points="325,525 338,500 311,500"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="325,625 325,686"/>
+			<polygon fill="#404040" stroke="none" points="325,700 338,675 311,675"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="325,800 325,861"/>
+			<polygon fill="#404040" stroke="none" points="325,875 338,850 311,850"/>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 100,275 L 100,450 L 550,450 L 550,275 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="100,300 550,300"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="125,275 125,450"/>
+				<text x="337" y="315" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="337" dy="50" unicode-bidi="embed">Dichiara numero,</tspan>
+					<tspan x="337" dy="50" unicode-bidi="embed"> doppio: Intero</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#C0E0FF" stroke="#6080A0" stroke-width="3" stroke-dasharray="none" d="M 150,525 L 100,625 L 500,625 L 550,525 Z"/>
+				<text x="325" y="540" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="325" dy="50" unicode-bidi="embed">Leggi numero</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 100,700 L 100,800 L 550,800 L 550,700 Z"/>
+				<text x="325" y="715" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="325" dy="50" unicode-bidi="embed">doppio = numero*2</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 175,875 L 125,975 L 475,975 L 525,875 Z"/>
+				<text x="325" y="890" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="325" dy="50" unicode-bidi="embed">Scrivi doppio</tspan>
+				</text>
+			</g>
+		</g>
+	</g>
+</svg>

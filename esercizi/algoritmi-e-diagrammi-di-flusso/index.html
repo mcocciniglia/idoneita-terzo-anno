@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Quaderno di allenamento su analisi dei problemi, algoritmi sequenziali, pseudocodice, diagrammi di flusso, variabili, assegnazioni ed espressioni.">
+  <title>Q03 — Quaderno di allenamento — Algoritmi e diagrammi di flusso</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+
+  <link rel="icon"
+        href="https://mcocciniglia.github.io/common/assets/favicon.svg"
+        type="image/svg+xml">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge second">Materiale integrativo</span>
+        </div>
+
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle"
+                  class="btn btn-theme"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+
+          <button id="contrastToggle"
+                  class="btn btn-outline btn-contrast"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Materiali integrativi</span>
+        <span aria-hidden="true">›</span>
+        <span>Collegato alle Lezioni 2.01–2.04</span>
+      </nav>
+
+      <p class="eyebrow">Q03 · Quaderno di allenamento</p>
+      <h1>Quaderno di allenamento<br>Algoritmi e diagrammi di flusso</h1>
+
+      <p class="lead">
+        Analizza problemi, completa algoritmi sequenziali e prevedi i risultati
+        prima di costruire il diagramma in Flowgorithm.
+      </p>
+
+      <div class="lesson-meta" aria-label="Informazioni sul quaderno">
+        <span>📘 Collegato alle Lezioni 2.01–2.04</span>
+        <span>📈 Difficoltà crescente</span>
+        <span>✅ Soluzioni incluse</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <aside class="callout remember" aria-labelledby="natura-quaderno">
+      <div class="callout-icon" aria-hidden="true">📒</div>
+      <div>
+        <p class="callout-label">Prima di cominciare</p>
+        <h2 id="natura-quaderno">Questo quaderno non è una nuova lezione</h2>
+        <p>
+          Consolida quanto studiato nelle Lezioni 2.01–2.04. Tutti gli
+          algoritmi procedono dall'inizio alla fine con istruzioni in sequenza.
+        </p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="istruzioni">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧭</span>
+        <h2 id="istruzioni">Come lavorare</h2>
+      </div>
+
+      <ol class="steps">
+        <li><strong>Leggi una consegna alla volta.</strong><p>Individua il compito principale.</p></li>
+        <li><strong>Scrivi prima di eseguire.</strong><p>Annota passaggi e risultato previsto.</p></li>
+        <li><strong>Procedi in ordine.</strong><p>Le attività diventano gradualmente più complete.</p></li>
+        <li><strong>Controlla con dati semplici.</strong><p>Confronta il risultato ottenuto con quello atteso.</p></li>
+        <li><strong>Apri la soluzione alla fine.</strong><p>Consulta i suggerimenti soltanto dopo avere provato.</p></li>
+        <li><strong>Spiega a voce.</strong><p>Racconta il procedimento con parole tue.</p></li>
+      </ol>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="richiamo">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧠</span>
+        <h2 id="richiamo">Richiamo essenziale</h2>
+      </div>
+
+      <div class="process-flow" aria-label="Flusso di un algoritmo sequenziale">
+        <div class="process-node"><strong>Input</strong><span>Dati in ingresso</span></div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node"><strong>Elaborazione</strong><span>Calcoli e assegnazioni</span></div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node"><strong>Output</strong><span>Risultati</span></div>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Simboli usati nei diagrammi sequenziali</caption>
+          <thead><tr><th scope="col">Ruolo</th><th scope="col">Forma</th><th scope="col">Esempio</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Inizio e fine</th><td>Terminatore</td><td><code>INIZIO</code>, <code>FINE</code></td></tr>
+            <tr><th scope="row">Input e output</th><td>Parallelogramma</td><td><code>LEGGI base</code>, <code>SCRIVI area</code></td></tr>
+            <tr><th scope="row">Elaborazione</th><td>Rettangolo</td><td><code>area ← base * altezza</code></td></tr>
+            <tr><th scope="row">Direzione</th><td>Freccia</td><td>Indica il prossimo blocco</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="leggere-problema">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔎</span>
+        <h2 id="leggere-problema">A. Leggere un problema</h2>
+      </div>
+
+      <p>Per ogni situazione individua <strong>obiettivo</strong>, <strong>input</strong>, <strong>output</strong> ed eventuali <strong>vincoli</strong>.</p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>1. Acquisto di quaderni</h3>
+          <p>Conosci il prezzo di un quaderno e la quantità acquistata. Calcola il costo totale.</p>
+        </article>
+        <article class="info-card">
+          <h3>2. Area del rettangolo</h3>
+          <p>Conosci base e altezza positive. Calcola l'area.</p>
+        </article>
+        <article class="info-card">
+          <h3>3. Da ore a minuti</h3>
+          <p>Conosci ore e minuti. Calcola i minuti complessivi usando 60 minuti per ogni ora.</p>
+        </article>
+        <article class="info-card">
+          <h3>4. Media di tre valori</h3>
+          <p>Conosci tre valori numerici. Calcola la loro media aritmetica.</p>
+        </article>
+      </div>
+
+      <details>
+        <summary>Controlla l'analisi dei problemi</summary>
+        <ol>
+          <li><strong>Quaderni:</strong> input prezzo e quantità; output totale; elaborazione <code>prezzo * quantita</code>.</li>
+          <li><strong>Rettangolo:</strong> input base e altezza; output area; vincolo indicato: misure positive.</li>
+          <li><strong>Tempo:</strong> input ore e minuti; output minuti complessivi; valore fisso usato: 60.</li>
+          <li><strong>Media:</strong> input tre valori; output media; elaborazione <code>(a + b + c) / 3</code>.</li>
+        </ol>
+      </details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ordine-passi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔢</span>
+        <h2 id="ordine-passi">B. Mettere in ordine i passi</h2>
+      </div>
+
+      <article class="info-card">
+        <h3>1. Preparare una spremuta</h3>
+        <p>Riscrivi le istruzioni nell'ordine corretto.</p>
+        <ol>
+          <li>Versare il succo nel bicchiere.</li>
+          <li>Tagliare le arance.</li>
+          <li>Bere la spremuta.</li>
+          <li>Spremere le arance.</li>
+          <li>Prendere arance, spremiagrumi e bicchiere.</li>
+        </ol>
+      </article>
+
+      <article class="info-card">
+        <h3>2. Calcolare il perimetro di un rettangolo</h3>
+        <p>Riordina e spiega perché ogni dato deve essere disponibile prima del calcolo.</p>
+        <ol>
+          <li>Scrivere il perimetro.</li>
+          <li>Leggere l'altezza.</li>
+          <li>Calcolare <code>2 * (base + altezza)</code>.</li>
+          <li>Leggere la base.</li>
+          <li>Iniziare.</li>
+          <li>Terminare.</li>
+        </ol>
+      </article>
+
+      <details>
+        <summary>Controlla l'ordine</summary>
+        <p><strong>Spremuta:</strong> prendere gli strumenti → tagliare → spremere → versare → bere.</p>
+        <p><strong>Perimetro:</strong> iniziare → leggere base → leggere altezza → calcolare → scrivere → terminare. Il calcolo usa base e altezza, quindi deve venire dopo i due input.</p>
+      </details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="pseudocodice">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📝</span>
+        <h2 id="pseudocodice">C. Dal problema allo pseudocodice</h2>
+      </div>
+
+      <p><strong>Problema:</strong> calcolare il prezzo finale conoscendo prezzo unitario e quantità.</p>
+      <ol class="steps">
+        <li><strong>Individua gli input.</strong><p>Scrivi i dati da acquisire.</p></li>
+        <li><strong>Individua l'output.</strong><p>Scrivi il risultato richiesto.</p></li>
+        <li><strong>Formula l'elaborazione.</strong><p>Usa un'assegnazione.</p></li>
+        <li><strong>Scrivi lo pseudocodice.</strong><p>Usa <code>INIZIO</code>, <code>LEGGI</code>, assegnazione, <code>SCRIVI</code> e <code>FINE</code>.</p></li>
+      </ol>
+
+      <details>
+        <summary>Controlla un possibile pseudocodice</summary>
+        <pre><code>INIZIO
+  LEGGI prezzo
+  LEGGI quantita
+  totale ← prezzo * quantita
+  SCRIVI totale
+FINE</code></pre>
+        <p>Con prezzo 2,50 e quantità 4 l'output atteso è 10.</p>
+      </details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="leggere-diagrammi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">➡️</span>
+        <h2 id="leggere-diagrammi">D. Leggere diagrammi di flusso</h2>
+      </div>
+
+      <p>Leggi il diagramma dall'alto verso il basso e segui le frecce.</p>
+      <figure class="lesson-figure lesson-figure-portrait">
+        <img src="diagramma.svg"
+             alt="Diagramma Flowgorithm sequenziale: Inizio, dichiarazione delle variabili numero e doppio di tipo Intero, lettura di numero, calcolo del doppio, scrittura del risultato e Fine."
+             width="650" height="1250" loading="lazy" decoding="async">
+        <figcaption>Diagramma realizzato con Flowgorithm: lettura di un numero e calcolo del suo doppio.</figcaption>
+      </figure>
+
+      <ol>
+        <li>Quali sono il primo e l'ultimo simbolo?</li>
+        <li>Quali variabili vengono dichiarate?</li>
+        <li>Di quale tipo sono?</li>
+        <li>Quale blocco acquisisce il dato?</li>
+        <li>Quale blocco esegue il calcolo?</li>
+        <li>Quale blocco comunica il risultato?</li>
+        <li>Quale output prevedi inserendo 7?</li>
+      </ol>
+
+      <aside class="callout tip" aria-labelledby="assegnazione-flowgorithm">
+        <div class="callout-icon" aria-hidden="true">✍️</div>
+        <div>
+          <p class="callout-label">Due modi di scrivere</p>
+          <h3 id="assegnazione-flowgorithm">La stessa assegnazione</h3>
+          <p>Nel nostro pseudocodice usiamo spesso <code>←</code>. Flowgorithm visualizza <code>=</code>. In questo contesto entrambi indicano che il risultato dell'espressione viene memorizzato nella variabile a sinistra.</p>
+        </div>
+      </aside>
+
+      <details>
+        <summary>Controlla la lettura del diagramma</summary>
+        <p>Il diagramma inizia e termina con un terminatore. Dichiara <code>numero</code> e <code>doppio</code> di tipo <code>Intero</code>. Il primo parallelogramma acquisisce <code>numero</code>; il rettangolo calcola <code>doppio = numero * 2</code>; il secondo parallelogramma mostra <code>doppio</code>. Con 7 l'output è 14.</p>
+      </details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="assegnazioni">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📦</span>
+        <h2 id="assegnazioni">E. Variabili e assegnazioni</h2>
+      </div>
+
+      <h3>1. Segui i valori</h3>
+      <pre><code>a ← 5
+b ← 3
+a ← a + b
+b ← a * 2</code></pre>
+      <p>Completa una riga dopo ogni assegnazione.</p>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Tabella di traccia da completare</caption>
+          <thead><tr><th scope="col">Istruzione</th><th scope="col">Valore di a</th><th scope="col">Valore di b</th><th scope="col">Variabile modificata</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><code>a ← 5</code></th><td>…</td><td>non ancora definito</td><td>…</td></tr>
+            <tr><th scope="row"><code>b ← 3</code></th><td>…</td><td>…</td><td>…</td></tr>
+            <tr><th scope="row"><code>a ← a + b</code></th><td>…</td><td>…</td><td>…</td></tr>
+            <tr><th scope="row"><code>b ← a * 2</code></th><td>…</td><td>…</td><td>…</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>2. Valore iniziale e nuovo valore</h3>
+      <pre><code>prezzo ← 4
+quantita ← 3
+totale ← prezzo * quantita
+prezzo ← prezzo + 1</code></pre>
+      <ol>
+        <li>Qual è il valore iniziale di <code>prezzo</code>?</li>
+        <li>Qual è il suo nuovo valore?</li>
+        <li>Quali variabili rimangono invariate dopo l'ultima istruzione?</li>
+        <li>Il valore di <code>totale</code> cambia automaticamente?</li>
+      </ol>
+
+      <details>
+        <summary>Controlla le assegnazioni</summary>
+        <p><strong>Prima sequenza:</strong> i valori finali sono <code>a = 8</code> e <code>b = 16</code>. Ogni riga modifica soltanto la variabile a sinistra della freccia.</p>
+        <p><strong>Seconda sequenza:</strong> <code>prezzo</code> passa da 4 a 5; <code>quantita</code> rimane 3 e <code>totale</code> rimane 12. Un'assegnazione già eseguita non viene ricalcolata automaticamente.</p>
+      </details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="espressioni">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">➗</span>
+        <h2 id="espressioni">F. Espressioni</h2>
+      </div>
+
+      <p>Valuta ogni espressione rispettando parentesi e precedenza. Scrivi almeno un passaggio intermedio.</p>
+      <ol>
+        <li><code>7 + 3 * 2</code></li>
+        <li><code>(7 + 3) * 2</code></li>
+        <li><code>20 - 8 / 2</code></li>
+        <li><code>18 / 3 + 4</code></li>
+        <li><code>17 mod 5</code></li>
+        <li><code>2 * (6 + 4) - 5</code></li>
+      </ol>
+
+      <aside class="callout tip" aria-labelledby="ordine-operazioni">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div><p class="callout-label">Promemoria</p><h3 id="ordine-operazioni">Procedi per livelli</h3><p>Prima le parentesi; poi moltiplicazione, divisione e resto; infine addizione e sottrazione. A parità di precedenza procedi da sinistra a destra.</p></div>
+      </aside>
+
+      <details>
+        <summary>Controlla i passaggi</summary>
+        <ol>
+          <li><code>7 + 3 * 2 = 7 + 6 = 13</code></li>
+          <li><code>(7 + 3) * 2 = 10 * 2 = 20</code></li>
+          <li><code>20 - 8 / 2 = 20 - 4 = 16</code></li>
+          <li><code>18 / 3 + 4 = 6 + 4 = 10</code></li>
+          <li><code>17 mod 5 = 2</code></li>
+          <li><code>2 * (6 + 4) - 5 = 2 * 10 - 5 = 20 - 5 = 15</code></li>
+        </ol>
+        <p>Nei primi due esercizi le parentesi cambiano il risultato: 13 diventa 20.</p>
+      </details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="trova-errore">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🛠️</span>
+        <h2 id="trova-errore">G. Trova l'errore</h2>
+      </div>
+
+      <p>Per ogni algoritmo individua l'errore, spiegalo e riscrivi la parte corretta.</p>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>1. Dato non ancora acquisito</h3>
+          <pre><code>area ← base * altezza
+LEGGI base
+LEGGI altezza
+SCRIVI area</code></pre>
+        </article>
+        <article class="info-card">
+          <h3>2. Output anticipato</h3>
+          <pre><code>LEGGI prezzo
+LEGGI quantita
+SCRIVI totale
+totale ← prezzo * quantita</code></pre>
+        </article>
+        <article class="info-card">
+          <h3>3. Formula errata</h3>
+          <pre><code>LEGGI base
+LEGGI altezza
+perimetro ← base * altezza
+SCRIVI perimetro</code></pre>
+        </article>
+        <article class="info-card">
+          <h3>4. Parentesi mancanti</h3>
+          <pre><code>LEGGI a
+LEGGI b
+LEGGI c
+media ← a + b + c / 3
+SCRIVI media</code></pre>
+        </article>
+      </div>
+
+      <details>
+        <summary>Controlla le correzioni</summary>
+        <ol>
+          <li>Prima si leggono base e altezza; soltanto dopo si calcola l'area.</li>
+          <li>Prima si assegna <code>totale ← prezzo * quantita</code>; poi si scrive <code>totale</code>.</li>
+          <li>Il perimetro è <code>2 * (base + altezza)</code>; <code>base * altezza</code> calcola l'area.</li>
+          <li>La media richiede <code>(a + b + c) / 3</code>, perché deve essere divisa l'intera somma.</li>
+        </ol>
+      </details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="prevedi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔮</span>
+        <h2 id="prevedi">H. Prevedi prima di eseguire</h2>
+      </div>
+
+      <aside class="callout warning" aria-labelledby="prima-di-eseguire">
+        <div class="callout-icon" aria-hidden="true">✋</div>
+        <div><p class="callout-label">Regola di allenamento</p><h3 id="prima-di-eseguire">Non premere subito Esegui</h3><p>Scrivi prima l'output previsto. Solo dopo costruisci o avvia il diagramma e confronta i risultati.</p></div>
+      </aside>
+
+      <h3>Attività 1</h3>
+      <pre><code>INIZIO
+  LEGGI numero
+  risultato ← numero * 3 + 2
+  SCRIVI risultato
+FINE</code></pre>
+      <p>Prevedi l'output con <code>numero = 4</code> e con <code>numero = 10</code>.</p>
+
+      <h3>Attività 2</h3>
+      <pre><code>INIZIO
+  LEGGI ore
+  LEGGI minuti
+  minutiTotali ← ore * 60 + minuti
+  SCRIVI minutiTotali
+FINE</code></pre>
+      <p>Prevedi l'output con 2 ore e 15 minuti, poi con 1 ora e 40 minuti.</p>
+
+      <ol class="steps">
+        <li><strong>Leggi.</strong><p>Segui le istruzioni nell'ordine scritto.</p></li>
+        <li><strong>Prevedi.</strong><p>Calcola a mano e annota l'output.</p></li>
+        <li><strong>Esegui.</strong><p>Riproduci il diagramma in Flowgorithm.</p></li>
+        <li><strong>Confronta.</strong><p>Spiega eventuali differenze.</p></li>
+      </ol>
+
+      <details>
+        <summary>Controlla le previsioni</summary>
+        <p><strong>Attività 1:</strong> con 4 l'output è 14; con 10 è 32.</p>
+        <p><strong>Attività 2:</strong> gli output sono 135 minuti e 100 minuti.</p>
+      </details>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio">
+      <div class="lab-header"><h2 id="laboratorio">I. Laboratorio Flowgorithm</h2></div>
+      <div class="lab-body">
+        <p>Per ogni esercizio completa prima l'analisi, poi costruisci il diagramma.</p>
+
+        <h3>1. Area e perimetro del rettangolo</h3>
+        <ul>
+          <li><strong>Input:</strong> base e altezza.</li>
+          <li><strong>Variabili:</strong> <code>base</code>, <code>altezza</code>, <code>area</code>, <code>perimetro</code>, tutte di tipo <code>Real</code>.</li>
+          <li><strong>Formule:</strong> <code>area ← base * altezza</code>; <code>perimetro ← 2 * (base + altezza)</code>.</li>
+          <li><strong>Dati di prova:</strong> base 5 e altezza 3.</li>
+        </ul>
+        <p>Scrivi gli output previsti, realizza il diagramma e verifica.</p>
+
+        <h3>2. Totale di un acquisto</h3>
+        <ul>
+          <li><strong>Input:</strong> prezzo unitario e quantità.</li>
+          <li><strong>Variabili:</strong> scegli nomi e tipi adatti.</li>
+          <li><strong>Formula:</strong> scrivila prima sul quaderno.</li>
+          <li><strong>Dati di prova:</strong> prezzo 4,50 e quantità 3.</li>
+        </ul>
+        <p>Prevedi il totale, costruisci il diagramma e controlla l'output.</p>
+
+        <h3>3. Media di tre valori</h3>
+        <ul>
+          <li><strong>Input:</strong> tre valori numerici.</li>
+          <li><strong>Variabili:</strong> <code>a</code>, <code>b</code>, <code>c</code> e <code>media</code> di tipo <code>Real</code>.</li>
+          <li><strong>Formula:</strong> presta attenzione alle parentesi.</li>
+          <li><strong>Dati di prova:</strong> 6, 7 e 8.</li>
+        </ul>
+        <p>Prevedi la media, realizza il diagramma e confronta il risultato.</p>
+
+        <details>
+          <summary>Controlla risultati e sequenze</summary>
+          <ol>
+            <li><strong>Rettangolo:</strong> dichiarazioni → due input → due assegnazioni → due output. Area 15; perimetro 16.</li>
+            <li><strong>Acquisto:</strong> <code>totale ← prezzo * quantita</code>. Con 4,50 e 3 il totale è 13,50.</li>
+            <li><strong>Media:</strong> <code>media ← (a + b + c) / 3</code>. Con 6, 7 e 8 la media è 7.</li>
+          </ol>
+        </details>
+      </div>
+    </section>
+
+    <section class="lab" aria-labelledby="riepilogo-finale">
+      <div class="lab-header"><h2 id="riepilogo-finale">Esercizio finale — Durata e costo di un'attività</h2></div>
+      <div class="lab-body">
+        <p><strong>Problema:</strong> un laboratorio usa un materiale con costo orario fisso. Conosci ore, minuti aggiuntivi e costo per ogni ora. Calcola i minuti complessivi e il costo dell'intera durata, comprese le frazioni di ora.</p>
+
+        <ol class="steps">
+          <li><strong>Analizza il problema.</strong><p>Scrivi obiettivo ed eventuali vincoli indicati.</p></li>
+          <li><strong>Individua input e output.</strong><p>Separa dati ricevuti e risultati richiesti.</p></li>
+          <li><strong>Scegli le variabili.</strong><p>Indica nome e tipo di dato.</p></li>
+          <li><strong>Scrivi le formule.</strong><p>Usa la costante <code>MINUTI_ORA = 60</code>.</p></li>
+          <li><strong>Scrivi lo pseudocodice.</strong><p>Mantieni l'ordine dichiarazioni → input → elaborazione → output.</p></li>
+          <li><strong>Prevedi due risultati.</strong><p>Prova 2 ore, 30 minuti, 6 euro all'ora; poi 3 ore, 15 minuti, 8 euro all'ora.</p></li>
+          <li><strong>Costruisci ed esegui.</strong><p>Realizza il diagramma in Flowgorithm e usa entrambe le serie di dati.</p></li>
+          <li><strong>Spiega a voce.</strong><p>Descrivi input, formule, ordine dei blocchi e output.</p></li>
+        </ol>
+
+        <details>
+          <summary>Controlla un possibile svolgimento</summary>
+          <p><strong>Input:</strong> <code>ore</code>, <code>minuti</code>, <code>costoOrario</code>. <strong>Output:</strong> <code>minutiTotali</code>, <code>costoTotale</code>.</p>
+          <pre><code>INIZIO
+  DICHIARA ore, minuti, minutiTotali, MINUTI_ORA COME Integer
+  DICHIARA costoOrario, costoTotale COME Real
+  MINUTI_ORA ← 60
+  LEGGI ore
+  LEGGI minuti
+  LEGGI costoOrario
+  minutiTotali ← ore * MINUTI_ORA + minuti
+  costoTotale ← minutiTotali / MINUTI_ORA * costoOrario
+  SCRIVI minutiTotali
+  SCRIVI costoTotale
+FINE</code></pre>
+          <p>Prima prova: 150 minuti e 15 euro. Seconda prova: 195 minuti e 26 euro.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="quiz" aria-labelledby="colloquio">
+      <h2 id="colloquio">Preparazione al colloquio orale</h2>
+      <p>Rispondi prima senza leggere, poi apri le indicazioni.</p>
+      <div class="self-check">
+        <details><summary>Che cos'è un algoritmo?</summary><p>È una sequenza finita e ordinata di istruzioni chiare ed eseguibili per raggiungere un obiettivo.</p></details>
+        <details><summary>Che differenza c'è tra input, elaborazione e output?</summary><p>L'input fornisce i dati, l'elaborazione li trasforma e l'output comunica il risultato.</p></details>
+        <details><summary>Che cos'è una variabile?</summary><p>È uno spazio con un nome che conserva temporaneamente un dato modificabile.</p></details>
+        <details><summary>Che cosa significa assegnare un valore?</summary><p>Significa calcolare o scegliere un valore e conservarlo nella variabile indicata a sinistra della freccia.</p></details>
+        <details><summary>Perché l'ordine delle istruzioni è importante?</summary><p>Ogni istruzione deve trovare già disponibili i dati che utilizza.</p></details>
+        <details><summary>Come si rappresenta un algoritmo con un diagramma di flusso?</summary><p>Si usano simboli con ruoli precisi, collegati da frecce che indicano l'ordine di esecuzione.</p></details>
+        <details><summary>Come si valuta un'espressione?</summary><p>Si rispettano parentesi e precedenza, svolgendo un'operazione alla volta fino al risultato.</p></details>
+        <details><summary>Perché prevedere il risultato prima dell'esecuzione?</summary><p>Per controllare il ragionamento e confrontare l'output ottenuto con un valore atteso.</p></details>
+      </div>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione del quaderno">
+      <a href="../index.html">Indice dei materiali integrativi</a>
+      <a href="../../secondo-anno/01-dal-problema-all-algoritmo/index.html">Lezione 2.01</a>
+      <a href="../../secondo-anno/02-rappresentare-un-algoritmo/index.html">Lezione 2.02</a>
+      <a href="../../secondo-anno/03-dati-variabili-assegnazione/index.html">Lezione 2.03</a>
+      <a href="../../secondo-anno/04-operatori-ed-espressioni/index.html">Lezione 2.04</a>
+      <a href="../../index.html">Homepage del corso</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>
+        Questa pagina è pensata per essere letta anche da studenti DSA:
+        istruzioni sequenziali, font leggibili, contrasti elevati e
+        scorciatoie da tastiera evidenziate.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
