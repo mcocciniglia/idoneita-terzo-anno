@@ -60,6 +60,16 @@ Legenda
 
 ---
 
+# Lezione ponte / completamento programma
+
+| Codice | Lezione | Stato |
+|--------|---------|--------|
+| R01 | Indirizzi e servizi Internet | ✅ Disponibile |
+
+**Lezione integrativa non conteggiata nelle 29 lezioni ordinarie del percorso.**
+
+---
+
 # Secondo anno
 
 ## Impostazione del percorso
