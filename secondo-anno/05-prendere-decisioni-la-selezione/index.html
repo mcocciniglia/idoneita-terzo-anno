@@ -118,6 +118,12 @@ FINE</code></pre>
     <section class="lesson-section" aria-labelledby="blocco-decisionale">
       <div class="section-heading"><span class="icon" aria-hidden="true">◇</span><h2 id="blocco-decisionale">Il blocco decisionale</h2></div>
       <p>Nel diagramma di flusso la decisione è rappresentata da un <strong>rombo</strong>. Al suo interno scriviamo la condizione.</p>
+      <figure class="lesson-figure lesson-figure-portrait">
+        <img src="blocco_condizione.png"
+             alt="Schema di un blocco decisionale con una condizione nel rombo, ramo Falso a sinistra, ramo Vero a destra e ricongiungimento finale."
+             width="524" height="282" loading="lazy" decoding="async">
+        <figcaption>Struttura generale di un blocco decisionale: la condizione separa il flusso nei rami Vero e Falso, che successivamente si ricongiungono.</figcaption>
+      </figure>
       <ol class="steps">
         <li><strong>L'algoritmo raggiunge il rombo.</strong><p>La condizione viene valutata.</p></li>
         <li><strong>Il risultato è vero.</strong><p>Il flusso segue il ramo indicato con <em>Vero</em>.</p></li>
@@ -127,6 +133,12 @@ FINE</code></pre>
       <pre><code>SE temperatura &lt; 10 ALLORA
   SCRIVI "Porta la giacca"
 FINE SE</code></pre>
+      <figure class="lesson-figure lesson-figure-portrait">
+        <img src="condizione_semplice.png"
+             alt="Diagramma di flusso con la condizione temperatura minore di 10: il ramo Vero mostra il messaggio Porta la giacca, mentre il ramo Falso prosegue senza eseguire l'output."
+             width="829" height="631" loading="lazy" decoding="async">
+        <figcaption>Esempio di selezione semplice: solo quando <code>temperatura &lt; 10</code> è vera viene eseguito l'output <q>Porta la giacca</q>.</figcaption>
+      </figure>
       <p>Questa è una <strong>selezione semplice</strong>: contiene un'azione soltanto sul ramo vero. Se la condizione è falsa, quell'azione viene saltata.</p>
     </section>
 
