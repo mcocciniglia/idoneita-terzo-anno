@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lezione ponte su MAC address, IPv4, IPv6, DHCP, gateway, NAT, DNS, Internet, Web e protocolli HTTP e HTTPS.">
+  <title>R01 — Indirizzi e servizi Internet</title>
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge first">Lezione ponte</span>
+        </div>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle" class="btn btn-theme" type="button" aria-pressed="false" aria-label="Cambia tema"><span class="btn-label">Tema</span></button>
+          <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button" aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">Contrasto alto ☀️</button>
+        </div>
+      </div>
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span><span aria-hidden="true">›</span><span>Lezioni ponte</span><span aria-hidden="true">›</span><span>R01</span>
+      </nav>
+      <p class="eyebrow">R01 · Laboratorio · Durata prevista: 2 ore</p>
+      <h1>Indirizzi e servizi Internet</h1>
+      <p class="lead">Da MAC e IPv4 al DNS, al Web e a IPv6.</p>
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ 2 ore</span><span>🌉 Ponte tra primo e secondo anno</span><span>🎯 Dal dispositivo alla pagina Web</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <aside class="callout remember" aria-labelledby="domanda-guida">
+      <div class="callout-icon" aria-hidden="true">🔎</div>
+      <div>
+        <p class="callout-label">Domanda guida</p>
+        <h2 id="domanda-guida">Che cosa succede quando scriviamo <code>www.wikipedia.org</code> nel browser e premiamo Invio?</h2>
+        <p>Alla fine della lezione sapremo ricostruire, in modo semplificato, il viaggio della richiesta dal nostro dispositivo al server Web e ritorno.</p>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="richiamo">
+      <div class="section-heading"><span class="icon" aria-hidden="true">↩️</span><h2 id="richiamo">Un breve richiamo alla Lezione 10</h2></div>
+      <p>Conosciamo già le <strong>LAN</strong>, che coprono un'area limitata, e le <strong>WAN</strong>, che collegano aree molto estese. Ogni dispositivo usa una <strong>scheda di rete</strong> per comunicare.</p>
+      <p>Nella rete locale lo <strong>switch</strong> collega i dispositivi, mentre il <strong>router</strong> collega reti differenti. I dati viaggiano su mezzi cablati o wireless: la <strong>banda</strong> indica quanti dati possono essere trasferiti in un intervallo di tempo; <strong>download</strong> e <strong>upload</strong> indicano rispettivamente ricezione e invio.</p>
+      <p>La fibra può arrivare fino a casa nell'<strong>FTTH</strong> (<span lang="en">Fiber To The Home</span>) oppure arrivare fino a una centralina o armadio stradale con <strong>FTTS</strong> (<span lang="en">Fiber To The Street</span>), spesso indicata anche come <strong>FTTC</strong> (<span lang="en">Fiber To The Cabinet</span>). In questo secondo caso l'ultimo tratto verso l'abitazione prosegue normalmente su rame.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎯</span><h2 id="obiettivi">Obiettivi della lezione</h2></div>
+      <div class="objective-grid">
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Distinguere MAC e IP</strong>
+          <small>Identità locale e posizione nella rete.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Riconoscere IPv4 e IPv6</strong>
+          <small>Forma, dimensione e motivo del cambiamento.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Spiegare i servizi essenziali</strong>
+          <small>DHCP, gateway, NAT e DNS.</small>
+        </article>
+        <article class="objective-card">
+          <span class="icon" aria-hidden="true">✓</span>
+          <strong>Ricostruire il viaggio</strong>
+          <small>Dal browser alla pagina Web.</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="mac">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🏷️</span><h2 id="mac">MAC address: l'identificatore dell'interfaccia</h2></div>
+      <p>Immagina di osservare i dispositivi collegati alla rete di un'aula. Per distinguere l'interfaccia di rete di un computer da quella di uno smartphone serve un identificatore.</p>
+      <div class="definition"><span class="definition-term">MAC address</span><p>È un identificatore associato a un'interfaccia di rete e usato principalmente nelle comunicazioni della rete locale.</p></div>
+      <p>Un esempio è <code>3C:52:82:4A:1F:90</code>. Le coppie contengono cifre esadecimali, cioè da 0 a 9 e da A a F.</p>
+      <figure class="lesson-figure">
+        <img
+          src="mac_ip.png"
+          alt="Confronto tra MAC e IP: il MAC identifica l'interfaccia nella rete locale, mentre l'indirizzo IP indica dove si trova il dispositivo nella rete e permette di raggiungerlo anche attraverso altre reti."
+          loading="lazy"
+          decoding="async">
+        <figcaption>
+          MAC e IP hanno compiti diversi: il MAC identifica l'interfaccia nella rete locale, l'IP permette di localizzare e raggiungere il dispositivo nella rete.
+        </figcaption>
+      </figure>
+      <p>Il MAC identifica l'interfaccia soprattutto nella LAN; l'indirizzo IP consente di raggiungere il dispositivo attraverso reti diverse.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ipv4">
+      <div class="section-heading"><span class="icon" aria-hidden="true">📍</span><h2 id="ipv4">IPv4: un indirizzo nella rete</h2></div>
+      <p>Consideriamo <code>192.168.1.25</code>: è formato da <strong>quattro numeri separati da punti</strong>. Ogni numero può andare da 0 a 255.</p>
+      <div class="definition"><span class="definition-term">Indirizzo IPv4</span><p>È un indirizzo IP di <strong>32 bit</strong> che permette di identificare e raggiungere un dispositivo in una rete che usa IPv4.</p></div>
+      <div class="card-grid">
+        <article class="info-card"><h3>Indirizzo privato</h3><p>È usato all'interno di una rete locale, per esempio quella di casa o della scuola. <code>192.168.1.25</code> è un tipico esempio.</p></article>
+        <article class="info-card"><h3>Indirizzo pubblico</h3><p>È l'indirizzo con cui una rete o un dispositivo è raggiungibile attraverso Internet. Nelle reti domestiche è normalmente associato al router.</p></article>
+      </div>
+      <aside class="callout warning"><div class="callout-icon" aria-hidden="true">⚠️</div><div><p class="callout-label">Limite della lezione</p><h3>Niente calcoli di sottorete</h3><p>Qui impariamo a riconoscere gli indirizzi e a comprenderne il ruolo, senza subnetting, maschere o calcoli.</p></div></aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="parametri">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🏠</span><h2 id="parametri">DHCP, gateway e NAT</h2></div>
+      <p>Quando uno smartphone entra nella rete Wi-Fi di casa, in genere non dobbiamo assegnargli manualmente tutti i parametri. Il collegamento viene preparato automaticamente.</p>
+      <div class="card-grid">
+        <article class="info-card"><h3>DHCP</h3><p>Assegna automaticamente al dispositivo i parametri necessari per collegarsi alla rete, tra cui un indirizzo IP.</p></article>
+        <article class="info-card"><h3>Gateway</h3><p>È normalmente il router attraverso il quale il dispositivo raggiunge altre reti e Internet.</p></article>
+        <article class="info-card"><h3>NAT</h3><p>Permette ai numerosi dispositivi di una rete domestica di comunicare con Internet utilizzando l'indirizzo pubblico del router.</p></article>
+      </div>
+      <figure class="lesson-figure">
+        <img
+          src="percorso_dati.png"
+          alt="Schema del percorso dei dati: un PC o smartphone con indirizzo IP privato comunica con il router, che svolge il ruolo di gateway e usa il NAT e un indirizzo IP pubblico per collegare il dispositivo a Internet."
+          loading="lazy"
+          decoding="async">
+        <figcaption>
+          Il dispositivo usa un IP privato, passa attraverso il router che funziona da gateway e utilizza il NAT, quindi raggiunge Internet.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ipv6">
+      <div class="section-heading"><span class="icon" aria-hidden="true">♾️</span><h2 id="ipv6">Perché nasce IPv6?</h2></div>
+      <p><strong>Se sempre più dispositivi devono avere un indirizzo, gli indirizzi IPv4 possono bastare per sempre?</strong></p>
+      <p>IPv4 usa 32 bit e offre quindi un numero limitato di indirizzi. La crescita enorme di computer, smartphone e altri dispositivi connessi ha reso necessario uno spazio di indirizzamento molto più ampio: per questo è stato introdotto <strong>IPv6</strong>, che usa <strong>128 bit</strong>.</p>
+      <div class="card-grid">
+        <article class="info-card"><h3>IPv4</h3><p><code>192.168.1.25</code></p><p>32 bit; quattro numeri decimali separati da punti.</p></article>
+        <article class="info-card"><h3>IPv6</h3><p><code>2001:db8:1234:5678::10</code></p><p>128 bit; gruppi separati da due punti e cifre esadecimali.</p></article>
+      </div>
+      <p>Per questa lezione basta saperli <strong>riconoscere visivamente</strong> e spiegare che IPv6 è stato introdotto soprattutto per disporre di moltissimi più indirizzi.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="dns">
+      <div class="section-heading"><span class="icon" aria-hidden="true">📖</span><h2 id="dns">DNS e nomi di dominio</h2></div>
+      <p>Le persone ricordano facilmente un nome come <code>www.example.it</code>; i dispositivi, per comunicare in rete, devono conoscere un indirizzo IP.</p>
+      <figure class="lesson-figure">
+        <img
+          src="dominio.png"
+          alt="Schema del funzionamento del DNS: il nome di dominio www.esempio.it viene cercato dal DNS, che individua il corrispondente indirizzo IP necessario per raggiungere il sito."
+          loading="lazy"
+          decoding="async">
+        <figcaption>
+          Il DNS traduce un nome di dominio facile da ricordare nell'indirizzo IP necessario per raggiungere il servizio in rete.
+        </figcaption>
+      </figure>
+      <dl class="glossary-grid">
+        <div class="glossary-card"><dt>Nome di dominio</dt><dd>Nome facile da ricordare che identifica un dominio, per esempio <code>wikipedia.org</code>.</dd></div>
+        <div class="glossary-card"><dt>Indirizzo IP</dt><dd>Indirizzo necessario per raggiungere un dispositivo o un server nella rete.</dd></div>
+        <div class="glossary-card"><dt>URL</dt><dd>Indirizzo completo di una risorsa Web; può comprendere protocollo, dominio e percorso.</dd></div>
+      </dl>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="internet-web">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🌐</span><h2 id="internet-web">Internet, WWW, browser e server Web</h2></div>
+      <aside class="callout remember"><div class="callout-icon" aria-hidden="true">💡</div><div><p class="callout-label">Distinzione essenziale</p><h3>Internet e Web non sono sinonimi</h3><p><strong>Internet</strong> è l'infrastruttura, una rete globale di reti. Il <strong>World Wide Web</strong> è uno dei servizi disponibili attraverso Internet.</p></div></aside>
+      <div class="card-grid">
+        <article class="info-card"><h3>Browser</h3><p>È il programma che richiede, riceve e visualizza le pagine Web, per esempio Firefox, Edge o Chrome.</p></article>
+        <article class="info-card"><h3>Server Web</h3><p>È il sistema che fornisce al browser le risorse Web richieste.</p></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="protocolli">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔐</span><h2 id="protocolli">Protocolli applicativi: HTTP e HTTPS</h2></div>
+      <p>Un protocollo stabilisce regole condivise per la comunicazione. Servizi differenti usano protocolli differenti.</p>
+      <div class="card-grid">
+        <article class="info-card"><h3>HTTP</h3><p>È un protocollo usato per richiedere e trasferire risorse del Web.</p></article>
+        <article class="info-card"><h3>HTTPS</h3><p>È HTTP con protezione della comunicazione: i dati scambiati vengono cifrati e l'identità del sito può essere verificata tramite un certificato.</p></article>
+      </div>
+      <p>Altri esempi sono <strong>SMTP</strong> per l'invio della posta elettronica, <strong>IMAP</strong> per consultarla sul server e <strong>FTP</strong> per il trasferimento di file. Qui è sufficiente riconoscere che hanno compiti diversi.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="viaggio">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🧭</span><h2 id="viaggio">Ricostruiamo il viaggio</h2></div>
+      <p><strong>Scrivo <code>www.wikipedia.org</code> e premo Invio. Che cosa accade?</strong></p>
+      <ol class="steps">
+        <li><strong>Il browser legge il nome.</strong><p>Riconosce il dominio indicato nell'indirizzo Web.</p></li>
+        <li><strong>Il DNS cerca l'indirizzo IP.</strong><p>Associa <code>www.wikipedia.org</code> a uno o più indirizzi del servizio.</p></li>
+        <li><strong>La richiesta raggiunge il gateway.</strong><p>Il router permette al dispositivo di uscire dalla rete locale; in una rete domestica può intervenire il NAT.</p></li>
+        <li><strong>I dati attraversano Internet.</strong><p>La richiesta viene instradata attraverso più reti verso il server.</p></li>
+        <li><strong>Il server Web risponde.</strong><p>Riceve la richiesta tramite HTTP o, normalmente, HTTPS e restituisce le risorse necessarie.</p></li>
+        <li><strong>Il browser visualizza la pagina.</strong><p>Interpreta le risorse ricevute e le presenta sullo schermo.</p></li>
+      </ol>
+      <figure class="lesson-figure">
+        <img
+          src="percorso_pagina.png"
+          alt="Schema del percorso di una pagina Web: il browser richiede un sito, il DNS individua l'indirizzo IP del server, la richiesta attraversa router e Internet, raggiunge il server Web e la pagina viene infine restituita e visualizzata nel browser."
+          loading="lazy"
+          decoding="async">
+        <figcaption>
+          Il percorso semplificato di una pagina Web: dal browser al DNS, attraverso Internet fino al server Web, e poi di nuovo al browser.
+        </figcaption>
+      </figure>
+      <p><strong>Questa rappresentazione è semplificata:</strong> non mostra tutti i dispositivi e tutti i passaggi tecnici, ma collega correttamente i concetti essenziali.</p>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio">
+      <div class="lab-header"><h2 id="laboratorio">💻 Laboratorio guidato — Osserva la rete in Windows</h2></div>
+      <div class="lab-body">
+        <aside class="callout warning"><div class="callout-icon" aria-hidden="true">⚠️</div><div><p class="callout-label">Prima di iniziare</p><h3>Non modificare alcun parametro di rete</h3><p>L'attività serve soltanto a osservare le informazioni. Non eseguire comandi diversi da quelli indicati.</p></div></aside>
+        <ol class="steps">
+          <li><strong>Apri il menu Start.</strong><p>Scrivi <kbd>cmd</kbd> e apri il Prompt dei comandi.</p></li>
+          <li><strong>Mostra le informazioni principali.</strong><p>Scrivi <code>ipconfig</code> e premi <kbd>Invio</kbd>.</p></li>
+          <li><strong>Individua la scheda attiva.</strong><p>Cerca la sezione Wi-Fi oppure Ethernet che contiene valori compilati.</p></li>
+          <li><strong>Osserva IPv4, IPv6 e gateway.</strong><p>Annota soltanto se sono presenti. Non condividere pubblicamente gli indirizzi rilevati.</p></li>
+          <li><strong>Mostra più dettagli.</strong><p>Scrivi <code>ipconfig /all</code> e premi <kbd>Invio</kbd>.</p></li>
+          <li><strong>Cerca DHCP e MAC.</strong><p>Osserva le voci relative a DHCP e l'«Indirizzo fisico», cioè il MAC address.</p></li>
+          <li><strong>Interroga il DNS.</strong><p>Scrivi <code>nslookup www.wikipedia.org</code> e premi <kbd>Invio</kbd>.</p></li>
+          <li><strong>Confronta nome e risultati.</strong><p>Osserva che il nome viene associato a uno o più indirizzi IP, che possono essere IPv4 o IPv6.</p></li>
+          <li><strong>Chiudi il Prompt.</strong><p>Scrivi <code>exit</code> e premi <kbd>Invio</kbd>.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="quiz" aria-labelledby="consolidamento">
+      <h2 id="consolidamento">🧠 Attività di consolidamento</h2>
+      <p>Rispondi prima senza aprire la soluzione.</p>
+      <div class="self-check">
+        <details><summary>1. <code>192.168.1.15</code> è IPv4 o IPv6?</summary><p>È IPv4: presenta quattro numeri decimali separati da punti.</p></details>
+        <details><summary>2. <code>2001:db8::8a2e:370:7334</code> è IPv4 o IPv6?</summary><p>È IPv6: usa gruppi con cifre esadecimali separati da due punti.</p></details>
+        <details><summary>3. Qual è la differenza principale tra MAC address e IP?</summary><p>Il MAC identifica un'interfaccia soprattutto nella rete locale; l'IP indica dove raggiungere il dispositivo nella rete.</p></details>
+        <details><summary>4. A cosa serve il DNS?</summary><p>Associa i nomi di dominio agli indirizzi IP.</p></details>
+        <details><summary>5. Internet e WWW sono la stessa cosa?</summary><p>No. Internet è la rete globale di reti; il WWW è uno dei servizi che la utilizza.</p></details>
+        <details><summary>6. Perché è stato necessario introdurre IPv6?</summary><p>Perché gli indirizzi IPv4 sono limitati e i dispositivi connessi sono cresciuti enormemente. IPv6 usa 128 bit e offre moltissimi più indirizzi.</p></details>
+        <details><summary>7. Quale protocollo utilizza normalmente un sito Web protetto?</summary><p>HTTPS, che protegge la comunicazione tra browser e server Web.</p></details>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="prova-voce">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎤</span><h2 id="prova-voce">Prova a spiegarlo a voce</h2></div>
+      <p>Formula prima una risposta breve; poi aggiungi un esempio concreto.</p>
+      <div class="self-check">
+        <details><summary>Qual è la differenza tra MAC address e indirizzo IP?</summary><p>Il MAC identifica l'interfaccia soprattutto nella rete locale; l'IP permette di localizzare e raggiungere il dispositivo nella rete. Per esempio, una scheda può avere un MAC come <code>3C:52:82:4A:1F:90</code> e un IPv4 come <code>192.168.1.25</code>.</p></details>
+        <details><summary>Come riconosci un indirizzo IPv4?</summary><p>È formato da quattro numeri da 0 a 255 separati da punti e usa complessivamente 32 bit.</p></details>
+        <details><summary>Perché è stato introdotto IPv6?</summary><p>IPv4 dispone di un numero limitato di indirizzi. Con la crescita dei dispositivi connessi è stato introdotto IPv6, che usa 128 bit e offre uno spazio di indirizzamento molto più ampio.</p></details>
+        <details><summary>Qual è il compito del DNS?</summary><p>Il DNS associa nomi di dominio facili da ricordare agli indirizzi IP necessari per raggiungere i servizi in rete.</p></details>
+        <details><summary>Internet e WWW sono la stessa cosa?</summary><p>No. Internet è l'infrastruttura globale di reti; il WWW è un servizio che usa Internet per fornire pagine e altre risorse Web.</p></details>
+        <details><summary>Che cosa succede, in modo semplificato, quando digiti l'indirizzo di un sito nel browser?</summary><p>Il browser usa il DNS per ottenere l'IP del server; la richiesta passa dal router e attraverso Internet, raggiunge il server Web tramite HTTP o HTTPS, poi la risposta torna al browser, che visualizza la pagina.</p></details>
+      </div>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header"><p class="eyebrow">Riepilogo finale</p><h2 id="zaino-studente">🎒 Lo zaino dello studente</h2><p>Le idee essenziali per ricostruire il viaggio di una pagina Web.</p></div>
+      <div class="student-backpack-grid">
+        <article class="backpack-card"><h3>✅ Idee fondamentali</h3><ol class="essential-list"><li>MAC e IP hanno ruoli differenti.</li><li>IPv4 usa 32 bit; IPv6 ne usa 128.</li><li>DHCP assegna parametri, il gateway conduce fuori dalla LAN e il NAT condivide l'IP pubblico.</li><li>Il DNS associa domini e indirizzi IP.</li><li>Internet è l'infrastruttura; il Web è un servizio.</li></ol></article>
+        <article class="backpack-card"><h3>📝 Parole chiave</h3><ul class="keyword-list"><li>MAC</li><li>IPv4</li><li>IPv6</li><li>DHCP</li><li>gateway</li><li>NAT</li><li>DNS</li><li>HTTPS</li></ul></article>
+        <article class="backpack-card"><h3>🔢 Sequenza da ricordare</h3><p>Browser → DNS → IP → router e Internet → server Web → HTTPS → pagina.</p></article>
+        <article class="backpack-card"><h3>🎤 Ripasso in 2 minuti</h3><p>Parti da <code>www.wikipedia.org</code> e racconta il viaggio usando almeno sei parole chiave.</p></article>
+      </div>
+    </section>
+
+    <section class="next-lesson" aria-labelledby="prossimo-passo">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2 id="prossimo-passo">Dal collegare dispositivi al descrivere procedimenti</h2>
+      <p>Abbiamo ricostruito una sequenza di operazioni. All'inizio del secondo anno impareremo ad analizzare un problema e a descrivere con ordine i passi necessari per risolverlo.</p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione della lezione ponte">
+      <a href="../../Primo-anno/10-reti-informatiche/index.html">← Lezione 10 — Reti informatiche</a>
+      <a href="../../index.html">Torna all'indice</a>
+      <a href="../../secondo-anno/01-dal-problema-all-algoritmo/index.html">Lezione 2.01 — Dal problema all'algoritmo →</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+    </div>
+  </footer>
+</body>
+</html>
