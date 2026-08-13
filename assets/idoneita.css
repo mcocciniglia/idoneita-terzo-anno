@@ -992,6 +992,11 @@ html[data-theme="dark"] .quiz-question{
   color:var(--edu-green);
   background:var(--edu-green-soft);
 }
+.home-status.optional {
+  color: #b45309;
+  background: #fff7ed;
+  border-color: #f59e0b;
+}
 
 .home-feature-grid{
   display:grid;
@@ -1037,7 +1042,11 @@ html[data-theme="dark"] .home-light-action:focus{
   -webkit-text-fill-color:#203a72;
   background:#fff !important;
 }
-
+html[data-theme="dark"] .home-status.optional {
+  color: #fbbf24;
+  background: #2b2111;
+  border-color: #d97706;
+}
 .home-secondary-link{
   color:#fff !important;
   font-weight:800;
