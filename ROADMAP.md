@@ -51,7 +51,7 @@ Legenda
 | 10 | Reti informatiche | ✅ | 06 | Concetti introduttivi |
 | 11 | Internet e Web | ✅ | 10 | Servizi Internet |
 | 12 | Sicurezza informatica | ✅ | 11 | Password, malware, phishing |
-| 13 | Sistemi di numerazione | ⚪ | 02 | Binario, decimale, esadecimale |
+| 13 | Sistema esadecimale e rappresentazione compatta dei dati binari | ✅ | 02 | Base 16, conversioni e relazione con il binario |
 | 14 | Codifica dei caratteri | ⚪ | 13 | ASCII e Unicode |
 | 15 | Immagini digitali | ⚪ | 13 | Pixel, risoluzione, colore |
 | 16 | Audio digitale | ⚪ | 13 | Campionamento e qualità |
@@ -90,8 +90,9 @@ Per l'attuale percorso di preparazione all'esame di idoneità:
 - array, funzioni, procedure e altri argomenti di programmazione avanzata non
   fanno parte del nucleo essenziale.
 
-Le lezioni 13–18 del primo anno rimangono in standby e non costituiscono
-prerequisito per l'avvio di questo percorso.
+Le lezioni 14–18 del primo anno rimangono in standby e non costituiscono
+prerequisito per l'avvio di questo percorso. La Lezione 13 è disponibile come
+approfondimento della rappresentazione dell'informazione.
 
 | Codice | Lezione                                      | Stato | Dipende da | Priorità      | Note                                                                                                |
 | ------ | -------------------------------------------- | ----- | ---------- | ------------- | --------------------------------------------------------------------------------------------------- |
@@ -146,13 +147,13 @@ La roadmap è un documento dinamico e può essere aggiornata nel corso dello svi
 
 Eventuali modifiche alla sequenza degli argomenti devono essere valutate prima di creare nuove lezioni.
 
-Dopo la Lezione 12, lo sviluppo del percorso del primo anno è temporaneamente
-sospeso. Le lezioni 13–18 restano previste, ma non sono necessarie per iniziare
+Dopo la Lezione 13, lo sviluppo del percorso del primo anno è temporaneamente
+sospeso. Le lezioni 14–18 restano previste, ma non sono necessarie per iniziare
 il secondo anno.
 
 Lo sviluppo attivo prosegue dalla Lezione 2.01. La numerazione del secondo anno
 è autonoma, così da distinguere chiaramente i due percorsi e da evitare che la
-sospensione delle lezioni 13–18 venga interpretata come una lacuna da colmare
+sospensione delle lezioni 14–18 venga interpretata come una lacuna da colmare
 prima di procedere.
 
 ## Materiale integrativo
