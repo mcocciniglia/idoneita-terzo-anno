@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lezione sul sistema esadecimale, le conversioni con decimale e binario e la rappresentazione compatta dei dati binari.">
+  <title>13 — Sistema esadecimale e rappresentazione compatta dei dati binari</title>
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge first">Programma del primo anno</span>
+        </div>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle" class="btn btn-theme" type="button" aria-pressed="false" aria-label="Cambia tema"><span class="btn-label">Tema</span></button>
+          <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button" aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">Contrasto alto ☀️</button>
+        </div>
+      </div>
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span><span aria-hidden="true">›</span><span>Primo anno</span><span aria-hidden="true">›</span><span>Lezione 13</span>
+      </nav>
+      <p class="eyebrow">Lezione 13 · Durata prevista: 2 ore</p>
+      <h1>Sistema esadecimale e rappresentazione compatta dei dati binari</h1>
+      <p class="lead">Come possiamo rendere più breve e leggibile una lunga sequenza di 0 e 1 senza cambiare il dato rappresentato?</p>
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ 2 ore</span><span>📘 Primo anno</span><span>🎯 Base 16 e conversioni</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading"><span>Percorso del primo anno</span><span>Lezione 13 di 18</span></div>
+      <div class="progress-track" role="progressbar" aria-label="Avanzamento del percorso" aria-valuemin="0" aria-valuemax="18" aria-valuenow="13">
+        <div class="progress-value" style="--progress:72.22%;"></div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎯</span><h2 id="obiettivi">Obiettivi della lezione</h2></div>
+      <div class="objective-grid">
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Riconoscere la base 16</strong><small>Usando le cifre da 0 a F.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Usare il valore posizionale</strong><small>Convertendo tra esadecimale e decimale.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Raggruppare i bit</strong><small>Collegando quattro bit a una cifra esadecimale.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Leggere dati compatti</strong><small>Interpretando byte e semplici codici colore.</small></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="prerequisiti">
+      <div class="section-heading"><span class="icon" aria-hidden="true">↩️</span><h2 id="prerequisiti">Cosa sappiamo già</h2></div>
+      <p>Riprendiamo ora un concetto incontrato nella Lezione 02 e lo sviluppiamo in una direzione nuova. Abbiamo già imparato come funzionano il sistema binario, il valore posizionale e le conversioni tra binario e decimale. Ora useremo queste conoscenze per comprendere il sistema esadecimale.</p>
+      <aside class="callout remember" aria-labelledby="attivazione">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div><p class="callout-label">Attivazione · 15–20 minuti</p><h3 id="attivazione">Recupera il procedimento, non rileggere tutta la teoria</h3><ol><li>Scrivi le posizioni 8, 4, 2, 1 sopra <code>1101₂</code> e calcola il valore decimale.</li><li>Converti <code>10₁₀</code> e <code>15₁₀</code> in binario.</li><li>Spiega a voce che cosa significano base e valore posizionale.</li></ol></div>
+      </aside>
+      <details>
+        <summary>Controlla il breve ripasso</summary>
+        <p><code>1101₂ = 13₁₀</code>; <code>10₁₀ = 1010₂</code>; <code>15₁₀ = 1111₂</code>. In un sistema posizionale ogni cifra pesa in base alla posizione occupata.</p>
+      </details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="situazione">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔎</span><h2 id="situazione">Un dato, due scritture</h2></div>
+      <p>Osserva queste due rappresentazioni dello stesso valore:</p>
+      <div class="process-flow" role="img" aria-label="La sequenza binaria 11111111 corrisponde al numero esadecimale FF">
+        <div class="process-node"><strong>1111 1111₂</strong><span>8 cifre binarie</span></div><div class="process-arrow" aria-hidden="true">→</div><div class="process-node"><strong>FF₁₆</strong><span>2 cifre esadecimali</span></div>
+      </div>
+      <p>La seconda scrittura è più corta. Per capire perché funziona, partiamo dalle cifre della base 16.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="base-sedici">
+      <div class="section-heading"><span class="icon" aria-hidden="true">16</span><h2 id="base-sedici">La base 16</h2></div>
+      <p>Dopo il 9 servono altre sei cifre. In informatica si usano le lettere <code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code> e <code>F</code>.</p>
+      <div class="definition"><span class="definition-term">Sistema esadecimale</span><p>Sistema posizionale in base 16. Usa le cifre da 0 a 9 e le lettere da A a F, che valgono rispettivamente da 10 a 15.</p></div>
+      <aside class="callout warning" aria-labelledby="lettere-cifre">
+        <div class="callout-icon" aria-hidden="true">⚠️</div><div><p class="callout-label">Attenzione</p><h3 id="lettere-cifre">A–F sono cifre, non variabili</h3><p>Nel numero <code>2A₁₆</code>, la cifra A vale 10. La base va sempre indicata quando potrebbe esserci ambiguità.</p></div>
+      </aside>
+
+      <div class="table-wrapper" tabindex="0" role="region" aria-label="Corrispondenze da zero a quindici tra decimale, binario ed esadecimale">
+        <table class="mini-table">
+          <caption>Tabella fondamentale: usala nelle conversioni successive</caption>
+          <thead><tr><th scope="col">Decimale</th><th scope="col">Binario (4 bit)</th><th scope="col">Esadecimale</th></tr></thead>
+          <tbody>
+            <tr><td>0</td><td><code>0000</code></td><td><code>0</code></td></tr><tr><td>1</td><td><code>0001</code></td><td><code>1</code></td></tr>
+            <tr><td>2</td><td><code>0010</code></td><td><code>2</code></td></tr><tr><td>3</td><td><code>0011</code></td><td><code>3</code></td></tr>
+            <tr><td>4</td><td><code>0100</code></td><td><code>4</code></td></tr><tr><td>5</td><td><code>0101</code></td><td><code>5</code></td></tr>
+            <tr><td>6</td><td><code>0110</code></td><td><code>6</code></td></tr><tr><td>7</td><td><code>0111</code></td><td><code>7</code></td></tr>
+            <tr><td>8</td><td><code>1000</code></td><td><code>8</code></td></tr><tr><td>9</td><td><code>1001</code></td><td><code>9</code></td></tr>
+            <tr><td>10</td><td><code>1010</code></td><td><code>A</code></td></tr><tr><td>11</td><td><code>1011</code></td><td><code>B</code></td></tr>
+            <tr><td>12</td><td><code>1100</code></td><td><code>C</code></td></tr><tr><td>13</td><td><code>1101</code></td><td><code>D</code></td></tr>
+            <tr><td>14</td><td><code>1110</code></td><td><code>E</code></td></tr><tr><td>15</td><td><code>1111</code></td><td><code>F</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="hex-dec">
+      <div class="section-heading"><span class="icon" aria-hidden="true">→</span><h2 id="hex-dec">Da esadecimale a decimale</h2></div>
+      <p>Prima osserviamo un esempio: in <code>2A₁₆</code>, il 2 occupa la posizione delle sedicine e A quella delle unità.</p>
+      <ol class="steps">
+        <li><strong>Scrivi i valori delle cifre.</strong><p><code>2 = 2</code> e, dalla tabella, <code>A = 10</code>.</p></li>
+        <li><strong>Moltiplica per il peso della posizione.</strong><p><code>(2 × 16) + (10 × 1)</code>.</p></li>
+        <li><strong>Somma.</strong><p><code>32 + 10 = 42</code>, quindi <strong><code>2A₁₆ = 42₁₀</code></strong>.</p></li>
+      </ol>
+      <p>Con tre cifre, le posizioni da destra valgono <code>1</code>, <code>16</code>, <code>256</code>. Esempio: <code>10F₁₆ = (1 × 256) + (0 × 16) + (15 × 1) = 271₁₀</code>.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="dec-hex">
+      <div class="section-heading"><span class="icon" aria-hidden="true">←</span><h2 id="dec-hex">Da decimale a esadecimale</h2></div>
+      <p>Per convertire <code>214₁₀</code>, dividiamo per 16 e interpretiamo il resto con la tabella.</p>
+      <ol class="steps">
+        <li><strong>Dividi per 16.</strong><p><code>214 ÷ 16 = 13</code> con resto <code>6</code>.</p></li>
+        <li><strong>Converti quoziente e resto.</strong><p>Dalla tabella, <code>13 = D</code> e <code>6 = 6</code>.</p></li>
+        <li><strong>Scrivi le cifre nell'ordine corretto.</strong><p>Prima il quoziente, poi il resto: <strong><code>214₁₀ = D6₁₆</code></strong>.</p></li>
+        <li><strong>Controlla.</strong><p><code>(13 × 16) + 6 = 208 + 6 = 214</code>.</p></li>
+      </ol>
+      <h3>Un esempio con più divisioni: <code>300₁₀</code></h3>
+      <p>Per numeri più grandi continuiamo a dividere il quoziente per 16, finché otteniamo zero.</p>
+      <ol class="steps">
+        <li><strong>Prima divisione.</strong><p><code>300 ÷ 16 = 18</code> con resto <code>12</code>. Dalla tabella, <code>12 = C</code>.</p></li>
+        <li><strong>Seconda divisione.</strong><p><code>18 ÷ 16 = 1</code> con resto <code>2</code>.</p></li>
+        <li><strong>Ultima divisione.</strong><p><code>1 ÷ 16 = 0</code> con resto <code>1</code>. Ora ci fermiamo.</p></li>
+        <li><strong>Leggi i resti dal basso verso l'alto.</strong><p>Otteniamo <code>1</code>, <code>2</code>, <code>C</code>: <strong><code>300₁₀ = 12C₁₆</code></strong>.</p></li>
+        <li><strong>Controlla con i valori posizionali.</strong><p><code>(1 × 256) + (2 × 16) + 12 = 256 + 32 + 12 = 300</code>.</p></li>
+      </ol>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="nibble">
+      <div class="section-heading"><span class="icon" aria-hidden="true">4</span><h2 id="nibble">Quattro bit alla volta</h2></div>
+      <p>La tabella mostra che ogni combinazione di quattro bit, da <code>0000</code> a <code>1111</code>, corrisponde a una sola cifra esadecimale.</p>
+      <div class="definition"><span class="definition-term">Nibble</span><p>Gruppo di 4 bit. Un nibble può rappresentare esattamente una cifra esadecimale.</p></div>
+      <div class="card-grid">
+        <article class="info-card"><h3>4 bit</h3><p><strong>1 nibble = 1 cifra esadecimale</strong></p></article>
+        <article class="info-card"><h3>8 bit</h3><p><strong>1 byte = 2 cifre esadecimali</strong></p></article>
+      </div>
+      <h3>Esempio fondamentale: <code>1101 0110₂ = D6₁₆</code></h3>
+      <ol class="steps">
+        <li><strong>Raggruppa da destra.</strong><p><code>1101 0110</code>. I gruppi hanno già quattro bit.</p></li>
+        <li><strong>Cerca il primo gruppo nella tabella.</strong><p><code>1101 = 13 = D</code>.</p></li>
+        <li><strong>Cerca il secondo gruppo.</strong><p><code>0110 = 6</code>.</p></li>
+        <li><strong>Unisci le cifre.</strong><p><strong><code>1101 0110₂ = D6₁₆</code></strong>.</p></li>
+      </ol>
+      <aside class="callout tip" aria-labelledby="zeri-sinistra">
+        <div class="callout-icon" aria-hidden="true">✅</div><div><p class="callout-label">Strategia</p><h3 id="zeri-sinistra">Completa il gruppo a sinistra con zeri</h3><p><code>101101₂</code> diventa <code>0010 1101₂</code>, quindi <code>2D₁₆</code>. Gli zeri iniziali non cambiano il valore.</p></div>
+      </aside>
+      <h3>Da esadecimale a binario</h3>
+      <p>Il procedimento si inverte: sostituisci ogni cifra con i quattro bit indicati nella tabella. Per esempio, <code>3A₁₆ = 0011 1010₂</code>.</p>
+      <aside class="callout remember" aria-labelledby="utilita">
+        <div class="callout-icon" aria-hidden="true">💡</div><div><p class="callout-label">Idea fondamentale</p><h3 id="utilita">Il dato non cambia, cambia la scrittura</h3><p>L'esadecimale è utile in informatica perché rende le sequenze binarie più compatte, leggibili e facili da controllare.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="colori">
+      <div class="section-heading"><span class="icon" aria-hidden="true">#</span><h2 id="colori">Un uso reale: i colori digitali</h2></div>
+      <p>Nei codici colore HTML/CSS, sei cifre esadecimali possono descrivere le quantità di rosso, verde e blu. Non occorre conoscere HTML: osserviamo soltanto come sono rappresentati i tre byte.</p>
+      <div class="table-wrapper" tabindex="0" role="region" aria-label="Interpretazione del codice colore esadecimale FF0000">
+        <table class="mini-table">
+          <caption>Interpretazione di <code>#FF0000</code>: rosso pieno, verde assente, blu assente</caption>
+          <thead><tr><th scope="col">Componente</th><th scope="col">Coppia esadecimale</th><th scope="col">Valore decimale</th><th scope="col">Significato</th></tr></thead>
+          <tbody><tr><th scope="row">Rosso</th><td><code>FF</code></td><td>255</td><td>Intensità massima</td></tr><tr><th scope="row">Verde</th><td><code>00</code></td><td>0</td><td>Assente</td></tr><tr><th scope="row">Blu</th><td><code>00</code></td><td>0</td><td>Assente</td></tr></tbody>
+        </table>
+      </div>
+      <p>Ogni coppia rappresenta un byte: <code>FF₁₆ = 255₁₀</code>. Perciò <code>#00FF00</code> indica verde pieno e <code>#0000FF</code> blu pieno. Le etichette testuali rendono l'informazione comprensibile anche senza distinguere i colori.</p>
+      <p>Nei linguaggi e negli strumenti informatici compare anche il prefisso <code>0x</code>: per esempio <code>0xFF</code> indica il valore esadecimale <code>FF₁₆</code>.</p>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio">
+      <div class="lab-header"><h2 id="laboratorio">💻 Laboratorio guidato — Dalla tabella al dato compatto</h2></div>
+      <div class="lab-body">
+        <p>Tieni visibile la tabella fondamentale e completa un livello alla volta.</p>
+        <h3>Livello 1 · Riconosci e converti</h3>
+        <ol><li>Spiega perché <code>G</code> non è una cifra esadecimale.</li><li>Converti <code>B₁₆</code> e <code>1C₁₆</code> in decimale.</li></ol>
+        <details><summary>Soluzione guidata del Livello 1</summary><p>Le cifre terminano con F, quindi G non è valida. <code>B₁₆ = 11₁₀</code>. <code>1C₁₆ = (1 × 16) + 12 = 28₁₀</code>.</p></details>
+        <h3>Livello 2 · Dal decimale</h3>
+        <ol><li>Converti <code>31₁₀</code> in esadecimale.</li><li>Converti <code>75₁₀</code> in esadecimale.</li></ol>
+        <details><summary>Soluzione guidata del Livello 2</summary><p><code>31 ÷ 16 = 1</code> resto 15, quindi <code>31₁₀ = 1F₁₆</code>. <code>75 ÷ 16 = 4</code> resto 11, quindi <code>75₁₀ = 4B₁₆</code>.</p></details>
+        <h3>Livello 3 · Gruppi di quattro bit</h3>
+        <ol><li>Converti <code>1010 1111₂</code> in esadecimale.</li><li>Converti <code>7C₁₆</code> in binario.</li></ol>
+        <details><summary>Soluzione guidata del Livello 3</summary><p><code>1010 = A</code> e <code>1111 = F</code>, quindi <code>AF₁₆</code>. <code>7 = 0111</code> e <code>C = 1100</code>, quindi <code>7C₁₆ = 0111 1100₂</code>.</p></details>
+        <h3>Livello 4 · Codici colore</h3>
+        <p>Interpreta <code>#FFFF00</code> separando le tre coppie e descrivendo l'intensità di rosso, verde e blu.</p>
+        <details><summary>Soluzione guidata del Livello 4</summary><p><code>FF</code> rosso = 255, <code>FF</code> verde = 255, <code>00</code> blu = 0. Il codice combina rosso e verde alla massima intensità e rappresenta il giallo.</p></details>
+
+        <h3 id="color-lab">Color Lab · Tre byte, un colore</h3>
+        <p>
+          Ogni campo rappresenta un byte con due cifre esadecimali:
+          <strong><code>#RRGGBB</code> = 3 byte = 6 cifre esadecimali</strong>.
+        </p>
+        <div class="quiz-question">
+          <fieldset aria-describedby="color-lab-help color-error">
+            <legend>Inserisci le tre coppie esadecimali</legend>
+            <p id="color-lab-help">Usa esattamente due cifre per campo, da <code>00</code> a <code>FF</code>. Le lettere minuscole vengono convertite in maiuscole.</p>
+            <div class="card-grid">
+              <label class="info-card" for="redHex"><strong>Rosso (RR)</strong><br><input id="redHex" class="hex-input" type="text" value="FF" maxlength="2" pattern="[0-9A-Fa-f]{2}" inputmode="text" autocomplete="off" spellcheck="false" aria-describedby="color-error"></label>
+              <label class="info-card" for="greenHex"><strong>Verde (GG)</strong><br><input id="greenHex" class="hex-input" type="text" value="00" maxlength="2" pattern="[0-9A-Fa-f]{2}" inputmode="text" autocomplete="off" spellcheck="false" aria-describedby="color-error"></label>
+              <label class="info-card" for="blueHex"><strong>Blu (BB)</strong><br><input id="blueHex" class="hex-input" type="text" value="00" maxlength="2" pattern="[0-9A-Fa-f]{2}" inputmode="text" autocomplete="off" spellcheck="false" aria-describedby="color-error"></label>
+            </div>
+          </fieldset>
+          <p id="color-error" role="alert" hidden>Ogni campo deve contenere esattamente due cifre esadecimali, da 0 a F.</p>
+          <div class="process-flow">
+            <div class="process-node"><strong>Codice completo</strong><output id="hexColor" for="redHex greenHex blueHex"><code>#FF0000</code></output></div>
+            <div class="process-arrow" aria-hidden="true">→</div>
+            <div id="colorPreview" class="process-node" role="img" aria-label="Campione del colore FF0000"><strong>Campione colore</strong><span id="colorPreviewText">#FF0000</span></div>
+          </div>
+          <p id="rgbValues" aria-live="polite"><strong>Valori decimali:</strong> R = 255, G = 0, B = 0.</p>
+        </div>
+
+        <h3>Percorso guidato al PC</h3>
+        <ol class="steps">
+          <li><strong>Prova i colori primari.</strong><p>Inserisci nell'ordine <code>FF 00 00</code>, <code>00 FF 00</code> e <code>00 00 FF</code>. Osserva quale byte vale <code>FF</code>.</p></li>
+          <li><strong>Combina due componenti.</strong><p>Prova <code>FF FF 00</code> e <code>00 FF FF</code>. Osserva quali due byte cambiano.</p></li>
+          <li><strong>Confronta i due estremi.</strong><p>Prova <code>FF FF FF</code> e poi <code>00 00 00</code>. Confronta anche i valori decimali mostrati.</p></li>
+          <li><strong>Esplora.</strong><p>Che cosa ottieni con <code>FF 00 FF</code>? Che colore può produrre <code>80 80 80</code>? Poi costruisci un colore personale.</p></li>
+          <li><strong>Spiega i numeri.</strong><p>Qual è il valore decimale di <code>80₁₆</code>? Perché ogni componente può assumere valori da <code>00</code> a <code>FF</code>?</p></li>
+        </ol>
+        <aside class="callout remember" aria-labelledby="color-lab-punto">
+          <div class="callout-icon" aria-hidden="true">💡</div><div><p class="callout-label">Punto didattico</p><h3 id="color-lab-punto">Osserva i byte, non memorizzare i colori</h3><p>Ogni coppia è un byte: due cifre esadecimali corrispondono a otto bit. Il colore rende visibile questo collegamento.</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="autonoma">
+      <div class="section-heading"><span class="icon" aria-hidden="true">✍️</span><h2 id="autonoma">Attività autonoma</h2></div>
+      <p>Scrivi sempre la base e mostra almeno un passaggio di controllo.</p>
+      <div class="card-grid">
+        <article class="info-card"><h3>Livello 1</h3><ol><li><code>E₁₆ → ?₁₀</code></li><li><code>24₁₆ → ?₁₀</code></li></ol></article>
+        <article class="info-card"><h3>Livello 2</h3><ol><li><code>46₁₀ → ?₁₆</code></li><li><code>156₁₀ → ?₁₆</code></li></ol></article>
+        <article class="info-card"><h3>Livello 3</h3><ol><li><code>1110 0011₂ → ?₁₆</code></li><li><code>5D₁₆ → ?₂</code></li><li><code>111101₂ → ?₁₆</code></li></ol></article>
+        <article class="info-card"><h3>Livello 4</h3><ol><li>Descrivi le tre componenti di <code>#00FFFF</code>.</li><li>Costruisci il codice con rosso 0, verde 0 e blu 255.</li></ol></article>
+      </div>
+      <div class="self-check">
+        <details><summary>Soluzioni dell'attività autonoma</summary><p><strong>Livello 1:</strong> <code>E₁₆ = 14₁₀</code>; <code>24₁₆ = 36₁₀</code>.</p><p><strong>Livello 2:</strong> <code>46₁₀ = 2E₁₆</code>; <code>156₁₀ = 9C₁₆</code>.</p><p><strong>Livello 3:</strong> <code>1110 0011₂ = E3₁₆</code>; <code>5D₁₆ = 0101 1101₂</code>; <code>111101₂ = 0011 1101₂ = 3D₁₆</code>.</p><p><strong>Livello 4:</strong> <code>#00FFFF</code> ha rosso 0, verde 255 e blu 255 (ciano). Rosso 0, verde 0 e blu 255 si scrive <code>#0000FF</code>.</p></details>
+      </div>
+    </section>
+
+    <section class="quiz" aria-labelledby="autoverifica">
+      <h2 id="autoverifica">🧠 Autoverifica finale</h2>
+      <div class="self-check">
+        <details><summary>1. Quali cifre usa il sistema esadecimale?</summary><p>Usa 0–9 e A–F. Le lettere A–F rappresentano i valori decimali 10–15.</p></details>
+        <details><summary>2. Quanto vale <code>3F₁₆</code> in decimale?</summary><p><code>(3 × 16) + 15 = 63</code>, quindi <code>3F₁₆ = 63₁₀</code>.</p></details>
+        <details><summary>3. Perché quattro bit corrispondono a una cifra esadecimale?</summary><p>Quattro bit producono 16 combinazioni, da 0000 a 1111, esattamente quante sono le cifre della base 16.</p></details>
+        <details><summary>4. Converti <code>1011 0100₂</code>.</summary><p><code>1011 = B</code> e <code>0100 = 4</code>: <code>1011 0100₂ = B4₁₆</code>.</p></details>
+        <details><summary>5. Perché l'esadecimale è utile in informatica?</summary><p>Rappresenta sequenze binarie in modo più breve e leggibile mantenendo una corrispondenza diretta con gruppi di quattro bit.</p></details>
+      </div>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header"><p class="eyebrow">Sintesi essenziale</p><h2 id="zaino-studente">🎒 Lo zaino dello studente</h2><p>Le idee da ricostruire senza consultare la pagina.</p></div>
+      <div class="student-backpack-grid">
+        <article class="backpack-card"><h3>✅ Cifre</h3><p>Base 16: 0–9 e A–F.</p></article>
+        <article class="backpack-card"><h3>🧩 Corrispondenza</h3><p>4 bit = 1 nibble = 1 cifra esadecimale.</p></article>
+        <article class="backpack-card"><h3>💾 Byte</h3><p>8 bit = 1 byte = 2 cifre esadecimali.</p></article>
+        <article class="backpack-card"><h3>🎤 Spiegazione</h3><p>Mostra <code>1101 0110₂ = D6₁₆</code> e spiega perché la scrittura è più compatta.</p></article>
+      </div>
+    </section>
+
+    <section class="next-lesson" aria-labelledby="prossima-lezione">
+      <p class="eyebrow">Nella prossima lezione</p><h2 id="prossima-lezione">Codifica dei caratteri</h2><p>Abbiamo visto come rappresentare numeri binari in forma compatta. Scopriremo come associare numeri a lettere, simboli e caratteri mediante codici condivisi come ASCII e Unicode.</p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../12-sicurezza-informatica/index.html">← Lezione 12 — Sicurezza informatica</a>
+      <a href="../../index.html">Torna all'indice</a>
+      <a href="../14-codifica-dei-caratteri/index.html">Lezione 14 — Codifica dei caratteri →</a>
+    </nav>
+  </main>
+  <footer class="course-footer"><div class="container narrow"><p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p><p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p></div></footer>
+  <script>
+    (() => {
+      const inputs = [...document.querySelectorAll('.hex-input')];
+      const codeOutput = document.getElementById('hexColor');
+      const preview = document.getElementById('colorPreview');
+      const previewText = document.getElementById('colorPreviewText');
+      const rgbOutput = document.getElementById('rgbValues');
+      const error = document.getElementById('color-error');
+
+      function updateColor() {
+        const values = inputs.map((input) => input.value.toUpperCase());
+        const valid = values.every((value) => /^[0-9A-F]{2}$/.test(value));
+
+        inputs.forEach((input) => input.setAttribute('aria-invalid', String(!/^[0-9A-F]{2}$/.test(input.value))));
+        error.hidden = valid;
+        if (!valid) return;
+
+        const color = `#${values.join('')}`;
+        const decimals = values.map((value) => Number.parseInt(value, 16));
+        const brightness = (decimals[0] * 299 + decimals[1] * 587 + decimals[2] * 114) / 1000;
+
+        codeOutput.innerHTML = `<code>${color}</code>`;
+        preview.style.backgroundColor = color;
+        preview.style.color = brightness > 140 ? '#000000' : '#ffffff';
+        preview.setAttribute('aria-label', `Campione del colore ${color}`);
+        previewText.textContent = color;
+        rgbOutput.innerHTML = `<strong>Valori decimali:</strong> R = ${decimals[0]}, G = ${decimals[1]}, B = ${decimals[2]}.`;
+      }
+
+      inputs.forEach((input) => {
+        input.addEventListener('input', () => {
+          input.value = input.value.replace(/[^0-9a-f]/gi, '').toUpperCase().slice(0, 2);
+          updateColor();
+        });
+        input.addEventListener('blur', () => {
+          if (input.value.length === 1) input.value = `0${input.value}`;
+          updateColor();
+        });
+      });
+
+      updateColor();
+    })();
+  </script>
+</body>
+</html>
