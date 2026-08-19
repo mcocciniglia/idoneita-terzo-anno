@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lezione sincrona guidata su AND, OR, NOT, condizioni composte e selezioni annidate in Flowgorithm.">
+  <title>2.06 Online — Condizioni composte e selezioni annidate</title>
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line" aria-label="Identificazione del percorso">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge second">Versione online</span>
+        </div>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle" class="btn btn-theme" type="button" aria-pressed="false" aria-label="Cambia tema"><span class="btn-label">Tema</span></button>
+          <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button" aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">Contrasto alto ☀️</button>
+        </div>
+      </div>
+      <nav class="breadcrumb" aria-label="Percorso"><span>Idoneità alla classe terza</span><span aria-hidden="true">›</span><span>Lezioni online</span><span aria-hidden="true">›</span><span>2.06 Online</span></nav>
+      <p class="eyebrow">Lezione speciale · Durata prevista: circa 2 ore</p>
+      <h1>2.06 Online — Condizioni composte e selezioni annidate</h1>
+      <p class="lead">Lezione sincrona guidata — AND, OR, NOT e decisioni dentro altre decisioni</p>
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione"><span>⏱️ Circa 2 ore</span><span>💻 Attività sincrona</span><span>🎯 Prerequisito: Lezione 2.05</span></div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <aside class="callout warning" aria-labelledby="nota-versione">
+      <div class="callout-icon" aria-hidden="true">📡</div>
+      <div><p class="callout-label">Versione online</p><h2 id="nota-versione">Una guida per lavorare insieme in videolezione</h2><p>Questa pagina accompagna un'attività sincrona e non sostituisce la futura Lezione 2.06 canonica del corso. Fermati alle domande e rispondi prima di aprire le soluzioni.</p></div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="tempi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">⏱️</span><h2 id="tempi">La strada di oggi</h2></div>
+      <p>Otto tappe brevi, con una pausa dopo il primo laboratorio.</p>
+      <aside class="callout tip" aria-labelledby="tempi-indicativi">
+        <div class="callout-icon" aria-hidden="true">🧭</div>
+        <div><p class="callout-label">Possiamo rallentare</p><h3 id="tempi-indicativi">I tempi sono indicativi</h3><p>Se un'attività richiede più tempo, ci fermiamo e riprendiamo da lì: capire bene è più importante che arrivare alla fine della pagina.</p></div>
+      </aside>
+      <div class="card-grid">
+        <article class="info-card"><h3>0–10 minuti</h3><p>Ripartiamo dalla 2.05.</p></article>
+        <article class="info-card"><h3>10–30 minuti</h3><p>Scopriamo AND, OR e NOT.</p></article>
+        <article class="info-card"><h3>30–55 minuti</h3><p>Primo laboratorio Flowgorithm.</p></article>
+        <article class="info-card"><h3>55–60 minuti</h3><p>Pausa di 5 minuti.</p></article>
+        <article class="info-card"><h3>60–80 minuti</h3><p>Una decisione dentro un'altra.</p></article>
+        <article class="info-card"><h3>80–105 minuti</h3><p>Adesso guidi tu.</p></article>
+        <article class="info-card"><h3>105–115 minuti</h3><p>Raccontami il diagramma.</p></article>
+        <article class="info-card"><h3>115–120 minuti</h3><p>Autoverifica finale.</p></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎯</span><h2 id="obiettivi">Il traguardo</h2></div>
+      <p>Oggi conta soprattutto capire, prevedere e spiegare a voce.</p>
+      <div class="objective-grid">
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Spiegare</strong><small>AND, OR e il significato essenziale di NOT.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Valutare</strong><small>Semplici condizioni composte.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Riconoscere</strong><small>Una selezione dentro un'altra.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Seguire</strong><small>Il percorso di un dato nel diagramma.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Prevedere</strong><small>L'output prima dell'esecuzione.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Raccontare</strong><small>Un algoritmo Flowgorithm con parole proprie.</small></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="richiamo">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔄</span><h2 id="richiamo">0–10 minuti — Ripartiamo dalla 2.05</h2></div>
+      <p>Nella lezione precedente una condizione permetteva di scegliere tra il ramo vero e il ramo falso.</p>
+      <aside class="callout tip" aria-labelledby="prima-rispondi">
+        <div class="callout-icon" aria-hidden="true">🗣️</div>
+        <div><p class="callout-label">Prima di continuare</p><h3 id="prima-rispondi">Prova a rispondere a voce</h3><ol><li>Che cosa significa che una condizione è vera?</li><li>In una selezione doppia, quanti percorsi sono possibili?</li><li>Se <code>numero &gt; 10</code> è falso, quale ramo viene seguito?</li><li>Qual è la differenza tra sequenza e selezione?</li></ol></div>
+      </aside>
+      <details><summary>Controlla le risposte</summary><ol><li>La condizione è vera quando il dato la rende verificata.</li><li>I percorsi possibili sono due, ma in ogni esecuzione se ne segue uno solo.</li><li>Viene seguito il ramo falso.</li><li>La sequenza esegue tutti i passi in ordine; la selezione sceglie un percorso.</li></ol></details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="and">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔗</span><h2 id="and">10–20 minuti — Due richieste insieme: AND</h2></div>
+      <p>Per partecipare a un'attività occorre avere almeno 14 anni <strong>e</strong> essere alti almeno 150 cm.</p>
+      <pre><code>eta &gt;= 14 AND altezza &gt;= 150</code></pre>
+      <p><strong>Prima di continuare:</strong> per ogni caso, di' se la persona può partecipare e spiega perché.</p>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Casi concreti per scoprire AND</caption>
+          <thead><tr><th scope="col">Età</th><th scope="col">Altezza</th><th scope="col">La prima richiesta?</th><th scope="col">La seconda richiesta?</th></tr></thead>
+          <tbody><tr><td>15 anni</td><td>160 cm</td><td>Rispettata</td><td>Rispettata</td></tr><tr><td>15 anni</td><td>145 cm</td><td>Rispettata</td><td>Non rispettata</td></tr><tr><td>13 anni</td><td>160 cm</td><td>Non rispettata</td><td>Rispettata</td></tr></tbody>
+        </table>
+      </div>
+      <details><summary>Scopri la regola di AND</summary><p>Può partecipare soltanto il primo caso. <strong>AND significa che devono essere vere entrambe le condizioni.</strong> Se anche una sola è falsa, tutta la condizione composta è falsa.</p></details>
+      <div class="definition"><span class="definition-term">AND</span><p>Collega due condizioni e produce vero soltanto quando entrambe sono vere.</p></div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="or">
+      <div class="section-heading"><span class="icon" aria-hidden="true">↔️</span><h2 id="or">20–27 minuti — Basta una possibilità: OR</h2></div>
+      <p>È prevista una riduzione per chi ha meno di 18 anni <strong>oppure</strong> almeno 65 anni.</p>
+      <pre><code>eta &lt; 18 OR eta &gt;= 65</code></pre>
+      <p><strong>Prima di continuare:</strong> prova le età 16, 30 e 70. Chi riceve la riduzione?</p>
+      <details><summary>Controlla i tre casi</summary><ul><li>16 anni: sì, perché <code>eta &lt; 18</code> è vera.</li><li>30 anni: no, perché entrambe le condizioni sono false.</li><li>70 anni: sì, perché <code>eta &gt;= 65</code> è vera.</li></ul></details>
+      <div class="definition"><span class="definition-term">OR</span><p>Collega due condizioni e produce vero quando almeno una delle due è vera.</p></div>
+      <aside class="callout remember" aria-labelledby="and-or-essenziale">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div><p class="callout-label">Dillo con parole tue</p><h3 id="and-or-essenziale">La differenza essenziale</h3><p><strong>AND:</strong> servono entrambe. <strong>OR:</strong> ne basta almeno una.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="not">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔁</span><h2 id="not">27–30 minuti — Cambiare vero in falso: NOT</h2></div>
+      <p>Partiamo da una condizione relazionale che conosci già:</p>
+      <pre><code>numero &gt; 10</code></pre>
+      <p>Prima viene valutata questa condizione. Poi <code>NOT</code> ne capovolge il risultato:</p>
+      <pre><code>NOT (numero &gt; 10)</code></pre>
+      <p>Se la prima condizione è falsa, con <code>NOT</code> diventa vera. Se la prima condizione è vera, con <code>NOT</code> diventa falsa.</p>
+      <p><strong>Domanda lampo:</strong> se <code>numero</code> vale <code>7</code>, quanto vale <code>numero &gt; 10</code>? E quanto vale <code>NOT (numero &gt; 10)</code>?</p>
+      <details><summary>Controlla la risposta</summary><p><code>numero &gt; 10</code> è falsa; <code>NOT (numero &gt; 10)</code> è vera.</p></details>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio-and">
+      <div class="lab-header"><h2 id="laboratorio-and">30–55 minuti — Primo laboratorio Flowgorithm</h2></div>
+      <div class="lab-body">
+        <p><strong>Problema:</strong> leggere età e altezza di una persona. Mostrare <q>Puoi partecipare</q> se ha almeno 14 anni e un'altezza di almeno 150 cm; altrimenti mostrare <q>Requisiti non soddisfatti</q>.</p>
+        <ol class="steps">
+          <li><strong>Leggi il problema.</strong><p>Individua il risultato che il programma deve comunicare.</p></li>
+          <li><strong>Trova gli input.</strong><p>Di' i nomi e i tipi delle due variabili.</p></li>
+          <li><strong>Formula la condizione.</strong><p>Scrivila sul quaderno prima di aprire un blocco decisionale.</p></li>
+          <li><strong>Prevedi.</strong><p>Decidi il risultato atteso per 15 e 160, per 15 e 145, per 13 e 160.</p></li>
+          <li><strong>Costruisci il diagramma.</strong><p>Inserisci un blocco alla volta e spiega a voce che cosa stai aggiungendo.</p></li>
+          <li><strong>Fermati prima dell'esecuzione.</strong><p>Segui con il dito il ramo previsto per il primo caso.</p></li>
+          <li><strong>Prova i tre dati.</strong><p>Esegui il diagramma e confronta ogni risultato con la previsione.</p></li>
+        </ol>
+        <details><summary>Indizio 1 — Quali dati servono?</summary><p>Servono <code>eta</code> e <code>altezza</code>. Puoi dichiararle come <code>Integer</code>.</p></details>
+        <details><summary>Indizio 2 — Qual è la condizione?</summary><p>Usa <code>eta &gt;= 14 AND altezza &gt;= 150</code>.</p></details>
+        <details><summary>Controlla la struttura soltanto alla fine</summary><pre><code>LEGGI eta
+LEGGI altezza
+SE eta &gt;= 14 AND altezza &gt;= 150 ALLORA
+  SCRIVI "Puoi partecipare"
+ALTRIMENTI
+  SCRIVI "Requisiti non soddisfatti"
+FINE SE</code></pre><p>Il primo caso segue il ramo vero. Gli altri due seguono il ramo falso.</p></details>
+      </div>
+    </section>
+
+    <aside class="callout curiosity" aria-labelledby="pausa">
+      <div class="callout-icon" aria-hidden="true">☕</div>
+      <div><p class="callout-label">55–60 minuti</p><h2 id="pausa">Pausa — 5 minuti</h2><p>Allontana lo sguardo dallo schermo, muoviti un poco e torna tra cinque minuti.</p></div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="annidate">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🪆</span><h2 id="annidate">60–80 minuti — Una decisione dentro un'altra</h2></div>
+      <p>Vogliamo classificare un numero come positivo, negativo oppure zero. Una sola domanda offre soltanto due rami, quindi nel ramo falso facciamo una seconda domanda.</p>
+      <pre><code>SE numero &gt; 0 ALLORA
+  SCRIVI "positivo"
+ALTRIMENTI
+  SE numero &lt; 0 ALLORA
+    SCRIVI "negativo"
+  ALTRIMENTI
+    SCRIVI "zero"
+  FINE SE
+FINE SE</code></pre>
+      <div class="definition"><span class="definition-term">Selezione annidata</span><p>Una decisione che viene presa all'interno di un ramo di un'altra decisione.</p></div>
+      <p><strong>Prima di continuare:</strong> segui il percorso di ogni dato. Rispondi sempre alle cinque domande: qual è la prima condizione, è vera o falsa, quale ramo seguiamo, incontriamo un'altra condizione, quale output otteniamo?</p>
+      <div class="self-check">
+        <details><summary>Segui il percorso di <code>8</code></summary><ol><li>La prima domanda è <code>numero &gt; 0</code>.</li><li>Con 8 è vera.</li><li>Seguiamo il ramo vero.</li><li>Non incontriamo la seconda condizione.</li><li>L'output è <q>positivo</q>.</li></ol></details>
+        <details><summary>Segui il percorso di <code>-3</code></summary><ol><li>La prima domanda è <code>numero &gt; 0</code>.</li><li>Con -3 è falsa e seguiamo il ramo falso.</li><li>Incontriamo <code>numero &lt; 0</code>.</li><li>La seconda condizione è vera.</li><li>L'output è <q>negativo</q>.</li></ol></details>
+        <details><summary>Segui il percorso di <code>0</code></summary><ol><li>La prima condizione è falsa e seguiamo il ramo falso.</li><li>Incontriamo <code>numero &lt; 0</code>.</li><li>Anche la seconda condizione è falsa.</li><li>Seguiamo il suo ramo falso.</li><li>L'output è <q>zero</q>.</li></ol></details>
+      </div>
+      <aside class="callout warning" aria-labelledby="una-domanda-volta">
+        <div class="callout-icon" aria-hidden="true">⚠️</div>
+        <div><p class="callout-label">Strategia</p><h3 id="una-domanda-volta">Una domanda alla volta</h3><p>Non saltare subito all'output. Valuta la prima condizione e segui soltanto il ramo scelto. Valuta una seconda condizione solo se il percorso la incontra.</p></div>
+      </aside>
+    </section>
+
+    <section class="lab" aria-labelledby="adesso-guidi-tu">
+      <div class="lab-header"><h2 id="adesso-guidi-tu">80–105 minuti — Adesso guidi tu</h2></div>
+      <div class="lab-body">
+        <p><strong>Condividi lo schermo e prendi la guida.</strong> Il docente darà soltanto gli indizi necessari.</p>
+        <p><strong>Problema:</strong> un'attività prevede accesso avanzato per chi ha almeno 14 anni e un punteggio di almeno 9; accesso base per chi ha almeno 14 anni e un punteggio da 6 a meno di 9; negli altri casi i requisiti non sono soddisfatti.</p>
+        <ol class="steps">
+          <li><strong>Leggi il problema.</strong><p>Non costruire ancora nulla.</p></li>
+          <li><strong>Dimmi quali dati servono.</strong><p>Scegli nome e tipo delle variabili.</p></li>
+          <li><strong>Dimmi la prima domanda.</strong><p>Deve controllare insieme età e punteggio minimo.</p></li>
+          <li><strong>Inserisci i primi blocchi.</strong><p>Crea dichiarazioni, input e prima selezione.</p></li>
+          <li><strong>Fermati.</strong><p>Spiega che cosa sappiamo quando il primo ramo è vero.</p></li>
+          <li><strong>Prevedi il comportamento.</strong><p>Che cosa manca per distinguere accesso base e avanzato?</p></li>
+          <li><strong>Completa il diagramma.</strong><p>Inserisci la seconda decisione nel ramo corretto.</p></li>
+          <li><strong>Scegli tre dati di prova.</strong><p>Devono raggiungere i tre output possibili.</p></li>
+          <li><strong>Di' il risultato previsto.</strong><p>Fallo prima di ogni esecuzione.</p></li>
+          <li><strong>Esegui.</strong><p>Prova il diagramma in Flowgorithm.</p></li>
+          <li><strong>Confronta.</strong><p>Per ogni prova, spiega se risultato previsto e risultato reale coincidono.</p></li>
+        </ol>
+        <details><summary>Indizio 1 — La prima condizione</summary><p>Puoi usare <code>eta &gt;= 14 AND punteggio &gt;= 6</code>. Se è falsa, l'output è <q>Requisiti non soddisfatti</q>.</p></details>
+        <details><summary>Indizio 2 — La decisione interna</summary><p>Nel ramo vero chiedi se <code>punteggio &gt;= 9</code>. Il ramo vero produce <q>Accesso avanzato</q>; quello falso produce <q>Accesso base</q>.</p></details>
+        <details><summary>Controlla tre possibili prove</summary><ul><li>Età 15, punteggio 9 → Accesso avanzato.</li><li>Età 15, punteggio 7 → Accesso base.</li><li>Età 13, punteggio 10 → Requisiti non soddisfatti.</li></ul></details>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="raccontami">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎤</span><h2 id="raccontami">105–115 minuti — Raccontami il diagramma</h2></div>
+      <p>Non eseguire il diagramma in Flowgorithm. Osservalo e prova a raccontare a voce cosa succede, seguendo il flusso dall'alto verso il basso.</p>
+      <figure class="lesson-figure lesson-figure-wide">
+        <img src="sample.png"
+             alt="Diagramma Flowgorithm che dichiara e legge il numero; se il numero è uguale a zero scrive zero, altrimenti controlla se è maggiore di zero e minore o uguale a 10, scrivendo Positivo tra 1 e 10 se la condizione è vera oppure Fuori intervallo se è falsa."
+             width="2605" height="1989" loading="lazy" decoding="async">
+        <figcaption>Osserva il diagramma senza eseguirlo e prova a prevederne il comportamento.</figcaption>
+      </figure>
+      <aside class="callout exam" aria-labelledby="traccia-racconto">
+        <div class="callout-icon" aria-hidden="true">🎓</div>
+        <div><p class="callout-label">Traccia per l'orale</p><h3 id="traccia-racconto">Spiegalo senza saltare passaggi</h3><ol><li>Quale dato riceve?</li><li>Qual è la prima condizione?</li><li>Che cosa accade se è vera?</li><li>Che cosa accade se è falsa?</li><li>C'è una seconda decisione?</li><li>Quali risultati può produrre?</li></ol></div>
+      </aside>
+      <details><summary>Ascolta, poi confronta con questa spiegazione</summary><p>Il diagramma dichiara un numero intero e ne legge il valore. Prima controlla se il numero è uguale a zero. Se la condizione è vera, scrive <q>zero</q>. Se è falsa, controlla se il numero è maggiore di zero e minore o uguale a 10. Se entrambe le parti sono vere, scrive <q>Positivo tra 1 e 10</q>; altrimenti scrive <q>Fuori intervallo</q>.</p></details>
+    </section>
+
+    <section class="quiz" aria-labelledby="autoverifica">
+      <h2 id="autoverifica">115–120 minuti — Autoverifica finale</h2>
+      <p>Rispondi prima di aprire ogni soluzione.</p>
+      <div class="self-check">
+        <details><summary>Con AND, quante condizioni devono essere vere?</summary><p>Devono essere vere entrambe.</p></details>
+        <details><summary>Con OR, è necessario che siano vere entrambe?</summary><p>No. È sufficiente che almeno una sia vera.</p></details>
+        <details><summary>Che cosa fa NOT?</summary><p>Capovolge il valore logico di una condizione: vero diventa falso e falso diventa vero.</p></details>
+        <details><summary>Che cosa significa “selezione annidata”?</summary><p>È una decisione inserita all'interno di un ramo di un'altra decisione.</p></details>
+        <details><summary>Come puoi seguire il percorso di un dato senza eseguire il programma?</summary><p>Parti dall'input, valuta una condizione alla volta e segui soltanto il ramo corrispondente fino all'output.</p></details>
+      </div>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header"><p class="eyebrow">Conclusione</p><h2 id="zaino-studente">🎒 Porta con te queste idee</h2><p>La comprensione del percorso conta più della memoria.</p></div>
+      <div class="student-backpack-grid">
+        <article class="backpack-card"><h3>Regole essenziali</h3><ol class="essential-list"><li>Con AND devono essere vere entrambe le condizioni.</li><li>Con OR basta che almeno una sia vera.</li><li>NOT capovolge vero e falso.</li><li>Una selezione annidata è una decisione dentro un'altra.</li><li>Prima si prevede, poi si esegue e si confronta.</li></ol></article>
+        <article class="backpack-card"><h3>Parole chiave</h3><ul class="keyword-list"><li>condizione composta</li><li>AND</li><li>OR</li><li>NOT</li><li>selezione annidata</li><li>previsione</li><li>percorso</li></ul></article>
+        <article class="backpack-card"><h3>Controllo rapido</h3><ol><li>Quale condizione viene valutata?</li><li>È vera o falsa?</li><li>Quale ramo seguo?</li><li>Incontro un'altra decisione?</li><li>Qual è l'output?</li></ol></article>
+        <article class="backpack-card"><h3>Spiegazione in 2 minuti</h3><p>Descrivi a voce la differenza tra AND e OR, poi inventa un esempio di decisione dentro un'altra.</p></article>
+      </div>
+    </section>
+
+    <section class="next-lesson" aria-labelledby="prossimo-passo">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2 id="prossimo-passo">Consolidare il flusso delle decisioni</h2>
+      <p>Questa attività online prepara la futura Lezione 2.06 canonica. La capacità di prevedere e raccontare un percorso sarà utile anche nelle lezioni successive.</p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione della lezione speciale">
+      <a href="../../secondo-anno/05-prendere-decisioni-la-selezione/index.html">← Lezione 2.05 — Prendere decisioni</a>
+      <a href="../../index.html#secondo-anno">Torna all'indice</a>
+      <a href="../../secondo-anno/06-condizioni-composte-e-selezioni-annidate/index.html">Lezione 2.06 canonica (in preparazione) →</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+    </div>
+  </footer>
+</body>
+</html>
