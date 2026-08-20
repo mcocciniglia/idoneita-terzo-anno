@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lezione ponte sul sistema operativo e sulle relazioni tra programmi, CPU, RAM, periferiche, file, cartelle, interfacce e avvio del computer.">
+  <title>R02 — Il sistema operativo: dal computer ai file</title>
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge first">Lezione ponte</span>
+        </div>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle" class="btn btn-theme" type="button" aria-pressed="false" aria-label="Cambia tema"><span class="btn-label">Tema</span></button>
+          <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button" aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">Contrasto alto ☀️</button>
+        </div>
+      </div>
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span><span aria-hidden="true">›</span><span>Lezioni ponte</span><span aria-hidden="true">›</span><span>R02</span>
+      </nav>
+      <p class="eyebrow">R02 · Raccordo e consolidamento · Durata prevista: 2 ore</p>
+      <h1>Il sistema operativo: dal computer ai file</h1>
+      <p class="lead">Programmi, memoria, periferiche, file, cartelle e interfacce.</p>
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ Circa 2 ore</span><span>🌉 Lezione ponte</span><span>🎯 Collegare concetti già studiati</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <aside class="callout remember" aria-labelledby="domanda-guida">
+      <div class="callout-icon" aria-hidden="true">🔎</div>
+      <div>
+        <p class="callout-label">Partiamo da una domanda</p>
+        <h2 id="domanda-guida">Accendo il computer, apro Flowgorithm e salvo un diagramma. Chi rende possibili tutte queste operazioni?</h2>
+        <p>Hardware e programma non lavorano da soli. Serve un software fondamentale che coordini le risorse e permetta all'utente di utilizzarle: il <strong>sistema operativo</strong>.</p>
+      </div>
+    </aside>
+
+    <aside class="callout tip" aria-labelledby="come-usare">
+      <div class="callout-icon" aria-hidden="true">🧭</div>
+      <div>
+        <p class="callout-label">Percorso essenziale</p>
+        <h2 id="come-usare">Come usare questa lezione ponte</h2>
+        <p>Non è necessario svolgere tutte le sezioni in un unico incontro. Il percorso principale viene affrontato per primo; gli approfondimenti e i laboratori facoltativi possono essere ripresi durante il ripasso.</p>
+        <p><strong>L'obiettivo è collegare bene i concetti, non arrivare necessariamente alla fine della pagina.</strong></p>
+        <ol>
+          <li>Che cosa fa il sistema operativo.</li>
+          <li>Memoria di massa, RAM e CPU.</li>
+          <li>Gestione delle periferiche.</li>
+          <li>File system.</li>
+          <li>File, cartelle e percorsi.</li>
+          <li>GUI e linea di comando.</li>
+          <li>Collegamento finale tra tutti gli elementi.</li>
+        </ol>
+      </div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="richiamo">
+      <div class="section-heading"><span class="icon" aria-hidden="true">↩️</span><h2 id="richiamo">Da R01 al computer che stiamo usando</h2></div>
+      <p>Nella precedente lezione ponte abbiamo seguito una richiesta dal browser al server Web. Il browser è un programma e usa la rete attraverso l'hardware del computer.</p>
+      <p>Ora guardiamo ciò che tiene insieme il lavoro: il sistema operativo coordina programma, memoria, CPU, periferiche e file. È il raccordo tra concetti già incontrati nelle lezioni del primo anno.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎯</span><h2 id="obiettivi">Obiettivi della lezione</h2></div>
+      <div class="objective-grid">
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Spiegare il ruolo del S.O.</strong><small>Tra utente, programmi e hardware.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Collegare SSD, RAM e CPU</strong><small>Seguendo un programma che viene avviato.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Riconoscere file e cartelle</strong><small>Dentro una struttura gerarchica.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Leggere un percorso</strong><small>Individuando unità, cartelle, nome ed estensione.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Distinguere GUI e CLI</strong><small>Due modi di interagire con il sistema.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Ricostruire il boot</strong><small>Con una sequenza fortemente semplificata.</small></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ruolo-so">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🌉</span><h2 id="ruolo-so">Che cosa fa il sistema operativo?</h2></div>
+      <p>Quando apri Flowgorithm non devi dire alla CPU come leggere ogni istruzione, né spiegare al monitor come disegnare ogni punto. Il sistema operativo offre ai programmi i servizi necessari.</p>
+      <div class="definition">
+        <span class="definition-term">Sistema operativo</span>
+        <p>Il software fondamentale che permette ai programmi e all'utente di utilizzare l'hardware e gestisce risorse come CPU, memoria, periferiche e file.</p>
+      </div>
+      <figure class="lesson-figure lesson-figure-wide">
+        <img src="hwsw.png"
+             alt="Infografica che presenta il sistema operativo come collegamento tra utente, programmi e hardware e riassume la gestione di CPU, RAM, memoria di massa e periferiche."
+             width="1536" height="1024" loading="lazy" decoding="async">
+        <figcaption>Il sistema operativo coordina i programmi e le principali risorse hardware del computer.</figcaption>
+      </figure>
+      <p><strong>La mappa è semplificata:</strong> mostra i collegamenti essenziali, non tutti gli scambi reali.</p>
+      <p>Windows, Linux e macOS sono sistemi operativi per computer. Android è un esempio vicino all'esperienza quotidiana sui dispositivi mobili.</p>
+      <aside class="callout remember" aria-labelledby="due-idee">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div><p class="callout-label">Due idee fondamentali</p><h3 id="due-idee">Gestire e rendere utilizzabile</h3><ol><li>Il sistema operativo gestisce le risorse del computer.</li><li>Permette a utenti e programmi di usarle senza conoscere direttamente tutti i dettagli dell'hardware.</li></ol></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="compiti">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🧩</span><h2 id="compiti">Chi gestisce che cosa?</h2></div>
+      <div class="card-grid">
+        <article class="info-card"><h3>CPU</h3><p>Il sistema operativo organizza l'esecuzione dei programmi che chiedono di usare il processore.</p></article>
+        <article class="info-card"><h3>RAM</h3><p>Assegna lo spazio necessario ai programmi e ai dati mentre vengono utilizzati.</p></article>
+        <article class="info-card"><h3>Periferiche</h3><p>Coordina la comunicazione con tastiera, mouse, monitor, stampante e altri dispositivi.</p></article>
+        <article class="info-card"><h3>Memorie di massa</h3><p>Organizza dati e programmi in file e cartelle attraverso il file system.</p></article>
+      </div>
+      <p><strong>Prima di continuare:</strong> se due programmi vogliono utilizzare contemporaneamente le risorse del computer, chi coordina tutto?</p>
+      <details><summary>Controlla la risposta</summary><p>Il sistema operativo coordina l'accesso alle risorse e permette ai programmi di utilizzarle in modo organizzato.</p></details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="dal-disco-alla-cpu">
+      <div class="section-heading"><span class="icon" aria-hidden="true">▶️</span><h2 id="dal-disco-alla-cpu">Dal disco alla RAM, poi alla CPU</h2></div>
+      <p><strong>Dove si trova Flowgorithm quando il computer è spento? E dove deve essere portato per poter funzionare?</strong></p>
+      <div class="process-flow" role="img" aria-label="Il programma passa dalla memoria di massa alla RAM, quindi le sue istruzioni vengono eseguite dalla CPU">
+        <div class="process-node"><strong>SSD o HDD</strong><span>Conserva il programma</span></div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node"><strong>RAM</strong><span>Mantiene ciò che è in uso</span></div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-node"><strong>CPU</strong><span>Esegue le istruzioni</span></div>
+      </div>
+      <ol class="steps">
+        <li><strong>Il programma è archiviato.</strong><p>Quando il computer è spento, Flowgorithm rimane sulla memoria di massa.</p></li>
+        <li><strong>Il programma viene avviato.</strong><p>Il sistema operativo carica in RAM ciò che serve per utilizzarlo.</p></li>
+        <li><strong>La CPU esegue.</strong><p>La CPU lavora sulle istruzioni e sui dati disponibili in memoria.</p></li>
+        <li><strong>Il sistema operativo coordina.</strong><p>Gestisce il passaggio e l'uso delle risorse coinvolte.</p></li>
+      </ol>
+      <aside class="callout remember" aria-labelledby="memorie-diverse">
+        <div class="callout-icon" aria-hidden="true">🧠</div>
+        <div><p class="callout-label">Collegamento alle lezioni 07 e 08</p><h3 id="memorie-diverse">Conservare, lavorare, eseguire</h3><p>SSD o HDD conservano; la RAM mantiene temporaneamente ciò che è in uso; la CPU esegue le istruzioni.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="kernel-processo">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔎</span><h2 id="kernel-processo">Approfondimento — due parole utili da riconoscere</h2></div>
+      <details>
+        <summary>Un passo in più: kernel e processo</summary>
+        <p>Quando avvii un programma, il sistema operativo deve seguirne l'esecuzione e coordinare le risorse che gli servono.</p>
+        <div class="card-grid">
+          <article class="info-card"><h3>Kernel</h3><p>È la parte centrale del sistema operativo. Lavora più vicino all'hardware e coordina risorse fondamentali.</p></article>
+          <article class="info-card"><h3>Processo</h3><p>È un programma mentre viene eseguito e viene gestito dal sistema operativo.</p></article>
+        </div>
+        <aside class="callout tip" aria-labelledby="metafora-direttore">
+          <div class="callout-icon" aria-hidden="true">🚦</div>
+          <div><p class="callout-label">Una metafora</p><h3 id="metafora-direttore">Il kernel come coordinatore</h3><p>Possiamo immaginarlo come chi regola l'accesso a risorse condivise. È soltanto una metafora: il kernel è software, non una persona né un dispositivo.</p></div>
+        </aside>
+      </details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="periferiche">
+      <div class="section-heading"><span class="icon" aria-hidden="true">⌨️</span><h2 id="periferiche">Il sistema operativo e le periferiche</h2></div>
+      <p>Quando premi un tasto o Flowgorithm mostra un risultato sul monitor, il programma deve comunicare con una periferica. Il sistema operativo rende possibile questa comunicazione, anche attraverso software specifici chiamati <strong>driver</strong>.</p>
+      <div class="card-grid">
+        <article class="info-card"><h3>Input</h3><p>Tastiera, mouse e webcam inviano dati al computer.</p></article>
+        <article class="info-card"><h3>Output</h3><p>Monitor e stampante ricevono risultati dal computer.</p></article>
+      </div>
+      <aside class="callout tip" aria-labelledby="coda-stampa">
+        <div class="callout-icon" aria-hidden="true">🖨️</div>
+        <div><p class="callout-label">Esempio concreto</p><h3 id="coda-stampa">La coda di stampa</h3><p>Più programmi possono chiedere di stampare. Il sistema operativo organizza i lavori e li invia alla stampante nell'ordine previsto.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="file-system">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🗂️</span><h2 id="file-system">File system: organizzare la memoria di massa</h2></div>
+      <p>Una memoria di massa contiene molti dati. Per trovarli e gestirli non basta conservarli: occorre organizzarli.</p>
+      <div class="definition"><span class="definition-term">File system</span><p>Il sistema usato dal sistema operativo per organizzare e gestire file e cartelle su una memoria di massa.</p></div>
+      <div class="card-grid">
+        <article class="info-card"><h3>File</h3><p>Un insieme di dati conservato con un nome.</p></article>
+        <article class="info-card"><h3>Cartella o directory</h3><p>Un contenitore che organizza file e altre cartelle.</p></article>
+        <article class="info-card"><h3>Sottocartella</h3><p>Una cartella contenuta all'interno di un'altra.</p></article>
+        <article class="info-card"><h3>Struttura gerarchica</h3><p>Un'organizzazione a livelli, simile ai rami di un albero.</p></article>
+      </div>
+      <p>Attraverso il sistema operativo possiamo <strong>creare, copiare, spostare, rinominare ed eliminare</strong> file e cartelle. Qui ci interessa l'organizzazione logica, non la posizione fisica dei dati sul dispositivo.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="nome-estensione">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🏷️</span><h2 id="nome-estensione">File, nome ed estensione</h2></div>
+      <p>L'estensione aiuta a riconoscere il formato di un file e il programma con cui normalmente può essere aperto.</p>
+      <div class="card-grid">
+        <article class="info-card"><h3><code>relazione.pdf</code></h3><p>Nome: <code>relazione</code><br>Estensione: <code>.pdf</code></p></article>
+        <article class="info-card"><h3><code>foto.jpg</code></h3><p>Nome: <code>foto</code><br>Estensione: <code>.jpg</code></p></article>
+        <article class="info-card"><h3><code>diagramma.fprg</code></h3><p>Nome: <code>diagramma</code><br>Estensione: <code>.fprg</code></p></article>
+        <article class="info-card"><h3><code>pagina.html</code></h3><p>Nome: <code>pagina</code><br>Estensione: <code>.html</code></p></article>
+      </div>
+      <aside class="callout warning" aria-labelledby="estensione-indizio">
+        <div class="callout-icon" aria-hidden="true">⚠️</div>
+        <div><p class="callout-label">Attenzione</p><h3 id="estensione-indizio">L'estensione è un indizio importante</h3><p>Aiuta a riconoscere il formato, ma cambiare soltanto l'estensione non trasforma davvero il contenuto del file.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="albero">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🌳</span><h2 id="albero">Cartelle e struttura ad albero</h2></div>
+      <pre><code>Documenti
+├── Scuola
+│   ├── Informatica
+│   │   ├── esercizio.fprg
+│   │   └── relazione.pdf
+│   └── Matematica
+└── Foto</code></pre>
+      <p><strong>Leggi l'albero:</strong> quale elemento è un file? Quale è una cartella? Quale cartella contiene <code>esercizio.fprg</code>? Qual è la cartella padre di <code>Informatica</code>? Quale strada porta al file?</p>
+      <details><summary>Controlla le risposte</summary><p><code>esercizio.fprg</code> e <code>relazione.pdf</code> sono file. <code>Documenti</code>, <code>Scuola</code>, <code>Informatica</code>, <code>Matematica</code> e <code>Foto</code> sono cartelle. <code>esercizio.fprg</code> si trova in <code>Informatica</code>; la cartella padre di <code>Informatica</code> è <code>Scuola</code>. La strada è Documenti → Scuola → Informatica → esercizio.fprg.</p></details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="percorso-file">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🧭</span><h2 id="percorso-file">Il percorso di un file</h2></div>
+      <p>Un percorso indica la strada da seguire nella struttura delle cartelle per raggiungere un file o una directory.</p>
+      <pre><code>C:\Utenti\Studente\Documenti\Scuola\esercizio.fprg</code></pre>
+      <div class="table-wrapper" tabindex="0" role="region" aria-label="Parti del percorso Windows di esempio">
+        <table class="comparison-table">
+          <caption>Leggiamo il percorso da sinistra a destra</caption>
+          <thead><tr><th scope="col">Parte</th><th scope="col">Esempio</th></tr></thead>
+          <tbody><tr><th scope="row">Unità</th><td><code>C:</code></td></tr><tr><th scope="row">Cartelle e sottocartelle</th><td><code>Utenti</code>, <code>Studente</code>, <code>Documenti</code>, <code>Scuola</code></td></tr><tr><th scope="row">Nome del file</th><td><code>esercizio</code></td></tr><tr><th scope="row">Estensione</th><td><code>.fprg</code></td></tr></tbody>
+        </table>
+      </div>
+      <aside class="callout curiosity" aria-labelledby="file-system-diversi">
+        <div class="callout-icon" aria-hidden="true">🔎</div>
+        <div><p class="callout-label">Solo da riconoscere</p><h3 id="file-system-diversi">File system diversi</h3><p>Windows, macOS, Linux e i dispositivi rimovibili possono usare file system differenti. Alcuni nomi sono NTFS, exFAT, APFS ed ext4: non occorre memorizzarne caratteristiche o differenze.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="interfacce">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🖥️</span><h2 id="interfacce">GUI e CLI: due modi di interagire</h2></div>
+      <p>La stessa operazione può essere richiesta con modalità diverse. Possiamo creare una cartella cliccando con il mouse oppure digitando un comando.</p>
+      <div class="card-grid">
+        <article class="info-card"><h3>GUI — Graphical User Interface</h3><p>È l'interfaccia grafica: usa finestre, icone, menu e azioni svolte con mouse o touch.</p></article>
+        <article class="info-card"><h3>CLI — Command Line Interface</h3><p>È l'interfaccia a riga di comando: permette di interagire con il sistema scrivendo comandi attraverso la tastiera.</p></article>
+      </div>
+      <div class="definition"><span class="definition-term">Idea essenziale</span><p>L'operazione può essere simile; cambia il modo con cui l'utente comunica con il sistema operativo.</p></div>
+    </section>
+
+    <section class="lab" aria-labelledby="terminale">
+      <div class="lab-header"><h2 id="terminale">💻 Laboratorio facoltativo — Un assaggio del terminale Windows</h2></div>
+      <div class="lab-body">
+        <aside class="callout warning" aria-labelledby="terminale-sicuro">
+          <div class="callout-icon" aria-hidden="true">⚠️</div>
+          <div><p class="callout-label">Prima di iniziare</p><h3 id="terminale-sicuro">Lavora soltanto nella cartella indicata dal docente</h3><p>Usa esclusivamente i quattro comandi mostrati. Non lavorare in cartelle di sistema e non inserire comandi diversi.</p></div>
+        </aside>
+        <div class="table-wrapper" tabindex="0" role="region" aria-label="Quattro comandi Windows del laboratorio facoltativo">
+          <table class="comparison-table">
+            <caption>I soli comandi usati nell'attività</caption>
+            <thead><tr><th scope="col">Comando</th><th scope="col">Che cosa fa</th></tr></thead>
+            <tbody><tr><th scope="row"><code>dir</code></th><td>Mostra file e cartelle nella posizione corrente.</td></tr><tr><th scope="row"><code>cd</code></th><td>Permette di entrare in una cartella indicata.</td></tr><tr><th scope="row"><code>mkdir</code></th><td>Crea una nuova cartella.</td></tr><tr><th scope="row"><code>cls</code></th><td>Pulisce il testo visibile nella finestra.</td></tr></tbody>
+          </table>
+        </div>
+        <ol class="steps">
+          <li><strong>Apri il Prompt dei comandi.</strong><p>Dal menu Start cerca <code>cmd</code>, aprilo e osserva il percorso mostrato.</p></li>
+          <li><strong>Guarda il contenuto.</strong><p>Scrivi <code>dir</code> e premi <kbd>Invio</kbd>.</p></li>
+          <li><strong>Crea una cartella di prova.</strong><p>Scrivi <code>mkdir LaboratorioSO</code> e premi <kbd>Invio</kbd>.</p></li>
+          <li><strong>Entra nella cartella.</strong><p>Scrivi <code>cd LaboratorioSO</code> e premi <kbd>Invio</kbd>. Osserva come cambia il percorso.</p></li>
+          <li><strong>Controlla e pulisci.</strong><p>Usa ancora <code>dir</code>, poi <code>cls</code>.</p></li>
+          <li><strong>Concludi in modo sicuro.</strong><p>Chiudi il Prompt. Se richiesto, elimina la cartella di prova con Esplora file.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="boot">
+      <div class="section-heading"><span class="icon" aria-hidden="true">⏻</span><h2 id="boot">Dove si trova il sistema operativo quando il PC è spento?</h2></div>
+      <p>Quando il computer è spento, il sistema operativo è conservato sulla memoria di massa. All'accensione deve essere caricato in RAM: questa fase fa parte del processo di avvio, chiamato <strong>boot</strong>.</p>
+      <figure class="lesson-figure lesson-figure-wide">
+        <img src="so.png"
+             alt="Infografica del processo di boot: accensione, firmware BIOS o UEFI, controllo dell'hardware, boot loader e caricamento del sistema operativo dalla memoria di massa alla RAM."
+             width="1536" height="1024" loading="lazy" decoding="async">
+        <figcaption>Sequenza semplificata dell'avvio: il sistema operativo passa dalla memoria di massa alla RAM.</figcaption>
+      </figure>
+      <dl class="glossary-grid">
+        <div class="glossary-card"><dt>Firmware</dt><dd>Software di base conservato nel dispositivo, usato nelle prime fasi dell'avvio.</dd></div>
+        <div class="glossary-card"><dt>BIOS o UEFI</dt><dd>Firmware che avvia il controllo iniziale del computer; UEFI è comune nei sistemi moderni.</dd></div>
+        <div class="glossary-card"><dt>Boot loader</dt><dd>Programma che permette di caricare il sistema operativo.</dd></div>
+        <div class="glossary-card"><dt>Boot</dt><dd>Il processo con cui il computer avvia il sistema operativo.</dd></div>
+      </dl>
+      <p><strong>Anche questa rappresentazione è semplificata:</strong> mostra soltanto i passaggi utili per comprendere il collegamento tra memoria di massa e RAM.</p>
+    </section>
+
+    <section class="quiz" aria-labelledby="ricostruzione">
+      <h2 id="ricostruzione">🧠 Attività di ricostruzione</h2>
+      <p>Rispondi prima di aprire le soluzioni.</p>
+      <div class="self-check">
+        <details><summary>Metti in ordine: CPU esegue, programma sull'SSD, caricamento in RAM, coordinamento del sistema operativo.</summary><p>1. Il programma è sull'SSD. 2. Il sistema operativo ne carica in RAM le parti necessarie. 3. La CPU esegue le istruzioni. 4. Durante il lavoro, il sistema operativo coordina l'uso delle risorse.</p></details>
+        <details><summary>Chi se ne occupa? Due programmi vogliono usare la stampante.</summary><p>Il sistema operativo organizza le richieste, per esempio attraverso una coda di stampa.</p></details>
+        <details><summary>Chi se ne occupa? Un programma deve usare RAM e CPU.</summary><p>Il sistema operativo gestisce l'esecuzione e coordina l'accesso alle risorse necessarie.</p></details>
+        <details><summary>Chi se ne occupa? Devi creare una cartella e salvare un file.</summary><p>Il sistema operativo, attraverso il file system, gestisce cartelle e file sulla memoria di massa.</p></details>
+      </div>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio-file">
+      <div class="lab-header"><h2 id="laboratorio-file">💻 Attività pratica — Costruisci una piccola gerarchia</h2></div>
+      <div class="lab-body">
+        <p><strong>Lavora soltanto nella cartella personale indicata dal docente.</strong></p>
+        <pre><code>Laboratorio
+└── Informatica
+    ├── Flowgorithm
+    └── Documenti</code></pre>
+        <ol class="steps">
+          <li><strong>Crea <code>Laboratorio</code>.</strong><p>Usa Esplora file e controlla dove viene creata.</p></li>
+          <li><strong>Crea la sottocartella <code>Informatica</code>.</strong><p>Apri <code>Laboratorio</code> prima di crearla.</p></li>
+          <li><strong>Aggiungi due sottocartelle.</strong><p>Dentro <code>Informatica</code> crea <code>Flowgorithm</code> e <code>Documenti</code>.</p></li>
+          <li><strong>Rinomina e ripristina.</strong><p>Rinomina <code>Documenti</code> in <code>Relazioni</code>, poi riportala al nome iniziale.</p></li>
+          <li><strong>Leggi il percorso.</strong><p>Individua il percorso che conduce alla cartella <code>Flowgorithm</code>.</p></li>
+          <li><strong>Riconosci un file.</strong><p>Osserva un file di esercizio e separa il nome dalla sua estensione.</p></li>
+          <li><strong>Concludi.</strong><p>Conserva la struttura oppure sposta nel Cestino soltanto la cartella <code>Laboratorio</code> appena creata, se il docente lo richiede.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="colleghiamo">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔗</span><h2 id="colleghiamo">Colleghiamo i pezzi</h2></div>
+      <p>Ora mettiamo insieme ciò che abbiamo visto: dall'azione dell'utente fino ai dati organizzati e salvati sul computer.</p>
+      <figure class="lesson-figure lesson-figure-wide">
+        <img src="link.png"
+             alt="Infografica di sintesi che collega utente, programmi, sistema operativo e hardware e mostra come il file system organizza i dati in cartelle e file sulla memoria di massa."
+             width="1536" height="1024" loading="lazy" decoding="async">
+        <figcaption>Mappa di sintesi dei collegamenti tra utente, programmi, sistema operativo, hardware e file system.</figcaption>
+      </figure>
+      <aside class="callout remember" aria-labelledby="frase-finale">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div><p class="callout-label">La frase da saper ricostruire</p><h3 id="frase-finale">Il sistema operativo mette in relazione software e hardware</h3><p>Permette ai programmi e all'utente di usare il computer e gestisce CPU, memoria, periferiche, file e cartelle.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="spiegamelo">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎤</span><h2 id="spiegamelo">Spiegamelo con parole tue</h2></div>
+      <p>Non recitare definizioni. Costruisci una risposta breve, collega almeno due elementi e usa un esempio concreto.</p>
+      <ol class="steps">
+        <li><strong>A cosa serve il sistema operativo?</strong><p>Collega utente, programmi e hardware.</p></li>
+        <li><strong>Che rapporto c'è tra programma, RAM e CPU?</strong><p>Segui l'avvio di Flowgorithm.</p></li>
+        <li><strong>Che cosa sono file e cartelle?</strong><p>Usa <code>diagramma.fprg</code> come esempio.</p></li>
+        <li><strong>Che cosa indica il percorso di un file?</strong><p>Leggi un percorso Windows da sinistra a destra.</p></li>
+        <li><strong>Qual è la differenza tra GUI e CLI?</strong><p>Descrivi due modi per creare la stessa cartella.</p></li>
+        <li><strong>Che cosa accade quando accendiamo il computer?</strong><p>Racconta soltanto la sequenza semplificata del boot.</p></li>
+      </ol>
+    </section>
+
+    <section class="quiz" aria-labelledby="autoverifica">
+      <h2 id="autoverifica">🧠 Autoverifica finale</h2>
+      <p>Prova a rispondere senza rileggere subito la lezione.</p>
+      <div class="self-check">
+        <details><summary>1. Quando il computer è spento, un programma si trova normalmente in RAM o sulla memoria di massa?</summary><p>Sulla memoria di massa, per esempio un SSD. La RAM è volatile e mantiene temporaneamente ciò che viene usato.</p></details>
+        <details><summary>2. Perché un programma deve essere caricato in RAM?</summary><p>Per rendere disponibili alla CPU le istruzioni e i dati necessari durante l'esecuzione.</p></details>
+        <details><summary>3. In <code>lezione.html</code>, qual è il nome e qual è l'estensione?</summary><p>Il nome è <code>lezione</code>; l'estensione è <code>.html</code>.</p></details>
+        <details><summary>4. GUI e CLI sono due tipi di che cosa?</summary><p>Sono due tipi di interfaccia utente: una grafica e una basata su comandi scritti.</p></details>
+        <details><summary>5. Chi gestisce l'accesso dei programmi alle periferiche?</summary><p>Il sistema operativo, anche con l'aiuto di software specifici come i driver.</p></details>
+        <details><summary>6. Qual è la funzione essenziale del file system?</summary><p>Organizzare e gestire file e cartelle sulla memoria di massa.</p></details>
+        <details><summary>7. Che cosa fa il boot loader nello schema semplificato?</summary><p>Permette di individuare e caricare il sistema operativo, che viene portato in RAM.</p></details>
+      </div>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header"><p class="eyebrow">Riepilogo finale</p><h2 id="zaino-studente">🎒 Lo zaino dello studente</h2><p>Le relazioni essenziali da ricostruire.</p></div>
+      <div class="student-backpack-grid">
+        <article class="backpack-card"><h3>✅ Idee fondamentali</h3><ol class="essential-list"><li>Il sistema operativo gestisce risorse e offre servizi.</li><li>Un programma passa dalla memoria di massa alla RAM.</li><li>La CPU esegue le istruzioni.</li><li>Il file system organizza cartelle e file.</li><li>GUI e CLI sono modalità di interazione.</li></ol></article>
+        <article class="backpack-card"><h3>📝 Parole chiave</h3><ul class="keyword-list"><li>sistema operativo</li><li>kernel</li><li>processo</li><li>RAM</li><li>CPU</li><li>file system</li><li>percorso</li><li>boot</li></ul></article>
+        <article class="backpack-card"><h3>🔢 Sequenze da ricordare</h3><p>SSD → RAM → CPU.</p><p>Utente → programmi → sistema operativo → hardware.</p><p>SSD → file system → cartelle → file.</p></article>
+        <article class="backpack-card"><h3>🎤 Ripasso in 2 minuti</h3><p>Parti dall'accensione, avvia Flowgorithm e salva un file: racconta chi interviene in ogni momento.</p></article>
+      </div>
+    </section>
+
+    <section class="next-lesson" aria-labelledby="prossimo-passo">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2 id="prossimo-passo">Dalle risorse del computer ai procedimenti</h2>
+      <p>Abbiamo collegato componenti e operazioni in sequenze ordinate. Nel percorso del secondo anno useremo lo stesso modo di ragionare per analizzare problemi e costruire algoritmi.</p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione della lezione ponte">
+      <a href="../01-indirizzi-servizi-internet/index.html">← R01 — Indirizzi e servizi Internet</a>
+      <a href="../../index.html#lezione-ponte">Torna alle lezioni ponte</a>
+      <a href="../../secondo-anno/01-dal-problema-all-algoritmo/index.html">Lezione 2.01 — Dal problema all'algoritmo →</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+    </div>
+  </footer>
+</body>
+</html>

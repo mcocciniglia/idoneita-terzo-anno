@@ -65,8 +65,9 @@ Legenda
 | Codice | Lezione | Stato |
 |--------|---------|--------|
 | R01 | Indirizzi e servizi Internet | ✅ Disponibile |
+| R02 | Il sistema operativo: dal computer ai file | ✅ Disponibile |
 
-**Lezione integrativa non conteggiata nelle 29 lezioni ordinarie del percorso.**
+**Lezioni integrative non conteggiate nelle 29 lezioni ordinarie del percorso.**
 
 ---
 
