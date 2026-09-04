@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lezione su AND, OR, NOT, intervalli, condizioni composte e selezioni annidate nei diagrammi di flusso e in Flowgorithm.">
+  <title>2.06 — Condizioni composte e selezioni annidate</title>
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line" aria-label="Identificazione del percorso">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge second">Programma del secondo anno</span>
+        </div>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle" class="btn btn-theme" type="button" aria-pressed="false" aria-label="Cambia tema"><span class="btn-label">Tema</span></button>
+          <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button" aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">Contrasto alto ☀️</button>
+        </div>
+      </div>
+      <nav class="breadcrumb" aria-label="Percorso"><span>Idoneità alla classe terza</span><span aria-hidden="true">›</span><span>Secondo anno</span><span aria-hidden="true">›</span><span>Lezione 2.06</span></nav>
+      <p class="eyebrow">Secondo anno — Lezione 2.06 · Durata prevista: 2 ore</p>
+      <h1>Condizioni composte e selezioni annidate</h1>
+      <p class="lead">Collegare più controlli, riconoscere i valori di confine e seguire decisioni organizzate su più livelli.</p>
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione"><span>⏱️ Circa 2 ore</span><span>📘 Secondo anno</span><span>🎯 Prerequisito: Lezione 2.05</span></div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading"><span>Percorso del secondo anno</span><span>Lezione 6 di 11</span></div>
+      <div class="progress-track" aria-hidden="true"><div class="progress-value" style="--progress:54.55%;"></div></div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="tempi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">⏱️</span><h2 id="tempi">Come lavoreremo</h2></div>
+      <div class="card-grid">
+        <article class="info-card"><h3>Richiamo · 10 minuti</h3><p>Selezione semplice, selezione doppia e previsione del ramo.</p></article>
+        <article class="info-card"><h3>Concetti · 35 minuti</h3><p>AND, OR, NOT e intervalli.</p></article>
+        <article class="info-card"><h3>Laboratorio · 55 minuti</h3><p>Condizioni composte e decisioni annidate in Flowgorithm.</p></article>
+        <article class="info-card"><h3>Conclusione · 20 minuti</h3><p>Esercizio autonomo, esposizione orale e autoverifica.</p></article>
+      </div>
+      <p><strong>I tempi sono indicativi.</strong> Le attività di laboratorio e i ragionamenti sui valori di confine hanno la precedenza: gli approfondimenti possono essere ripresi successivamente.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="richiamo">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔄</span><h2 id="richiamo">Prima di iniziare: una decisione, due rami</h2></div>
+      <p>Nella Lezione 2.05 abbiamo usato una condizione semplice per scegliere un percorso. La condizione viene valutata una volta e produce <strong>vero</strong> oppure <strong>falso</strong>.</p>
+      <pre><code>SE eta &gt;= 18 ALLORA
+  SCRIVI "Maggiorenne"
+ALTRIMENTI
+  SCRIVI "Minorenne"
+FINE SE</code></pre>
+      <p>Questa è una <strong>selezione doppia</strong>: durante una singola esecuzione viene seguito un solo ramo. In una selezione semplice, invece, il ramo falso non contiene azioni.</p>
+      <aside class="callout remember" aria-labelledby="metodo-ripasso">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div><p class="callout-label">Metodo già conosciuto</p><h3 id="metodo-ripasso">Prima prevedi, poi esegui</h3><p>Individua la condizione, sostituisci il dato, stabilisci se il risultato è vero o falso e segui soltanto il ramo corrispondente.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎯</span><h2 id="obiettivi">Obiettivi della lezione</h2></div>
+      <div class="objective-grid">
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Leggere</strong><small>Condizioni con AND, OR e NOT.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Costruire</strong><small>Condizioni composte senza ambiguità.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Controllare</strong><small>L'appartenenza a un intervallo.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Riconoscere</strong><small>Una selezione annidata.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Motivare</strong><small>Il percorso e l'output ottenuto.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Provare</strong><small>Rami, soglie e valori di confine.</small></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="and">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔗</span><h2 id="and">AND: devono essere vere entrambe</h2></div>
+      <p>Per partecipare a un'attività bisogna avere almeno 14 anni <strong>e</strong> un'altezza di almeno 150 cm. Non basta rispettare uno solo dei due requisiti.</p>
+      <pre><code>(eta &gt;= 14) and (altezza &gt;= 150)</code></pre>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Esempi concreti della condizione con AND</caption>
+          <thead><tr><th scope="col">Età</th><th scope="col">Altezza</th><th scope="col">Prima condizione</th><th scope="col">Seconda condizione</th><th scope="col">Risultato</th></tr></thead>
+          <tbody>
+            <tr><td>15</td><td>160 cm</td><td>Vera</td><td>Vera</td><td>Vero</td></tr>
+            <tr><td>15</td><td>145 cm</td><td>Vera</td><td>Falsa</td><td>Falso</td></tr>
+            <tr><td>13</td><td>160 cm</td><td>Falsa</td><td>Vera</td><td>Falso</td></tr>
+            <tr><td>13</td><td>145 cm</td><td>Falsa</td><td>Falsa</td><td>Falso</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="definition"><span class="definition-term">AND</span><p>Collega due condizioni e produce vero soltanto quando entrambe sono vere.</p></div>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Riepilogo dei casi possibili per AND</caption>
+          <thead><tr><th scope="col">Condizione A</th><th scope="col">Condizione B</th><th scope="col">A AND B</th></tr></thead>
+          <tbody><tr><td>Vera</td><td>Vera</td><td>Vero</td></tr><tr><td>Vera</td><td>Falsa</td><td>Falso</td></tr><tr><td>Falsa</td><td>Vera</td><td>Falso</td></tr><tr><td>Falsa</td><td>Falsa</td><td>Falso</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="or">
+      <div class="section-heading"><span class="icon" aria-hidden="true">↔️</span><h2 id="or">OR inclusivo: ne basta almeno una</h2></div>
+      <p>Un negozio assegna una riduzione a chi ha meno di 18 anni <strong>oppure</strong> ha effettuato almeno 5 acquisti.</p>
+      <pre><code>(eta &lt; 18) or (acquisti &gt;= 5)</code></pre>
+      <p>Una persona di 16 anni con 7 acquisti riceve la riduzione: le due condizioni sono entrambe vere e l'OR rimane vero.</p>
+      <div class="definition"><span class="definition-term">OR inclusivo</span><p>Collega due condizioni e produce vero quando almeno una è vera, anche quando sono vere entrambe.</p></div>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Riepilogo dei casi possibili per OR</caption>
+          <thead><tr><th scope="col">Condizione A</th><th scope="col">Condizione B</th><th scope="col">A OR B</th><th scope="col">Esempio</th></tr></thead>
+          <tbody>
+            <tr><td>Vera</td><td>Vera</td><td>Vero</td><td>16 anni e 7 acquisti</td></tr>
+            <tr><td>Vera</td><td>Falsa</td><td>Vero</td><td>16 anni e 2 acquisti</td></tr>
+            <tr><td>Falsa</td><td>Vera</td><td>Vero</td><td>30 anni e 7 acquisti</td></tr>
+            <tr><td>Falsa</td><td>Falsa</td><td>Falso</td><td>30 anni e 2 acquisti</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <aside class="callout warning" aria-labelledby="or-inclusivo">
+        <div class="callout-icon" aria-hidden="true">⚠️</div>
+        <div><p class="callout-label">Errore frequente</p><h3 id="or-inclusivo">OR non significa “una sola delle due”</h3><p>In questa lezione usiamo l'OR inclusivo di Flowgorithm: il risultato è vero anche quando entrambe le condizioni sono vere.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="not">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔁</span><h2 id="not">NOT: capovolgere il risultato</h2></div>
+      <p>Considera la condizione <code>numero &gt; 10</code>. Con <code>numero = 7</code> è falsa. Se la neghiamo, diventa vera:</p>
+      <pre><code>not (numero &gt; 10)</code></pre>
+      <div class="definition"><span class="definition-term">NOT</span><p>È un operatore che trasforma vero in falso e falso in vero.</p></div>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Riepilogo dei casi possibili per NOT</caption>
+          <thead><tr><th scope="col">Condizione A</th><th scope="col">NOT A</th><th scope="col">Esempio con <code>numero &gt; 10</code></th></tr></thead>
+          <tbody><tr><td>Vera</td><td>Falso</td><td>Con 12: <code>not (12 &gt; 10)</code> è falso</td></tr><tr><td>Falsa</td><td>Vero</td><td>Con 7: <code>not (7 &gt; 10)</code> è vero</td></tr></tbody>
+        </table>
+      </div>
+      <aside class="callout tip" aria-labelledby="not-parentesi">
+        <div class="callout-icon" aria-hidden="true">✅</div>
+        <div><p class="callout-label">Scrittura sicura</p><h3 id="not-parentesi">Dopo NOT racchiudi la condizione tra parentesi</h3><p>In Flowgorithm scrivi <code>not (numero &gt; 10)</code>. Le parentesi indicano chiaramente quale risultato deve essere negato.</p></div>
+      </aside>
+      <p><strong>Attività lampo:</strong> la condizione <code>temperatura &gt;= 18</code> riconosce i valori da 18 in poi. Costruisci con NOT la condizione opposta e valutala con 17, 18 e 19.</p>
+      <details><summary>Controlla condizione e risultati</summary><p>La condizione è <code>not (temperatura &gt;= 18)</code>. Con 17 è vera; con 18 e 19 è falsa. In questo caso equivale a <code>temperatura &lt; 18</code>, ma l'esercizio serve ad allenare la negazione.</p></details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="sintassi-flowgorithm">
+      <div class="section-heading"><span class="icon" aria-hidden="true">⌨️</span><h2 id="sintassi-flowgorithm">La sintassi che useremo in Flowgorithm</h2></div>
+      <p><strong>Nel nostro corso useremo sempre <code>and</code>, <code>or</code> e <code>not</code> in minuscolo, così le condizioni restano uniformi e facili da rileggere.</strong></p>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Operatori logici scelti per il corso</caption>
+          <thead><tr><th scope="col">Significato</th><th scope="col">Da digitare</th><th scope="col">Esempio valido</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">E logico</th><td><code>and</code></td><td><code>(eta &gt;= 14) and (altezza &gt;= 150)</code></td></tr>
+            <tr><th scope="row">O logico</th><td><code>or</code></td><td><code>(eta &lt; 18) or (acquisti &gt;= 5)</code></td></tr>
+            <tr><th scope="row">Negazione</th><td><code>not</code></td><td><code>not (numero &gt; 10)</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Prima vengono valutati i confronti racchiusi tra parentesi; poi viene applicato l'operatore logico. Non usare le parole italiane <code>e</code>, <code>o</code> e <code>non</code> dentro il blocco <em>If</em>.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="intervalli">
+      <div class="section-heading"><span class="icon" aria-hidden="true">📏</span><h2 id="intervalli">Intervalli: dentro con AND, fuori con OR</h2></div>
+      <p>Vogliamo sapere se una temperatura appartiene all'intervallo da 18 a 24 gradi. Per essere <strong>dentro</strong>, deve rispettare contemporaneamente il limite inferiore e quello superiore.</p>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Condizioni per intervalli inclusivi ed esclusivi</caption>
+          <thead><tr><th scope="col">Richiesta</th><th scope="col">Condizione Flowgorithm</th><th scope="col">I confini 18 e 24</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Dentro l'intervallo inclusivo [18, 24]</th><td><code>(temperatura &gt;= 18) and (temperatura &lt;= 24)</code></td><td>Sono compresi</td></tr>
+            <tr><th scope="row">Dentro l'intervallo esclusivo (18, 24)</th><td><code>(temperatura &gt; 18) and (temperatura &lt; 24)</code></td><td>Sono esclusi</td></tr>
+            <tr><th scope="row">Fuori dall'intervallo inclusivo [18, 24]</th><td><code>(temperatura &lt; 18) or (temperatura &gt; 24)</code></td><td>Non sono fuori</td></tr>
+            <tr><th scope="row">Fuori dall'intervallo esclusivo (18, 24)</th><td><code>(temperatura &lt;= 18) or (temperatura &gt;= 24)</code></td><td>Sono fuori</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <aside class="callout remember" aria-labelledby="regola-intervalli">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div><p class="callout-label">Regola pratica</p><h3 id="regola-intervalli">Dentro richiede due limiti; fuori offre due vie</h3><p>Per stare dentro servono entrambe le condizioni, quindi usiamo AND. Per stare fuori basta essere sotto il minimo oppure sopra il massimo, quindi usiamo OR.</p></div>
+      </aside>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Valori di prova per l'intervallo inclusivo [18, 24]</caption>
+          <thead><tr><th scope="col">Temperatura</th><th scope="col">Posizione</th><th scope="col">Condizione “dentro”</th></tr></thead>
+          <tbody><tr><td>17</td><td>Sotto</td><td>Falsa</td></tr><tr><td>18</td><td>Confine inferiore</td><td>Vera</td></tr><tr><td>21</td><td>Interna</td><td>Vera</td></tr><tr><td>24</td><td>Confine superiore</td><td>Vera</td></tr><tr><td>25</td><td>Sopra</td><td>Falsa</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="parentesi">
+      <p class="eyebrow">Approfondimento</p>
+      <div class="section-heading"><span class="icon" aria-hidden="true">🧩</span><h2 id="parentesi">Parentesi: rendere visibile il raggruppamento</h2></div>
+      <p class="muted">Puoi riprendere questa sezione durante il ripasso senza interrompere il nucleo essenziale della lezione.</p>
+      <p>Le parentesi aiutano a leggere una condizione composta come gruppi di domande. Osserva questo requisito: la persona deve avere un'età che dà diritto alla riduzione e deve presentare un documento.</p>
+      <pre><code>((eta &lt; 18) or (eta &gt;= 65)) and (documento = 1)</code></pre>
+      <ol class="steps">
+        <li><strong>Valuta il primo gruppo.</strong><p>Controlla se l'età è minore di 18 oppure almeno 65.</p></li>
+        <li><strong>Valuta il secondo gruppo.</strong><p>Controlla se <code>documento</code> vale 1.</p></li>
+        <li><strong>Collega i risultati.</strong><p>Il gruppo dell'età e il documento devono essere entrambi veri.</p></li>
+      </ol>
+      <aside class="callout warning" aria-labelledby="parentesi-chiare">
+        <div class="callout-icon" aria-hidden="true">⚠️</div>
+        <div><p class="callout-label">Evita ambiguità</p><h3 id="parentesi-chiare">Non affidarti alla memoria della precedenza</h3><p>Quando compaiono operatori diversi, usa le parentesi per mostrare esplicitamente quali condizioni devono essere collegate per prime.</p></div>
+      </aside>
+    </section>
+
+    <section class="lab" aria-labelledby="esempio-guidato">
+      <div class="lab-header"><h2 id="esempio-guidato">Laboratorio guidato — Temperatura nella zona di comfort</h2></div>
+      <div class="lab-body">
+        <p><strong>Problema:</strong> leggere una temperatura intera. Mostrare <q>Temperatura nella zona di comfort</q> quando il valore è compreso tra 18 e 24 inclusi; negli altri casi mostrare <q>Temperatura fuori zona</q>.</p>
+        <ol class="steps">
+          <li><strong>Individua input e output.</strong><p>L'input è <code>temperatura</code>, di tipo <code>Integer</code>. Gli output possibili sono i due messaggi della consegna.</p></li>
+          <li><strong>Formula la condizione.</strong><p>Per essere dentro l'intervallo devono essere rispettati entrambi i limiti.</p></li>
+          <li><strong>Prevedi prima di costruire.</strong><p>Completa sul quaderno la tabella con 17, 18, 21, 24 e 25. Motiva soprattutto i due confini.</p></li>
+          <li><strong>Crea il diagramma.</strong><p>Inserisci dichiarazione, input e una selezione doppia.</p></li>
+          <li><strong>Digita la condizione.</strong><p>Nel blocco <em>If</em> scrivi <code>(temperatura &gt;= 18) and (temperatura &lt;= 24)</code>.</p></li>
+          <li><strong>Completa i rami.</strong><p>Inserisci il messaggio della zona di comfort sul ramo vero e l'altro sul ramo falso.</p></li>
+          <li><strong>Segui il flusso.</strong><p>Prima di ogni esecuzione indica la verità dei due confronti e il ramo previsto.</p></li>
+          <li><strong>Esegui e confronta.</strong><p>Prova tutti i dati e confronta ogni output con la previsione.</p></li>
+        </ol>
+        <details><summary>Controlla lo pseudocodice</summary><pre><code>INIZIO
+  DICHIARA temperatura COME Integer
+  LEGGI temperatura
+  SE (temperatura &gt;= 18) and (temperatura &lt;= 24) ALLORA
+    SCRIVI "Temperatura nella zona di comfort"
+  ALTRIMENTI
+    SCRIVI "Temperatura fuori zona"
+  FINE SE
+FINE</code></pre></details>
+        <details><summary>Controlla risultati e confini</summary><ul><li>17 → Temperatura fuori zona.</li><li>18 → Temperatura nella zona di comfort.</li><li>21 → Temperatura nella zona di comfort.</li><li>24 → Temperatura nella zona di comfort.</li><li>25 → Temperatura fuori zona.</li></ul><p>I valori 18 e 24 sono inclusi perché i confronti usano <code>&gt;=</code> e <code>&lt;=</code>.</p></details>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="attivita-completare">
+      <div class="section-heading"><span class="icon" aria-hidden="true">✏️</span><h2 id="attivita-completare">Attività da completare — Riconoscere i valori esterni</h2></div>
+      <p>Completa la condizione che rende vero il ramo quando la temperatura è <strong>fuori</strong> dall'intervallo inclusivo [18, 24].</p>
+      <pre><code>SE (temperatura ______ 18) ______ (temperatura ______ 24) ALLORA
+  SCRIVI "Temperatura fuori zona"
+ALTRIMENTI
+  SCRIVI "Temperatura nella zona di comfort"
+FINE SE</code></pre>
+      <ol>
+        <li>Completa i due confronti e l'operatore logico.</li>
+        <li>Prevedi i risultati con 17, 18, 24 e 25.</li>
+        <li>Modifica il diagramma guidato e ripeti le quattro prove.</li>
+        <li>Spiega perché sui confini viene seguito il ramo falso.</li>
+      </ol>
+      <details><summary>Apri la soluzione</summary><p>La condizione è <code>(temperatura &lt; 18) or (temperatura &gt; 24)</code>. Con 17 e 25 è vera e l'output è <q>Temperatura fuori zona</q>. Con 18 e 24 è falsa e l'output è <q>Temperatura nella zona di comfort</q>.</p></details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="annidate">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🪆</span><h2 id="annidate">Selezioni annidate: una decisione dentro un ramo</h2></div>
+      <p>Vogliamo classificare un numero come positivo, negativo oppure zero. Una prima condizione separa i positivi dagli altri valori. Soltanto nel ramo falso serve una seconda domanda.</p>
+      <pre><code>SE numero &gt; 0 ALLORA
+  SCRIVI "Positivo"
+ALTRIMENTI
+  SE numero &lt; 0 ALLORA
+    SCRIVI "Negativo"
+  ALTRIMENTI
+    SCRIVI "Zero"
+  FINE SE
+FINE SE</code></pre>
+      <div class="definition"><span class="definition-term">Selezione annidata</span><p>Una selezione inserita all'interno del ramo vero o del ramo falso di un'altra selezione.</p></div>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Percorso di esecuzione della classificazione</caption>
+          <thead><tr><th scope="col">Numero</th><th scope="col"><code>numero &gt; 0</code></th><th scope="col"><code>numero &lt; 0</code></th><th scope="col">Output e motivazione</th></tr></thead>
+          <tbody>
+            <tr><td>8</td><td>Vera</td><td>Non valutata</td><td>Positivo: il ramo vero termina senza incontrare la seconda decisione.</td></tr>
+            <tr><td>-3</td><td>Falsa</td><td>Vera</td><td>Negativo: nel ramo falso la seconda condizione è vera.</td></tr>
+            <tr><td>0</td><td>Falsa</td><td>Falsa</td><td>Zero: vengono seguiti i due rami falsi.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <aside class="callout tip" aria-labelledby="una-condizione-volta">
+        <div class="callout-icon" aria-hidden="true">✅</div>
+        <div><p class="callout-label">Strategia di lettura</p><h3 id="una-condizione-volta">Valuta solo le decisioni incontrate</h3><p>Non calcolare subito tutte le condizioni. Parti dalla prima e segui il ramo scelto; valuta la condizione interna soltanto se il percorso la raggiunge.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="indipendenti-annidate">
+      <p class="eyebrow">Consolidamento</p>
+      <div class="section-heading"><span class="icon" aria-hidden="true">🛤️</span><h2 id="indipendenti-annidate">Annidate o indipendenti? Non è la stessa cosa</h2></div>
+      <p class="muted">Questa distinzione può essere consolidata in un secondo momento, dopo avere completato laboratorio ed esercizio autonomo.</p>
+      <p>In due selezioni indipendenti, dopo la prima decisione il flusso prosegue e raggiunge anche la seconda.</p>
+      <pre><code>SE eta &gt;= 18 ALLORA
+  SCRIVI "Maggiorenne"
+FINE SE
+
+SE eta &gt;= 65 ALLORA
+  SCRIVI "Almeno 65 anni"
+FINE SE</code></pre>
+      <p>Con <code>eta = 70</code> vengono valutate entrambe le condizioni e appaiono entrambi i messaggi.</p>
+      <p>In una struttura annidata, invece, la seconda decisione appartiene a un ramo della prima e viene raggiunta soltanto percorrendo quel ramo.</p>
+      <pre><code>SE eta &gt;= 18 ALLORA
+  SE eta &gt;= 65 ALLORA
+    SCRIVI "Almeno 65 anni"
+  ALTRIMENTI
+    SCRIVI "Adulto sotto i 65 anni"
+  FINE SE
+ALTRIMENTI
+  SCRIVI "Minorenne"
+FINE SE</code></pre>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Differenza strutturale</caption>
+          <thead><tr><th scope="col">Due selezioni indipendenti</th><th scope="col">Selezione annidata</th></tr></thead>
+          <tbody><tr><td>La seconda decisione si trova dopo la prima e viene comunque raggiunta.</td><td>La seconda decisione si trova dentro un ramo e può non essere raggiunta.</td></tr><tr><td>Possono essere eseguite azioni di entrambe le selezioni.</td><td>Il percorso attraversa soltanto i rami incontrati.</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="equivalenza">
+      <p class="eyebrow">Approfondimento facoltativo</p>
+      <div class="section-heading"><span class="icon" aria-hidden="true">⚖️</span><h2 id="equivalenza">Un caso equivalente, ma non una regola generale</h2></div>
+      <p class="muted">Affronta questo confronto se il tempo lo permette oppure riprendilo durante il ripasso.</p>
+      <p>Per mostrare <q>Ammesso</q> soltanto a chi ha almeno 14 anni e almeno 6 punti, possiamo usare una condizione composta:</p>
+      <pre><code>SE (eta &gt;= 14) and (punteggio &gt;= 6) ALLORA
+  SCRIVI "Ammesso"
+ALTRIMENTI
+  SCRIVI "Non ammesso"
+FINE SE</code></pre>
+      <p>Possiamo ottenere gli stessi due output anche con due controlli annidati:</p>
+      <pre><code>SE eta &gt;= 14 ALLORA
+  SE punteggio &gt;= 6 ALLORA
+    SCRIVI "Ammesso"
+  ALTRIMENTI
+    SCRIVI "Non ammesso"
+  FINE SE
+ALTRIMENTI
+  SCRIVI "Non ammesso"
+FINE SE</code></pre>
+      <p>In questo caso le strutture sono equivalenti perché l'ammissione richiede entrambe le condizioni e ogni fallimento produce lo stesso risultato. <strong>Non sono sempre intercambiabili:</strong> una struttura annidata può produrre risultati diversi a livelli diversi o evitare del tutto una seconda decisione.</p>
+    </section>
+
+    <section class="lab" aria-labelledby="esercizio-autonomo">
+      <div class="lab-header"><h2 id="esercizio-autonomo">Esercizio autonomo — Livelli di accesso al laboratorio</h2></div>
+      <div class="lab-body">
+        <p><strong>Problema:</strong> un'attività assegna:</p>
+        <ul>
+          <li><q>Accesso avanzato</q> a chi ha almeno 14 anni e almeno 9 punti;</li>
+          <li><q>Accesso base</q> a chi ha almeno 14 anni e un punteggio da 6 a meno di 9;</li>
+          <li><q>Requisiti non soddisfatti</q> negli altri casi.</li>
+        </ul>
+        <ol class="steps">
+          <li><strong>Individua i dati.</strong><p>Dichiara <code>eta</code> e <code>punteggio</code> come <code>Integer</code>.</p></li>
+          <li><strong>Pianifica il primo controllo.</strong><p>Verifica insieme età minima e punteggio minimo.</p></li>
+          <li><strong>Pianifica la decisione interna.</strong><p>Nel ramo che soddisfa i requisiti minimi, distingui il livello avanzato da quello base.</p></li>
+          <li><strong>Disegna sul quaderno.</strong><p>Indica chiaramente il ramo che contiene la seconda decisione.</p></li>
+          <li><strong>Prevedi tutti i risultati.</strong><p>Usa la tabella di prova prima di aprire Flowgorithm.</p></li>
+          <li><strong>Costruisci il diagramma.</strong><p>Inserisci un blocco alla volta e rileggi ogni condizione.</p></li>
+          <li><strong>Segui ogni percorso.</strong><p>Spiega quali condizioni vengono valutate e quali non vengono raggiunte.</p></li>
+          <li><strong>Esegui e confronta.</strong><p>Prova tutti i dati, compresi i valori esattamente uguali alle soglie.</p></li>
+        </ol>
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <caption>Dati obbligatori: scrivi l'output previsto prima dell'esecuzione</caption>
+            <thead><tr><th scope="col">Età</th><th scope="col">Punteggio</th><th scope="col">Caso controllato</th></tr></thead>
+            <tbody><tr><td>13</td><td>10</td><td>Età sotto la soglia, punteggio sopra</td></tr><tr><td>14</td><td>5</td><td>Età sulla soglia, punteggio sotto</td></tr><tr><td>14</td><td>6</td><td>Entrambe le soglie minime esatte</td></tr><tr><td>15</td><td>8</td><td>Valori interni al livello base</td></tr><tr><td>14</td><td>9</td><td>Età e livello avanzato sulle soglie</td></tr><tr><td>16</td><td>10</td><td>Valori sopra entrambe le soglie</td></tr></tbody>
+          </table>
+        </div>
+        <details><summary>Suggerimento 1 — Prima condizione</summary><p>Usa <code>(eta &gt;= 14) and (punteggio &gt;= 6)</code>. Se è falsa, mostra <q>Requisiti non soddisfatti</q>.</p></details>
+        <details><summary>Suggerimento 2 — Decisione annidata</summary><p>Nel ramo vero controlla <code>punteggio &gt;= 9</code>. Il ramo vero corrisponde all'accesso avanzato; il ramo falso all'accesso base.</p></details>
+        <details><summary>Controlla soluzione e risultati attesi</summary><pre><code>SE (eta &gt;= 14) and (punteggio &gt;= 6) ALLORA
+  SE punteggio &gt;= 9 ALLORA
+    SCRIVI "Accesso avanzato"
+  ALTRIMENTI
+    SCRIVI "Accesso base"
+  FINE SE
+ALTRIMENTI
+  SCRIVI "Requisiti non soddisfatti"
+FINE SE</code></pre><ul><li>13, 10 → Requisiti non soddisfatti.</li><li>14, 5 → Requisiti non soddisfatti.</li><li>14, 6 → Accesso base.</li><li>15, 8 → Accesso base.</li><li>14, 9 → Accesso avanzato.</li><li>16, 10 → Accesso avanzato.</li></ul></details>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="errori">
+      <div class="section-heading"><span class="icon" aria-hidden="true">❌</span><h2 id="errori">Errori frequenti</h2></div>
+      <div class="card-grid">
+        <article class="info-card"><h3>Usare OR per stare dentro</h3><p>Per appartenere a un intervallo servono entrambi i limiti: usa AND.</p></article>
+        <article class="info-card"><h3>Escludere per errore il confine</h3><p>Se il limite è compreso, usa <code>&gt;=</code> oppure <code>&lt;=</code> e prova il valore esatto.</p></article>
+        <article class="info-card"><h3>Negare senza parentesi</h3><p>Scrivi <code>not (condizione)</code> per rendere chiaro che cosa viene capovolto.</p></article>
+        <article class="info-card"><h3>Valutare un ramo non percorso</h3><p>In una selezione annidata, la condizione interna viene valutata solo se il flusso la raggiunge.</p></article>
+        <article class="info-card"><h3>Confondere annidamento e sequenza</h3><p>Una selezione interna appartiene a un ramo; una selezione indipendente viene dopo la precedente.</p></article>
+        <article class="info-card"><h3>Provare solo valori comodi</h3><p>Scegli casi sotto, sopra e uguali a ogni soglia, oltre a un caso per ciascun output.</p></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="colloquio">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎤</span><h2 id="colloquio">Preparazione al colloquio</h2></div>
+      <aside class="callout exam" aria-labelledby="traccia-orale">
+        <div class="callout-icon" aria-hidden="true">🎓</div>
+        <div><p class="callout-label">Possibili domande</p><h3 id="traccia-orale">Spiega regola, percorso ed esempio</h3><ol><li>Qual è la differenza tra AND e OR inclusivo?</li><li>Che cosa fa NOT e perché sono utili le parentesi?</li><li>Come scrivi la condizione per essere dentro un intervallo inclusivo?</li><li>Come scrivi la condizione per essere fuori dallo stesso intervallo?</li><li>Che cos'è una selezione annidata?</li><li>Come distingui una selezione annidata da due selezioni indipendenti?</li><li>Perché i valori di confine sono dati di prova importanti?</li></ol></div>
+      </aside>
+    </section>
+
+    <section class="quiz" aria-labelledby="autoverifica">
+      <h2 id="autoverifica">Autoverifica finale</h2>
+      <p>Rispondi prima di aprire le soluzioni.</p>
+      <div class="self-check">
+        <details><summary>Quanto vale <code>(eta &gt;= 14) and (altezza &gt;= 150)</code> con età 14 e altezza 149?</summary><p>È falsa: la prima condizione è vera, ma la seconda è falsa; con AND devono essere vere entrambe.</p></details>
+        <details><summary>Quanto vale <code>(eta &lt; 18) or (acquisti &gt;= 5)</code> con età 16 e 7 acquisti?</summary><p>È vera. Sono vere entrambe le condizioni e l'OR inclusivo produce comunque vero.</p></details>
+        <details><summary>Quanto vale <code>not (numero &gt; 10)</code> con numero 10?</summary><p><code>10 &gt; 10</code> è falsa; NOT la trasforma in vera.</p></details>
+        <details><summary>Quale condizione riconosce i valori dentro [5, 12]?</summary><p><code>(valore &gt;= 5) and (valore &lt;= 12)</code>.</p></details>
+        <details><summary>Quale condizione riconosce i valori fuori da [5, 12]?</summary><p><code>(valore &lt; 5) or (valore &gt; 12)</code>.</p></details>
+        <details><summary>In una selezione annidata vengono sempre valutate tutte le condizioni?</summary><p>No. Una condizione interna viene valutata soltanto se il percorso entra nel ramo che la contiene.</p></details>
+        <details><summary>Quali prove useresti per una soglia <code>punteggio &gt;= 6</code>?</summary><p>Almeno un valore sotto, il valore esatto e un valore sopra: per esempio 5, 6 e 7.</p></details>
+      </div>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header"><p class="eyebrow">Riepilogo finale</p><h2 id="zaino-studente">🎒 Lo zaino dello studente</h2><p>Le idee essenziali da ricordare e spiegare.</p></div>
+      <div class="student-backpack-grid">
+        <article class="backpack-card"><h3>Sintesi</h3><ol class="essential-list"><li>AND richiede che entrambe le condizioni siano vere.</li><li>OR inclusivo richiede che almeno una sia vera.</li><li>NOT capovolge vero e falso.</li><li>Per stare dentro un intervallo si usa AND; per stare fuori si usa OR.</li><li>Una selezione annidata si trova dentro un ramo.</li><li>I confini devono essere provati esplicitamente.</li></ol></article>
+        <article class="backpack-card"><h3>Parole chiave</h3><ul class="keyword-list"><li>condizione composta</li><li>AND</li><li>OR inclusivo</li><li>NOT</li><li>intervallo</li><li>valore di confine</li><li>selezione annidata</li><li>percorso</li></ul></article>
+        <article class="backpack-card"><h3>Controllo rapido</h3><ol><li>Quali confronti compongono la condizione?</li><li>Come sono raggruppati?</li><li>Qual è il loro valore?</li><li>Quale ramo viene seguito?</li><li>Si incontra un'altra decisione?</li><li>Quale output si ottiene?</li></ol></article>
+        <article class="backpack-card"><h3>Ripasso in 2 minuti</h3><p>Spiega a voce come riconoscere un valore dentro [10, 20], poi descrivi il percorso di 9, 10 e 20.</p></article>
+      </div>
+    </section>
+
+    <section class="next-lesson" aria-labelledby="prossimo-passo">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2 id="prossimo-passo">Ripetere operazioni: i cicli</h2>
+      <p>Nella prossima lezione studieremo come rappresentare operazioni che devono essere ripetute. Le decisioni apprese finora resteranno utili per controllare il flusso.</p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../05-prendere-decisioni-la-selezione/index.html">← Lezione 2.05 — Prendere decisioni: la selezione</a>
+      <a href="../../index.html#secondo-anno">Torna all'indice</a>
+      <a href="../07-ripetere-operazioni-i-cicli/index.html">Lezione 2.07 — Ripetere operazioni: i cicli →</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+    </div>
+  </footer>
+</body>
+</html>
