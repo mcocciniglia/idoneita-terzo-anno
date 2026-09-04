@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lezione sul ciclo while, la variabile di controllo, il contatore, l'accumulatore, le tabelle di traccia e i cicli infiniti in Flowgorithm.">
+  <title>2.07 — Ripetere operazioni: i cicli</title>
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line" aria-label="Identificazione del percorso">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge second">Programma del secondo anno</span>
+        </div>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle" class="btn btn-theme" type="button" aria-pressed="false" aria-label="Cambia tema"><span class="btn-label">Tema</span></button>
+          <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button" aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">Contrasto alto ☀️</button>
+        </div>
+      </div>
+      <nav class="breadcrumb" aria-label="Percorso"><span>Idoneità alla classe terza</span><span aria-hidden="true">›</span><span>Secondo anno</span><span aria-hidden="true">›</span><span>Lezione 2.07</span></nav>
+      <p class="eyebrow">Secondo anno — Lezione 2.07 · Durata prevista: 2 ore</p>
+      <h1>Ripetere operazioni: i cicli</h1>
+      <p class="lead">Usare il ciclo <code>while</code> per ripetere istruzioni finché una condizione è vera.</p>
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione"><span>⏱️ Circa 2 ore</span><span>📘 Secondo anno</span><span>🎯 Prerequisito: Lezione 2.06</span></div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading"><span>Percorso del secondo anno</span><span>Lezione 7 di 11</span></div>
+      <div class="progress-track" aria-hidden="true"><div class="progress-value" style="--progress:63.64%;"></div></div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="tempi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">⏱️</span><h2 id="tempi">Come lavoreremo</h2></div>
+      <div class="card-grid">
+        <article class="info-card"><h3>Richiamo · 10 minuti</h3><p>Condizioni, vero e falso, variabili e assegnazioni.</p></article>
+        <article class="info-card"><h3>Concetti · 35 minuti</h3><p>Iterazione, struttura del <code>while</code> e tabella di traccia.</p></article>
+        <article class="info-card"><h3>Laboratorio · 55 minuti</h3><p>Costruzione ed esecuzione passo per passo in Flowgorithm.</p></article>
+        <article class="info-card"><h3>Conclusione · 20 minuti</h3><p>Errori essenziali e autoverifica; l'esercizio autonomo può essere completato successivamente.</p></article>
+      </div>
+      <p><strong>I tempi sono indicativi.</strong> Se un passaggio non è chiaro, fermati e completa la tabella di traccia prima di proseguire. Il consolidamento facoltativo e, se necessario, l'esercizio autonomo possono essere svolti in seguito.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="prerequisiti">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🧰</span><h2 id="prerequisiti">Prerequisiti</h2></div>
+      <ul>
+        <li>riconoscere una condizione e stabilire se è vera o falsa;</li>
+        <li>usare variabili di tipo <code>Integer</code>;</li>
+        <li>leggere e scrivere un'assegnazione, per esempio <code>numero ← numero + 1</code>;</li>
+        <li>inserire dichiarazioni, input, output e selezioni in Flowgorithm.</li>
+      </ul>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="richiamo">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔄</span><h2 id="richiamo">Prima di iniziare: condizioni e percorsi</h2></div>
+      <p>Nella Lezione 2.06 abbiamo collegato condizioni e seguito il percorso scelto dall'algoritmo. Una condizione viene valutata e produce <strong>vero</strong> oppure <strong>falso</strong>.</p>
+      <pre><code>SE temperatura &lt; 18 ALLORA
+  SCRIVI "Temperatura bassa"
+ALTRIMENTI
+  SCRIVI "Temperatura non bassa"
+FINE SE</code></pre>
+      <p>Nella selezione la condizione decide quale ramo eseguire. Nel ciclo <code>while</code>, invece, la condizione viene controllata nuovamente dopo ogni esecuzione del corpo. Finché rimane vera, le istruzioni contenute nel ciclo vengono ripetute.</p>
+      <aside class="callout remember" aria-labelledby="assegnazione-ripasso">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div><p class="callout-label">Ripasso in 3 minuti</p><h3 id="assegnazione-ripasso">Un'assegnazione può cambiare una variabile</h3><p>Se <code>numero</code> vale 3, dopo <code>numero ← numero + 1</code> vale 4. Il nuovo valore sostituisce quello precedente.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎯</span><h2 id="obiettivi">Obiettivi della lezione</h2></div>
+      <div class="objective-grid">
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Riconoscere</strong><small>Quando un problema richiede una ripetizione.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Individuare</strong><small>Inizializzazione, condizione e aggiornamento.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Costruire</strong><small>Un semplice ciclo <code>while</code> in Flowgorithm.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Simulare</strong><small>Il ciclo con una tabella di traccia.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Prevedere</strong><small>Quante volte viene eseguito il corpo.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Correggere</strong><small>Un aggiornamento che causa un ciclo infinito.</small></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="problema-ripetizione">
+      <div class="section-heading"><span class="icon" aria-hidden="true">📣</span><h2 id="problema-ripetizione">Copiare la stessa istruzione non è una buona soluzione</h2></div>
+      <p>Vogliamo visualizzare i numeri da 1 a 5. Potremmo scrivere cinque istruzioni:</p>
+      <pre><code>SCRIVI 1
+SCRIVI 2
+SCRIVI 3
+SCRIVI 4
+SCRIVI 5</code></pre>
+      <p>Per cinque numeri funziona, ma per cento numeri il programma diventerebbe lungo e difficile da modificare. Serve una struttura che ripeta la stessa azione cambiando ogni volta il valore.</p>
+      <div class="definition"><span class="definition-term">Iterazione</span><p>Una singola esecuzione delle istruzioni che devono essere ripetute.</p></div>
+      <div class="definition"><span class="definition-term">Ciclo</span><p>Una struttura che permette di eseguire più volte un gruppo di istruzioni.</p></div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="struttura-while">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔁</span><h2 id="struttura-while">La struttura logica del ciclo <code>while</code></h2></div>
+      <p><code>while</code> significa <q>mentre</q>. Il ciclo ripete il proprio corpo <strong>mentre la condizione è vera</strong>.</p>
+      <pre><code>MENTRE condizione ESEGUI
+  istruzioni da ripetere
+FINE MENTRE</code></pre>
+      <ol class="steps">
+        <li><strong>Controlla la condizione.</strong><p>Il controllo avviene prima di entrare nel corpo.</p></li>
+        <li><strong>Se è vera, esegui il corpo.</strong><p>Al termine, il flusso torna alla condizione.</p></li>
+        <li><strong>Se è falsa, esci dal ciclo.</strong><p>L'esecuzione continua con l'istruzione successiva.</p></li>
+      </ol>
+      <aside class="callout warning" aria-labelledby="zero-iterazioni">
+        <div class="callout-icon" aria-hidden="true">⚠️</div>
+        <div><p class="callout-label">Controllo anticipato</p><h3 id="zero-iterazioni">Il corpo può non essere eseguito</h3><p>Se la condizione è falsa già al primo controllo, il ciclo compie zero iterazioni. Non entra mai nel corpo.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="tre-momenti">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🧭</span><h2 id="tre-momenti">Inizializzazione, controllo e aggiornamento</h2></div>
+      <p>Per controllare una ripetizione usiamo spesso una variabile che cambia a ogni giro.</p>
+      <div class="definition"><span class="definition-term">Variabile di controllo</span><p>La variabile osservata dalla condizione per decidere se il ciclo deve continuare.</p></div>
+      <div class="card-grid">
+        <article class="info-card"><h3>1. Inizializzazione</h3><p>Assegna il valore di partenza prima del ciclo: <code>numero ← 1</code>.</p></article>
+        <article class="info-card"><h3>2. Controllo</h3><p>Stabilisce se entrare nel corpo: <code>numero &lt;= 5</code>.</p></article>
+        <article class="info-card"><h3>3. Aggiornamento</h3><p>Cambia la variabile nel corpo: <code>numero ← numero + 1</code>.</p></article>
+      </div>
+      <aside class="callout remember" aria-labelledby="domande-ciclo">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div><p class="callout-label">Metodo di lettura</p><h3 id="domande-ciclo">Fai sempre tre domande</h3><ol><li>Da quale valore parte la variabile?</li><li>Finché quale condizione continua?</li><li>Come cambia a ogni iterazione?</li></ol></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="una-volta-ripetute">
+      <div class="section-heading"><span class="icon" aria-hidden="true">📍</span><h2 id="una-volta-ripetute">Fuori o dentro il ciclo?</h2></div>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Posizione ed esecuzione delle istruzioni</caption>
+          <thead><tr><th scope="col">Posizione</th><th scope="col">Esempio</th><th scope="col">Quante volte?</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Prima del ciclo</th><td>Inizializzazione e input</td><td>Una volta</td></tr>
+            <tr><th scope="row">Nel corpo del ciclo</th><td>Output e aggiornamento</td><td>Zero o più volte</td></tr>
+            <tr><th scope="row">Dopo il ciclo</th><td>Output del risultato finale</td><td>Una volta, quando il ciclo termina</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>L'indentazione rende visibile il corpo del ciclo. In Flowgorithm la posizione dei blocchi dentro il simbolo <em>While</em> mostra quali istruzioni vengono ripetute.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esempio-uno">
+      <div class="section-heading"><span class="icon" aria-hidden="true">1️⃣</span><h2 id="esempio-uno">Esempio 1 — Visualizzare i numeri da 1 a 5</h2></div>
+      <p><strong>Problema:</strong> mostrare in ordine i numeri 1, 2, 3, 4 e 5 senza scrivere cinque istruzioni di output diverse.</p>
+      <p><strong>Variabile necessaria:</strong> <code>numero</code>, di tipo <code>Integer</code>. È la variabile di controllo e funziona anche da <strong>contatore</strong>: cambia di una unità a ogni iterazione.</p>
+      <h3>Algoritmo in pseudocodice</h3>
+      <pre><code>INIZIO
+  DICHIARA numero COME Integer
+  numero ← 1
+  MENTRE numero &lt;= 5 ESEGUI
+    SCRIVI numero
+    numero ← numero + 1
+  FINE MENTRE
+FINE</code></pre>
+      <h3>Diagramma da costruire in Flowgorithm</h3>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Blocchi e collegamenti dell'esempio 1</caption>
+          <thead><tr><th scope="col">Ordine</th><th scope="col">Blocco</th><th scope="col">Contenuto e collegamento</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Dichiarazione</td><td><code>numero</code> come <code>Integer</code></td></tr>
+            <tr><td>2</td><td>Assegnazione</td><td><code>numero = 1</code></td></tr>
+            <tr><td>3</td><td><em>While</em></td><td><code>numero &lt;= 5</code>; se falsa, vai a Fine</td></tr>
+            <tr><td>4</td><td>Output nel ciclo</td><td>Mostra <code>numero</code></td></tr>
+            <tr><td>5</td><td>Assegnazione nel ciclo</td><td><code>numero = numero + 1</code>, poi torna al <em>While</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Tabella di traccia</h3>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Simulazione completa dell'esempio 1</caption>
+          <thead><tr><th scope="col">Controllo</th><th scope="col">Valore di <code>numero</code></th><th scope="col">Condizione</th><th scope="col">Output</th><th scope="col">Valore dopo l'aggiornamento</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>1</td><td>Vera</td><td>1</td><td>2</td></tr>
+            <tr><td>2</td><td>2</td><td>Vera</td><td>2</td><td>3</td></tr>
+            <tr><td>3</td><td>3</td><td>Vera</td><td>3</td><td>4</td></tr>
+            <tr><td>4</td><td>4</td><td>Vera</td><td>4</td><td>5</td></tr>
+            <tr><td>5</td><td>5</td><td>Vera</td><td>5</td><td>6</td></tr>
+            <tr><td>6</td><td>6</td><td>Falsa</td><td>Nessuno</td><td>Nessun aggiornamento</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Risultato atteso:</strong> vengono mostrati <code>1 2 3 4 5</code>. Il corpo è eseguito cinque volte; il sesto controllo serve per uscire.</p>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Due prove significative</caption>
+          <thead><tr><th scope="col">Inizializzazione usata</th><th scope="col">Previsione</th><th scope="col">Che cosa controlla</th></tr></thead>
+          <tbody><tr><td><code>numero ← 1</code></td><td>Output da 1 a 5</td><td>Il caso normale</td></tr><tr><td><code>numero ← 6</code></td><td>Nessun output</td><td>La condizione falsa al primo controllo</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esempio-due">
+      <p class="eyebrow">Attività opzionale</p>
+      <div class="section-heading"><span class="icon" aria-hidden="true">2️⃣</span><h2 id="esempio-due">Consolidamento facoltativo — Contare da un valore iniziale a un limite</h2></div>
+      <p class="muted">Svolgi questa parte se rimane tempo oppure usala successivamente per il ripasso.</p>
+      <p><strong>Problema:</strong> leggere un valore iniziale e un limite, poi mostrare tutti gli interi dal valore iniziale al limite compreso.</p>
+      <p><strong>Variabili necessarie:</strong> <code>inizio</code> e <code>limite</code> contengono gli input; <code>contatore</code> è la variabile di controllo. Tutte sono di tipo <code>Integer</code>.</p>
+      <h3>Algoritmo in pseudocodice</h3>
+      <pre><code>INIZIO
+  DICHIARA inizio, limite, contatore COME Integer
+  LEGGI inizio
+  LEGGI limite
+  contatore ← inizio
+  MENTRE contatore &lt;= limite ESEGUI
+    SCRIVI contatore
+    contatore ← contatore + 1
+  FINE MENTRE
+FINE</code></pre>
+      <h3>Diagramma da costruire in Flowgorithm</h3>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Blocchi e collegamenti dell'esempio 2</caption>
+          <thead><tr><th scope="col">Ordine</th><th scope="col">Blocco</th><th scope="col">Contenuto e collegamento</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Dichiarazione</td><td><code>inizio</code>, <code>limite</code> e <code>contatore</code> come <code>Integer</code></td></tr>
+            <tr><td>2</td><td>Due input</td><td>Leggi <code>inizio</code>, poi <code>limite</code></td></tr>
+            <tr><td>3</td><td>Assegnazione</td><td><code>contatore = inizio</code></td></tr>
+            <tr><td>4</td><td><em>While</em></td><td><code>contatore &lt;= limite</code>; se falsa, vai a Fine</td></tr>
+            <tr><td>5</td><td>Output e assegnazione nel ciclo</td><td>Mostra <code>contatore</code>, aumenta di 1 e torna al <em>While</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Tabella di traccia con <code>inizio = 3</code> e <code>limite = 6</code></h3>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Simulazione dell'esempio 2</caption>
+          <thead><tr><th scope="col">Controllo</th><th scope="col"><code>contatore</code></th><th scope="col"><code>contatore &lt;= limite</code></th><th scope="col">Output</th><th scope="col">Dopo l'aggiornamento</th></tr></thead>
+          <tbody><tr><td>1</td><td>3</td><td>Vera</td><td>3</td><td>4</td></tr><tr><td>2</td><td>4</td><td>Vera</td><td>4</td><td>5</td></tr><tr><td>3</td><td>5</td><td>Vera</td><td>5</td><td>6</td></tr><tr><td>4</td><td>6</td><td>Vera</td><td>6</td><td>7</td></tr><tr><td>5</td><td>7</td><td>Falsa</td><td>Nessuno</td><td>Nessun aggiornamento</td></tr></tbody>
+        </table>
+      </div>
+      <p><strong>Risultato atteso:</strong> con 3 e 6 vengono mostrati <code>3 4 5 6</code>.</p>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <caption>Dati di prova dell'esempio 2</caption>
+          <thead><tr><th scope="col"><code>inizio</code></th><th scope="col"><code>limite</code></th><th scope="col">Output atteso</th><th scope="col">Che cosa controlla</th></tr></thead>
+          <tbody><tr><td>3</td><td>6</td><td>3, 4, 5, 6</td><td>Più iterazioni</td></tr><tr><td>5</td><td>5</td><td>5</td><td>Una sola iterazione</td></tr><tr><td>7</td><td>5</td><td>Nessun output</td><td>Zero iterazioni</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="previsione">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔮</span><h2 id="previsione">Prevedi prima di eseguire</h2></div>
+      <p>Non avviare subito il programma. Scrivi l'output previsto e il valore finale di <code>i</code>.</p>
+      <pre><code>i ← 2
+MENTRE i &lt; 7 ESEGUI
+  SCRIVI i
+  i ← i + 2
+FINE MENTRE</code></pre>
+      <details><summary>Controlla la previsione</summary><p>L'output è <code>2 4 6</code>. Dopo l'ultimo aggiornamento <code>i</code> vale 8; la condizione <code>8 &lt; 7</code> è falsa e il ciclo termina.</p></details>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio">
+      <div class="lab-header"><h2 id="laboratorio">Laboratorio guidato — Sommare i numeri da 1 a <code>N</code></h2></div>
+      <div class="lab-body">
+        <p><strong>Problema:</strong> leggere un intero non negativo <code>N</code> e calcolare la somma <code>1 + 2 + ... + N</code>.</p>
+        <p><strong>Dato assunto:</strong> in questa attività assumiamo che l'utente inserisca un valore <code>N ≥ 0</code>.</p>
+        <p><strong>Variabili necessarie:</strong> <code>N</code> contiene il limite, <code>numero</code> è la variabile di controllo, <code>somma</code> conserva il totale parziale. Tutte sono di tipo <code>Integer</code>.</p>
+        <div class="definition"><span class="definition-term">Accumulatore</span><p>Una variabile che raccoglie un risultato progressivo. Qui <code>somma</code> parte da 0 e riceve ogni nuovo numero.</p></div>
+        <h3>Algoritmo in pseudocodice</h3>
+        <pre><code>INIZIO
+  DICHIARA N, numero, somma COME Integer
+  LEGGI N
+  numero ← 1
+  somma ← 0
+  MENTRE numero &lt;= N ESEGUI
+    somma ← somma + numero
+    numero ← numero + 1
+  FINE MENTRE
+  SCRIVI somma
+FINE</code></pre>
+        <h3>Diagramma da costruire in Flowgorithm</h3>
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <caption>Blocchi e collegamenti del laboratorio</caption>
+            <thead><tr><th scope="col">Ordine</th><th scope="col">Blocco</th><th scope="col">Contenuto e collegamento</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Dichiarazione e input</td><td>Dichiara le tre variabili e leggi <code>N</code></td></tr>
+              <tr><td>2</td><td>Due assegnazioni</td><td><code>numero = 1</code> e <code>somma = 0</code></td></tr>
+              <tr><td>3</td><td><em>While</em></td><td><code>numero &lt;= N</code></td></tr>
+              <tr><td>4</td><td>Due assegnazioni nel ciclo</td><td>Prima aggiorna <code>somma</code>, poi aggiorna <code>numero</code>; torna al <em>While</em></td></tr>
+              <tr><td>5</td><td>Output fuori dal ciclo</td><td>Quando la condizione è falsa, mostra <code>somma</code> e vai a Fine</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Istruzioni operative</h3>
+        <ol class="steps">
+          <li><strong>Crea un nuovo diagramma.</strong><p>Apri Flowgorithm e individua i simboli Inizio e Fine.</p></li>
+          <li><strong>Dichiara le variabili.</strong><p>Subito dopo Inizio inserisci <code>N</code>, <code>numero</code> e <code>somma</code> come <code>Integer</code>.</p></li>
+          <li><strong>Leggi il limite.</strong><p>Inserisci un blocco <em>Input</em> per <code>N</code>.</p></li>
+          <li><strong>Inizializza prima del ciclo.</strong><p>Inserisci <code>numero = 1</code> e <code>somma = 0</code>. Queste istruzioni devono essere eseguite una sola volta.</p></li>
+          <li><strong>Inserisci il ciclo.</strong><p>Aggiungi un blocco <em>While</em> dopo le inizializzazioni.</p></li>
+          <li><strong>Scrivi la condizione.</strong><p>Nel blocco <em>While</em> digita <code>numero &lt;= N</code>.</p></li>
+          <li><strong>Costruisci il corpo.</strong><p>Dentro il ciclo inserisci, in quest'ordine, <code>somma = somma + numero</code> e <code>numero = numero + 1</code>.</p></li>
+          <li><strong>Colloca l'output dopo il ciclo.</strong><p>Inserisci <code>somma</code> fuori dal <em>While</em>: il totale finale deve apparire una sola volta.</p></li>
+          <li><strong>Prevedi con <code>N = 4</code>.</strong><p>Completa la tabella seguente prima dell'esecuzione.</p></li>
+          <li><strong>Esegui passo per passo.</strong><p>Usa il comando <em>Step</em> o <em>Passo</em>. A ogni blocco, osserva nella finestra delle variabili i valori di <code>numero</code> e <code>somma</code>.</p></li>
+          <li><strong>Confronta.</strong><p>Verifica che i valori osservati coincidano con la tabella e ripeti con <code>N = 0</code>.</p></li>
+        </ol>
+        <h3>Tabella di traccia con <code>N = 4</code></h3>
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <caption>Valori prima e dopo ogni iterazione</caption>
+            <thead><tr><th scope="col">Controllo</th><th scope="col"><code>numero</code> prima</th><th scope="col">Condizione</th><th scope="col"><code>somma</code> dopo l'accumulo</th><th scope="col"><code>numero</code> dopo l'aggiornamento</th></tr></thead>
+            <tbody><tr><td>1</td><td>1</td><td>Vera</td><td>1</td><td>2</td></tr><tr><td>2</td><td>2</td><td>Vera</td><td>3</td><td>3</td></tr><tr><td>3</td><td>3</td><td>Vera</td><td>6</td><td>4</td></tr><tr><td>4</td><td>4</td><td>Vera</td><td>10</td><td>5</td></tr><tr><td>5</td><td>5</td><td>Falsa</td><td>Resta 10</td><td>Resta 5</td></tr></tbody>
+          </table>
+        </div>
+        <p><strong>Risultato atteso:</strong> con <code>N = 4</code> l'output è <code>10</code>.</p>
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <caption>Dati di prova del laboratorio</caption>
+            <thead><tr><th scope="col"><code>N</code></th><th scope="col">Output atteso</th><th scope="col">Che cosa controlla</th></tr></thead>
+            <tbody><tr><td>4</td><td>10</td><td>Più iterazioni e accumulo progressivo</td></tr><tr><td>1</td><td>1</td><td>Una sola iterazione</td></tr><tr><td>0</td><td>0</td><td>Zero iterazioni e valore iniziale dell'accumulatore</td></tr></tbody>
+          </table>
+        </div>
+        <details><summary>Perché <code>somma</code> parte da 0?</summary><p>Zero non cambia una somma. Se il ciclo non viene eseguito, per esempio con <code>N = 0</code>, il risultato corretto rimane 0.</p></details>
+        <details><summary>Che cosa osservare nella finestra delle variabili?</summary><p><code>N</code> resta invariato. <code>numero</code> cresce di 1 a ogni iterazione. <code>somma</code> contiene prima 0, poi 1, 3, 6 e 10. Al controllo finale <code>numero</code> vale 5.</p></details>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="attivita-completare">
+      <div class="section-heading"><span class="icon" aria-hidden="true">✏️</span><h2 id="attivita-completare">Attività da completare — I numeri da 2 a 8</h2></div>
+      <p>Completa l'algoritmo in modo che mostri <code>2 4 6 8</code>.</p>
+      <pre><code>numero ← ____
+MENTRE numero &lt;= ____ ESEGUI
+  SCRIVI numero
+  numero ← numero + ____
+FINE MENTRE</code></pre>
+      <ol>
+        <li>Inserisci i tre valori mancanti.</li>
+        <li>Prevedi quante iterazioni verranno eseguite.</li>
+        <li>Scrivi il valore finale di <code>numero</code>.</li>
+        <li>Costruisci e prova il ciclo in Flowgorithm.</li>
+      </ol>
+      <details><summary>Apri la soluzione</summary><p>I valori sono 2, 8 e 2. Il corpo viene eseguito quattro volte. Dopo l'ultimo aggiornamento <code>numero</code> vale 10 e la condizione diventa falsa.</p></details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ciclo-infinito">
+      <div class="section-heading"><span class="icon" aria-hidden="true">♾️</span><h2 id="ciclo-infinito">Quando il ciclo non termina</h2></div>
+      <p>Osserva questo algoritmo:</p>
+      <pre><code>numero ← 1
+MENTRE numero &lt;= 5 ESEGUI
+  SCRIVI numero
+FINE MENTRE</code></pre>
+      <p><code>numero</code> resta sempre uguale a 1. La condizione rimane vera e il programma continua a mostrare 1.</p>
+      <div class="definition"><span class="definition-term">Ciclo infinito</span><p>Un ciclo che non raggiunge mai una condizione falsa e quindi non termina.</p></div>
+      <aside class="callout error" aria-labelledby="aggiornamento-mancante">
+        <div class="callout-icon" aria-hidden="true">❌</div>
+        <div><p class="callout-label">Errore da correggere</p><h3 id="aggiornamento-mancante">Manca l'aggiornamento</h3><p>Individua la riga mancante, indica dove deve essere inserita e spiega perché rende possibile l'uscita.</p></div>
+      </aside>
+      <details><summary>Controlla la correzione</summary><pre><code>numero ← 1
+MENTRE numero &lt;= 5 ESEGUI
+  SCRIVI numero
+  numero ← numero + 1
+FINE MENTRE</code></pre><p>L'aggiornamento deve stare nel corpo. <code>numero</code> raggiunge 6 e la condizione diventa falsa.</p></details>
+      <h3>Un aggiornamento presente ma errato</h3>
+      <pre><code>numero ← 1
+MENTRE numero &lt;= 5 ESEGUI
+  SCRIVI numero
+  numero ← numero - 1
+FINE MENTRE</code></pre>
+      <p>In questo caso <code>numero</code> diventa 0, poi -1, poi -2. Rimane sempre minore o uguale a 5.</p>
+      <details><summary>Come correggerlo?</summary><p>Sostituisci <code>numero ← numero - 1</code> con <code>numero ← numero + 1</code>. L'aggiornamento deve avvicinare la variabile al valore che rende falsa la condizione.</p></details>
+    </section>
+
+    <section class="lab" aria-labelledby="esercizio-autonomo">
+      <div class="lab-header"><h2 id="esercizio-autonomo">Esercizio autonomo — Multipli di 3 fino a un limite</h2></div>
+      <div class="lab-body">
+        <p class="muted">Questa è l'attività conclusiva di verifica. Se il tempo della lezione è terminato, completala successivamente.</p>
+        <p><strong>Problema:</strong> leggere un limite intero non negativo e mostrare i multipli positivi di 3 che non lo superano. Con limite 10, l'output deve essere <code>3 6 9</code>.</p>
+        <ol class="steps">
+          <li><strong>Individua le variabili.</strong><p>Usa <code>limite</code> per l'input e una variabile di controllo.</p></li>
+          <li><strong>Scegli l'inizializzazione.</strong><p>Il primo valore da mostrare è 3.</p></li>
+          <li><strong>Formula la condizione.</strong><p>Il valore può essere mostrato finché non supera <code>limite</code>.</p></li>
+          <li><strong>Scegli l'aggiornamento.</strong><p>Ogni multiplo positivo di 3 si ottiene aggiungendo 3.</p></li>
+          <li><strong>Disegna il diagramma.</strong><p>Inserisci input e inizializzazione fuori dal ciclo; output e aggiornamento dentro.</p></li>
+          <li><strong>Prevedi due prove.</strong><p>Scrivi l'output atteso con limite 10 e con limite 2.</p></li>
+          <li><strong>Esegui passo per passo.</strong><p>Controlla nella finestra delle variabili come cambia il valore.</p></li>
+          <li><strong>Spiega a voce.</strong><p>Indica inizializzazione, condizione, aggiornamento e numero di iterazioni.</p></li>
+        </ol>
+        <details><summary>Suggerimento 1 — Variabile e condizione</summary><p>Puoi chiamare la variabile di controllo <code>multiplo</code>. La condizione è <code>multiplo &lt;= limite</code>.</p></details>
+        <details><summary>Suggerimento 2 — Aggiornamento</summary><p>Nel corpo, dopo l'output, usa <code>multiplo ← multiplo + 3</code>.</p></details>
+        <details><summary>Controlla una possibile soluzione</summary><pre><code>INIZIO
+  DICHIARA limite, multiplo COME Integer
+  LEGGI limite
+  multiplo ← 3
+  MENTRE multiplo &lt;= limite ESEGUI
+    SCRIVI multiplo
+    multiplo ← multiplo + 3
+  FINE MENTRE
+FINE</code></pre><p>Con limite 10 l'output è <code>3 6 9</code>. Con limite 2 non viene mostrato nulla, perché la condizione è falsa al primo controllo.</p></details>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="dati-prova">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🧪</span><h2 id="dati-prova">Perché servono dati di prova diversi</h2></div>
+      <p>Un ciclo può funzionare con un dato e fallire con un altro. Prima di considerarlo corretto, prova almeno:</p>
+      <ul>
+        <li>un caso che esegua il corpo più volte;</li>
+        <li>un caso che lo esegua una sola volta;</li>
+        <li>quando ha senso, un caso che lo esegua zero volte;</li>
+        <li>un valore esattamente uguale al limite della condizione.</li>
+      </ul>
+      <p>Nella prossima lezione organizzeremo in modo più sistematico tabelle di traccia, casi di prova ed errori logici.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="errori">
+      <div class="section-heading"><span class="icon" aria-hidden="true">❌</span><h2 id="errori">Errori frequenti</h2></div>
+      <div class="card-grid">
+        <article class="info-card"><h3>Reinizializzare la variabile di controllo nel ciclo</h3><p>Se nel corpo assegniamo nuovamente alla variabile di controllo il valore iniziale, essa può tornare indietro a ogni iterazione e non raggiungere mai il valore necessario per uscire.</p></article>
+        <article class="info-card"><h3>Dimenticare l'aggiornamento</h3><p>La condizione può restare sempre vera e causare un ciclo infinito.</p></article>
+        <article class="info-card"><h3>Aggiornare nella direzione sbagliata</h3><p>Con una condizione <code>numero &lt;= limite</code>, diminuire <code>numero</code> lo allontana dall'uscita.</p></article>
+        <article class="info-card"><h3>Usare <code>&lt;</code> invece di <code>&lt;=</code></h3><p>Il valore limite viene escluso. Prova sempre il confine.</p></article>
+        <article class="info-card"><h3>Mettere l'output finale nel corpo</h3><p>Il risultato viene mostrato a ogni iterazione invece che una sola volta.</p></article>
+        <article class="info-card"><h3>Contare controlli e iterazioni allo stesso modo</h3><p>Il controllo finale falso non esegue il corpo, ma è necessario per terminare.</p></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="colloquio">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎤</span><h2 id="colloquio">Preparazione al colloquio</h2></div>
+      <aside class="callout exam" aria-labelledby="traccia-orale">
+        <div class="callout-icon" aria-hidden="true">🎓</div>
+        <div><p class="callout-label">Possibili domande</p><h3 id="traccia-orale">Spiega struttura, esecuzione e controllo</h3><ol><li>Che cosa sono un ciclo e un'iterazione?</li><li>Come funziona il ciclo <code>while</code>?</li><li>Perché il corpo può essere eseguito zero volte?</li><li>Quali sono inizializzazione, condizione e aggiornamento?</li><li>Che differenza c'è tra contatore e accumulatore?</li><li>Come si compila una tabella di traccia?</li><li>Quando si verifica un ciclo infinito?</li><li>Perché bisogna usare dati di prova diversi?</li></ol></div>
+      </aside>
+    </section>
+
+    <section class="quiz" aria-labelledby="autoverifica">
+      <h2 id="autoverifica">Autoverifica finale</h2>
+      <p>Rispondi prima di aprire le soluzioni.</p>
+      <div class="self-check">
+        <details><summary>Quando è utile una ripetizione?</summary><p>Quando lo stesso gruppo di istruzioni deve essere eseguito più volte secondo una regola, senza copiarlo manualmente.</p></details>
+        <details><summary>In <code>i ← 1; MENTRE i &lt;= 4; i ← i + 1</code>, quali sono i tre elementi di controllo?</summary><p>Inizializzazione: <code>i ← 1</code>. Condizione: <code>i &lt;= 4</code>. Aggiornamento: <code>i ← i + 1</code>.</p></details>
+        <details><summary>Quante volte viene eseguito il corpo se <code>i</code> parte da 1 e continua mentre <code>i &lt;= 4</code>, aumentando di 1?</summary><p>Quattro volte, con <code>i</code> uguale a 1, 2, 3 e 4. Il valore finale è 5.</p></details>
+        <details><summary>Completa una riga di traccia: <code>i</code> vale 2, la condizione è <code>i &lt;= 3</code> e l'aggiornamento è <code>i ← i + 1</code>. Quali valori registri?</summary><p>La condizione è vera; il corpo viene eseguito con <code>i = 2</code>; dopo l'aggiornamento <code>i</code> vale 3.</p></details>
+        <details><summary>Che cosa accade se la condizione è falsa al primo controllo?</summary><p>Il corpo non viene eseguito neppure una volta e il flusso prosegue dopo il ciclo.</p></details>
+        <details><summary>In una tabella di traccia, perché si registra anche il controllo finale falso?</summary><p>Per mostrare il momento in cui il ciclo termina e distinguere il numero dei controlli dal numero delle iterazioni.</p></details>
+        <details><summary>Qual è il possibile errore in un ciclo la cui variabile di controllo non cambia?</summary><p>La condizione può restare sempre vera e il ciclo può diventare infinito.</p></details>
+        <details><summary>Quale valore iniziale conviene usare per un accumulatore di somme?</summary><p>Zero, perché è l'elemento neutro della somma e non modifica il totale.</p></details>
+      </div>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header"><p class="eyebrow">Riepilogo finale</p><h2 id="zaino-studente">🎒 Lo zaino dello studente</h2><p>Le idee essenziali da ricordare e spiegare.</p></div>
+      <div class="student-backpack-grid">
+        <article class="backpack-card"><h3>Sintesi</h3><ol class="essential-list"><li>Un ciclo evita di copiare le stesse istruzioni.</li><li>Il <code>while</code> controlla prima la condizione.</li><li>Il corpo può essere eseguito zero o più volte.</li><li>La variabile di controllo va inizializzata e aggiornata.</li><li>Un accumulatore conserva un risultato progressivo.</li><li>Un aggiornamento errato può creare un ciclo infinito.</li></ol></article>
+        <article class="backpack-card"><h3>Parole chiave</h3><ul class="keyword-list"><li>ciclo</li><li>iterazione</li><li><code>while</code></li><li>variabile di controllo</li><li>contatore</li><li>accumulatore</li><li>tabella di traccia</li><li>ciclo infinito</li></ul></article>
+        <article class="backpack-card"><h3>Controllo rapido</h3><ol><li>Da quale valore parte?</li><li>Qual è la condizione?</li><li>Quali istruzioni si ripetono?</li><li>Come cambia la variabile?</li><li>Quando la condizione diventa falsa?</li><li>Quali dati devo provare?</li></ol></article>
+        <article class="backpack-card"><h3>Ripasso in 2 minuti</h3><p>Disegna un ciclo che mostra da 1 a 3 e indica inizializzazione, condizione, aggiornamento e valore finale.</p></article>
+      </div>
+    </section>
+
+    <section class="next-lesson" aria-labelledby="prossimo-passo">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2 id="prossimo-passo">Verificare un algoritmo</h2>
+      <p>Nella prossima lezione useremo in modo sistematico tabelle di traccia e casi di prova per individuare errori logici e controllare i risultati.</p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../06-condizioni-composte-e-selezioni-annidate/index.html">← Lezione 2.06 — Condizioni composte e selezioni annidate</a>
+      <a href="../../index.html#secondo-anno">Torna all'indice</a>
+      <a href="../08-verificare-un-algoritmo/index.html">Lezione 2.08 — Verificare un algoritmo →</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+    </div>
+  </footer>
+</body>
+</html>
