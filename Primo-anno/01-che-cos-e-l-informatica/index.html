@@ -419,7 +419,7 @@
       <div class="lesson-meta" aria-label="Informazioni sulla lezione">
         <span>⏱️ 2 ore</span>
         <span>📘 Lezione introduttiva</span>
-        <span>🎯 Nessun prerequisito tecnico</span>
+        <span>🎯 Nessuna conoscenza precedente di informatica; uso elementare di mouse e tastiera</span>
       </div>
     </div>
   </header>
@@ -895,16 +895,19 @@
         </p>
 
         <p>
-          Usa un foglio di carta oppure un semplice editor di testo. Non
-          occorre un programma particolare.
+          Per la prima parte usa un foglio di carta oppure un semplice editor
+          di testo. Nel passaggio «Metti in pratica al computer» userai un
+          foglio di calcolo già disponibile, senza formule.
         </p>
 
-        <ol class="steps">
+        <ol class="steps lesson-01-lab-steps">
           <li>
-            <strong>Scrivi dieci nomi di città</strong>
+            <strong>Scegli e numera dieci città</strong>
             <p>
-              Scegli liberamente dieci città italiane o straniere. Scrivile
-              inizialmente nell'ordine in cui ti vengono in mente.
+              Scegli dieci città diverse appartenenti ad almeno tre Stati. Per
+              ottenere gruppi significativi, almeno uno degli Stati deve avere
+              due o più città. Scrivile nell'ordine in cui ti vengono in mente,
+              numerale da 1 a 10 e conserva questa lista originale.
             </p>
           </li>
 
@@ -912,30 +915,180 @@
             <strong>Ordinale alfabeticamente</strong>
             <p>
               Riscrivi la lista dalla A alla Z. Indica il criterio usato:
-              il nome della città.
+              il nome della città. Mantieni accanto a ciascuna città il numero
+              assegnato nella lista originale: non rinumerare le città in base
+              alla nuova posizione.
             </p>
           </li>
 
           <li>
             <strong>Associa un secondo dato</strong>
             <p>
-              Accanto a ogni città scrivi lo Stato o la regione. Non è
-              necessario conoscere dati demografici precisi.
+              Accanto a ogni città scrivi lo <strong>Stato</strong> in cui si
+              trova. Usa sempre questo livello geografico: per esempio, per
+              Roma scrivi Italia, non Lazio. Usa sempre lo stesso nome per uno
+              Stato: scrivi per esempio sempre “Stati Uniti”, senza alternarlo
+              con “USA”. Conserva anche il numero iniziale di ogni città.
             </p>
           </li>
 
           <li>
             <strong>Crea un nuovo ordinamento</strong>
             <p>
-              Raggruppa le città per Stato o regione. Osserva che gli elementi
-              sono gli stessi, ma la struttura della lista è cambiata.
+              Raggruppa le città per Stato mantenendo accanto a ognuna il suo
+              numero iniziale. Osserva che gli elementi sono gli stessi, ma la
+              struttura della lista è cambiata. Non assegnare nuovi numeri.
             </p>
+          </li>
+
+          <li>
+            <section aria-labelledby="metti-in-pratica">
+              <h3 id="metti-in-pratica">Metti in pratica al computer</h3>
+
+              <p><strong>Durata orientativa:</strong> 30–40 minuti.</p>
+
+              <p>
+                <strong>Occorrente:</strong> le dieci città già usate, un
+                computer e un foglio di calcolo come Calc, Excel o Fogli Google.
+                <strong>Prerequisiti:</strong> nessuna conoscenza precedente di
+                informatica; uso elementare di mouse e tastiera. Devi soltanto
+                saper aprire il programma; non servono formule.
+              </p>
+
+              <div class="definition">
+                <span class="definition-term">Cella, riga e colonna</span>
+                <p>
+                  Una <strong>cella</strong> è uno dei riquadri del foglio e
+                  contiene un dato. Una <strong>riga</strong> è una sequenza
+                  orizzontale di celle: nel nostro lavoro descrive una città.
+                  Una <strong>colonna</strong> è una sequenza verticale di
+                  celle e raccoglie dati dello stesso tipo, come tutti i nomi
+                  delle città o tutti gli Stati.
+                </p>
+              </div>
+
+              <ol>
+                <li>
+                  <strong>Prepara la tabella.</strong>
+                  Nella cella <strong>A1</strong> scrivi <strong>Città</strong>,
+                  in <strong>B1</strong> scrivi <strong>Stato</strong> e in
+                  <strong>C1</strong> scrivi <strong>Ordine iniziale</strong>.
+                  A1 indica la cella che si trova nella colonna A e nella riga 1.
+                  La prima riga contiene le intestazioni: descrive le colonne e
+                  non fa parte dei dieci elementi da ordinare.
+                </li>
+                <li>
+                  <strong>Inserisci gli stessi dati.</strong>
+                  Nelle righe da <strong>2 a 11</strong> copia le dieci città,
+                  i rispettivi Stati e i numeri conservati dalla lista originale.
+                  Ogni riga descrive una città. Non sostituire i numeri quando
+                  l'ordine cambia.
+                </li>
+                <li>
+                  <strong>Ordina per città.</strong>
+                  Seleziona l'intervallo <strong>A1:C11</strong>, cioè l'intera
+                  tabella, e indica che la prima riga contiene intestazioni.
+                  Scegli un ordinamento crescente dalla A alla Z usando la
+                  colonna Città. Non ordinare una sola colonna: Città, Stato e
+                  Ordine iniziale devono restare uniti nella stessa riga.
+                </li>
+                <li>
+                  <strong>Osserva il primo risultato.</strong>
+                  Prima di continuare, controlla quale città compare per prima
+                  e quale per ultima. Verifica su almeno tre righe che ogni
+                  città abbia conservato lo Stato e il numero iniziale corretti.
+                </li>
+                <li>
+                  <strong>Ordina per Stato.</strong>
+                  Seleziona di nuovo <strong>A1:C11</strong>, indica che la prima
+                  riga contiene intestazioni e applica l'ordinamento crescente
+                  alla colonna Stato. Mantieni unite le tre colonne. Osserva
+                  quali città vengono raggruppate e quale domanda diventa ora
+                  più facile.
+                </li>
+                <li>
+                  <strong>Ripristina la sequenza originale.</strong>
+                  Seleziona ancora <strong>A1:C11</strong>, indica che la prima
+                  riga contiene intestazioni e ordina numericamente l'intera
+                  tabella in base alla colonna Ordine iniziale, dal numero più
+                  piccolo al più grande. Mantieni unite le tre colonne: la prima
+                  città scelta deve tornare nella prima riga dei dati.
+                </li>
+              </ol>
+
+              <h4 id="istruzioni-programmi">Istruzioni per il programma che usi</h4>
+              <p>Apri soltanto la guida del programma che utilizzi.</p>
+              <p>
+                Se vuoi stampare le istruzioni, apri la guida scelta prima di
+                avviare la stampa.
+              </p>
+              <div class="self-check" aria-labelledby="istruzioni-programmi">
+                <details>
+                  <summary>Se usi LibreOffice Calc</summary>
+                  <ol>
+                    <li>Seleziona l'intervallo <strong>A1:C11</strong>.</li>
+                    <li>Apri <strong>Dati → Ordina</strong>.</li>
+                    <li>Nelle opzioni indica che la prima riga contiene etichette di colonna.</li>
+                    <li>Scegli la colonna richiesta e l'ordine crescente, poi conferma.</li>
+                    <li>Usa <strong>File → Salva con nome</strong>, assegna il nome <strong>L01_organizzare_informazioni</strong> e salva il file in una cartella che sai ritrovare. Chiudilo e riaprilo dalla stessa cartella.</li>
+                  </ol>
+                </details>
+
+                <details>
+                  <summary>Se usi Microsoft Excel</summary>
+                  <ol>
+                    <li>Seleziona l'intervallo <strong>A1:C11</strong>.</li>
+                    <li>Apri <strong>Dati → Ordina</strong>.</li>
+                    <li>Controlla che sia attiva l'opzione <strong>I dati hanno intestazioni</strong>.</li>
+                    <li>Scegli la colonna richiesta e l'ordine crescente, poi conferma.</li>
+                    <li>Usa <strong>File → Salva con nome</strong>, assegna il nome <strong>L01_organizzare_informazioni</strong> e salva il file in una cartella che sai ritrovare. Chiudilo e riaprilo dalla stessa cartella.</li>
+                  </ol>
+                </details>
+
+                <details>
+                  <summary>Se usi Fogli Google</summary>
+                  <ol>
+                    <li>Seleziona l'intervallo <strong>A1:C11</strong>.</li>
+                    <li>Apri <strong>Dati → Ordina intervallo → Opzioni avanzate di ordinamento intervallo</strong>.</li>
+                    <li>Indica che l'intervallo contiene una riga di intestazione.</li>
+                    <li>Scegli la colonna richiesta e l'ordine dalla A alla Z, poi conferma.</li>
+                    <li>Rinomina il documento <strong>L01_organizzare_informazioni</strong>. Fogli Google salva automaticamente in Drive: torna in Drive e ritrova il documento tra i file recenti oppure cercandone il nome, quindi riaprilo.</li>
+                  </ol>
+                </details>
+              </div>
+
+              <aside class="callout tip" aria-labelledby="controlla-tabella">
+                <div class="callout-icon" aria-hidden="true">✅</div>
+                <div>
+                  <p class="callout-label">Controlla il risultato</p>
+                  <h4 id="controlla-tabella">Il lavoro è completo?</h4>
+                  <ul>
+                    <li>La tabella contiene un'intestazione e dieci righe di dati.</li>
+                    <li>Le città sono diverse, gli Stati sono almeno tre e almeno uno compare più volte.</li>
+                    <li>Ogni riga mantiene uniti città, Stato e ordine iniziale.</li>
+                    <li>Hai osservato il risultato dell'ordinamento per città prima di ordinare per Stato.</li>
+                    <li>L'ordinamento per Stato raggruppa correttamente le città.</li>
+                    <li>I numeri da 1 a 10 ripristinano la sequenza originale.</li>
+                    <li>Hai riaperto il file salvato oppure ritrovato il documento in Drive.</li>
+                  </ul>
+                </div>
+              </aside>
+
+              <p>
+                In questa esperienza l'<strong>input</strong> è la tabella con
+                le dieci città, gli Stati e l'ordine iniziale;
+                l'<strong>elaborazione</strong> è l'ordinamento eseguito dal
+                foglio di calcolo secondo il criterio scelto;
+                l'<strong>output</strong> è la stessa tabella presentata nel
+                nuovo ordine.
+              </p>
+            </section>
           </li>
 
           <li>
             <strong>Formula una domanda</strong>
             <p>
-              Scrivi una domanda a cui uno dei due ordinamenti permette di
+              Scrivi una domanda a cui uno degli ordinamenti permette di
               rispondere più velocemente. Esempio: «Qual è la prima città in
               ordine alfabetico?».
             </p>
@@ -944,8 +1097,9 @@
           <li>
             <strong>Descrivi il procedimento</strong>
             <p>
-              In tre o quattro frasi, spiega quali dati hai raccolto, quale
-              elaborazione hai svolto e quale risultato hai ottenuto.
+              In quattro o cinque frasi, spiega quali dati hai inserito, quale
+              criterio hai scelto, quale elaborazione ha eseguito il foglio di
+              calcolo e quale output hai osservato.
             </p>
           </li>
         </ol>
@@ -1231,7 +1385,7 @@
 
   <footer class="course-footer">
     <div class="container narrow">
-      <p><strong>Docente: Prof. Marco Cocciniglia — Informatica.</strong></p>
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
       <p>
         Questa pagina è pensata per essere letta anche da studenti DSA:
         istruzioni sequenziali, font leggibili, contrasti elevati e

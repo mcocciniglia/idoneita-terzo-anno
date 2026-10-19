@@ -425,6 +425,11 @@ kbd{
   font-weight:850;
 }
 
+/* Il CSS comune incrementa già il contatore sull'elemento li. */
+.lesson-01-lab-steps > li::before{
+  counter-increment:none;
+}
+
 .steps > li:not(:last-child)::after{
   content:"";
   position:absolute;
