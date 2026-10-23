@@ -127,3 +127,12 @@ dalla progressione numerata delle lezioni.
 |--------|-----------|-------------|-------|-----------|
 | Q01 | Quaderno di allenamento – Sistemi di numerazione | Lezione 02 | ✅ | Conversioni, addizioni e sottrazioni binarie; nelle sottrazioni il minuendo è sempre maggiore o uguale al sottraendo; divisioni binarie non comprese |
 | Q02 | Quaderno di allenamento – Hardware e software | Lezioni 03 e 04 | ✅ | Distinzione e collaborazione tra hardware e software; input, elaborazione e output |
+
+## Mappe concettuali pubblicate
+
+| Codice | Mappa | Collegata a | Stato |
+|--------|-------|-------------|-------|
+| M04 | Dal problema all'algoritmo | Lezione 2.01 | ✅ |
+
+La Lezione 2.01 conserva anche la mappa visuale del percorso in sei fasi, con
+lettura testuale equivalente. Le immagini originali di `main` sono mantenute.

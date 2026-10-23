@@ -36,9 +36,11 @@ Tre soluzioni scaricabili in `flowgorithm/`: `01-sequenza.fprg`, `02-biglietti.f
 piccoli: non vengono anticipati controllo completo degli input o gestione monetaria
 di applicazioni reali.
 
-Lo schema illustrato della sorgente è reso come elenco HTML equivalente nelle sei
-fasi, leggibile anche senza immagini. Il collegamento alla mappa M04 non ancora
-pubblicata non viene esposto: il riepilogo resta nella pagina. Nessuna nuova immagine.
+Ripristinate le due mappe originali di `main`: il percorso in sei fasi nella
+lezione e la mappa concettuale M04 nella propria pagina. L'elenco equivalente
+delle sei fasi resta disponibile in un riquadro apribile. Le due immagini sono
+copiate senza modifiche dai file già presenti nel repository; non vengono
+introdotte immagini esterne. La M04 conserva la trascrizione testuale originale.
 
 ## Navigazione e file
 
@@ -59,7 +61,7 @@ tagli o scorrimento orizzontale. Conservato il footer didattico della lezione or
 ## Verifiche eseguite
 
 - Controllo dei tag HTML bilanciati, attributi e identificatori non duplicati, gerarchia dei titoli, riferimenti ARIA, percorsi relativi e ancore dei file modificati. Nessun errore strutturale rilevato; non è una certificazione W3C/WCAG completa.
-- Tutti i collegamenti locali della nuova lezione risolti, salvo il percorso intenzionale della 2.02, gestito dal 404 comune. Nessun richiamo a pagine non pubblicate del Primo anno o alla mappa M04.
+- Tutti i collegamenti locali della nuova lezione risolti, salvo il percorso intenzionale della 2.02, gestito dal 404 comune. Nessun richiamo a pagine non pubblicate del Primo anno. La mappa M04 è pubblicata e collegata in entrambe le direzioni.
 - Inventario dei file pubblicabili: esattamente quattro lezioni del Primo anno e una del Secondo anno. Lezioni 01–03, fotografie Hardware, CSS e script invariati.
 - Chrome: homepage, Hardware e 2.01 provate a 1280, 390 e 320 pixel, in chiaro e scuro (18 combinazioni). Nessun elemento fuori schermo né scorrimento orizzontale; nessun errore JavaScript. Ispezione visiva di testata, laboratorio e schermo stretto in scuro.
 - Pulsanti tema e contrasto, apertura delle soluzioni e salto al contenuto da tastiera controllati. Usate copie dei CSS/JS effettivamente pubblicati in `common`; font esterni esclusi dalla prova e caratteri di riserva attivi.
@@ -92,3 +94,34 @@ Consultata la documentazione ufficiale di Flowgorithm per
 [selezione](https://www.flowgorithm.org/documentation/if.html),
 [tipi](https://www.flowgorithm.org/documentation/language/types.html) e
 [operatori](https://flowgorithm.org/documentation/operators.html).
+
+## Ripristino delle mappe originali — 23 ottobre 2026
+
+La precedente pubblicazione aveva sostituito la mappa nella lezione con un elenco
+e omesso il collegamento alla M04. Le mappe hanno una funzione didattica di
+organizzazione dei concetti e ripasso: sono ripristinate, senza modificare il
+laboratorio, gli esercizi, i file Flowgorithm o le altre lezioni.
+
+File interessati: lezione 2.01; le due immagini originali; pagina M04 e indice
+delle mappe; ROADMAP.md; questo report. L'indice espone soltanto la M04, senza
+pubblicare altre mappe o lezioni del Primo anno.
+
+Nella pagina M04 una nota esplicita la distinzione fra controllo della soluzione
+prima dell'applicazione e confronto fra risultato ottenuto e output atteso dopo
+l'esecuzione. L'immagine e la trascrizione originali restano intatte.
+
+Le due pagine riutilizzano CSS/JS comuni e la classe responsiva `figure`. Le mappe
+si aprono anche a dimensione completa; sono indicati dimensioni, alt e didascalie.
+Nessuna modifica ai CSS comuni e nessun nuovo script.
+
+Verifiche del ripristino: tag, identificatori, ARIA, ancore e link locali senza
+errori; immagini identiche byte per byte a `main`; trascrizione originale M04
+e contenuti del laboratorio invariati. Chrome: lezione, M04 e indice mappe a
+1280, 390 e 320 pixel in entrambi i temi, immagini caricate e nessun elemento
+fuori schermo. Le didascalie ereditano il colore del tema, evitando il grigio
+fisso della classe comune `caption` sul fondo scuro. Peso originale complessivo
+delle mappe: 3.40 MB, conservato per non alterare le immagini e il testo incorporato.
+
+- `secondo-anno/01-dal-problema-all-algoritmo/assets/dal-problema-all-algoritmo.png`: 1536 × 1024 pixel, 1,606,750 byte; SHA-256 `ae483471b8d9e1c92b832f80c4935309b83f5aed7ccd8c8cabc715844af2bc0d`.
+
+- `Mappe-concettuali/secondo-anno/dal-problema-all-algoritmo/mappa-dal-problema-all-algoritmo.png`: 1402 × 1122 pixel, 1,796,016 byte; SHA-256 `df42b732a824c17b737aa94ca356cbeb5b67d3fc11fe101171140a0685914395`.
