@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value="Dal problema all’algoritmo" />
+        <attribute name="authors" value="Prof. Marco Cocciniglia" />
+        <attribute name="about" value="Esempio svolto della Lezione 2.01: input validi, test descritti nella pagina." />
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters />
+        <body>
+            <declare name="quantita" type="Integer" array="False" size="" />
+            <declare name="prezzo" type="Real" array="False" size="" />
+            <declare name="totale" type="Real" array="False" size="" />
+            <declare name="budget" type="Real" array="False" size="" />
+            <output expression="&quot;Quanti biglietti?&quot;" newline="True" />
+            <input variable="quantita" />
+            <output expression="&quot;Prezzo di un biglietto in euro?&quot;" newline="True" />
+            <input variable="prezzo" />
+            <assign variable="totale" expression="quantita * prezzo" />
+            <output expression="&quot;Totale in euro:&quot;" newline="True" />
+            <output expression="totale" newline="True" />
+            <output expression="&quot;Budget disponibile in euro?&quot;" newline="True" />
+            <input variable="budget" />
+            <if expression="totale &lt;= budget">
+                <then>
+                    <output expression="&quot;Budget sufficiente&quot;" newline="True" />
+                </then>
+                <else>
+                    <output expression="&quot;Budget insufficiente&quot;" newline="True" />
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

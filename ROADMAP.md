@@ -62,7 +62,23 @@ Legenda
 
 # Secondo anno
 
-Le lezioni del secondo anno verranno aggiunte successivamente.
+## Pubblicazione attuale
+
+Il ramo `pubblicazione`, sorgente di GitHub Pages, contiene soltanto le lezioni
+01–04 del Primo anno e la Lezione 2.01 del Secondo anno. Le lezioni 05–18 del
+Primo anno restano non pubblicate. I contenuti già generati in `main` non vanno
+importati in blocco nel ramo pubblico.
+
+| Codice | Lezione | Stato | Dipende da | Note |
+|--------|---------|-------|------------|------|
+| 2.01 | Dal problema all'algoritmo | ✅ | 01–04 | Analisi; laboratorio Flowgorithm di circa 2 ore: sequenza, input/output, variabili, selezione; iterazione facoltativa; test e collegamento al futuro studio del C |
+| 2.02 | Rappresentare un algoritmo | ⚪ | 2.01 | Non pubblicata; approfondimento di simboli, linguaggio naturale e pseudocodice |
+
+La numerazione del Secondo anno resta autonoma. Il laboratorio della 2.01
+introduce soltanto le operazioni necessarie ai primi diagrammi; variabili,
+operatori e selezione verranno ripresi nelle lezioni successive. Non servono
+prerequisiti delle lezioni 05–18. Il riferimento al C motiva il percorso futuro
+senza introdurne qui la sintassi.
 
 ---
 

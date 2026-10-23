@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Lezione introduttiva sul passaggio dal problema all'algoritmo: analisi del problema e laboratorio Flowgorithm con sequenze, variabili, input, output, selezione, esercizi e test. Un primo collegamento al linguaggio C.">
+  <title>2.01 — Dal problema all'algoritmo</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line" aria-label="Identificazione del percorso">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge second">Programma del secondo anno</span>
+        </div>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle" class="btn btn-theme" type="button"
+                  aria-pressed="false" aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+          <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button"
+                  aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span>
+        <span aria-hidden="true">›</span>
+        <span>Secondo anno</span>
+        <span aria-hidden="true">›</span>
+        <span>Lezione 2.01</span>
+      </nav>
+
+      <p class="section-intro">Secondo anno — Lezione 2.01 · Durata prevista: 2 ore</p>
+      <h1>Dal problema all'algoritmo</h1>
+      <p class="lead">Dalla richiesta a un diagramma che funziona: analizziamo un problema, lo eseguiamo con Flowgorithm e controlliamo i risultati.</p>
+
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ Circa 2 ore</span>
+        <span>📘 Secondo anno</span>
+        <span>🎯 Prerequisito: riconoscere dati e informazioni</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading">
+        <span>Percorso del secondo anno</span>
+        <span>Lezione 2.01 · Prima lezione disponibile del secondo anno</span>
+      </div>
+
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ripasso">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🔄</span>
+        <h2 id="ripasso">Prima di iniziare: dati e informazioni</h2>
+      </div>
+      <p>Nella <a href="../../Primo-anno/04-hardware/index.html">Lezione 04</a> hai osservato le parti fisiche del computer. La tastiera permette di inserire dati, la CPU esegue le istruzioni dei programmi, la RAM conserva dati e istruzioni in uso e lo schermo mostra i risultati. Quando calcoli il costo di una visita, queste parti collaborano.</p>
+      <p>La <a href="../../Primo-anno/03-software/index.html">Lezione 03</a> ci ha aiutato a distinguere hardware e software. Ora cominciamo a progettare le istruzioni: il computer può eseguire un calcolo, ma dobbiamo stabilire quali dati servono, quale operazione fare e che cosa mostrare.</p>
+      <p>Riprendiamo anche la distinzione della <a href="../../Primo-anno/01-che-cos-e-l-informatica/index.html#dato-informazione">Lezione 01</a>: «4» da solo è un dato; «servono 4 biglietti» gli dà un significato. Se ogni biglietto costa 7 euro, possiamo usare questi dati per trovare una spesa di 28 euro.</p>
+      <p>Nella <a href="../../Primo-anno/02-rappresentazione-dell-informazione/index.html">Lezione 02</a> hai visto che i dati nel computer sono rappresentati in binario. Nel laboratorio lavoreremo con numeri e parole leggibili: non occorre convertire i valori in binario per progettare il procedimento.</p>
+      <p><strong>Fermati due minuti:</strong> nel calcolo dei biglietti, quali sono i dati inseriti? Quale risultato vuoi leggere? Quale parte fisica ti permette di comunicarlo al computer? Puoi rispondere a voce o annotare tre parole chiave.</p>
+      <aside class="callout remember" aria-labelledby="ponte-prerequisiti">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Collegamento con il primo anno</p>
+          <h3 id="ponte-prerequisiti">I dati acquistano significato dentro un problema</h3>
+          <p>Prima di usarli, chiediti sempre che cosa rappresentano e perché sono necessari.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🎯</span>
+        <h2 id="obiettivi">Obiettivi della lezione</h2>
+      </div>
+      <p>Al termine saprai analizzare un problema semplice, costruire un primo diagramma eseguibile e spiegare perché il risultato è corretto.</p>
+      <div class="objective-grid">
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Distinguere</strong><small>Problema, soluzione e algoritmo.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Individuare</strong><small>Obiettivo, input, output atteso e vincoli.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Ordinare</strong><small>Azioni chiare, complete ed eseguibili.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Controllare</strong><small>Il risultato ottenuto rispetto all'output atteso.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Esporre</strong><small>L'analisi con parole semplici e precise.</small></article>
+        <article class="objective-card"><span class="icon" aria-hidden="true">✓</span><strong>Costruire e provare</strong><small>Sequenze, input/output, variabili e una scelta con Flowgorithm.</small></article>
+      </div>
+    </section>
+
+
+    <section class="lesson-section" aria-labelledby="percorso-due-ore">
+      <h2 id="percorso-due-ore">Il percorso nelle due ore</h2>
+      <p>Lavora un blocco alla volta. Le attività quotidiane aggiuntive e l'iterazione sono facoltative: puoi riprenderle a casa. In coppia, alternate chi usa il computer e chi legge i passi e controlla i risultati.</p>
+      <ol>
+        <li><strong>0–10 minuti:</strong> richiamo iniziale e <a href="#situazione">analisi della richiesta</a>.</li>
+        <li><strong>10–25 minuti:</strong> algoritmo, input, output, vincoli ed <a href="#esempio-biglietti">esempio dei biglietti</a>. Gli esempi del compito si leggono insieme; zaino e attività autonome restano per il ripasso.</li>
+        <li><strong>25–35 minuti:</strong> <a href="#primi-passi-flowgorithm">primi passi in Flowgorithm</a> e sequenza di due messaggi.</li>
+        <li><strong>35–60 minuti:</strong> <a href="#laboratorio-biglietti">laboratorio 1</a>, variabili, calcolo e prove.</li>
+        <li><strong>60–65 minuti:</strong> pausa e confronto sulle difficoltà.</li>
+        <li><strong>65–85 minuti:</strong> <a href="#laboratorio-budget">laboratorio 2</a>, una scelta e tre test.</li>
+        <li><strong>85–105 minuti:</strong> <a href="#esercizi-flowgorithm">esercizi progressivi</a>: svolgi 1 e 2; scegli 3 o 4 se hai tempo.</li>
+        <li><strong>105–115 minuti:</strong> <a href="#verifica-laboratorio">verifica individuale</a> e correzione.</li>
+        <li><strong>115–120 minuti:</strong> <a href="#verso-c">collegamento al C</a> e consegna dei file.</li>
+      </ol>
+      <p><strong>Per seguire i passaggi:</strong> tieni visibile una consegna alla volta, usa i nomi di variabile proposti e annota input e output su un foglio. Puoi usare la scheda delle forme durante il laboratorio e rispondere a voce alle domande di ripasso.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="situazione">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">📤</span>
+        <h2 id="situazione">Situazione iniziale: consegnare un compito</h2>
+      </div>
+      <p>
+        Hai terminato una relazione e devi consegnarla sulla piattaforma scolastica entro le
+        18:00, in formato PDF e con il nome indicato dal docente. Fare subito clic su
+        «Consegna» non basta: prima devi capire la richiesta.
+      </p>
+      <div class="card-grid">
+        <article class="info-card"><h3>Che cosa ottenere?</h3><p>Una consegna corretta e visibile al docente.</p></article>
+        <article class="info-card"><h3>Quali sono gli input?</h3><p>Il documento, le credenziali e le istruzioni.</p></article>
+        <article class="info-card"><h3>Quali limiti?</h3><p>Scadenza, formato e nome del file.</p></article>
+        <article class="info-card"><h3>Quali azioni?</h3><p>Preparare, caricare, eseguire la consegna e controllare.</p></article>
+      </div>
+      <p>
+        Questa situazione mostra l'idea centrale della lezione: <strong>prima di agire,
+        analizziamo il problema</strong>.
+      </p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="problema-soluzione-algoritmo">
+      <div class="section-heading">
+        <span class="icon" aria-hidden="true">🧩</span>
+        <h2 id="problema-soluzione-algoritmo">Problema, soluzione e algoritmo</h2>
+      </div>
+      <p>Partiamo dall'esempio concreto e diamo un nome ai tre elementi principali.</p>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Problema</h3>
+          <p>Descrive una situazione da risolvere e ciò che deve essere ottenuto.</p>
+        </article>
+        <article class="info-card">
+          <h3>Soluzione</h3>
+          <p>È il modo scelto per affrontare il problema.</p>
+        </article>
+        <article class="info-card">
+          <h3>Algoritmo</h3>
+          <p>È una sequenza finita di istruzioni precise ed eseguibili che stabilisce come ottenere un risultato a partire dai dati ammessi. Le istruzioni possono comprendere operazioni in ordine, scelte e ripetizioni.</p>
+        </article>
+      </div>
+      <p>
+        Durante l'analisi distinguiamo i <strong>dati di ingresso (input)</strong>
+        dal risultato che vogliamo ottenere, chiamato <strong>risultato atteso
+        (output)</strong>. L'algoritmo descrive i passi necessari per trasformare
+        gli input nell'output atteso. L'esecuzione produce un
+        <strong>risultato ottenuto</strong>, che deve poi essere controllato.
+      </p>
+      <ol aria-label="Dal problema al controllo">
+        <li><strong>Problema:</strong> leggi la richiesta.</li>
+        <li><strong>Analisi:</strong> individua obiettivo, input, output atteso e vincoli.</li>
+        <li><strong>Algoritmo:</strong> scrivi i passi.</li>
+        <li><strong>Esecuzione:</strong> svolgi le istruzioni.</li>
+        <li><strong>Risultato ottenuto:</strong> osserva ciò che viene prodotto.</li>
+        <li><strong>Controllo:</strong> confrontalo con l'output atteso; se non coincide, rivedi analisi o passi.</li>
+      </ol>
+      <aside class="callout remember" aria-labelledby="differenza-fondamentale">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Ricorda</p>
+          <h3 id="differenza-fondamentale">Il problema non è la soluzione</h3>
+          <p>Il problema dice che cosa occorre risolvere; la soluzione indica come affrontarlo.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="buon-algoritmo">
+      <div class="section-heading"><span class="icon" aria-hidden="true">✅</span><h2 id="buon-algoritmo">Come deve essere un buon algoritmo</h2></div>
+      <p>Una semplice lista di frasi non è sufficiente. Il procedimento deve avere caratteristiche precise.</p>
+      <div class="card-grid">
+        <article class="info-card"><h3>Ordinato</h3><p>I passi sono nella successione corretta.</p></article>
+        <article class="info-card"><h3>Finito</h3><p>Termina dopo un numero limitato di passi.</p></article>
+        <article class="info-card"><h3>Comprensibile</h3><p>Chi lo legge capisce che cosa deve fare.</p></article>
+        <article class="info-card"><h3>Non ambiguo</h3><p>Ogni istruzione ha un significato preciso.</p></article>
+        <article class="info-card"><h3>Eseguibile</h3><p>Le azioni possono essere svolte con i mezzi disponibili.</p></article>
+        <article class="info-card"><h3>Efficace</h3><p>Per gli input ammessi, produce il risultato richiesto. Le prove aiutano a trovare errori; pochi test riusciti non dimostrano da soli che funzioni in ogni caso.</p></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="elementi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔎</span><h2 id="elementi">Gli elementi da individuare</h2></div>
+      <p>Per analizzare un problema usa cinque domande-guida.</p>
+      <div class="card-grid">
+        <article class="info-card"><h3>Obiettivo</h3><p>Lo scopo da raggiungere.</p><p><strong>Domanda:</strong> Che cosa devo ottenere?</p></article>
+        <article class="info-card"><h3>Dati di ingresso (input)</h3><p>Le informazioni disponibili all'inizio e necessarie per affrontare il problema.</p><p><strong>Domanda:</strong> Quali dati conosco o ricevo?</p></article>
+        <article class="info-card"><h3>Risultato atteso (output)</h3><p>Ciò che la soluzione deve produrre o comunicare.</p><p><strong>Domanda:</strong> Quale risultato deve uscire dal procedimento?</p></article>
+        <article class="info-card"><h3>Vincoli</h3><p>Le condizioni e i limiti che devono essere rispettati.</p><p><strong>Domanda:</strong> Quali condizioni devo rispettare?</p></article>
+        <article class="info-card"><h3>Passi</h3><p>Le azioni necessarie, espresse nella successione corretta.</p><p><strong>Domanda:</strong> Come trasformo i dati di ingresso nel risultato atteso?</p></article>
+      </div>
+      <aside class="callout tip" aria-labelledby="prima-domanda">
+        <div class="callout-icon" aria-hidden="true">🧭</div>
+        <div><p class="callout-label">Strategia</p><h3 id="prima-domanda">Inizia dall'obiettivo</h3><p>Se non definisci l'output atteso, non puoi scegliere come trasformare i dati di ingresso né ordinare i passi.</p></div>
+      </aside>
+      <aside class="callout remember" aria-labelledby="output-e-risultato">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div>
+          <p class="callout-label">Distinzione importante</p>
+          <h3 id="output-e-risultato">Output atteso e risultato ottenuto non sono la stessa cosa</h3>
+          <p>L'output atteso viene definito durante l'analisi; il risultato ottenuto compare dopo l'esecuzione. Il controllo serve a verificare che coincidano.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esempio-compito">
+      <div class="section-heading"><span class="icon" aria-hidden="true">📄</span><h2 id="esempio-compito">Primo esempio guidato: consegnare il compito</h2></div>
+      <dl class="card-grid">
+        <div class="info-card"><dt><strong>Problema</strong></dt><dd>Consegnare correttamente la relazione sulla piattaforma.</dd></div>
+        <div class="info-card"><dt><strong>Obiettivo</strong></dt><dd>Fare in modo che il docente riceva il file richiesto entro la scadenza.</dd></div>
+        <div class="info-card"><dt><strong>Dati di ingresso (input)</strong></dt><dd>Relazione completata, istruzioni, credenziali e orario di scadenza.</dd></div>
+        <div class="info-card"><dt><strong>Output atteso</strong></dt><dd>Consegna registrata con il file corretto.</dd></div>
+        <div class="info-card"><dt><strong>Vincoli</strong></dt><dd>Formato PDF, nome richiesto, dimensione accettata e consegna entro le 18:00.</dd></div>
+      </dl>
+      <h3>Passi ordinati in linguaggio naturale</h3>
+      <ol class="steps lesson-01-lab-steps">
+        <li><strong>Rileggi le istruzioni.</strong><p>Controlla formato, nome e scadenza.</p></li>
+        <li><strong>Apri la relazione.</strong><p>Verifica che il contenuto sia completo.</p></li>
+        <li><strong>Prepara il file.</strong><p>Salvalo in PDF con il nome richiesto.</p></li>
+        <li><strong>Accedi alla piattaforma.</strong><p>Apri l'attività indicata dal docente.</p></li>
+        <li><strong>Carica e consegna.</strong><p>Seleziona il file corretto e conferma.</p></li>
+        <li><strong>Esegui e osserva il risultato.</strong><p>La conferma visualizzata dopo l'invio è il risultato ottenuto.</p></li>
+        <li><strong>Controlla.</strong><p>Confronta la conferma, il nome del file e l'orario con l'output atteso e con i vincoli.</p></li>
+      </ol>
+      <p><strong>Controllo finale:</strong> il risultato ottenuto coincide con l'output atteso? Il file visualizzato è corretto e la consegna risulta registrata prima delle 18:00?</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esempio-biglietti">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎟️</span><h2 id="esempio-biglietti">Secondo esempio guidato: il costo dei biglietti</h2></div>
+      <p><strong>Situazione:</strong> per una visita servono 4 biglietti uguali. Ogni biglietto costa 7 euro. Quanto si spende in totale?</p>
+      <ol class="steps lesson-01-lab-steps">
+        <li><strong>Individua gli input.</strong><p>Servono 4 biglietti e ciascuno costa 7 euro.</p></li>
+        <li><strong>Definisci l'output atteso.</strong><p>Occorre ottenere il costo complessivo.</p></li>
+        <li><strong>Scegli l'operazione.</strong><p>Moltiplica il numero di biglietti per il costo unitario.</p></li>
+        <li><strong>Esegui il calcolo.</strong><p>4 × 7 = 28. La moltiplicazione equivale all'addizione ripetuta 7 + 7 + 7 + 7.</p></li>
+        <li><strong>Comunica il risultato ottenuto.</strong><p>La spesa complessiva è di 28 euro.</p></li>
+        <li><strong>Controlla.</strong><p>Verifica che 28 euro sia plausibile e che il risultato abbia l'unità di misura.</p></li>
+      </ol>
+      <aside class="callout remember" aria-labelledby="risultato-unita">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div><p class="callout-label">Controllo</p><h3 id="risultato-unita">Un risultato deve essere comunicato chiaramente</h3><p>Scrivere soltanto «28» non basta: occorre specificare che si tratta di 28 euro.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ordine">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🔢</span><h2 id="ordine">L'ordine delle istruzioni conta</h2></div>
+      <p>
+        Se provi a caricare la relazione prima di convertirla in PDF, potresti scegliere il
+        file sbagliato. Se comunichi il costo prima di fare il calcolo, non hai ancora un
+        risultato. Cambiare l'ordine può rendere il procedimento inefficace.
+      </p>
+      <aside class="callout warning" aria-labelledby="ordine-errore">
+        <div class="callout-icon" aria-hidden="true">⚠️</div>
+        <div><p class="callout-label">Attenzione</p><h3 id="ordine-errore">Tutti i passi possono essere corretti, ma nell'ordine sbagliato</h3><p>Controlla quali azioni devono avvenire prima e quali dipendono dalle precedenti.</p></div>
+      </aside>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="ambigue">
+      <div class="section-heading"><span class="icon" aria-hidden="true">❓</span><h2 id="ambigue">Istruzioni ambigue o incomplete</h2></div>
+      <p>Un'istruzione ambigua permette interpretazioni diverse; un'istruzione incompleta non fornisce ciò che serve per agire.</p>
+      <div class="card-grid">
+        <article class="quiz-question"><h3>«Sistema il file nel posto giusto»</h3><p><strong>Problema:</strong> non indica quale file né quale cartella.</p><p><strong>Più precisa:</strong> «Sposta il file relazione.pdf nella cartella Consegna».</p></article>
+        <article class="quiz-question"><h3>«Fai il calcolo necessario»</h3><p><strong>Problema:</strong> non specifica quali valori usare né che cosa calcolare.</p><p><strong>Più precisa:</strong> «Considera quattro volte il costo di 7 euro».</p></article>
+        <article class="quiz-question"><h3>«Ripeti alcune volte»</h3><p><strong>Problema:</strong> «alcune» non stabilisce quante volte.</p><p><strong>Più precisa:</strong> «Esegui il controllo tre volte».</p></article>
+        <article class="quiz-question"><h3>«Usa un numero abbastanza grande»</h3><p><strong>Problema:</strong> persone diverse possono scegliere numeri diversi.</p><p><strong>Più precisa:</strong> «Usa un numero maggiore di 100».</p></article>
+      </div>
+    </section>
+
+    <section class="lab" aria-labelledby="attivita-guidata">
+      <div class="lab-header"><h2 id="attivita-guidata">🧭 Ripasso facoltativo — Preparare lo zaino</h2></div>
+      <div class="lab-body">
+        <p><strong>Situazione:</strong> domani hai educazione fisica alla prima ora e devi preparare lo zaino questa sera.</p>
+        <ol class="steps lesson-01-lab-steps">
+          <li><strong>Problema.</strong><p>Preparare tutto il necessario senza dimenticare oggetti.</p></li>
+          <li><strong>Obiettivo.</strong><p>Avere uno zaino completo e pronto prima di andare a dormire.</p></li>
+          <li><strong>Dati di ingresso (input).</strong><p>Orario scolastico, elenco del materiale e oggetti presenti in casa.</p></li>
+          <li><strong>Output atteso.</strong><p>Uno zaino con libri, quaderni e materiale per educazione fisica.</p></li>
+          <li><strong>Vincoli.</strong><p>Completa tu: quali limiti di tempo, spazio o disponibilità devi rispettare?</p></li>
+          <li><strong>Passi ordinati.</strong><p>Scrivi quattro o cinque azioni, iniziando dal controllo dell'orario.</p></li>
+          <li><strong>Risultato ottenuto e controllo.</strong><p>Osserva il contenuto dello zaino e confrontalo con l'output atteso, l'orario e l'elenco.</p></li>
+        </ol>
+        <details>
+          <summary>Apri un possibile completamento</summary>
+          <p><strong>Vincoli:</strong> preparare lo zaino entro sera, usare lo spazio disponibile e inserire soltanto il materiale necessario.</p>
+          <p><strong>Passi:</strong> leggere l'orario; elencare il materiale; recuperare gli oggetti; inserirli nello zaino; confrontare il contenuto con l'elenco.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="attivita-autonome">
+      <div class="section-heading"><span class="icon" aria-hidden="true">✍️</span><h2 id="attivita-autonome">Attività autonome per il ripasso a casa</h2></div>
+      <p>Per ogni situazione individua gli elementi, ordina i passi, correggi le ambiguità e poi presenta la soluzione a voce.</p>
+
+      <article class="quiz-question">
+        <h3>1. Inviare una fotografia al docente</h3>
+        <p>La fotografia deve essere leggibile, in formato JPG, nominata «cognome-attivita» e inviata entro domani.</p>
+        <ol>
+          <li>Individua problema, obiettivo, dati di ingresso, output atteso e vincoli.</li>
+          <li>Scrivi cinque passi ordinati in linguaggio naturale.</li>
+          <li>Sostituisci l'istruzione ambigua «manda la foto nel modo giusto».</li>
+          <li>Spiega oralmente la soluzione in un minuto.</li>
+        </ol>
+        <details>
+          <summary>Controlla la tua analisi</summary>
+          <p><strong>Elementi:</strong> l'obiettivo è far ricevere una fotografia corretta; gli input sono fotografia, istruzioni e scadenza; l'output atteso è l'invio registrato con il file corretto; i vincoli sono leggibilità, formato, nome e tempo.</p>
+          <p><strong>Passi possibili:</strong> scattare la foto; controllarne la leggibilità; salvarla in JPG; assegnare il nome richiesto; inviarla. La conferma è il risultato ottenuto, da confrontare con l'output atteso.</p>
+        </details>
+      </article>
+
+      <article class="quiz-question">
+        <h3>2. Acquistare quaderni uguali</h3>
+        <p>Occorrono 5 quaderni. Ogni quaderno costa 3 euro. Quanto si spende?</p>
+        <ol>
+          <li>Individua problema, obiettivo, dati di ingresso, output atteso e vincoli.</li>
+          <li>Descrivi in ordine il ragionamento e il controllo.</li>
+          <li>Rendi precisa l'istruzione «fai il conto».</li>
+          <li>Spiega oralmente la soluzione in un minuto.</li>
+        </ol>
+        <details>
+          <summary>Controlla la tua analisi</summary>
+          <p>Gli input sono 5 quaderni e 3 euro ciascuno; l'output atteso è il costo complessivo. L'esecuzione del calcolo 5 × 3 produce il risultato ottenuto di 15 euro. Il controllo conferma che è plausibile perché cinque oggetti da 3 euro costano più di 3 euro e meno di 20.</p>
+        </details>
+      </article>
+    </section>
+
+    <section class="lab" aria-labelledby="primi-passi-flowgorithm">
+      <div class="lab-header"><h2 id="primi-passi-flowgorithm">💻 Prima di calcolare: una sequenza in Flowgorithm</h2></div>
+      <div class="lab-body">
+        <p><strong>Occorrente:</strong> Flowgorithm già disponibile sul computer, una cartella in cui salvare e un foglio per prevedere i risultati. Se non hai il programma, segui il diagramma su carta con un compagno; potrai eseguirlo in laboratorio.</p>
+        <p>Flowgorithm permette di costruire ed eseguire <strong>diagrammi di flusso</strong>: forme collegate da frecce che rappresentano istruzioni e ordine di esecuzione. Le etichette possono essere in italiano o in inglese; qui trovi entrambi i nomi. Colori e aspetto possono cambiare: riconosci le forme dalla funzione.</p>
+        <ol class="steps lesson-01-lab-steps">
+          <li><strong>Apri un nuovo diagramma.</strong><p>Individua la forma iniziale <code>Main</code> e quella finale <code>End</code>. Per ora lascia queste due forme al loro posto.</p></li>
+          <li><strong>Inserisci il primo messaggio.</strong><p>Fai clic sulla freccia tra inizio e fine. Scegli <strong>Output (Uscita)</strong>. Apri la forma con un doppio clic e, nel campo dell'espressione, scrivi <code>"Inizio del laboratorio"</code>, comprese le virgolette dritte. Conferma.</p></li>
+          <li><strong>Aggiungi un secondo Output.</strong><p>Fai clic sulla freccia sotto il primo messaggio. Inserisci <code>"Ora controllo il risultato"</code>. Lascia attiva l'opzione per andare a capo nei due Output.</p></li>
+          <li><strong>Prevedi, poi esegui.</strong><p>Scrivi l'ordine dei due messaggi. Avvia il diagramma con il comando di esecuzione <strong>Run (Esegui)</strong>, riconoscibile dal triangolo di avvio. Leggi i messaggi nella console, cioè la finestra di input e output.</p></li>
+          <li><strong>Salva e modifica.</strong><p>Salva come <code>01-sequenza.fprg</code>. Inverti i due testi e riesegui: quale riga compare per prima? Ripristina poi l'ordine iniziale.</p></li>
+        </ol>
+        <p>Questa è una <strong>sequenza</strong>: le istruzioni vengono eseguite nell'ordine indicato dalle frecce. Hai già un programma che produce due risultati osservabili.</p>
+        <details><summary>Confronta con il diagramma svolto</summary><p><a href="flowgorithm/01-sequenza.fprg" download>Scarica la sequenza di due messaggi (.fprg)</a>. Aprila con Flowgorithm dopo aver provato a costruirla.</p></details>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="strumenti-laboratorio">
+      <h2 id="strumenti-laboratorio">I dati cambiano: servono le variabili</h2>
+      <p>Per 4 biglietti da 7 euro il totale è 28 euro. Per 3 biglietti da 2.5 euro è 7.5 euro. Possiamo usare lo stesso procedimento cambiando i dati: leggiamo quantità e prezzo, li moltiplichiamo e mostriamo il totale.</p>
+      <div class="definition">
+        <strong>Variabile</strong>
+        <p>Una variabile ha un nome, un tipo e un valore che può cambiare durante l'esecuzione. Per esempio, <code>quantita</code> conserva il numero di biglietti inserito. Il nome ci permette di usare quel valore nei calcoli.</p>
+      </div>
+      <p>Prima di usare una variabile la <strong>dichiariamo</strong>: scegliamo nome e tipo. Useremo <code>Integer</code> per quantità intere e <code>Real</code> per prezzi e risultati che possono avere decimali. Nei nomi proposti non ci sono spazi né accenti.</p>
+      <p>Se leggiamo 4 e 7, l'operazione <code>quantita * prezzo</code> dà 28. L'<strong>assegnazione</strong> calcola questa espressione e memorizza il risultato in <code>totale</code>. Il simbolo <code>*</code> indica la moltiplicazione.</p>
+      <p><strong>Le cinque forme usate nei laboratori</strong></p>
+      <div class="card-grid">
+        <article class="info-card"><h3>Declare · Dichiarazione</h3><p>Prepara una variabile e ne stabilisce il tipo.</p><p><strong>Esempio:</strong> Nome <code>quantita</code>, tipo <code>Integer</code>.</p></article>
+        <article class="info-card"><h3>Input · Ingresso</h3><p>Legge un valore digitato e lo conserva nella variabile.</p><p><strong>Esempio:</strong> Variabile <code>quantita</code>.</p></article>
+        <article class="info-card"><h3>Assign · Assegnazione</h3><p>Calcola e memorizza un valore.</p><p><strong>Esempio:</strong> Variabile <code>totale</code>, espressione <code>quantita * prezzo</code>.</p></article>
+        <article class="info-card"><h3>Output · Uscita</h3><p>Mostra un testo o un valore.</p><p><strong>Esempio:</strong> <code>"Totale in euro:"</code>, oppure <code>totale</code> senza virgolette.</p></article>
+        <article class="info-card"><h3>If · Se</h3><p>Valuta una condizione e sceglie uno dei due rami.</p><p><strong>Esempio:</strong> <code>totale &lt;= budget</code>: il totale è minore o uguale al budget?</p></article>
+      </div>
+      <aside class="callout remember" aria-labelledby="testo-o-valore">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div><h3 id="testo-o-valore">Testo e valore di una variabile</h3><p>Un Output con <code>"totale"</code> mostra la parola «totale». Un Output con <code>totale</code> mostra il valore memorizzato. Una dichiarazione, da sola, non sostituisce la lettura o l'assegnazione dei dati necessari.</p></div>
+      </aside>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio-biglietti">
+      <div class="lab-header"><h2 id="laboratorio-biglietti">💻 Laboratorio 1 · Calcolare il costo dei biglietti</h2></div>
+      <div class="lab-body">
+        <p><strong>Consegna:</strong> leggi il numero di biglietti e il prezzo di un biglietto. Calcola e mostra la spesa totale in euro.</p>
+        <ul>
+          <li><strong>Input ammessi:</strong> quantità intera maggiore o uguale a zero; prezzo maggiore o uguale a zero. In queste prove usiamo valori piccoli.</li>
+          <li><strong>Output atteso:</strong> quantità × prezzo, comunicato come importo in euro.</li>
+          <li><strong>Vincolo:</strong> tutti i biglietti hanno lo stesso prezzo; non ci sono sconti o spese aggiuntive. Il diagramma assume input validi: non li controlla ancora.</li>
+        </ul>
+        <p><strong>Prima del computer:</strong> per 4 biglietti da 7 euro scrivi sul foglio il risultato atteso, 28 euro. Sarà il riferimento per il primo test.</p>
+        <ol class="steps lesson-01-lab-steps">
+          <li><strong>Crea e salva.</strong><p>Apri un nuovo diagramma e salvalo come <code>02-biglietti.fprg</code>.</p></li>
+          <li><strong>Dichiara le variabili.</strong><p>Tra <code>Main</code> e <code>End</code> inserisci tre forme Declare, nell'ordine: <code>quantita</code> di tipo <code>Integer</code>; <code>prezzo</code> di tipo <code>Real</code>; <code>totale</code> di tipo <code>Real</code>. Per ogni forma apri le proprietà, imposta nome e tipo e conferma.</p></li>
+          <li><strong>Chiedi la quantità.</strong><p>Dopo le dichiarazioni aggiungi un Output con <code>"Quanti biglietti?"</code>. Sotto aggiungi un Input e imposta come variabile <code>quantita</code>, senza virgolette.</p></li>
+          <li><strong>Chiedi il prezzo.</strong><p>Aggiungi un Output con <code>"Prezzo di un biglietto in euro?"</code>, seguito da un Input nella variabile <code>prezzo</code>. Per i decimali delle prove usa il punto: <code>2.5</code>.</p></li>
+          <li><strong>Calcola il totale.</strong><p>Aggiungi una forma Assign. Nel campo della variabile scrivi <code>totale</code>; nel campo dell'espressione scrivi <code>quantita * prezzo</code>. Non scrivere l'intera uguaglianza nel campo della variabile.</p></li>
+          <li><strong>Mostra il risultato.</strong><p>Aggiungi un Output con <code>"Totale in euro:"</code> e poi un secondo Output con <code>totale</code>, senza virgolette. Lascia attiva l'andata a capo. Per ora teniamo testo e numero in due forme distinte.</p></li>
+          <li><strong>Esegui il primo test.</strong><p>Avvia con Run, inserisci prima <code>4</code> e poi <code>7</code>. Il risultato deve essere 28, preceduto dall'indicazione dell'unità di misura. Salva con <kbd>Ctrl</kbd> + <kbd>S</kbd>.</p></li>
+          <li><strong>Segui un'istruzione alla volta.</strong><p>Avvia una nuova esecuzione con il comando <strong>Step (Passo)</strong>. Avanza una forma alla volta e osserva le variabili nella finestra di controllo dei valori (<strong>Variable Watch</strong>). Se non è visibile, richiamala dal menu delle finestre. Annota quando vengono letti <code>quantita</code> e <code>prezzo</code> e quando viene calcolato <code>totale</code>.</p></li>
+        </ol>
+        <h3>Controlla l'ordine prima di eseguire</h3>
+        <ol>
+          <li>Tre dichiarazioni.</li>
+          <li>Messaggio e lettura della quantità.</li>
+          <li>Messaggio e lettura del prezzo.</li>
+          <li>Assegnazione del prodotto a <code>totale</code>.</li>
+          <li>Messaggio «Totale in euro:» e visualizzazione del valore.</li>
+        </ol>
+        <p><strong>Traccia del primo calcolo: «—» indica un valore non ancora fornito o calcolato</strong></p>
+      <div class="card-grid">
+        <article class="info-card"><h3>Input quantità</h3><p><code>quantita</code>: <strong>4</strong>; <code>prezzo</code>: <strong>—</strong>; <code>totale</code>: <strong>—</strong>.</p></article>
+        <article class="info-card"><h3>Input prezzo</h3><p><code>quantita</code>: <strong>4</strong>; <code>prezzo</code>: <strong>7</strong>; <code>totale</code>: <strong>—</strong>.</p></article>
+        <article class="info-card"><h3>Assign totale</h3><p><code>quantita</code>: <strong>4</strong>; <code>prezzo</code>: <strong>7</strong>; <code>totale</code>: <strong>28</strong>.</p></article>
+      </div>
+        <h3>Ripeti con dati diversi</h3>
+        <p>Un <strong>test</strong> è una prova con input scelti e un output atteso stabilito prima dell'esecuzione. Confronta il risultato ottenuto con quello previsto. Compila sul foglio anche una colonna «ottenuto» e una colonna «esito».</p>
+        <p><strong>Test del laboratorio 1 · Risultati in euro</strong></p>
+      <div class="card-grid">
+        <article class="info-card"><h3>Quantità 4, prezzo 7</h3><p><strong>Totale atteso:</strong> 28 euro.</p><p>Il caso svolto.</p></article>
+        <article class="info-card"><h3>Quantità 3, prezzo 2.5</h3><p><strong>Totale atteso:</strong> 7.5 euro.</p><p>Un prezzo con decimali.</p></article>
+        <article class="info-card"><h3>Quantità 0, prezzo 7</h3><p><strong>Totale atteso:</strong> 0 euro.</p><p>Nessun biglietto.</p></article>
+        <article class="info-card"><h3>Quantità 2, prezzo 0</h3><p><strong>Totale atteso:</strong> 0 euro.</p><p>Biglietti gratuiti.</p></article>
+      </div>
+        <details><summary>Apri la soluzione dopo il tentativo</summary><p><a href="flowgorithm/02-biglietti.fprg" download>Scarica il diagramma completo dei biglietti (.fprg)</a>. Se il browser mostra il contenuto del file, usa «Salva link con nome» e mantieni l'estensione <code>.fprg</code>; poi aprilo in Flowgorithm. Il numero può essere mostrato come 28 oppure 28.0: il valore è lo stesso.</p></details>
+      </div>
+    </section>
+
+    <section class="lab" aria-labelledby="laboratorio-budget">
+      <div class="lab-header"><h2 id="laboratorio-budget">💻 Laboratorio 2 · Il budget è sufficiente?</h2></div>
+      <div class="lab-body">
+        <p>Il totale è 28 euro. Se hai 30 euro puoi acquistare i biglietti; se ne hai 27 il denaro non basta. Con 28 euro puoi pagarli esattamente. Serve una <strong>selezione</strong>: una condizione decide quale ramo di istruzioni eseguire.</p>
+        <p><strong>Consegna:</strong> riparti dal calcolo dei biglietti, leggi il budget disponibile e comunica se copre la spesa. Anche il budget deve essere maggiore o uguale a zero; per questa attività assumiamo un valore valido.</p>
+        <ol class="steps lesson-01-lab-steps">
+          <li><strong>Conserva il primo lavoro.</strong><p>Apri il diagramma dei biglietti e usa «Salva con nome» per creare <code>03-budget.fprg</code>.</p></li>
+          <li><strong>Prepara il budget.</strong><p>Prima dei blocchi di input, aggiungi Declare con nome <code>budget</code> e tipo <code>Real</code>. Dopo gli Output del totale inserisci un Output con <code>"Budget disponibile in euro?"</code> e un Input nella variabile <code>budget</code>.</p></li>
+          <li><strong>Inserisci la scelta.</strong><p>Dopo la lettura del budget aggiungi la forma <strong>If (Se)</strong>, riconoscibile dal rombo. Nella condizione scrivi <code>totale &lt;= budget</code>. Leggila: «il totale è minore o uguale al budget».</p></li>
+          <li><strong>Completa il ramo vero.</strong><p>Sulla freccia etichettata <strong>True (Vero)</strong> inserisci un Output con <code>"Budget sufficiente"</code>. Segui l'etichetta, perché la posizione del ramo può dipendere dallo stile del diagramma.</p></li>
+          <li><strong>Completa il ramo falso.</strong><p>Sulla freccia <strong>False (Falso)</strong> inserisci un Output con <code>"Budget insufficiente"</code>. Dopo la scelta i rami si ricongiungono e l'esecuzione raggiunge <code>End</code>.</p></li>
+          <li><strong>Verifica entrambi i rami.</strong><p>Esegui i tre test indicati sotto. Per ogni prova riavvia il diagramma e reinserisci quantità e prezzo. Prima di avviare, indica quale ramo deve essere percorso. Controlla almeno una prova con Step, poi salva.</p></li>
+        </ol>
+        <p><strong>Test del laboratorio 2 · Quantità 4, prezzo 7, totale 28 in tutte le prove</strong></p>
+      <div class="card-grid">
+        <article class="info-card"><h3>Budget: 30 euro</h3><p><strong>28 &lt;= budget:</strong> Vero.</p><p><strong>Messaggio atteso:</strong> Budget sufficiente.</p></article>
+        <article class="info-card"><h3>Budget: 28 euro</h3><p><strong>28 &lt;= budget:</strong> Vero.</p><p><strong>Messaggio atteso:</strong> Budget sufficiente.</p></article>
+        <article class="info-card"><h3>Budget: 27 euro</h3><p><strong>28 &lt;= budget:</strong> Falso.</p><p><strong>Messaggio atteso:</strong> Budget insufficiente.</p></article>
+      </div>
+        <p><strong>Perché provare proprio 28?</strong> È il caso al confine: il denaro basta esattamente. Se usi <code>&lt;</code> al posto di <code>&lt;=</code>, lo classifichi in modo errato. Provare solo 30 non rivelerebbe l'errore.</p>
+        <details><summary>Confronta con la soluzione</summary><p><a href="flowgorithm/03-budget.fprg" download>Scarica il diagramma con selezione sul budget (.fprg)</a>. Spiega a un compagno perché un solo ramo viene eseguito in ogni prova.</p></details>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="esercizi-flowgorithm">
+      <h2 id="esercizi-flowgorithm">Esercizi progressivi · Prova prima di aprire la soluzione</h2>
+      <p>Per ogni esercizio annota input, output atteso e passi; costruisci il diagramma, esegui i test e salva il file con un nome riconoscibile. In aula completa 1 e 2; scegli poi 3 o 4. Gli altri restano per l'allenamento.</p>
+      <article class="quiz-question">
+        <h3>1 · Sequenza: tre messaggi</h3>
+        <p>Mostra, nell'ordine, «Leggo i dati», «Eseguo il calcolo», «Controllo il risultato». Non servono Input né variabili. Salva come <code>esercizio-01.fprg</code>.</p>
+        <p><strong>Test:</strong> i tre messaggi devono comparire su tre righe e nell'ordine richiesto.</p>
+        <details><summary>Suggerimento e soluzione</summary><p>Inserisci tre Output tra Main e End, con ciascun testo tra virgolette dritte. La sequenza dei blocchi stabilisce l'ordine dei messaggi.</p></details>
+      </article>
+      <article class="quiz-question">
+        <h3>2 · Input, variabile e calcolo: il doppio</h3>
+        <p>Leggi un numero intero e mostrane il doppio. Usa <code>numero</code> e <code>doppio</code>, entrambi Integer. Salva come <code>esercizio-02.fprg</code>.</p>
+        <p><strong>Test:</strong> 5 → 10; 0 → 0; −3 → −6. I numeri negativi sono ammessi; nel programma digita il segno <code>-</code>.</p>
+        <details><summary>Suggerimento</summary><p>Dopo le dichiarazioni, chiedi e leggi il numero. Quale espressione assegni a <code>doppio</code>?</p></details>
+        <details><summary>Soluzione</summary><p>Dichiara le due variabili; Output di richiesta; Input in <code>numero</code>; Assign a <code>doppio</code> dell'espressione <code>numero * 2</code>; Output di una descrizione e poi di <code>doppio</code>.</p></details>
+      </article>
+      <article class="quiz-question">
+        <h3>3 · Due input: l'area di un rettangolo</h3>
+        <p>Leggi base e altezza in centimetri e mostra l'area in centimetri quadrati. Usa <code>base</code>, <code>altezza</code> e <code>area</code> di tipo Real. Assumi misure maggiori di zero. Salva come <code>esercizio-03.fprg</code>.</p>
+        <p><strong>Test:</strong> base 4, altezza 3 → 12 cm²; base 2.5, altezza 4 → 10 cm².</p>
+        <details><summary>Soluzione</summary><p>Dichiara le tre variabili; chiedi e leggi le due misure; assegna a <code>area</code> l'espressione <code>base * altezza</code>; mostra <code>"Area in centimetri quadrati:"</code> e poi <code>area</code>. Verifica anche l'unità di misura.</p></details>
+      </article>
+      <article class="quiz-question">
+        <h3>4 · Selezione: raggiungere la sufficienza</h3>
+        <p>Leggi un voto intero da 0 a 10. Mostra «Sufficiente» se è almeno 6, altrimenti «Da recuperare». Assumi che il voto inserito sia nell'intervallo richiesto. Salva come <code>esercizio-04.fprg</code>.</p>
+        <p><strong>Test:</strong> 5 → Da recuperare; 6 → Sufficiente; 10 → Sufficiente.</p>
+        <details><summary>Soluzione</summary><p>Dichiara <code>voto</code> Integer, chiedilo e leggilo. Inserisci If con <code>voto &gt;= 6</code>. Nel ramo vero mostra <code>"Sufficiente"</code>; nel ramo falso <code>"Da recuperare"</code>. Il test con 6 verifica il confine.</p></details>
+      </article>
+      <article class="quiz-question">
+        <h3>5 · Estensione: il maggiore di due numeri</h3>
+        <p>Leggi due interi <code>a</code> e <code>b</code>. Mostra il valore maggiore; se sono uguali, mostra il loro valore comune una sola volta. Salva come <code>esercizio-05.fprg</code>.</p>
+        <p><strong>Test:</strong> 8 e 3 → 8; 2 e 9 → 9; 4 e 4 → 4.</p>
+        <details><summary>Soluzione</summary><p>Dichiara e leggi <code>a</code> e <code>b</code>. Usa la condizione <code>a &gt;= b</code>: nel ramo vero mostra <code>a</code>, nel falso <code>b</code>. L'uguaglianza entra nel ramo vero e il valore comune viene mostrato una sola volta.</p></details>
+      </article>
+      <article class="quiz-question">
+        <h3>Facoltativo · Ripetere un saluto tre volte</h3>
+        <p>Se hai terminato il percorso, mostra «Ciao» esattamente tre volte. Prima costruisci una sequenza di tre Output uguali. Poi prova a sostituirli con una ripetizione.</p>
+        <details><summary>Primo incontro con l'iterazione</summary><p>Un'<strong>iterazione</strong> ripete un gruppo di istruzioni. Dichiara <code>contatore</code> Integer; inserisci una forma <strong>For</strong> con variabile <code>contatore</code>, inizio <code>1</code>, fine <code>3</code>, incremento <code>1</code> e direzione crescente. Dentro il ciclo inserisci un Output con <code>"Ciao"</code>. Il corpo viene eseguito per 1, 2 e 3: il limite finale è incluso. Conta tre messaggi e osserva il contatore con Step. Confronta il risultato con la sequenza precedente. I cicli saranno ripresi più avanti: questa attività non è richiesta nella verifica.</p></details>
+      </article>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="errori-frequenti">
+      <h2 id="errori-frequenti">Errori frequenti · Dove guardare quando il risultato non torna</h2>
+      <div class="card-grid">
+        <article class="info-card"><h3>Variabile non dichiarata</h3><p>Controlla che Declare compaia prima del primo uso. Confronta il nome scritto in Input, Assign e Output: usa sempre <code>quantita</code>, senza spazi o accenti.</p></article>
+        <article class="info-card"><h3>Calcolo prima dei dati</h3><p>Se calcoli prima degli Input non stai usando i dati richiesti. Segui le frecce: prima leggi quantità e prezzo, poi assegni il prodotto a totale.</p></article>
+        <article class="info-card"><h3>Testo al posto del valore</h3><p>Se compare la parola «totale», hai probabilmente scritto <code>"totale"</code>. Per vedere il valore togli le virgolette.</p></article>
+        <article class="info-card"><h3>Decimali perduti</h3><p>Per prezzo e totale usa Real. Integer non conserva la parte frazionaria. Nelle espressioni scrivi <code>2.5</code> con il punto; ripeti il test con un prezzo decimale.</p></article>
+        <article class="info-card"><h3>Scelta nel ramo sbagliato</h3><p>Leggi la condizione ad alta voce e segui True o False. Per il budget prova anche l'uguaglianza: «minore o uguale» richiede <code>&lt;=</code>.</p></article>
+        <article class="info-card"><h3>Un solo test riuscito</h3><p>Il test 4 × 7 non controlla i decimali o lo zero. Usa casi diversi e confronta sempre con un risultato previsto prima di avviare.</p></article>
+      </div>
+      <p><strong>Metodo di correzione:</strong> annota input, risultato atteso e risultato ottenuto; individua con Step il primo punto in cui i valori non corrispondono alla tua traccia; correggi una cosa alla volta e ripeti anche le prove già riuscite.</p>
+    </section>
+
+    <section class="quiz" aria-labelledby="verifica-laboratorio">
+      <h2 id="verifica-laboratorio">🧠 Verifica individuale · 10 minuti</h2>
+      <p>Rispondi prima senza aprire le soluzioni. Puoi tenere accanto la scheda delle forme. Per ogni domanda vale 1 punto: assegna il punto solo se sai motivare la risposta.</p>
+      <div class="self-check">
+        <details><summary>1. Nei biglietti, quali sono input, output atteso e un vincolo?</summary><p>Input: quantità e prezzo unitario. Output atteso: costo complessivo in euro. Un vincolo: tutti i biglietti hanno lo stesso prezzo. Quantità intera e dati non negativi definiscono gli input ammessi.</p></details>
+        <details><summary>2. Per 3 biglietti da 2.5 euro, quale totale prevedi e quali tipi usi?</summary><p>7.5 euro. <code>quantita</code> è Integer; <code>prezzo</code> e <code>totale</code> sono Real.</p></details>
+        <details><summary>3. Riordina: mostra totale; leggi prezzo; dichiara le variabili; calcola totale; leggi quantità.</summary><p>Dichiara le variabili; leggi quantità; leggi prezzo; calcola totale; mostra totale. Anche leggere prima il prezzo e poi la quantità è corretto, se richieste e Input corrispondono.</p></details>
+        <details><summary>4. Un Output con "totale" mostra il numero calcolato?</summary><p>No: mostra la parola «totale». Per mostrare il valore, l'espressione è <code>totale</code> senza virgolette.</p></details>
+        <details><summary>5. Totale 28 e budget 28: quale ramo di totale &lt;= budget viene eseguito? Perché questo test serve?</summary><p>Il ramo vero, con messaggio «Budget sufficiente». È il caso di uguaglianza: permette di scoprire l'errore di usare <code>&lt;</code> al posto di <code>&lt;=</code>.</p></details>
+        <details><summary>6. Prova pratica: per 2 biglietti da 3 euro e budget 5, prevedi e controlla il risultato.</summary><p>Prima dell'esecuzione: totale 6 euro e messaggio «Budget insufficiente». Avvia il diagramma, inserisci 2, 3 e 5 in quest'ordine e confronta. Il punto richiede previsione, esecuzione e spiegazione del ramo falso.</p></details>
+      </div>
+      <p><strong>Come usare l'esito:</strong> con 5–6 punti passa agli esercizi di estensione; con 3–4 riprendi i passaggi delle risposte errate e riprova; con 0–2 ricostruisci il laboratorio 1 con il docente o un compagno, un blocco alla volta.</p>
+      <h3>Che cosa consegnare</h3>
+      <ul>
+        <li>I tre file <code>01-sequenza.fprg</code>, <code>02-biglietti.fprg</code>, <code>03-budget.fprg</code> e gli esercizi svolti.</li>
+        <li>Una tabella, su foglio o documento, con input, output atteso, output ottenuto ed esito dei quattro test dei biglietti e dei tre test del budget.</li>
+        <li>Due frasi: un errore incontrato o prevenuto e come lo hai controllato. Preparati a spiegare un diagramma in un minuto.</li>
+      </ul>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="verso-c">
+      <h2 id="verso-c">Verso il C: il procedimento lo stai già progettando</h2>
+      <p>Nel futuro studio del C ritroverai le stesse domande: quali dati leggere, dove conservarli, come calcolare e quando scegliere un ramo. Il diagramma ti permette già di provare queste decisioni e di correggerle osservando i risultati.</p>
+      <ul>
+        <li><strong>Variabili:</strong> darai un nome e un tipo ai dati anche in C.</li>
+        <li><strong>Input e output:</strong> leggerai dati e comunicherai risultati con istruzioni testuali.</li>
+        <li><strong>Assegnazione e selezione:</strong> conserverai i calcoli e deciderai quali istruzioni eseguire.</li>
+        <li><strong>Test:</strong> userai ancora prove normali, valori al confine e risultati attesi.</li>
+      </ul>
+      <p>Quando passeremo al C aggiungeremo gradualmente la sintassi. Oggi il compito è saper spiegare il diagramma e prevederne l'esecuzione. Un algoritmo può essere realizzato in linguaggi diversi; ciascun linguaggio ha regole proprie da imparare.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="glossario-laboratorio">
+      <h2 id="glossario-laboratorio">Glossario del laboratorio</h2>
+      <dl class="card-grid">
+        <div class="info-card"><dt><strong>Diagramma di flusso</strong></dt><dd>Rappresentazione con forme e frecce delle istruzioni e dei percorsi di esecuzione.</dd></div>
+        <div class="info-card"><dt><strong>Variabile e tipo</strong></dt><dd>Una variabile conserva un valore identificato da un nome; il tipo stabilisce quali valori può rappresentare.</dd></div>
+        <div class="info-card"><dt><strong>Assegnazione</strong></dt><dd>Operazione che calcola un'espressione e ne memorizza il risultato in una variabile.</dd></div>
+        <div class="info-card"><dt><strong>Selezione</strong></dt><dd>Scelta del ramo da eseguire in base a una condizione vera o falsa.</dd></div>
+        <div class="info-card"><dt><strong>Traccia di esecuzione</strong></dt><dd>Annotazione dei valori e delle istruzioni durante un'esecuzione, passo dopo passo.</dd></div>
+        <div class="info-card"><dt><strong>Test e caso al confine</strong></dt><dd>Un test confronta output atteso e ottenuto; il caso al confine verifica un valore su cui cambia la decisione.</dd></div>
+      </dl>
+      <p>Per consultare le funzioni del programma: <a href="https://www.flowgorithm.org/documentation/index.html">documentazione ufficiale di Flowgorithm</a>, sezioni sulle forme e sui tipi di dato. Le istruzioni qui usate sono limitate ai due laboratori.</p>
+    </section>
+
+
+    <section class="lesson-section" aria-labelledby="colloquio">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎤</span><h2 id="colloquio">Preparazione al colloquio orale</h2></div>
+      <p>Rispondi prima con una frase chiara, poi aggiungi un esempio.</p>
+      <div class="self-check">
+        <details><summary>Che cos'è un problema?</summary><p>È una situazione che richiede di raggiungere un obiettivo o trovare una risposta.</p></details>
+        <details><summary>Qual è la differenza tra problema e soluzione?</summary><p>Il problema descrive ciò che va risolto; la soluzione è il modo scelto per affrontarlo.</p></details>
+        <details><summary>Che cosa fa l'algoritmo?</summary><p>Descrive con istruzioni ordinate e finite come trasformare i dati di ingresso nell'output atteso.</p></details>
+        <details><summary>Quali caratteristiche deve avere un buon algoritmo?</summary><p>Deve essere ordinato, finito, comprensibile, non ambiguo, eseguibile e capace di condurre al risultato.</p></details>
+        <details><summary>Che cosa sono i dati di ingresso o input?</summary><p>Sono le informazioni disponibili all'inizio e necessarie per affrontare il problema.</p></details>
+        <details><summary>Che cosa si intende per output atteso?</summary><p>È il risultato che definiamo durante l'analisi e che la soluzione deve produrre o comunicare.</p></details>
+        <details><summary>Qual è la differenza tra output atteso e risultato ottenuto?</summary><p>L'output atteso viene definito prima dell'algoritmo; il risultato ottenuto compare dopo la sua esecuzione.</p></details>
+        <details><summary>Che cosa sono i vincoli?</summary><p>Sono condizioni e limiti che la soluzione deve rispettare.</p></details>
+        <details><summary>Perché l'ordine delle istruzioni è importante?</summary><p>Perché alcune azioni dipendono da quelle precedenti; un ordine errato può impedire il risultato.</p></details>
+        <details><summary>Perché un'istruzione ambigua può causare errori?</summary><p>Perché può essere interpretata in modi diversi e produrre azioni o risultati differenti.</p></details>
+        <details><summary>A che cosa serve il controllo finale?</summary><p>Serve a confrontare il risultato ottenuto con l'output atteso e a decidere se occorre rivedere l'analisi o i passi.</p></details>
+      </div>
+
+      <aside class="callout exam" aria-labelledby="traccia-orale">
+        <div class="callout-icon" aria-hidden="true">🎓</div>
+        <div>
+          <p class="callout-label">Traccia per 1–2 minuti</p>
+          <h3 id="traccia-orale">Dal problema al risultato</h3>
+          <ol>
+            <li>Definisci problema, soluzione e algoritmo.</li>
+            <li>Nomina obiettivo, input, output atteso e vincoli.</li>
+            <li>Spiega come l'algoritmo trasforma gli input e perché i passi devono essere ordinati e chiari.</li>
+            <li>Presenta un esempio semplice.</li>
+            <li>Concludi confrontando risultato ottenuto e output atteso.</li>
+          </ol>
+        </div>
+      </aside>
+    </section>
+
+    <section class="quiz" aria-labelledby="autovalutazione">
+      <h2 id="autovalutazione">🧠 Autovalutazione finale</h2>
+      <p>Prova a rispondere senza rileggere. Apri poi le indicazioni.</p>
+      <div class="self-check">
+        <details><summary>So distinguere problema, soluzione e algoritmo?</summary><p>Se sai definirli e applicarli allo stesso esempio, l'obiettivo è raggiunto.</p></details>
+        <details><summary>So riconoscere obiettivo, input, output atteso e vincoli?</summary><p>Prova con una consegna scolastica nuova. Se trovi tutti e quattro gli elementi, l'obiettivo è raggiunto.</p></details>
+        <details><summary>So scrivere passi ordinati e non ambigui?</summary><p>Fai leggere i passi a un'altra persona: deve poterli eseguire senza chiedere chiarimenti.</p></details>
+        <details><summary>So distinguere output atteso e risultato ottenuto?</summary><p>Se sai collocarli rispettivamente prima della costruzione dell'algoritmo e dopo l'esecuzione, la distinzione è chiara.</p></details>
+        <details><summary>So presentare l'analisi a voce?</summary><p>Se riesci a seguire la traccia in uno o due minuti senza leggere un testo completo, sei pronto.</p></details>
+      </div>
+    </section>
+
+
+
+    <section class="student-backpack" aria-labelledby="zaino-studente">
+      <div class="student-backpack-header">
+        <p class="section-intro">Riepilogo finale</p>
+        <h2 id="zaino-studente">🎒 Lo zaino dello studente</h2>
+        <p>Le idee essenziali da portare al colloquio orale.</p>
+      </div>
+      <div class="student-backpack-grid">
+        <article class="backpack-card">
+          <h3>✅ Sintesi</h3>
+          <ol class="essential-list">
+            <li>Un problema presenta un obiettivo da raggiungere.</li>
+            <li>L'analisi individua input, output atteso e vincoli.</li>
+            <li>L'algoritmo descrive una sequenza ordinata e finita di istruzioni.</li>
+            <li>L'esecuzione produce un risultato ottenuto.</li>
+            <li>Il controllo confronta il risultato ottenuto con l'output atteso.</li>
+            <li>Se il controllo fallisce, si rivedono l'analisi o i passi.</li>
+          </ol>
+        </article>
+        <article class="backpack-card"><h3>📝 Parole chiave</h3><ul class="keyword-list"><li>problema</li><li>obiettivo</li><li>input</li><li>output atteso</li><li>vincoli</li><li>algoritmo</li><li>esecuzione</li><li>risultato ottenuto</li><li>controllo</li></ul></article>
+        <article class="backpack-card"><h3>❓ Controllo rapido</h3><ol><li>Qual è l'obiettivo?</li><li>Quali input ricevo?</li><li>Qual è l'output atteso?</li><li>Quali vincoli rispetto?</li><li>Quale risultato produce l'esecuzione?</li><li>Il risultato ottenuto coincide con l'output atteso?</li></ol></article>
+        <article class="backpack-card"><h3>🎤 Ripasso in 2 minuti</h3><p>Scegli un problema quotidiano, individua i suoi elementi e racconta i passi senza usare frasi ambigue.</p></article>
+      </div>
+    </section>
+
+
+    <section class="review-mission" aria-labelledby="missione-ripasso">
+      <div class="review-mission-icon" aria-hidden="true">🏕️</div>
+      <div>
+        <h2 id="missione-ripasso">Missione di ripasso · 10 minuti al giorno</h2>
+        <div class="mission-days">
+          <article><h3>Giorno 1</h3><p>Spiega input, output e vincoli dei biglietti. Ricostruisci la sequenza senza aprire la soluzione.</p></article>
+          <article><h3>Giorno 2</h3><p>Riapri il diagramma. Prevedi il totale per 3 biglietti da 2.5 euro, poi esegui e confronta.</p></article>
+          <article><h3>Giorno 3</h3><p>Prova il budget appena sotto, uguale e appena sopra il totale. Spiega quale ramo viene eseguito.</p></article>
+          <article><h3>Giorno 4</h3><p>Presenta un esercizio in un minuto: richiesta, dati, passi, risultato e test. Usa lo Zaino per controllare i termini.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-lesson" aria-labelledby="prossimo-passo">
+      <p class="eyebrow">Prossimo passo</p>
+      <h2 id="prossimo-passo">Rappresentare un algoritmo</h2>
+      <p>Abbiamo eseguito i primi diagrammi. Nella Lezione 2.02 riprenderemo simboli e rappresentazioni, distinguendo linguaggio naturale, pseudocodice e diagramma di flusso. La lezione è in preparazione.</p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../../Primo-anno/04-hardware/index.html">← Riprendi la Lezione 04 — Hardware</a>
+      <a href="../../index.html#secondo-anno">Torna all'indice</a>
+      <a href="../02-rappresentare-un-algoritmo/index.html">Lezione 2.02 — In preparazione →</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+    </div>
+  </footer>
+</body>
+</html>

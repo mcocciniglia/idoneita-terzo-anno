@@ -166,14 +166,22 @@
         "17": { slug: "17-video-digitale", title: "Video digitale" },
         "18": { slug: "18-ripasso-generale", title: "Ripasso generale" }
       };
+      const secondYearLessons = {
+        "2.01": { slug: "01-dal-problema-all-algoritmo", title: "Dal problema all'algoritmo" },
+        "2.02": { slug: "02-rappresentare-un-algoritmo", title: "Rappresentare un algoritmo" }
+      };
       const siteRoot = "/idoneita-terzo-anno/";
-      const lessonRoot = `${siteRoot}Primo-anno/`;
       const requestedPath = window.location.pathname;
-      const matchedLesson = Object.entries(lessons).find(([, lesson]) => {
-        const directoryPath = `${lessonRoot}${lesson.slug}/`;
-        const pagePath = `${directoryPath}index.html`;
-        return requestedPath === directoryPath || requestedPath === pagePath;
-      });
+      const groups = [
+        { root: `${siteRoot}Primo-anno/`, lessons },
+        { root: `${siteRoot}secondo-anno/`, lessons: secondYearLessons }
+      ];
+      const matchedLesson = groups.flatMap(({ root, lessons: group }) =>
+        Object.entries(group).filter(([, lesson]) => {
+          const directoryPath = `${root}${lesson.slug}/`;
+          return requestedPath === directoryPath || requestedPath === `${directoryPath}index.html`;
+        })
+      )[0];
 
       if (!matchedLesson) {
         return;
