@@ -311,20 +311,15 @@ Ogni modifica deve mantenere la continuità didattica dell'intero percorso, evit
 In caso di dubbio l'agente deve seguire la struttura delle lezioni già presenti oppure chiedere conferma all'utente prima di introdurre modifiche sostanziali.
 ---
 
-# Gestione del repository Git
+## Gestione del repository Git
 
-L'agente non deve eseguire operazioni Git.
+L’agente può leggere lo stato del repository, confrontare versioni e consultare la cronologia.
 
-In particolare non deve:
+Può creare commit locali delle modifiche richieste dall’utente dopo aver completato i controlli pertinenti. Deve includere soltanto i file dell’incarico, preservando eventuali modifiche preesistenti del docente.
 
-- eseguire commit;
-- eseguire push;
-- creare branch;
-- creare tag;
-- effettuare merge;
-- modificare la configurazione Git del repository;
-- creare Pull Request.
+Push, pubblicazione, merge e cancellazione di branch sono consentiti quando richiesti esplicitamente dall’utente. L’autorizzazione vale per l’intero incarico e non deve essere richiesta nuovamente per ogni passaggio necessario.
 
-L'agente deve limitarsi esclusivamente alla modifica dei file richiesti.
+Non riscrivere la cronologia, eseguire push forzati o scartare modifiche locali senza un’autorizzazione specifica.
 
-Le operazioni Git vengono sempre eseguite manualmente dal docente dopo la revisione delle modifiche.
+Al termine riportare i commit creati, le operazioni remote eseguite e lo stato della pubblicazione.
+
