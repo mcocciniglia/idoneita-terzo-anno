@@ -1,0 +1,22 @@
+/* Solo lezioni di programmazione: il codice scorre nel proprio riquadro. */
+.programming-lesson pre {
+  max-width: 100%;
+  overflow-x: auto;
+  box-sizing: border-box;
+  white-space: pre;
+}
+
+.programming-lesson code {
+  overflow-wrap: anywhere;
+}
+
+.programming-lesson pre code {
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.programming-lesson pre:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}

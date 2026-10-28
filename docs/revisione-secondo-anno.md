@@ -132,7 +132,7 @@ L'orale resta utile per spiegare un programma eseguito, non sostituisce la prova
 Ogni nuova pagina mantiene un breve ripasso, istruzioni sequenziali, soluzioni
 apribili, pochi obiettivi e gli stili del progetto, senza modificare i CSS comuni.
 
-## Stato e limiti delle verifiche
+## Stato della revisione iniziale, prima della realizzazione delle pagine
 
 Questa è una revisione editoriale e una specifica dei nuovi laboratori.
 Non sono stati compilati nuovi programmi né eseguito Flowgorithm durante
@@ -154,3 +154,17 @@ roadmap, obiettivi, raccordo finale della 2.01 e mappa dei futuri slug nel 404.
 Fotografie, crediti, mappe e corpo della 2.01 sono conservati.
 Le modifiche locali del docente al benvenuto e `ROADMAP.zip` restano escluse.
 Il ramo `develop` non viene modificato.
+
+
+## Realizzazione e pubblicazione delle pagine — 28 ottobre 2026
+
+Le specifiche di questo documento sono state applicate alle nuove lezioni
+2.02–2.06. Le cinque pagine sostituiscono didatticamente le sei bozze precedenti
+2.02–2.07: non esiste una nuova 2.07 nel percorso abbreviato.
+
+Sono disponibili programmi completi scaricabili, laboratori, esercizi autonomi,
+soluzioni apribili e autoverifiche. Il rapporto
+[pubblicazione-programmazione.md](pubblicazione-programmazione.md) documenta
+la compilazione dei 19 sorgenti, i 62 test e i controlli delle pagine.
+Le limitazioni della precedente sezione descrivono la fase iniziale del piano,
+non lo stato delle pagine realizzate successivamente.

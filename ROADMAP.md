@@ -66,7 +66,7 @@ Legenda
 
 GitHub Pages usa il ramo `main`, cartella `/`. La base editoriale è la versione
 effettivamente pubblicata al commit `a5679c431903e6b4db114fe83ad61056a689b595`:
-lezioni 01–04 del Primo anno e 2.01 del Secondo anno. I testi già rivisti,
+lezioni 01–04 del Primo anno e 2.01 del Secondo anno. Il 28 ottobre 2026 il percorso è stato completato con le nuove 2.02–2.06, ricavate dalla revisione delle vecchie bozze 2.02–2.07. I testi già rivisti,
 le fotografie, le mappe e i materiali pubblicati restano il riferimento.
 Le lezioni 05–18 del Primo anno non sono prerequisiti del percorso operativo.
 
@@ -96,11 +96,11 @@ esercizi e verifica; si procede quando lo studente svolge il compito indicato.
 | Codice | Lezione | Stato | Dipende da | Compito verificabile |
 |--------|---------|-------|------------|----------------------|
 | 2.01 | Dal problema all'algoritmo | ✅ | 01–04 | Analizzare un problema ed eseguire i diagrammi del laboratorio pubblicato |
-| 2.02 | Dal diagramma al primo programma | ⚪ | 2.01 | Compilare un programma C++ che legge due dati e calcola un risultato; distinguere assegnazione e calcolo; circa 2 ore |
-| 2.03 | Prendere decisioni con if e else | ⚪ | 2.02 | Scrivere una selezione semplice e doppia; distinguere = e ==; provare entrambi i rami e la soglia; circa 2 ore |
-| 2.04 | Ripetere con while | ⚪ | 2.03 | Usare inizializzazione, condizione, aggiornamento e accumulatore; provare zero, una e più iterazioni; circa 2 ore |
-| 2.05 | Il ciclo for e le condizioni composte | ⚪ | 2.04 | Riscrivere un conteggio con for; usare &&, || e ! in condizioni semplici; distinguere ciclo e selezione; circa 2 ore, divisibili in due incontri |
-| 2.06 | Dal C++ al C e prova pratica | ⚪ | 2.05 | Tradurre un piccolo programma numerico usando printf/scanf e spiegare cosa cambia; completare una prova autonoma con test; circa 2 ore, con recupero se necessario |
+| 2.02 | Dal diagramma al primo programma | ✅ | 2.01 | Compilare un programma C++ che legge due dati e calcola un risultato; distinguere assegnazione e calcolo; circa 2 ore |
+| 2.03 | Prendere decisioni con if e else | ✅ | 2.02 | Scrivere una selezione semplice e doppia; distinguere = e ==; provare entrambi i rami e la soglia; circa 2 ore |
+| 2.04 | Ripetere con while | ✅ | 2.03 | Usare inizializzazione, condizione, aggiornamento e accumulatore; provare zero, una e più iterazioni; circa 2 ore |
+| 2.05 | Il ciclo for e le condizioni composte | ✅ | 2.04 | Riscrivere un conteggio con for; usare &&, || e ! in condizioni semplici; distinguere ciclo e selezione; circa 2 ore, divisibili in due incontri |
+| 2.06 | Dal C++ al C e prova pratica | ✅ | 2.05 | Tradurre un piccolo programma numerico usando printf/scanf e spiegare cosa cambia; completare una prova autonoma con test; circa 2 ore, con recupero se necessario |
 
 Il percorso ufficiale della 2.02 resta `secondo-anno/02-rappresentare-un-algoritmo/`
 per conservare i collegamenti già pubblicati. I percorsi successivi sono:
@@ -113,7 +113,7 @@ Tutti sono relativi a `secondo-anno/` e sono registrati nel fallback 404.
 La revisione didattica delle vecchie 2.02–2.07 è documentata in
 [docs/revisione-secondo-anno.md](docs/revisione-secondo-anno.md).
 Le bozze restano recuperabili nella cronologia precedente all'allineamento;
-non sono pagine pubblicate né lezioni approvate secondo il nuovo percorso.
+non sono state ripubblicate nella vecchia forma. La loro revisione è confluita nelle nuove lezioni operative 2.02–2.06, ora disponibili.
 
 Le vecchie 2.02, 2.03 e 2.04 confluiscono nella nuova 2.02: i simboli già usati
 in Flowgorithm diventano un richiamo breve, mentre variabili, assegnazione ed
@@ -134,7 +134,7 @@ L'uso iniziale di `main` non richiede una lezione generale sulle funzioni.
 Nella traduzione in C si spiega il ruolo di `&` negli input numerici, senza
 anticipare un modulo sulla gestione della memoria.
 
-## Condizioni prima di pubblicare una nuova lezione
+## Controlli per la pubblicazione
 
 Ogni pagina deve essere riscritta rispetto alla 2.01 effettivamente online,
 conservando stile, accessibilità e mappe utili. Deve comprendere un esempio

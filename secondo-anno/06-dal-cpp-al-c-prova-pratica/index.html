@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Dal C++ al C e prova pratica: lezione di programmazione di base con esempi C/C++, esercizi guidati, sorgenti scaricabili e casi di prova.">
+  <title>2.06 — Dal C++ al C e prova pratica</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+  <link rel="stylesheet" href="../../assets/programmazione.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+</head>
+
+<body class="programming-lesson">
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line" aria-label="Identificazione del percorso">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge second">Programma del secondo anno</span>
+        </div>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle" class="btn btn-theme" type="button"
+                  aria-pressed="false" aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+          <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button"
+                  aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span>
+        <span aria-hidden="true">›</span>
+        <span>Secondo anno</span>
+        <span aria-hidden="true">›</span>
+        <span>Lezione 2.06</span>
+      </nav>
+
+      <p class="section-intro">Secondo anno — Lezione 2.06 · Durata prevista: 2 ore</p>
+      <h1>Dal C++ al C e prova pratica</h1>
+      <p class="lead">Verificare le competenze di base e tradurre un programma numerico già compreso.</p>
+
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ Circa 2 ore</span>
+        <span>📘 Secondo anno</span>
+        <span>🎯 Prerequisito: Lezione 2.05</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow"><section class="progress-card" aria-label="Avanzamento del percorso"><div class="progress-heading"><span>Percorso del secondo anno</span><span>Lezione 6 di 6</span></div></section><nav aria-label="Sezioni della lezione"><p><a href="#ripasso">Ripasso</a> · <a href="#obiettivi">Obiettivi</a> · <a href="#autonomo">Esercizio autonomo</a> · <a href="#autoverifica">Autoverifica</a></p></nav><section class="lesson-section" aria-labelledby="ripasso"><h2 id="ripasso">Prima di iniziare: leggere un programma completo</h2><p>Ora sai costruire piccoli programmi C++ da console. Una sequenza legge e calcola; una selezione sceglie un ramo; un ciclo ripete un gruppo di istruzioni. Per controllare il risultato usi una previsione e una serie di prove.</p><p>Nella 2.05 hai distinto tre variabili: l'indice del giro, il valore appena letto e il conteggio dei dati accettati. Nel programma dell'intervallo, un valore sostituisce il precedente a ogni lettura, mentre il conteggio conserva il lavoro già fatto.</p><p>Riprendi l'input N = 5 e i valori 9, 10, 15, 20, 21. Devi ottenere tre valori dentro [10,20]. Poi pensa al caso N = 0: il ciclo non legge altri numeri e il conteggio rimane zero.</p><p>Il programma dei biglietti è più breve, ma usa gli stessi ingredienti: tipi, lettura, espressione e output. Lo useremo per confrontare C++ e C senza dover imparare contemporaneamente un algoritmo nuovo.</p><p>Prima svolgi una piccola prova autonoma in C++. Se non riesci a distinguere input, condizione, conteggio e somma, riprendi la 2.04 o la 2.05. La traduzione in C viene dopo: capire la logica è il prerequisito per riconoscere ciò che cambia nella scrittura.</p></section>
+<section class="lesson-section" aria-labelledby="obiettivi"><h2 id="obiettivi">Come usare questa lezione</h2><p><strong>Circa due ore:</strong> 15 minuti di ripasso, 35 di prova autonoma e correzione, 10 di pausa, 40 per il confronto C/C++ e 20 di esercizio. Se la prova richiede recupero, svolgi il confronto con il C in un incontro successivo.</p><ul><li>Risolvere un problema con input, ciclo e selezione.</li><li>Riconoscere le differenze essenziali di input/output fra C++ e C.</li><li>Compilare file nel linguaggio corretto e confrontarne i risultati.</li></ul></section>
+<section class="lesson-section" aria-labelledby="prova"><h2 id="prova">Prova pratica: contare e sommare i positivi</h2><p>Leggi un intero N fra 0 e 100, poi N interi fra -100 e 100. Mostra prima quanti sono positivi e poi la somma dei soli positivi. Zero non è positivo.</p><ol><li>Individua input e due output.</li><li>Scegli un contatore dei positivi e un accumulatore per la loro somma.</li><li>Leggi un numero a ogni giro e aggiorna entrambi soltanto se è positivo.</li><li>Prevedi quattro casi prima di eseguire.</li></ol><div class="card-grid"><article class="info-card"><h3>Caso misto</h3><p>N = 5; -2, 0, 4, 1, -1 → conteggio 2, somma 5.</p></article><article class="info-card"><h3>Nessun dato</h3><p>N = 0 → conteggio 0, somma 0.</p></article><article class="info-card"><h3>Nessun positivo</h3><p>N = 3; -1, -2, 0 → conteggio 0, somma 0.</p></article><article class="info-card"><h3>Tutti positivi</h3><p>N = 2; 3, 7 → conteggio 2, somma 10.</p></article></div><details><summary>Suggerimento</summary><p>Prima del ciclo imposta entrambi i risultati a zero. Nel ramo <code>numero &gt; 0</code> aumenta il conteggio di uno e aggiungi il numero alla somma.</p></details><details><summary>Confronta una soluzione completa</summary><p><a href="codice/prova-pratica.cpp" download>Scarica prova-pratica.cpp</a></p><pre class="language-cpp" tabindex="0" aria-label="Programma prova-pratica"><code>#include &lt;iostream&gt;
+
+int main() {
+    int n = 0;
+    std::cin &gt;&gt; n;
+    int positivi = 0;
+    int somma = 0;
+    for (int i = 0; i &lt; n; i = i + 1) {
+        int numero = 0;
+        std::cin &gt;&gt; numero;
+        if (numero &gt; 0) {
+            positivi = positivi + 1;
+            somma = somma + numero;
+        }
+    }
+    std::cout &lt;&lt; positivi &lt;&lt; &#x27;\n&#x27;;
+    std::cout &lt;&lt; somma &lt;&lt; &#x27;\n&#x27;;
+    return 0;
+}
+</code></pre></details><p><strong>Per controllarti:</strong> assegna un punto a ciascuno di questi cinque aspetti: lettura corretta dei dati; N iterazioni; esclusione di zero e negativi; conteggio e somma distinti; prove normali e al confine. Se uno dei primi quattro aspetti non funziona, correggilo prima della traduzione in C. Spiega infine due iterazioni usando una traccia.</p></section>
+<section class="lesson-section" aria-labelledby="linguaggi"><h2 id="linguaggi">C e C++: la logica può restare, la scrittura va controllata</h2><p>C e C++ sono linguaggi distinti. Nel sottoinsieme numerico usato qui, tipi come <code>int</code> e <code>double</code>, assegnazioni, confronti, <code>if</code>, <code>while</code> e <code>for</code> hanno forme simili. Gli strumenti di input e output che abbiamo scelto, invece, cambiano.</p><p>Non basta rinominare un file <code>.cpp</code> in <code>.c</code>. In C non usiamo <code>std::cin</code> e <code>std::cout</code>; per questi esempi useremo <code>scanf</code> e <code>printf</code>, dichiarati in <code>&lt;stdio.h&gt;</code>.</p><p>Confronta il nuovo programma con <a href="../02-rappresentare-un-algoritmo/codice/biglietti.cpp" download>biglietti.cpp della 2.02</a>. Input, moltiplicazione e risultato sono gli stessi.</p><p><a href="codice/biglietti-c.c" download>Scarica biglietti-c.c</a></p><pre class="language-c" tabindex="0" aria-label="Programma biglietti-c"><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int quantita = 0;
+    double prezzo = 0.0;
+    if (scanf(&quot;%d %lf&quot;, &amp;quantita, &amp;prezzo) != 2) {
+        return 1;
+    }
+    double totale = quantita * prezzo;
+    printf(&quot;%.2f\n&quot;, totale);
+    return 0;
+}
+</code></pre></section>
+<section class="lesson-section" aria-labelledby="lettura"><h2 id="lettura">Capire scanf e printf</h2><p><code>scanf("%d %lf", &amp;quantita, &amp;prezzo)</code> prova a leggere due numeri: un intero e un <code>double</code>. I segnaposto nella stringa descrivono il tipo atteso.</p><ul><li><code>%d</code> in <code>scanf</code> legge un <code>int</code>.</li><li><code>%lf</code> in <code>scanf</code> legge un <code>double</code>.</li><li><code>&amp;quantita</code> indica dove scrivere il valore letto. Qui <code>&amp;</code> fornisce l'indirizzo della variabile; non è l'AND logico <code>&amp;&amp;</code>.</li></ul><p><code>scanf</code> restituisce il numero di conversioni riuscite. Ci aspettiamo 2: se il valore restituito è diverso da 2, <code>return 1;</code> interrompe il programma segnalando un input non letto correttamente. Per una sola lettura corretta ci aspetteremmo 1.</p><p><code>printf("%.2f\n", totale);</code> mostra il valore di <code>totale</code> con due cifre dopo il punto decimale, poi va a capo. La formattazione arrotonda ciò che si vede e non trasforma il calcolo in aritmetica decimale esatta.</p><p>In <code>printf</code>, <code>%d</code> mostra un intero e <code>%f</code> un valore <code>double</code>; <code>%.2f</code> ne sceglie due cifre decimali. Non copiare automaticamente il formato della lettura nell'output. Per stampare il valore non si usa <code>&amp;</code>.</p><aside class="callout warning"><div class="callout-icon" aria-hidden="true">⚠️</div><div><p class="callout-label">Attenzione</p><h3>Il formato deve corrispondere al dato</h3><p>Per leggere un <code>double</code> usa <code>%lf</code> e l’indirizzo della variabile. Un formato errato può produrre un comportamento scorretto anche se il programma compila. Nei dati digitati usa il punto decimale.</p></div></aside><p><code>int main(void)</code> è la forma usata qui per indicare che <code>main</code> non riceve parametri. Le funzioni in generale e i puntatori saranno studiati più avanti: per ora collega l'indirizzo al compito concreto della lettura.</p></section>
+<section class="lesson-section" aria-labelledby="laboratorio"><h2 id="laboratorio">Laboratorio guidato: eseguire il primo file C</h2><ol><li>Crea un progetto C o un file <code>biglietti-c.c</code> nell'ambiente predisposto dal docente.</li><li>Controlla che la compilazione sia per C, non per C++. Con GNU C puoi usare <code>gcc -std=c11 biglietti-c.c -o biglietti-c</code>.</li><li>Compila ed esegui. Inserisci 4 e 2.5, separati da spazio o Invio: l'output è <code>10.00</code>.</li><li>Ripeti con 0 e 2.5: <code>0.00</code>. Poi con 3 e 7: <code>21.00</code>.</li><li>Confronta i risultati con il programma C++: cambia la presentazione dei decimali, non il valore atteso.</li><li>Prova una lettera al posto della quantità: la lettura non completa le due conversioni e il programma termina senza calcolare il totale.</li></ol><p>Il controllo sul numero di letture riuscite non verifica tutte le regole del problema: un prezzo negativo resta un numero leggibile. Nei casi ordinari assumiamo quantità intere non negative e prezzi non negativi e piccoli.</p></section>
+<section class="lesson-section" aria-labelledby="ciclo"><h2 id="ciclo">Riconoscere un ciclo già scritto</h2><p>Il programma seguente traduce in C la somma da 1 a N della 2.04. Cerca le parti rimaste uguali: inizializzazioni, condizione e aggiornamenti.</p><p><a href="codice/somma-c.c" download>Scarica somma-c.c</a></p><pre class="language-c" tabindex="0" aria-label="Programma somma-c"><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int n = 0;
+    if (scanf(&quot;%d&quot;, &amp;n) != 1) {
+        return 1;
+    }
+    int somma = 0;
+    int numero = 1;
+    while (numero &lt;= n) {
+        somma = somma + numero;
+        numero = numero + 1;
+    }
+    printf(&quot;%d\n&quot;, somma);
+    return 0;
+}
+</code></pre><p>Con N fra 0 e 100, ripeti 0 → 0, 1 → 1 e 4 → 10. Il risultato è un <code>int</code>, quindi l'output usa <code>%d</code>. La lettura attende una sola conversione.</p></section>
+<section class="lesson-section" aria-labelledby="autonomo"><h2 id="autonomo">Esercizio autonomo: il rettangolo in C</h2><p>Traduci il programma del rettangolo della 2.02. Leggi due <code>double</code> positivi e mostra prima area, poi perimetro, con due cifre decimali. Controlla che entrambe le letture siano riuscite.</p><p>Prove: base 5 e altezza 3 → 15.00 e 16.00; base 2.5 e altezza 2 → 5.00 e 9.00. Conserva le parentesi della formula.</p><details><summary>Confronta una soluzione completa</summary><p><a href="codice/rettangolo-c.c" download>Scarica rettangolo-c.c</a></p><pre class="language-c" tabindex="0" aria-label="Programma rettangolo-c"><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    double base = 0.0;
+    double altezza = 0.0;
+    if (scanf(&quot;%lf %lf&quot;, &amp;base, &amp;altezza) != 2) {
+        return 1;
+    }
+    double area = base * altezza;
+    double perimetro = 2 * (base + altezza);
+    printf(&quot;%.2f\n&quot;, area);
+    printf(&quot;%.2f\n&quot;, perimetro);
+    return 0;
+}
+</code></pre></details><p><strong>Consegna finale:</strong> file C++ della prova pratica, file C del rettangolo, input e risultati di ciascuna prova. Presenta un errore che hai corretto spiegando quale test lo ha rivelato.</p></section>
+<section class="lesson-section" aria-labelledby="autoverifica"><h2 id="autoverifica">Autoverifica</h2><p>Rispondi prima di aprire le indicazioni.</p><div class="self-check"><details><summary>Rinominare un file C++ in .c basta per tradurlo?</summary><p>No. Occorre usare costrutti e strumenti disponibili in C e compilare per il linguaggio corretto.</p></details><details><summary>Che cosa significa il 2 nel controllo di scanf dei biglietti?</summary><p>Sono attese due conversioni riuscite: quantità intera e prezzo double.</p></details><details><summary>Perché in scanf scriviamo &amp;prezzo?</summary><p>La lettura deve sapere dove memorizzare il valore: & fornisce l’indirizzo della variabile.</p></details><details><summary>Una compilazione riuscita conclude la verifica?</summary><p>No: occorrono dati di prova, confronto con gli output attesi e controllo dei confini.</p></details></div></section>
+<section class="student-backpack" aria-labelledby="zaino"><div class="student-backpack-header"><p class="eyebrow">Riepilogo finale</p><h2 id="zaino">🎒 Lo zaino dello studente</h2></div><div class="student-backpack-grid"><article class="backpack-card"><h3>Parole da usare</h3><p>C, C++, compilazione, scanf, printf, formato, indirizzo, caso di prova, errore logico.</p></article><article class="backpack-card"><h3>Ripasso in due minuti</h3><p>Spiega quali righe cambiano traducendo i biglietti da C++ a C. Poi ripeti la prova pratica senza aprire la soluzione.</p></article></div></section><section class="next-lesson" aria-labelledby="prossimo-passo"><p class="eyebrow">Dopo il percorso di base</p><h2 id="prossimo-passo">Consolidare con la prova pratica</h2><p>Questa è l’ultima lezione del percorso essenziale. Ripeti la prova con dati diversi e presenta la tua soluzione al docente. Gli approfondimenti successivi saranno scelti in base ai risultati.</p></section><nav class="lesson-navigation" aria-label="Navigazione tra le lezioni"><a href="../05-for-condizioni-composte/index.html">← Lezione 2.05 — Il ciclo for e le condizioni composte</a><a href="../../index.html#secondo-anno">Torna all’indice</a><a href="index.html#prova">Ripeti la prova pratica →</a></nav></main>
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+    </div>
+  </footer>
+</body>
+</html>
