@@ -14,109 +14,6 @@
   <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
   <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
 
-  <style>
-    .concept-map-figure {
-      margin: 1.5rem 0;
-    }
-
-    .concept-map-canvas {
-      padding: 1rem;
-      overflow: hidden;
-      border: 1px solid var(--panel-border);
-      border-radius: 1rem;
-      background: #fff;
-    }
-
-    .concept-map-figure a {
-      display: block;
-    }
-
-    .concept-map-figure img {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .concept-map-figure figcaption {
-      margin-top: .75rem;
-      color: var(--muted);
-      font-size: .95rem;
-      text-align: center;
-    }
-
-    .concept-map-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .75rem;
-      margin: 1.5rem 0;
-    }
-
-    .concept-map-actions .btn {
-      text-align: center;
-      text-decoration: none;
-    }
-
-    .concept-transcription article {
-      margin: 1.25rem 0;
-      padding: 1rem 1.25rem;
-      border: 1px solid var(--panel-border);
-      border-radius: 1rem;
-      background: var(--panel);
-      break-inside: avoid;
-    }
-
-    .concept-transcription article h3 {
-      margin-top: 0;
-    }
-
-    @media (max-width: 560px) {
-      .concept-map-canvas {
-        padding: .5rem;
-      }
-
-      .concept-map-actions {
-        flex-direction: column;
-      }
-
-      .concept-map-actions .btn {
-        width: 100%;
-      }
-    }
-
-    @page {
-      size: landscape;
-      margin: 10mm;
-    }
-
-    @media print {
-      .concept-map-actions {
-        display: none !important;
-      }
-
-      .concept-map-figure {
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-
-      .concept-map-canvas {
-        padding: 0;
-        border: 0;
-        background: #fff !important;
-      }
-
-      .concept-map-figure img {
-        max-width: 100%;
-        max-height: 175mm;
-      }
-
-      .concept-transcription article {
-        color: #000 !important;
-        background: #fff !important;
-        box-shadow: none !important;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -149,7 +46,7 @@
         <span>M04</span>
       </nav>
 
-      <p class="eyebrow">Mappa concettuale M04 · Secondo anno</p>
+      <p class="section-intro">Mappa concettuale M04 · Secondo anno</p>
       <h1>Dal problema all'algoritmo</h1>
       <p class="lead">
         Usa questa mappa dopo avere studiato la lezione. Parti dal titolo
@@ -199,25 +96,30 @@
            href="mappa-dal-problema-all-algoritmo.png"
            target="_blank"
            rel="noopener">Apri a dimensione completa</a>
-        <button id="printMap" class="btn" type="button">Stampa la mappa</button>
+        <p>Per stampare la pagina usa <kbd>Ctrl</kbd> + <kbd>P</kbd> e scegli l’orientamento orizzontale.</p>
         <a class="btn" href="../../../secondo-anno/01-dal-problema-all-algoritmo/index.html">Vai alla Lezione 2.01</a>
         <a class="btn" href="../../index.html">Torna alle mappe concettuali</a>
       </div>
     </section>
 
-    <section class="lesson-section concept-transcription" aria-labelledby="trascrizione">
+    <section class="lesson-section self-check" aria-labelledby="trascrizione">
       <div class="section-heading">
         <span class="icon" aria-hidden="true">📖</span>
         <h2 id="trascrizione">Contenuti della mappa in forma testuale</h2>
       </div>
 
-      <article>
+      <aside class="callout remember" aria-labelledby="ordine-esecuzione">
+        <div class="callout-icon" aria-hidden="true">💡</div>
+        <div><h3 id="ordine-esecuzione">Come leggere controllo e risultato</h3><p>La mappa originale riassume anche il controllo della soluzione prima di applicarla. Nel laboratorio distinguiamo questo controllo dal test finale: eseguiamo l'algoritmo, osserviamo il risultato ottenuto e lo confrontiamo con l'output atteso. Per seguire queste fasi usa anche la <a href="../../../secondo-anno/01-dal-problema-all-algoritmo/index.html#mappa-percorso">mappa del percorso nella lezione</a>.</p></div>
+      </aside>
+
+      <article class="info-card">
         <h3>1. Che cos'è un problema?</h3>
         <p>È una situazione in cui abbiamo un obiettivo da raggiungere ma non sappiamo ancora come farlo.</p>
         <p><strong>Esempi:</strong> devo consegnare un compito; devo calcolare il costo di alcuni biglietti; devo trovare la media dei voti.</p>
       </article>
 
-      <article>
+      <article class="info-card">
         <h3>2. Problema, soluzione e algoritmo</h3>
         <ul>
           <li><strong>Problema:</strong> descrive ciò che deve essere risolto.</li>
@@ -234,7 +136,7 @@
         </ol>
       </article>
 
-      <article>
+      <article class="info-card">
         <h3>3. Gli elementi da individuare</h3>
         <ul>
           <li><strong>Obiettivo:</strong> che cosa devo ottenere?</li>
@@ -245,7 +147,7 @@
         </ul>
       </article>
 
-      <article>
+      <article class="info-card">
         <h3>4. Caratteristiche di un buon algoritmo</h3>
         <p>Un algoritmo deve essere:</p>
         <ul>
@@ -258,7 +160,7 @@
         </ul>
       </article>
 
-      <article>
+      <article class="info-card">
         <h3>5. Istruzioni ambigue o incomplete</h3>
         <p>Esempi di istruzioni che non sono buoni algoritmi:</p>
         <ul>
@@ -275,7 +177,7 @@
         </ul>
       </article>
 
-      <article>
+      <article class="info-card">
         <h3>6. Esempio guidato 1 — Consegna del compito scolastico</h3>
         <ol>
           <li><strong>Obiettivo:</strong> consegnare il compito al docente.</li>
@@ -296,7 +198,7 @@
         </ol>
       </article>
 
-      <article>
+      <article class="info-card">
         <h3>7. Esempio guidato 2 — Calcolo del costo di più biglietti uguali</h3>
         <ol>
           <li>Capisco il problema: devo sapere quanto costa in totale.</li>
@@ -309,7 +211,7 @@
         </ol>
       </article>
 
-      <article>
+      <article class="info-card">
         <h3>8. In sintesi</h3>
         <ol>
           <li>Capisco bene il problema.</li>
@@ -360,8 +262,5 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('printMap').addEventListener('click', () => window.print());
-  </script>
 </body>
 </html>

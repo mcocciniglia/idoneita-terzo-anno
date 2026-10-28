@@ -371,134 +371,6 @@ kbd{
   font-weight:900;
 }
 
-.process-flow-four{
-  grid-template-columns:
-    minmax(0,1fr) auto
-    minmax(0,1fr) auto
-    minmax(0,1fr) auto
-    minmax(0,1fr);
-  align-items:stretch;
-  gap:.75rem;
-}
-
-.process-flow-four .process-node{
-  min-width:0;
-  width:auto;
-}
-
-.process-flow-four .process-arrow{
-  align-self:center;
-  text-align:center;
-}
-
-.process-flow-five{
-  grid-template-columns:
-    minmax(0,1fr) auto
-    minmax(0,1fr) auto
-    minmax(0,1fr) auto
-    minmax(0,1fr) auto
-    minmax(0,1fr);
-  align-items:stretch;
-  gap:.55rem;
-}
-
-.process-flow-five .process-node{
-  min-width:0;
-  padding:14px 10px;
-}
-
-.process-flow-five .process-arrow{
-  align-self:center;
-  text-align:center;
-}
-
-/* ---------- Figure delle lezioni ---------- */
-
-.lesson-figure{
-  margin:1.5rem 0;
-}
-
-.lesson-figure img{
-  display:block;
-  width:100%;
-  height:auto;
-  border:1px solid var(--panel-border);
-  border-radius:16px;
-}
-
-.lesson-figure figcaption{
-  margin-top:.75rem;
-  color:var(--muted);
-  font-size:.95rem;
-  text-align:center;
-}
-
-.lesson-figure-wide img{
-  max-width:1100px;
-  margin-inline:auto;
-}
-
-.lesson-figure-portrait img{
-  max-width:760px;
-  margin-inline:auto;
-}
-
-/* ---------- Tabelle comparative ---------- */
-
-.table-wrapper{
-  max-width:100%;
-  margin:24px 0;
-  overflow-x:auto;
-  border-radius:12px;
-}
-
-.comparison-table{
-  width:100%;
-  min-width:42rem;
-  margin:0;
-  border-collapse:collapse;
-  border:1px solid var(--edu-line);
-  background:var(--panel);
-}
-
-.comparison-table caption{
-  padding:0 0 .75rem;
-  color:var(--text);
-  text-align:left;
-  font-weight:800;
-}
-
-.comparison-table th,
-.comparison-table td{
-  padding:.85rem 1rem;
-  border:1px solid var(--edu-line);
-  text-align:left;
-  vertical-align:top;
-}
-
-.comparison-table thead th{
-  background:var(--edu-blue-soft);
-  font-weight:850;
-}
-
-.comparison-table tbody tr:nth-child(even){
-  background:var(--bg);
-}
-
-.comparison-table tbody th[scope="row"]{
-  background:var(--edu-blue-soft);
-  font-weight:850;
-}
-
-.cpu-parts-table{
-  min-width:0;
-  table-layout:fixed;
-}
-
-.cpu-parts-table th:first-child{
-  width:30%;
-}
-
 /* ---------- Laboratorio ---------- */
 
 .lab{
@@ -538,6 +410,7 @@ kbd{
 }
 
 .steps > li::before{
+  counter-increment:step;
   content:counter(step);
   position:absolute;
   left:0;
@@ -550,6 +423,11 @@ kbd{
   color:#fff;
   background:var(--edu-teal);
   font-weight:850;
+}
+
+/* Il CSS comune incrementa già il contatore sull'elemento li. */
+.lesson-01-lab-steps > li::before{
+  counter-increment:none;
 }
 
 .steps > li:not(:last-child)::after{
@@ -713,10 +591,6 @@ html[data-theme="dark"] .quiz-question{
   }
 
   .process-flow{
-    grid-template-columns:1fr;
-  }
-
-  .process-flow-four{
     grid-template-columns:1fr;
   }
 
@@ -992,11 +866,6 @@ html[data-theme="dark"] .quiz-question{
   color:var(--edu-green);
   background:var(--edu-green-soft);
 }
-.home-status.optional {
-  color: #b45309;
-  background: #fff7ed;
-  border-color: #f59e0b;
-}
 
 .home-feature-grid{
   display:grid;
@@ -1042,11 +911,7 @@ html[data-theme="dark"] .home-light-action:focus{
   -webkit-text-fill-color:#203a72;
   background:#fff !important;
 }
-html[data-theme="dark"] .home-status.optional {
-  color: #fbbf24;
-  background: #2b2111;
-  border-color: #d97706;
-}
+
 .home-secondary-link{
   color:#fff !important;
   font-weight:800;
