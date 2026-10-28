@@ -39,7 +39,8 @@ Al termine del percorso lo studente dovrà essere in grado di:
 - organizzare dati e file;
 - comprendere la rappresentazione digitale delle informazioni;
 - utilizzare strumenti informatici in modo consapevole;
-- affrontare con sicurezza l'esame di idoneità.
+- affrontare con sicurezza l'esame di idoneità;
+- scrivere, eseguire e verificare piccoli programmi procedurali in C++ e comprenderne una traduzione essenziale in C, al livello di una classe terza del liceo scientifico.
 
 ---
 

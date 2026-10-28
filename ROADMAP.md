@@ -64,21 +64,83 @@ Legenda
 
 ## Pubblicazione attuale
 
-Il ramo `pubblicazione`, sorgente di GitHub Pages, contiene soltanto le lezioni
-01–04 del Primo anno e la Lezione 2.01 del Secondo anno. Le lezioni 05–18 del
-Primo anno restano non pubblicate. I contenuti già generati in `main` non vanno
-importati in blocco nel ramo pubblico.
+GitHub Pages usa il ramo `main`, cartella `/`. La base editoriale è la versione
+effettivamente pubblicata al commit `a5679c431903e6b4db114fe83ad61056a689b595`:
+lezioni 01–04 del Primo anno e 2.01 del Secondo anno. I testi già rivisti,
+le fotografie, le mappe e i materiali pubblicati restano il riferimento.
+Le lezioni 05–18 del Primo anno non sono prerequisiti del percorso operativo.
 
-| Codice | Lezione | Stato | Dipende da | Note |
-|--------|---------|-------|------------|------|
-| 2.01 | Dal problema all'algoritmo | ✅ | 01–04 | Analisi; laboratorio Flowgorithm di circa 2 ore: sequenza, input/output, variabili, selezione; iterazione facoltativa; test e collegamento al futuro studio del C |
-| 2.02 | Rappresentare un algoritmo | ⚪ | 2.01 | Non pubblicata; approfondimento di simboli, linguaggio naturale e pseudocodice |
+## Obiettivo operativo e scelta del linguaggio
 
-La numerazione del Secondo anno resta autonoma. Il laboratorio della 2.01
-introduce soltanto le operazioni necessarie ai primi diagrammi; variabili,
-operatori e selezione verranno ripresi nelle lezioni successive. Non servono
-prerequisiti delle lezioni 05–18. Il riferimento al C motiva il percorso futuro
-senza introdurne qui la sintassi.
+Il livello è la programmazione di base per una classe terza del liceo scientifico.
+L'obiettivo è leggere, scrivere, eseguire e correggere piccoli programmi da console,
+spiegando input, elaborazione, output e casi di prova.
+
+Si parte con C++ procedurale: `int`, `double`, variabili, `std::cin`,
+`std::cout`, espressioni, `if/else`, `while` e `for`. Si usa uno stesso
+ambiente di compilazione predisposto dal docente. Il C viene confrontato con il
+C++ dopo le prime competenze operative, traducendo un programma già compreso:
+non si alternano due sintassi di input/output durante il primo apprendimento.
+Il collegamento al C presente nella 2.01 resta valido come prospettiva del percorso.
+
+Flowgorithm serve per progettare o chiarire un passaggio difficile; non occorre
+riscrivere ogni esercizio in tre rappresentazioni. Test e tracce dei valori
+accompagnano tutte le lezioni. L'esposizione orale segue una prova pratica.
+
+## Sequenza essenziale
+
+✅ indica una lezione disponibile. ⚪ indica una lezione prevista e non pubblicata,
+anche quando esistono bozze precedenti. I tempi sono indicativi e comprendono
+esercizi e verifica; si procede quando lo studente svolge il compito indicato.
+
+| Codice | Lezione | Stato | Dipende da | Compito verificabile |
+|--------|---------|-------|------------|----------------------|
+| 2.01 | Dal problema all'algoritmo | ✅ | 01–04 | Analizzare un problema ed eseguire i diagrammi del laboratorio pubblicato |
+| 2.02 | Dal diagramma al primo programma | ⚪ | 2.01 | Compilare un programma C++ che legge due dati e calcola un risultato; distinguere assegnazione e calcolo; circa 2 ore |
+| 2.03 | Prendere decisioni con if e else | ⚪ | 2.02 | Scrivere una selezione semplice e doppia; distinguere = e ==; provare entrambi i rami e la soglia; circa 2 ore |
+| 2.04 | Ripetere con while | ⚪ | 2.03 | Usare inizializzazione, condizione, aggiornamento e accumulatore; provare zero, una e più iterazioni; circa 2 ore |
+| 2.05 | Il ciclo for e le condizioni composte | ⚪ | 2.04 | Riscrivere un conteggio con for; usare &&, || e ! in condizioni semplici; distinguere ciclo e selezione; circa 2 ore, divisibili in due incontri |
+| 2.06 | Dal C++ al C e prova pratica | ⚪ | 2.05 | Tradurre un piccolo programma numerico usando printf/scanf e spiegare cosa cambia; completare una prova autonoma con test; circa 2 ore, con recupero se necessario |
+
+Il percorso ufficiale della 2.02 resta `secondo-anno/02-rappresentare-un-algoritmo/`
+per conservare i collegamenti già pubblicati. I percorsi successivi sono:
+`03-decisioni-if-else/`, `04-ripetere-con-while/`,
+`05-for-condizioni-composte/` e `06-dal-cpp-al-c-prova-pratica/`.
+Tutti sono relativi a `secondo-anno/` e sono registrati nel fallback 404.
+
+## Revisione delle bozze precedenti
+
+La revisione didattica delle vecchie 2.02–2.07 è documentata in
+[docs/revisione-secondo-anno.md](docs/revisione-secondo-anno.md).
+Le bozze restano recuperabili nella cronologia precedente all'allineamento;
+non sono pagine pubblicate né lezioni approvate secondo il nuovo percorso.
+
+Le vecchie 2.02, 2.03 e 2.04 confluiscono nella nuova 2.02: i simboli già usati
+in Flowgorithm diventano un richiamo breve, mentre variabili, assegnazione ed
+espressioni vengono applicate subito a un programma. La vecchia 2.05 alimenta
+la nuova 2.03; il nucleo della vecchia 2.07 anticipa la vecchia 2.06 e diventa
+la nuova 2.04. Condizioni composte e for seguono nella 2.05.
+
+Non serve una lezione separata sui test prima di programmare: previsione,
+esecuzione e confronto fanno parte di ogni laboratorio fin dalla 2.01.
+Foglio elettronico, ripassi estesi di hardware e reti e approfondimenti sulle
+rappresentazioni restano percorsi di recupero o complementari, senza bloccare
+l'avvio della programmazione. Privacy, sicurezza e diritto d'autore mantengono
+il loro valore formativo e potranno essere sviluppati separatamente.
+
+Array, funzioni definite dallo studente, puntatori come argomento autonomo,
+classi, ereditarietà, memoria dinamica e librerie avanzate sono rinviati.
+L'uso iniziale di `main` non richiede una lezione generale sulle funzioni.
+Nella traduzione in C si spiega il ruolo di `&` negli input numerici, senza
+anticipare un modulo sulla gestione della memoria.
+
+## Condizioni prima di pubblicare una nuova lezione
+
+Ogni pagina deve essere riscritta rispetto alla 2.01 effettivamente online,
+conservando stile, accessibilità e mappe utili. Deve comprendere un esempio
+completo, un esercizio guidato, un esercizio autonomo, risultati attesi e casi
+di confine. I programmi vanno compilati ed eseguiti prima di considerarli pronti.
+Una bozza o una revisione del piano non autorizza a segnare la lezione come pubblicata.
 
 ---
 

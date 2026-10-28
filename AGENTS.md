@@ -323,3 +323,62 @@ Non riscrivere la cronologia, eseguire push forzati o scartare modifiche locali 
 
 Al termine riportare i commit creati, le operazioni remote eseguite e lo stato della pubblicazione.
 
+---
+
+# Immagini didattiche con licenze aperte
+
+Queste regole si applicano alle immagini aggiunte o sostituite nelle lezioni e nei materiali integrativi. Mantengono validi i vincoli precedenti su struttura, CSS comuni e operazioni Git.
+
+## Scelta e verifica della fonte
+
+- Inserire immagini che aiutino a riconoscere un oggetto, comprendere un concetto o svolgere un’attività. Preferire fotografie reali quando occorre riconoscere componenti fisici; evitare decorazioni e immagini pubblicitarie.
+- Usare soltanto risorse con CC0, CC BY o CC BY-SA verificabili. CC0 è uno strumento di dedica al pubblico dominio; mantenere comunque i crediti per scelta editoriale. Non assimilare automaticamente altre dichiarazioni di pubblico dominio a CC0.
+- Preferire Wikimedia Commons o archivi con una pagina dedicata al singolo file. Aprire tale pagina e controllare autore, fonte originaria, licenza esatta, versione, eventuale giurisdizione e richieste di attribuzione. I risultati di ricerca, le categorie, il piè di pagina del sito e l’URL diretto dell’immagine non dimostrano la licenza del file.
+- Non inventare autori, titoli o licenze, né attribuire la fotografia a chi l’ha soltanto caricata. Conservare lo pseudonimo e la formula di credito richiesti. Se il titolo non è fornito, usare una descrizione dichiarata come tale.
+- Se la risorsa offre più licenze alternative, scegliere e documentare una licenza ammessa. Non sostituire una versione con una più recente non offerta dall’autore. Escludere licenze NC, ND, «tutti i diritti riservati» e autorizzazioni ambigue.
+- Se autore, condizioni o provenienza non sono verificabili, saltare la risorsa e segnalarne il motivo nel report. Non completare una quota di immagini con risorse dubbie.
+
+## File locali e prestazioni
+
+- Scaricare le immagini nella cartella della risorsa didattica, normalmente `img/`, con nomi descrittivi e percorsi relativi. Non usare hotlink in `src`, `srcset`, CSS o script; i collegamenti esterni alle pagine fonte e alle licenze restano necessari per i crediti.
+- Preparare dimensioni adeguate allo spazio di lettura, senza ingrandimenti inutili. Preferire WebP, JPEG o altri formati già supportati dal progetto. Come riferimento, puntare a 150–200 KB per fotografia e circa 1 MB complessivo per le immagini di una lezione; motivare le eccezioni e preservare la leggibilità.
+- Indicare `width` e `height` coerenti con il file per riservare lo spazio; usare il ridimensionamento responsivo già disponibile nei CSS del progetto. Usare `loading="lazy"` sotto la prima schermata e `decoding="async"` quando appropriato. Non ritardare inutilmente l’immagine principale immediatamente visibile.
+- Conservare nella documentazione locale URL della pagina fonte, collegamento permanente o revisione quando disponibile, URL del file scaricato, data di verifica, nome locale, dimensioni e trasformazioni effettuate. Non rimuovere avvisi o metadati di attribuzione senza riportarli nei crediti e nella documentazione locale.
+
+## Attribuzione TASL e modifiche
+
+- Fornire per ogni immagine TASL: **Title** (titolo fornito), **Author** (autore e altri soggetti da accreditare), **Source** (link alla pagina del file), **License** (nome completo o sigla, versione e link alla licenza specifica). Conservare gli avvisi di copyright e le attribuzioni pregresse pertinenti presenti nella fonte.
+- Inserire i crediti nella didascalia oppure in una sezione finale «Crediti delle immagini», con un rimando identificabile da ogni figura. `alt`, commenti HTML e un file di documentazione da soli non sostituiscono i crediti visibili.
+- Dichiarare ridimensionamento e conversione di formato. Per ritagli, annotazioni o altre elaborazioni scrivere «adattata da…» e descrivere l’intervento. Non presentare la fotografia altrui come propria né suggerire l’approvazione dell’autore.
+- Per CC BY-SA distribuire gli adattamenti con la stessa licenza dell’originale o con una licenza compatibile verificata per quella versione. Non presumere che la semplice inclusione di una fotografia imponga la medesima licenza all’intero sito; non cambiare la licenza generale del progetto. Le elaborazioni soltanto tecniche non costituiscono automaticamente un adattamento creativo.
+
+## Accessibilità e integrazione didattica
+
+- Usare `figure`, `img` e `figcaption` per le fotografie formative. Scrivere un `alt` che descriva ciò che è realmente visibile e utile a riconoscere il soggetto; non collocarvi i crediti. Le immagini decorative, se indispensabili, hanno `alt=""`.
+- Collegare ogni didascalia al concetto già trattato, con linguaggio adatto anche a studenti DSA. Non anticipare argomenti della roadmap, non affidare informazioni essenziali soltanto a colore o testo incorporato nell’immagine e non aggiungere dettagli tecnici non necessari.
+- Distribuire poche figure nei punti pertinenti, con al massimo una figura grande per sezione. Evitare gallerie separate dal ragionamento. Conservare testi, titoli, ancore, esercizi, progressione e navigazione, salvo modifiche espressamente richieste.
+- Riutilizzare i componenti e i fogli di stile esistenti. Verificare desktop, schermo stretto, tema chiaro e scuro. Non modificare i CSS comuni o introdurre librerie per aggiungere le foto.
+
+## Verifiche e report di consegna
+
+Prima della consegna controllare HTML, esistenza dei file e percorsi relativi, assenza di hotlink delle nuove immagini, corrispondenza fra fotografie e didascalie, copertura dei crediti TASL, dimensioni e peso, leggibilità nei due temi e conservazione dei contenuti originali.
+
+Il report deve indicare file modificati, immagini inserite e collocazione, titolo/autore/fonte/licenza per ciascuna, trasformazioni, peso complessivo, risorse scartate con motivo, controlli svolti e limiti rimasti. Distinguere problemi preesistenti da regressioni introdotte. Non dichiarare effettuati controlli non eseguiti.
+
+Riferimenti: [riuso e attribuzione TASL di Creative Commons](https://creativecommons.org/reusing-cc-licensed-content/), [condizioni CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Per il singolo file valgono la licenza e la versione verificate nella sua pagina fonte.
+
+---
+
+# Incarico operativo — Lezione 04: Hardware
+
+Destinazione: `Primo-anno/04-hardware/index.html`. Questo incarico riguarda l’integrazione fotografica della lezione esistente; non crea una nuova lezione e non modifica la roadmap.
+
+1. Applicare le regole permanenti sulle immagini sopra riportate. Selezionare circa 6–8 fotografie reali, verificando ogni pagina fonte prima di inserire il file.
+2. Inserire una vista interna del PC in «Che cosa c’è realmente dentro un computer?», prima delle schede sulle parti visibili e interne.
+3. Integrare le schede già presenti in «Le componenti principali: una panoramica» con fotografie di scheda madre, CPU, RAM, SSD e/o HDD, alimentatore chiuso e periferiche comuni. Se si usano otto foto, mostrare separatamente SSD e HDD nella medesima scheda di archiviazione.
+4. Aggiungere didascalie formative brevi che colleghino aspetto e funzione generale. Descrivere soltanto elementi visibili; per esempio distinguere la CPU dal suo sistema di raffreddamento. Conservare lo schema testuale input–elaborazione–output già presente.
+5. Salvare i file in `Primo-anno/04-hardware/img/`, con `alt`, dimensioni, caricamento differito e crediti raggiungibili dalla figura. Aggiungere «Crediti delle immagini» prima della navigazione finale.
+6. Preservare integralmente testi, ordine delle sezioni, obiettivi, esercizi, glossario, richiami, navigazione e stile comune. Saltare le risorse non verificabili; motivare un eventuale numero inferiore di fotografie.
+7. Verificare il risultato e aggiornare `docs/immagini-hardware.md` con fonti, trasformazioni, immagini scartate, controlli e riepilogo delle modifiche. Non eseguire operazioni Git.
+
+Traccia dell’integrazione del 21 ottobre 2026: otto fotografie locali, crediti in pagina e dati di provenienza in `Primo-anno/04-hardware/img/credits.json`; riepilogo in `docs/immagini-hardware.md`. Nelle revisioni successive mantenere questa documentazione coerente con le immagini effettivamente usate.
