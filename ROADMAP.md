@@ -100,12 +100,14 @@ esercizi e verifica; si procede quando lo studente svolge il compito indicato.
 | 2.03 | Prendere decisioni con if e else | ⚪ | 2.02 | Scrivere una selezione semplice e doppia; distinguere = e ==; provare entrambi i rami e la soglia; circa 2 ore |
 | 2.04 | Ripetere con while | ⚪ | 2.03 | Usare inizializzazione, condizione, aggiornamento e accumulatore; provare zero, una e più iterazioni; circa 2 ore |
 | 2.05 | Il ciclo for e le condizioni composte | ⚪ | 2.04 | Riscrivere un conteggio con for; usare &&, || e ! in condizioni semplici; distinguere ciclo e selezione; circa 2 ore, divisibili in due incontri |
-| 2.06 | Dal C++ al C e prova pratica | ⚪ | 2.05 | Tradurre un piccolo programma numerico usando printf/scanf e spiegare cosa cambia; completare una prova autonoma con test; circa 2 ore, con recupero se necessario |
+| 2.06 | Dalla tabellina all'elenco degli studenti | ✅ | 2.05 | Consolidare for e cicli annidati; introdurre gradualmente array, do-while, funzioni, #define e scope ricostruendo un elenco di studenti; circa 2 ore, divisibili in due incontri |
+| 2.07 | Dal C++ al C e prova pratica | ⚪ | 2.06 | Tradurre un piccolo programma numerico usando printf/scanf e spiegare cosa cambia; completare una prova autonoma con test; circa 2 ore, con recupero se necessario |
 
 Il percorso ufficiale della 2.02 resta `secondo-anno/02-rappresentare-un-algoritmo/`
 per conservare i collegamenti già pubblicati. I percorsi successivi sono:
 `03-decisioni-if-else/`, `04-ripetere-con-while/`,
-`05-for-condizioni-composte/` e `06-dal-cpp-al-c-prova-pratica/`.
+`05-for-condizioni-composte/`, `06-dalla-tabellina-all-elenco-studenti/`
+e `07-dal-cpp-al-c-prova-pratica/`.
 Tutti sono relativi a `secondo-anno/` e sono registrati nel fallback 404.
 
 ## Revisione delle bozze precedenti
@@ -128,9 +130,11 @@ rappresentazioni restano percorsi di recupero o complementari, senza bloccare
 l'avvio della programmazione. Privacy, sicurezza e diritto d'autore mantengono
 il loro valore formativo e potranno essere sviluppati separatamente.
 
-Array, funzioni definite dallo studente, puntatori come argomento autonomo,
-classi, ereditarietà, memoria dinamica e librerie avanzate sono rinviati.
-L'uso iniziale di `main` non richiede una lezione generale sulle funzioni.
+Array e prime funzioni definite dallo studente sono introdotti nella 2.06,
+dopo i cicli, mediante un solo programma ricostruito per tappe. Puntatori come
+argomento autonomo, classi, ereditarietà, memoria dinamica e librerie avanzate
+sono rinviati. L'uso iniziale di `main` non richiede una lezione generale sulle
+funzioni.
 Nella traduzione in C si spiega il ruolo di `&` negli input numerici, senza
 anticipare un modulo sulla gestione della memoria.
 

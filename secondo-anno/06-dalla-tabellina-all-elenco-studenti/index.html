@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lezione di consolidamento in C++: ciclo for, cicli annidati, array, do-while, funzioni, costante simbolica e scope delle variabili.">
+  <title>2.06 — Dalla tabellina all'elenco degli studenti</title>
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line" aria-label="Identificazione del percorso">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge second">Programma del secondo anno</span>
+        </div>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle" class="btn btn-theme" type="button" aria-pressed="false" aria-label="Cambia tema"><span class="btn-label">Tema</span></button>
+          <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button" aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">Contrasto alto ☀️</button>
+        </div>
+      </div>
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span><span aria-hidden="true">›</span><span>Secondo anno</span><span aria-hidden="true">›</span><span>Lezione 2.06</span>
+      </nav>
+      <p class="section-intro">Secondo anno — Lezione 2.06 · Consolidamento dopo il laboratorio</p>
+      <h1>Dalla tabellina all'elenco degli studenti</h1>
+      <p class="lead">Ricostruiamo con calma il percorso svolto in aula: un dato, un ciclo, due cicli, un array e infine un programma diviso in funzioni.</p>
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ 2 ore, divisibili in due incontri</span><span>📘 C++ procedurale</span><span>🎯 Prerequisiti: input, output, condizioni e cicli</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="progress-card" aria-label="Avanzamento del percorso">
+      <div class="progress-heading"><span>Percorso del secondo anno</span><span>Lezione 2.06 · Laboratorio di riallineamento</span></div>
+    </section>
+
+    <aside class="callout remember" aria-labelledby="una-cosa-volta">
+      <div class="callout-icon" aria-hidden="true">🧭</div>
+      <div><p class="callout-label">Metodo di lavoro</p><h2 id="una-cosa-volta">Una novità alla volta</h2><p>Il programma finale contiene molti concetti. Non devi comprenderli tutti insieme: esegui ogni tappa, prevedi l'output e passa alla successiva soltanto quando sai spiegare quella corrente.</p></div>
+    </aside>
+
+    <section class="lesson-section" aria-labelledby="obiettivi">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎯</span><h2 id="obiettivi">Obiettivi essenziali</h2></div>
+      <ul>
+        <li>usare un <code>for</code> per ripetere un'operazione un numero noto di volte;</li>
+        <li>leggere e scrivere un elemento di un array mediante il suo indice;</li>
+        <li>distinguere il compito di <code>main</code> da quello di una funzione;</li>
+        <li>riconoscere dove una variabile è visibile e utilizzabile;</li>
+        <li>ricostruire e spiegare il programma finale senza impararlo a memoria.</li>
+      </ul>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="mappa-percorso">
+      <h2 id="mappa-percorso">La strada che seguiremo</h2>
+      <ol class="steps">
+        <li><strong>Un dato.</strong><p>Leggiamo un nome e lo mostriamo.</p></li>
+        <li><strong>Una ripetizione.</strong><p>Stampiamo una tabellina con un <code>for</code>.</p></li>
+        <li><strong>Una ripetizione dentro un'altra.</strong><p>Costruiamo la tabella pitagorica.</p></li>
+        <li><strong>Molti dati dello stesso tipo.</strong><p>Conserviamo più nomi in un array.</p></li>
+        <li><strong>Un numero valido di studenti.</strong><p>Ripetiamo l'input con <code>do-while</code> finché il valore rispetta i limiti.</p></li>
+        <li><strong>Compiti separati.</strong><p>Spostiamo inserimento e stampa in due funzioni.</p></li>
+      </ol>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="tappa-zero">
+      <h2 id="tappa-zero">Tappa 0 — Input di un solo dato</h2>
+      <p>Prima dell'array usiamo una sola variabile. <code>nome</code> contiene una parola letta con <code>cin</code>.</p>
+      <pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string nome;
+    cout &lt;&lt; "Inserisci un nome: ";
+    cin &gt;&gt; nome;
+    cout &lt;&lt; "Hai inserito: " &lt;&lt; nome &lt;&lt; endl;
+}</code></pre>
+      <p><strong>Prova:</strong> inserisci <code>Anna</code>. L'output atteso è <code>Hai inserito: Anna</code>. Per ora usiamo nomi senza spazi.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="tabellina">
+      <h2 id="tabellina">Tappa 1 — La tabellina e il ciclo for</h2>
+      <p>Per stampare dieci prodotti cambia soltanto il moltiplicatore. Il <code>for</code> raccoglie inizializzazione, condizione e aggiornamento.</p>
+      <pre><code>int numero;
+cout &lt;&lt; "Quale tabellina vuoi stampare? ";
+cin &gt;&gt; numero;
+
+for (int i = 1; i &lt;= 10; i++) {
+    cout &lt;&lt; numero &lt;&lt; " x " &lt;&lt; i
+         &lt;&lt; " = " &lt;&lt; numero * i &lt;&lt; endl;
+}</code></pre>
+      <div class="definition"><span class="definition-term">Leggi il for</span><p><code>i</code> parte da 1; il blocco continua finché <code>i &lt;= 10</code>; dopo ogni giro <code>i++</code> aumenta <code>i</code> di uno.</p></div>
+      <table>
+        <thead><tr><th>Prima del giro</th><th>Condizione</th><th>Riga prodotta con numero = 3</th><th>Dopo il giro</th></tr></thead>
+        <tbody><tr><td><code>i = 1</code></td><td>vera</td><td><code>3 x 1 = 3</code></td><td><code>i = 2</code></td></tr><tr><td><code>i = 2</code></td><td>vera</td><td><code>3 x 2 = 6</code></td><td><code>i = 3</code></td></tr><tr><td>…</td><td>…</td><td>…</td><td>…</td></tr><tr><td><code>i = 11</code></td><td>falsa</td><td>nessuna riga</td><td>il ciclo termina</td></tr></tbody>
+      </table>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="pitagorica">
+      <h2 id="pitagorica">Tappa 2 — La tabella pitagorica: due for annidati</h2>
+      <p>Il ciclo esterno sceglie la riga. Per ogni riga, il ciclo interno percorre tutte le colonne.</p>
+      <pre><code>for (int riga = 1; riga &lt;= 10; riga++) {
+    for (int colonna = 1; colonna &lt;= 10; colonna++) {
+        cout &lt;&lt; riga * colonna &lt;&lt; '\t';
+    }
+    cout &lt;&lt; endl;
+}</code></pre>
+      <aside class="callout tip" aria-labelledby="orologio-cicli">
+        <div class="callout-icon" aria-hidden="true">🕒</div>
+        <div><p class="callout-label">Immagine mentale</p><h3 id="orologio-cicli">Il ciclo interno riparte</h3><p>Quando cambia <code>riga</code>, <code>colonna</code> riparte da 1. Con 10 righe e 10 colonne, la moltiplicazione viene eseguita 100 volte.</p></div>
+      </aside>
+      <p><strong>Attività:</strong> porta entrambi i limiti da 10 a 3. Prima di eseguire, scrivi a mano le tre righe attese.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="array">
+      <h2 id="array">Tappa 3 — Dalla variabile all'array</h2>
+      <p>Tre variabili separate funzionano, ma diventano scomode quando i nomi aumentano. Un array raccoglie più valori dello stesso tipo sotto un solo nome.</p>
+      <pre><code>string studenti[3];
+
+for (int i = 0; i &lt; 3; i++) {
+    cout &lt;&lt; "Inserisci il nome dello studente " &lt;&lt; i + 1 &lt;&lt; ": ";
+    cin &gt;&gt; studenti[i];
+}
+
+for (int i = 0; i &lt; 3; i++) {
+    cout &lt;&lt; i + 1 &lt;&lt; ") " &lt;&lt; studenti[i] &lt;&lt; endl;
+}</code></pre>
+      <div class="card-grid">
+        <article class="info-card"><h3>Indice</h3><p>La prima posizione è <code>0</code>, non <code>1</code>.</p></article>
+        <article class="info-card"><h3>Numero mostrato</h3><p>All'utente mostriamo <code>i + 1</code>, così l'elenco parte da 1.</p></article>
+        <article class="info-card"><h3>Limite</h3><p>Per tre elementi gli indici validi sono <code>0</code>, <code>1</code> e <code>2</code>.</p></article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="do-while">
+      <h2 id="do-while">Tappa 4 — Controllare quanti studenti inserire</h2>
+      <p>Il numero deve essere letto almeno una volta. Se non è compreso tra 1 e 100, lo chiediamo di nuovo.</p>
+      <pre><code>int numeroStudenti;
+do {
+    cout &lt;&lt; "Quanti studenti vuoi inserire? ";
+    cin &gt;&gt; numeroStudenti;
+} while (numeroStudenti &lt;= 0 || numeroStudenti &gt; 100);</code></pre>
+      <p>La ripetizione continua se il valore è troppo piccolo <strong>oppure</strong> troppo grande. Con 100 posti, il valore 100 è valido.</p>
+      <table>
+        <thead><tr><th>Input</th><th>Condizione</th><th>Comportamento atteso</th></tr></thead>
+        <tbody><tr><td>0</td><td>vera</td><td>chiede di nuovo</td></tr><tr><td>1</td><td>falsa</td><td>prosegue</td></tr><tr><td>100</td><td>falsa</td><td>prosegue</td></tr><tr><td>101</td><td>vera</td><td>chiede di nuovo</td></tr></tbody>
+      </table>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="funzioni">
+      <h2 id="funzioni">Tappa 5 — Separare i compiti con le funzioni</h2>
+      <p>Il programma svolge tre compiti: controlla il numero, inserisce i nomi e li stampa. <code>main</code> coordina; le due funzioni eseguono i compiti specifici.</p>
+      <pre><code>void inserisciStudenti(int numeroStudenti);
+void stampaStudenti(int numeroStudenti);</code></pre>
+      <p>Queste sono le dichiarazioni delle funzioni. <code>void</code> indica che la funzione svolge un'azione ma non restituisce un valore. Il parametro <code>numeroStudenti</code> comunica quanti elementi usare.</p>
+      <div class="process-flow">
+        <div class="process-node"><strong>main</strong><span>legge e controlla il numero</span></div><div class="process-arrow">→</div><div class="process-node"><strong>inserisciStudenti</strong><span>riempie l'array</span></div><div class="process-arrow">→</div><div class="process-node"><strong>stampaStudenti</strong><span>mostra l'elenco</span></div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="define-scope">
+      <h2 id="define-scope">Tappa 6 — #define e scope</h2>
+      <pre><code>#define NSTUD 100
+string studenti[NSTUD];</code></pre>
+      <p><code>NSTUD</code> dà un nome al limite massimo. In questo esempio è una costante simbolica elaborata prima della compilazione. Più avanti potrai incontrare anche <code>const</code>; qui riconosciamo la forma usata nel programma di classe.</p>
+      <div class="card-grid">
+        <article class="info-card"><h3>Scope globale</h3><p><code>studenti</code>, dichiarato fuori dalle funzioni, è visibile a tutte le funzioni del file.</p></article>
+        <article class="info-card"><h3>Scope locale</h3><p><code>i</code> esiste soltanto nel proprio <code>for</code>; <code>numeroStudenti</code> del parametro appartiene alla funzione.</p></article>
+        <article class="info-card"><h3>Scelta didattica</h3><p>L'array globale rende il primo esempio più leggibile. Non significa che ogni array debba essere globale.</p></article>
+      </div>
+    </section>
+
+    <section class="lab" aria-labelledby="programma-finale">
+      <div class="lab-header"><h2 id="programma-finale">💻 Programma finale ricostruito</h2></div>
+      <div class="lab-body">
+        <p>Il programma conserva la struttura realizzata in classe. Le funzioni sono <code>void</code> perché non restituiscono risultati; il controllo ammette da 1 a 100 studenti.</p>
+        <pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+#define NSTUD 100
+
+using namespace std;
+
+void inserisciStudenti(int numeroStudenti);
+void stampaStudenti(int numeroStudenti);
+
+string studenti[NSTUD];
+
+int main() {
+    int numeroStudenti = 0;
+
+    do {
+        cout &lt;&lt; "INSERISCI QUANTI STUDENTI VUOI INSERIRE" &lt;&lt; endl;
+        cin &gt;&gt; numeroStudenti;
+    } while (numeroStudenti &lt;= 0 || numeroStudenti &gt; NSTUD);
+
+    inserisciStudenti(numeroStudenti);
+    stampaStudenti(numeroStudenti);
+}
+
+void inserisciStudenti(int numeroStudenti) {
+    for (int i = 0; i &lt; numeroStudenti; i++) {
+        cout &lt;&lt; "INSERISCI IL NOME DELLO STUDENTE NUMERO "
+             &lt;&lt; i + 1 &lt;&lt; endl;
+        cin &gt;&gt; studenti[i];
+    }
+}
+
+void stampaStudenti(int numeroStudenti) {
+    cout &lt;&lt; "NOME" &lt;&lt; endl;
+    cout &lt;&lt; "----------------" &lt;&lt; endl;
+
+    for (int i = 0; i &lt; numeroStudenti; i++) {
+        cout &lt;&lt; i + 1 &lt;&lt; ")\t" &lt;&lt; studenti[i] &lt;&lt; endl;
+        cout &lt;&lt; "----------------" &lt;&lt; endl;
+    }
+}</code></pre>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="traccia-finale">
+      <h2 id="traccia-finale">Segui l'esecuzione con tre studenti</h2>
+      <table>
+        <thead><tr><th>Passaggio</th><th>Valore o azione</th></tr></thead>
+        <tbody><tr><td>Input iniziale</td><td><code>numeroStudenti = 3</code></td></tr><tr><td>Primo inserimento</td><td><code>studenti[0] = "Anna"</code></td></tr><tr><td>Secondo inserimento</td><td><code>studenti[1] = "Luca"</code></td></tr><tr><td>Terzo inserimento</td><td><code>studenti[2] = "Sara"</code></td></tr><tr><td>Stampa</td><td><code>1) Anna</code>, <code>2) Luca</code>, <code>3) Sara</code></td></tr></tbody>
+      </table>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="attivita">
+      <h2 id="attivita">Attività graduate</h2>
+      <ol>
+        <li><strong>Completa:</strong> modifica la tabellina affinché stampi i prodotti da 0 a 10.</li>
+        <li><strong>Prevedi:</strong> nella tabella pitagorica 3 × 3, quante volte viene eseguito il ciclo interno in totale?</li>
+        <li><strong>Correggi:</strong> spiega perché <code>i &lt;= numeroStudenti</code> accederebbe a una posizione in più dell'array.</li>
+        <li><strong>Modifica:</strong> aggiungi la funzione <code>void stampaSeparatore()</code> e usala al posto della riga di trattini ripetuta.</li>
+        <li><strong>Autonomo:</strong> crea un array di cinque numeri interi, leggili e stampali nello stesso ordine.</li>
+      </ol>
+      <details><summary>Indicazioni per controllare le attività</summary><p>La tabellina parte con <code>i = 0</code>. Una tabella 3 × 3 esegue il corpo interno 9 volte. Con <code>numeroStudenti = 3</code> sono validi gli indici 0, 1 e 2: l'indice 3 è fuori dal gruppo dei tre elementi usati. La nuova funzione non richiede parametri né restituisce valori.</p></details>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="errori">
+      <h2 id="errori">Errori da riconoscere</h2>
+      <div class="card-grid">
+        <article class="info-card"><h3>Partire da 1 nell'array</h3><p>Il primo indice è 0. Il numero mostrato alla persona può invece partire da 1.</p></article>
+        <article class="info-card"><h3>Confondere indice e contenuto</h3><p><code>i</code> indica una posizione; <code>studenti[i]</code> è il nome conservato in quella posizione.</p></article>
+        <article class="info-card"><h3>Dimenticare l'aggiornamento</h3><p>Nel <code>for</code>, <code>i++</code> permette di passare all'elemento successivo.</p></article>
+        <article class="info-card"><h3>Restituire un valore inutile</h3><p>Se una funzione esegue soltanto input o output, <code>void</code> esprime meglio il suo compito.</p></article>
+      </div>
+    </section>
+
+    <section class="quiz" aria-labelledby="autoverifica">
+      <h2 id="autoverifica">🧠 Autoverifica finale</h2>
+      <div class="self-check">
+        <details><summary>Perché il primo indice di un array di 100 elementi è 0 e l'ultimo è 99?</summary><p>Gli indici contano gli spostamenti rispetto all'inizio: il primo elemento è a spostamento 0. Cento posizioni vanno quindi da 0 a 99.</p></details>
+        <details><summary>Quando conviene usare un for?</summary><p>Quando la ripetizione segue un conteggio chiaro: valore iniziale, condizione e aggiornamento possono stare insieme nell'intestazione.</p></details>
+        <details><summary>Che cosa cambia tra il ciclo esterno e quello interno?</summary><p>Il ciclo esterno sceglie una riga; per ogni sua iterazione, il ciclo interno percorre tutte le colonne.</p></details>
+        <details><summary>Che cosa significa void?</summary><p>Indica che la funzione non restituisce un valore al punto in cui è stata chiamata.</p></details>
+        <details><summary>Che cos'è lo scope di una variabile?</summary><p>È la parte del programma nella quale quel nome è visibile e può essere usato.</p></details>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="colloquio">
+      <div class="section-heading"><span class="icon" aria-hidden="true">🎤</span><h2 id="colloquio">Preparazione al colloquio</h2></div>
+      <p>Apri il programma finale e segui questa traccia in due minuti:</p>
+      <ol><li>spiega quale problema risolve;</li><li>indica perché serve un array;</li><li>descrivi il controllo eseguito dal <code>do-while</code>;</li><li>spiega che cosa fanno le due funzioni;</li><li>indica una variabile locale e una globale;</li><li>concludi con un caso di prova.</li></ol>
+    </section>
+
+    <section class="student-backpack" aria-labelledby="zaino">
+      <div class="student-backpack-header"><p class="section-intro">Riepilogo finale</p><h2 id="zaino">🎒 Lo zaino dello studente</h2></div>
+      <div class="student-backpack-grid">
+        <article class="backpack-card"><h3>✅ Cinque idee</h3><ol class="essential-list"><li>Il <code>for</code> gestisce un conteggio.</li><li>Due <code>for</code> annidati percorrono righe e colonne.</li><li>Un array raccoglie dati dello stesso tipo.</li><li>Una funzione isola un compito.</li><li>Lo scope stabilisce dove un nome è utilizzabile.</li></ol></article>
+        <article class="backpack-card"><h3>📝 Parole chiave</h3><ul class="keyword-list"><li>for</li><li>indice</li><li>array</li><li>do-while</li><li>funzione</li><li>parametro</li><li>void</li><li>scope</li></ul></article>
+        <article class="backpack-card"><h3>🔎 Controllo del codice</h3><p>Per ogni ciclo chiediti: da dove parte, quando continua, come cambia. Per ogni array chiediti: quali indici sono validi?</p></article>
+      </div>
+    </section>
+
+    <section class="next-lesson" aria-labelledby="prossimo-passo">
+      <p class="eyebrow">Dopo il consolidamento</p><h2 id="prossimo-passo">Non aggiungere subito un'altra novità</h2><p>Riprendi il programma in una seconda sessione: prima ricostruiscilo con tre studenti, poi modifica una sola parte. Il passaggio successivo sarà una prova pratica che riutilizza questi concetti.</p>
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Navigazione tra le lezioni">
+      <a href="../05-for-condizioni-composte/index.html">← Lezione 2.05 — Il ciclo for e le condizioni composte</a>
+      <a href="../../index.html#secondo-anno">Torna all'indice</a>
+      <a href="../07-dal-cpp-al-c-prova-pratica/index.html">Lezione 2.07 — In preparazione →</a>
+    </nav>
+  </main>
+
+  <footer class="course-footer"><div class="container narrow"><p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p><p>Pagina progettata per una lettura graduale: esempi brevi, passaggi numerati, risposte apribili e controllo mediante dati di prova.</p></div></footer>
+</body>
+</html>
