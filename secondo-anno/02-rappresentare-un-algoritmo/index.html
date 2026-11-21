@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Dal diagramma al primo programma: lezione di programmazione di base con esempi C/C++, esercizi guidati, sorgenti scaricabili e casi di prova.">
+  <title>2.02 — Dal diagramma al primo programma</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+  <link rel="stylesheet" href="../../assets/programmazione.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+</head>
+
+<body class="programming-lesson">
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line" aria-label="Identificazione del percorso">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge second">Programma del secondo anno</span>
+        </div>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle" class="btn btn-theme" type="button"
+                  aria-pressed="false" aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+          <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button"
+                  aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span>
+        <span aria-hidden="true">›</span>
+        <span>Secondo anno</span>
+        <span aria-hidden="true">›</span>
+        <span>Lezione 2.02</span>
+      </nav>
+
+      <p class="section-intro">Secondo anno — Lezione 2.02 · Durata prevista: 2 ore</p>
+      <h1>Dal diagramma al primo programma</h1>
+      <p class="lead">Dal laboratorio Flowgorithm al primo programma che legge, calcola e mostra un risultato.</p>
+
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ Circa 2 ore</span>
+        <span>📘 Secondo anno</span>
+        <span>🎯 Prerequisito: Lezione 2.01</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow"><section class="progress-card" aria-label="Avanzamento del percorso"><div class="progress-heading"><span>Percorso del secondo anno</span><span>Lezione 2 di 6</span></div></section><nav aria-label="Sezioni della lezione"><p><a href="#ripasso">Ripasso</a> · <a href="#obiettivi">Obiettivi</a> · <a href="#autonomo">Esercizio autonomo</a> · <a href="#autoverifica">Autoverifica</a></p></nav><section class="lesson-section" aria-labelledby="ripasso"><h2 id="ripasso">Prima di iniziare: dal diagramma alle istruzioni</h2>
+<p>Nella <a href="../01-dal-problema-all-algoritmo/index.html">2.01</a> hai costruito con Flowgorithm un diagramma per calcolare il costo dei biglietti. Hai distinto gli ingressi, l'elaborazione e l'uscita: numero dei biglietti e prezzo unitario entrano, il prodotto viene calcolato, il totale viene mostrato.</p>
+<p>Ripercorri il diagramma senza avviarlo. Con quattro biglietti da 2,50 euro, quale valore deve apparire? Se cambi soltanto il prezzo in 3 euro, quale dato rimane uguale e quale risultato cambia? Questa previsione serve anche quando scrivi codice.</p>
+<p>Nel diagramma ogni forma ha un compito: il parallelogramma legge o mostra un dato, il rettangolo esegue un calcolo. Nel programma troverai istruzioni scritte al posto dei blocchi. Il procedimento resta lo stesso; per eseguirlo dovrai rispettare la sintassi del linguaggio.</p>
+<p>Un algoritmo è il procedimento; un diagramma, lo pseudocodice e il codice sono modi per rappresentarlo. Il codice C++ può essere tradotto da un compilatore in un programma eseguibile. Non occorre ricopiare ogni esercizio in tutte e tre le forme.</p>
+<p><strong>Prima di proseguire:</strong> scrivi input, calcolo e output dei biglietti. Spiega perché devi leggere i dati prima di moltiplicarli. Se non riesci, riprendi il laboratorio della 2.01; se riesci, sei pronto per la traduzione.</p></section>
+<section class="lesson-section" aria-labelledby="obiettivi"><h2 id="obiettivi">Che cosa farai oggi</h2><ul><li>Creare, compilare ed eseguire un file C++.</li><li>Usare variabili intere e decimali, input e output.</li><li>Tradurre una formula e controllarla con dati di prova.</li></ul><p><strong>Circa due ore:</strong> 15 minuti di raccordo e ambiente, 35 per il primo programma, 10 di pausa, 40 di esercizi e 20 di verifica. Puoi riprendere gli esercizi a casa se il primo avvio richiede più tempo.</p></section>
+<section class="lesson-section" aria-labelledby="primo-programma"><h2 id="primo-programma">Il costo dei biglietti, questa volta in C++</h2><p>Leggi il programma prima di copiarlo. Cerca i nomi <code>quantita</code>, <code>prezzo</code> e <code>totale</code>. Inserirai prima la quantità, poi il prezzo; il programma mostrerà soltanto il totale.</p><p><a href="codice/biglietti.cpp" download>Scarica biglietti.cpp</a></p><pre class="language-cpp" tabindex="0" aria-label="Programma biglietti"><code>#include &lt;iostream&gt;
+
+int main() {
+    int quantita = 0;
+    double prezzo = 0.0;
+    std::cin &gt;&gt; quantita;
+    std::cin &gt;&gt; prezzo;
+    double totale = quantita * prezzo;
+    std::cout &lt;&lt; totale &lt;&lt; &#x27;\n&#x27;;
+    return 0;
+}
+</code></pre>
+<div class="card-grid"><article class="info-card"><h3>Preparare gli strumenti</h3><p><code>#include &lt;iostream&gt;</code> rende disponibili gli strumenti di input e output usati qui. Non è un'istruzione di calcolo e non termina con il punto e virgola.</p></article><article class="info-card"><h3>Dove si comincia</h3><p><code>int main()</code> introduce la funzione da cui inizia il programma. Le parentesi graffe racchiudono le sue istruzioni. Per ora usa questo modello senza studiare le funzioni in generale.</p></article><article class="info-card"><h3>Inserire e mostrare</h3><p><code>std::cin &gt;&gt; quantita;</code> legge un valore. <code>std::cout &lt;&lt; totale;</code> mostra il risultato. <code>std::</code> indica strumenti della libreria standard: conserva questa scrittura negli esempi.</p></article><article class="info-card"><h3>Terminare</h3><p><code>'\n'</code> manda a capo l'output. <code>return 0;</code> conclude il programma segnalando una terminazione regolare. Le istruzioni di lettura, calcolo e output terminano con <code>;</code>.</p></article></div></section>
+<section class="lesson-section" aria-labelledby="ambiente"><h2 id="ambiente">Laboratorio guidato: scrivere, compilare, eseguire</h2><ol><li><strong>Apri l'ambiente indicato dal docente.</strong><p>Crea un progetto o un file per C++, non per C. Salvalo come <code>biglietti.cpp</code>. Puoi partire dal file scaricabile.</p></li><li><strong>Scrivi il modello completo.</strong><p>Conserva maiuscole, simboli, graffe e punto e virgola. Il nome del file e quello delle variabili hanno funzioni diverse.</p></li><li><strong>Compila.</strong><p>Usa il comando Compila o Build dell'ambiente. Il compilatore controlla il codice e lo traduce. Se segnala un errore, leggi il primo messaggio e controlla anche la riga precedente.</p></li><li><strong>Esegui.</strong><p>Avvia il programma. Nella console digita <code>4</code> e premi Invio; poi digita <code>2.5</code> e premi Invio. Se la console aspetta dopo il primo numero, sta attendendo il secondo input.</p></li><li><strong>Confronta.</strong><p>Devi leggere <code>10</code>. È lo stesso valore di 10,00 euro: la formattazione con due decimali verrà ripresa più avanti.</p></li><li><strong>Modifica e ricompila.</strong><p>Prova 3 biglietti da 7 euro: devi ottenere 21. Ogni modifica del sorgente richiede una nuova compilazione prima dell'esecuzione della versione aggiornata.</p></li></ol><p>Se lavori da un terminale con GNU C++ già predisposto, puoi compilare con <code>g++ -std=c++17 biglietti.cpp -o biglietti</code>. L'avvio dipende dal sistema: <code>./biglietti</code> su Linux, <code>.\biglietti.exe</code> in PowerShell su Windows. Nell'ambiente grafico usa il suo pulsante Esegui.</p></section>
+<section class="lesson-section" aria-labelledby="variabili"><h2 id="variabili">Che cosa conservano le variabili</h2><p><code>int quantita = 0;</code> crea una variabile per un numero intero e le assegna un valore iniziale. <code>double prezzo = 0.0;</code> prepara un numero che può avere una parte decimale. La lettura successiva sostituisce il valore iniziale.</p><p>Una <strong>variabile</strong> ha un nome, un tipo e un valore. <code>int</code> è adatto a una quantità intera; <code>double</code> a una misura decimale. I valori rappresentabili sono limitati: negli esercizi usiamo numeri piccoli. <code>double</code> rappresenta molti decimali in modo approssimato; questi esempi non sono un modello di contabilità professionale.</p><p>Un nome significativo, come <code>prezzo</code>, aiuta a capire il ruolo del dato. Nel corso usiamo lettere, cifre e underscore; non iniziamo con una cifra, non usiamo spazi e rispettiamo maiuscole e minuscole. <code>prezzo</code> e <code>Prezzo</code> sono nomi diversi.</p><p>L'assegnazione <code>totale = quantita * prezzo;</code> valuta prima la parte destra e memorizza il risultato a sinistra. Il simbolo <code>=</code> assegna: non è un'affermazione di uguaglianza matematica.</p><pre tabindex="0"><code>int numero = 5;
+numero = numero + 1;</code></pre><p>La seconda riga legge 5, calcola 6 e sostituisce il valore precedente. In una traccia scrivi una riga per ogni aggiornamento.</p><details><summary>Controlla le tre assegnazioni</summary><p>Con <code>a = 4;</code>, <code>b = 3;</code>, <code>a = a + b;</code>, <code>b = a * 2;</code>, i valori finali sono <code>a = 7</code> e <code>b = 14</code>. L'ultima istruzione usa il nuovo valore di <code>a</code>.</p></details><p>Una variabile letta da input resta una variabile anche se non viene più modificata. Se un valore deve essere fisso nel programma, puoi dichiararlo con <code>const</code>, per esempio <code>const double PI_GRECO = 3.14159;</code>: il programma non può riassegnarlo. Questa è un'approssimazione scelta per l'esercizio.</p></section>
+<section class="lesson-section" aria-labelledby="operatori"><h2 id="operatori">Dalla formula al codice</h2><p>Per moltiplicare si usa <code>*</code>, non il simbolo matematico ×. I simboli <code>+</code>, <code>-</code> e <code>/</code> indicano somma, sottrazione e divisione. Le parentesi rendono esplicito il raggruppamento: <code>2 + 3 * 4</code> vale 14, mentre <code>(2 + 3) * 4</code> vale 20.</p><p>In <code>10 + 6 / 2 * 3</code>, prima si eseguono divisione e moltiplicazione da sinistra a destra: 6 / 2 dà 3, 3 * 3 dà 9, poi 10 + 9 dà 19. L'operatore agisce sugli operandi; l'intera espressione produce un valore.</p><p><a href="codice/divisione.cpp" download>Scarica divisione.cpp</a></p><pre class="language-cpp" tabindex="0" aria-label="Programma divisione"><code>#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; 8 / 3 &lt;&lt; &#x27;\n&#x27;;
+    std::cout &lt;&lt; 8.0 / 3 &lt;&lt; &#x27;\n&#x27;;
+    std::cout &lt;&lt; 8 % 3 &lt;&lt; &#x27;\n&#x27;;
+    return 0;
+}
+</code></pre><p>Le tre righe mostrano <code>2</code>, circa <code>2.66667</code> e <code>2</code>. Con due operandi interi, <code>/</code> produce un quoziente intero troncato verso zero. Con <code>8.0</code> la divisione usa un tipo decimale. <code>%</code> calcola il resto fra interi: qui 8 = 3 × 2 + 2. Non usare <code>mod</code> come in Flowgorithm.</p><aside class="callout warning"><div class="callout-icon" aria-hidden="true">⚠️</div><div><p class="callout-label">Attenzione</p><h3>Il tipo del risultato non corregge il calcolo</h3><p>Anche <code>double risultato = 8 / 3;</code> memorizza 2: la divisione è già avvenuta fra interi. Usa <code>8.0 / 3</code>. Non dividere per zero e, nei dati digitati, usa il punto: <code>2.5</code>.</p></div></aside></section>
+<section class="lesson-section" aria-labelledby="rettangolo"><h2 id="rettangolo">Esercizio guidato: rettangolo</h2><p>Leggi base e altezza positive. Calcola area e perimetro. Prima scrivi le formule sul quaderno; poi confrontale con il programma.</p><p><a href="codice/rettangolo.cpp" download>Scarica rettangolo.cpp</a></p><pre class="language-cpp" tabindex="0" aria-label="Programma rettangolo"><code>#include &lt;iostream&gt;
+
+int main() {
+    double base = 0.0;
+    double altezza = 0.0;
+    std::cin &gt;&gt; base &gt;&gt; altezza;
+    double area = base * altezza;
+    double perimetro = 2 * (base + altezza);
+    std::cout &lt;&lt; area &lt;&lt; &#x27;\n&#x27;;
+    std::cout &lt;&lt; perimetro &lt;&lt; &#x27;\n&#x27;;
+    return 0;
+}
+</code></pre><ol><li>Individua i due input e i due output.</li><li>Nota che <code>std::cin &gt;&gt; base &gt;&gt; altezza;</code> esegue due letture in ordine; puoi separare i numeri con uno spazio o con Invio.</li><li>Prova base 5 e altezza 3: area 15, perimetro 16.</li><li>Prova 2.5 e 2: area 5, perimetro 9.</li><li>Togli temporaneamente le parentesi dalla formula del perimetro. Con 5 e 3 ottieni 13: spiega perché la formula è sbagliata, poi ripristinala.</li></ol></section>
+<section class="lesson-section" aria-labelledby="autonomo"><h2 id="autonomo">Ora prova tu: media di tre misure</h2><p>Scrivi un programma che legga tre misure e mostri la loro media aritmetica. Usa tre variabili <code>double</code>, parentesi attorno alla somma e divisione per <code>3.0</code>. Prova prima 6, 7, 8: risultato 7. Poi 1, 2, 2: risultato circa 1,66667.</p><details><summary>Apri una possibile soluzione</summary><p><a href="codice/media.cpp" download>Scarica media.cpp</a></p><pre class="language-cpp" tabindex="0" aria-label="Programma media"><code>#include &lt;iostream&gt;
+
+int main() {
+    double a = 0.0;
+    double b = 0.0;
+    double c = 0.0;
+    std::cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+    double media = (a + b + c) / 3.0;
+    std::cout &lt;&lt; media &lt;&lt; &#x27;\n&#x27;;
+    return 0;
+}
+</code></pre></details><p><strong>Consegna:</strong> il file <code>.cpp</code>, i due gruppi di input e i risultati ottenuti. Spiega perché <code>a + b + c / 3.0</code> non calcola la media.</p></section>
+<section class="lesson-section" aria-labelledby="errori"><h2 id="errori">Quando qualcosa non funziona</h2><ul><li><strong>Errore di compilazione:</strong> controlla <code>;</code>, graffe e nomi prima di cambiare la formula.</li><li><strong>Il programma sembra fermo:</strong> controlla quanti input sta aspettando.</li><li><strong>Il risultato è sbagliato:</strong> scegli dati semplici e ricostruisci le operazioni; compilare non dimostra la correttezza del calcolo.</li><li><strong>Hai modificato il sorgente ma non l'output:</strong> salva e ricompila, verificando quale eseguibile avvii.</li></ul><p>In questa lezione assumiamo input numerici validi: quantità intere non negative, prezzi non negativi e piccoli. Le lettere al posto dei numeri e la gestione completa degli errori di input saranno affrontate dopo i primi programmi.</p></section>
+<section class="lesson-section" aria-labelledby="autoverifica"><h2 id="autoverifica">Autoverifica</h2><p>Rispondi prima di aprire le indicazioni.</p><div class="self-check"><details><summary>Che cosa cambia fra sorgente ed eseguibile?</summary><p>Il sorgente è il testo del programma; il compilatore lo traduce per ottenere un eseguibile avviabile.</p></details><details><summary>Quanto vale numero dopo numero = numero + 1, se prima vale 5?</summary><p>Vale 6. Prima si legge il valore precedente, poi si calcola e si assegna.</p></details><details><summary>Perché 8 / 3 e 8.0 / 3 danno risultati diversi?</summary><p>Nel primo caso entrambi gli operandi sono interi; nel secondo uno è double e il risultato della divisione può avere parte decimale.</p></details><details><summary>Quando puoi passare alla prossima lezione?</summary><p>Quando sai compilare il programma della media, provarlo con due gruppi di dati e spiegare input, formula e output.</p></details></div></section>
+<section class="student-backpack" aria-labelledby="zaino"><div class="student-backpack-header"><p class="eyebrow">Riepilogo finale</p><h2 id="zaino">🎒 Lo zaino dello studente</h2></div><div class="student-backpack-grid"><article class="backpack-card"><h3>Parole da usare</h3><p>Sorgente, compilatore, eseguibile, variabile, int, double, assegnazione, input, output, espressione.</p></article><article class="backpack-card"><h3>Ripasso in due minuti</h3><p>Ricostruisci il programma dei biglietti senza copiarlo. Il giorno dopo cambia la formula e ripeti due test.</p></article></div></section><section class="next-lesson" aria-labelledby="prossimo-passo"><p class="eyebrow">Prossimo passo</p><h2 id="prossimo-passo">Prendere decisioni con if e else</h2><p>Nella <a href="../03-decisioni-if-else/index.html">Lezione 2.03</a> userai ciò che hai appena eseguito per affrontare il passaggio successivo. Prima completa l’esercizio autonomo e i suoi test.</p></section><nav class="lesson-navigation" aria-label="Navigazione tra le lezioni"><a href="../01-dal-problema-all-algoritmo/index.html">← Lezione 2.01 — Dal problema all'algoritmo</a><a href="../../index.html#secondo-anno">Torna all’indice</a><a href="../03-decisioni-if-else/index.html">Lezione 2.03 — Prendere decisioni con if e else →</a></nav></main>
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Prendere decisioni con if e else: lezione di programmazione di base con esempi C/C++, esercizi guidati, sorgenti scaricabili e casi di prova.">
+  <title>2.03 — Prendere decisioni con if e else</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+  <link rel="stylesheet" href="../../assets/programmazione.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+</head>
+
+<body class="programming-lesson">
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line" aria-label="Identificazione del percorso">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge second">Programma del secondo anno</span>
+        </div>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle" class="btn btn-theme" type="button"
+                  aria-pressed="false" aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+          <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button"
+                  aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span>
+        <span aria-hidden="true">›</span>
+        <span>Secondo anno</span>
+        <span aria-hidden="true">›</span>
+        <span>Lezione 2.03</span>
+      </nav>
+
+      <p class="section-intro">Secondo anno — Lezione 2.03 · Durata prevista: 2 ore</p>
+      <h1>Prendere decisioni con if e else</h1>
+      <p class="lead">Usare una condizione per scegliere il percorso e controllare i valori di soglia.</p>
+
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ Circa 2 ore</span>
+        <span>📘 Secondo anno</span>
+        <span>🎯 Prerequisito: Lezione 2.02</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow"><section class="progress-card" aria-label="Avanzamento del percorso"><div class="progress-heading"><span>Percorso del secondo anno</span><span>Lezione 3 di 6</span></div></section><nav aria-label="Sezioni della lezione"><p><a href="#ripasso">Ripasso</a> · <a href="#obiettivi">Obiettivi</a> · <a href="#autonomo">Esercizio autonomo</a> · <a href="#autoverifica">Autoverifica</a></p></nav><section class="lesson-section" aria-labelledby="ripasso"><h2 id="ripasso">Prima di iniziare: una scelta già incontrata</h2><p>Nella 2.02 hai tradotto il diagramma dei biglietti in un programma: leggi i dati, esegui una moltiplicazione e mostri il totale. <code>int</code> conserva una quantità intera; <code>double</code> permette di lavorare con prezzi e misure decimali.</p><p>Riprendi il file dei biglietti. Con 4 e 2.5 il totale è 10. Ora immagina di avere un budget di 9 euro: il programma dovrebbe mostrare un messaggio diverso rispetto a un budget di 12 euro. Non basta aggiungere sempre lo stesso output.</p><p>Questo problema non è nuovo: nella 2.01 il rombo di Flowgorithm aveva già separato i due percorsi. Ora devi esprimere la stessa decisione nel codice. Il confronto produce vero o falso, e il programma esegue le istruzioni del ramo corrispondente.</p><p>Prima di leggere il codice, prevedi tre casi: costo 10 e budget 9; costo 10 e budget 10; costo 10 e budget 11. Il caso di uguaglianza decide quale confronto è adatto. Scrivi anche quale dato è il totale e quale è la disponibilità.</p><p>Se hai dubbi sull'assegnazione, segui a mano <code>int x = 5;</code> e <code>x = x + 1;</code>. La seconda riga cambia il valore. La domanda «x è uguale a 6?» richiederà un operatore diverso: confrontare e assegnare svolgono compiti distinti.</p></section>
+<section class="lesson-section" aria-labelledby="obiettivi"><h2 id="obiettivi">Obiettivi e lavoro previsto</h2><ul><li>Scrivere selezioni semplici e doppie con <code>if</code> ed <code>else</code>.</li><li>Distinguere assegnazione e confronto.</li><li>Provare rami e soglie prima di considerare corretto il programma.</li></ul><p><strong>Circa due ore:</strong> 15 minuti di ripasso, 30 per condizioni e budget, 10 di pausa, 45 di laboratorio, 20 di verifica.</p></section>
+<section class="lesson-section" aria-labelledby="budget"><h2 id="budget">Esempio: il budget basta?</h2><p>Inserisci nell'ordine il costo totale e il budget. Quando il budget è uguale al costo, è sufficiente: la condizione usa <code>&gt;=</code>.</p><p><a href="codice/budget.cpp" download>Scarica budget.cpp</a></p><pre class="language-cpp" tabindex="0" aria-label="Programma budget"><code>#include &lt;iostream&gt;
+
+int main() {
+    double totale = 0.0;
+    double budget = 0.0;
+    std::cin &gt;&gt; totale &gt;&gt; budget;
+    if (budget &gt;= totale) {
+        std::cout &lt;&lt; &quot;Budget sufficiente\n&quot;;
+    } else {
+        std::cout &lt;&lt; &quot;Budget insufficiente\n&quot;;
+    }
+    return 0;
+}
+</code></pre><p><code>if</code> significa «se». La condizione è fra parentesi tonde. Se è vera, vengono eseguite le istruzioni del primo blocco; altrimenti si esegue il blocco di <code>else</code>. Dopo il ramo scelto, il flusso prosegue dopo l'intera selezione.</p><div class="card-grid"><article class="info-card"><h3>Input 10 e 9</h3><p>9 ≥ 10 è falso: <code>Budget insufficiente</code>.</p></article><article class="info-card"><h3>Input 10 e 10</h3><p>10 ≥ 10 è vero: <code>Budget sufficiente</code>.</p></article><article class="info-card"><h3>Input 10 e 11</h3><p>11 ≥ 10 è vero: <code>Budget sufficiente</code>.</p></article></div><p>Questa è una <strong>selezione doppia</strong>: a ogni esecuzione viene scelto uno solo dei due rami. Il compilatore non verifica se hai scelto la soglia giusta per il problema: servono i test.</p></section>
+<section class="lesson-section" aria-labelledby="confronti"><h2 id="confronti">I confronti da scrivere nel codice</h2><ul><li><code>a &lt; b</code>: a è minore di b.</li><li><code>a &gt; b</code>: a è maggiore di b.</li><li><code>a &lt;= b</code> e <code>a &gt;= b</code>: includono l'uguaglianza.</li><li><code>a == b</code>: i due valori sono uguali.</li><li><code>a != b</code>: i due valori sono diversi.</li></ul><p>Il risultato di un confronto è un valore logico: <code>true</code> oppure <code>false</code>. In italiano lo leggiamo vero oppure falso.</p><aside class="callout warning"><div class="callout-icon" aria-hidden="true">⚠️</div><div><p class="callout-label">Attenzione</p><h3>Un solo = non confronta</h3><p><code>numero = 0;</code> assegna zero. <code>numero == 0</code> verifica se il valore è zero. Scrivere un’assegnazione dentro <code>if</code> può compilare e cambiare la variabile: per questo va controllata anche la logica.</p></div></aside><p>Scriviamo sempre le graffe dei blocchi. Non mettere un punto e virgola dopo la condizione: <code>if (numero &gt; 0);</code> contiene un'istruzione vuota e non controlla il blocco successivo come ti aspetti.</p></section>
+<section class="lesson-section" aria-labelledby="semplice"><h2 id="semplice">Un messaggio soltanto in un caso</h2><p>Se vuoi mostrare «Positivo» soltanto per valori maggiori di zero, basta una <strong>selezione semplice</strong>, senza <code>else</code>.</p><p><a href="codice/positivo.cpp" download>Scarica positivo.cpp</a></p><pre class="language-cpp" tabindex="0" aria-label="Programma positivo"><code>#include &lt;iostream&gt;
+
+int main() {
+    double numero = 0.0;
+    std::cin &gt;&gt; numero;
+    if (numero &gt; 0) {
+        std::cout &lt;&lt; &quot;Positivo\n&quot;;
+    }
+    return 0;
+}
+</code></pre><p>Con 5 compare il messaggio. Con 0 e con -2 non compare alcun messaggio: non è un blocco del programma. La condizione è falsa e l'output viene saltato. Zero non è un numero positivo.</p></section>
+<section class="lesson-section" aria-labelledby="laboratorio"><h2 id="laboratorio">Laboratorio guidato: ingresso al museo</h2><p>Un museo offre l'ingresso gratuito fino a 12 anni compresi. Scrivi un programma che legga l'età intera e mostri «Ingresso gratuito» oppure «Biglietto ordinario». Assumi un'età valida fra 0 e 120.</p><ol><li>Prepara un nuovo file <code>museo.cpp</code> con il modello della lezione precedente.</li><li>Dichiara e leggi <code>eta</code>.</li><li>Scrivi sul quaderno il risultato atteso per 11, 12 e 13.</li><li>Formula il confronto: il valore 12 deve appartenere al ramo gratuito.</li><li>Completa entrambi i blocchi e compila.</li><li>Esegui tre volte il programma, una per ogni dato. Confronta previsione e risultato.</li></ol><details><summary>Controlla la soluzione</summary><p><a href="codice/museo.cpp" download>Scarica museo.cpp</a></p><pre class="language-cpp" tabindex="0" aria-label="Programma museo"><code>#include &lt;iostream&gt;
+
+int main() {
+    int eta = 0;
+    std::cin &gt;&gt; eta;
+    if (eta &lt;= 12) {
+        std::cout &lt;&lt; &quot;Ingresso gratuito\n&quot;;
+    } else {
+        std::cout &lt;&lt; &quot;Biglietto ordinario\n&quot;;
+    }
+    return 0;
+}
+</code></pre></details><p>11 e 12 devono dare ingresso gratuito, 13 biglietto ordinario. Sostituire <code>&lt;=</code> con <code>&lt;</code> mantiene corretti alcuni casi e sbaglia proprio la soglia.</p></section>
+<section class="lesson-section" aria-labelledby="autonomo"><h2 id="autonomo">Esercizio autonomo: zero oppure diverso da zero</h2><p>Leggi un intero e mostra «Zero» quando è uguale a zero, «Diverso da zero» negli altri casi. Scegli il confronto, scrivi il programma e prova 0, 4 e -1.</p><details><summary>Suggerimento</summary><p>Servono due output alternativi, quindi usa <code>if/else</code>. Il confronto è <code>numero == 0</code>.</p></details><details><summary>Apri una possibile soluzione</summary><p><a href="codice/zero.cpp" download>Scarica zero.cpp</a></p><pre class="language-cpp" tabindex="0" aria-label="Programma zero"><code>#include &lt;iostream&gt;
+
+int main() {
+    int numero = 0;
+    std::cin &gt;&gt; numero;
+    if (numero == 0) {
+        std::cout &lt;&lt; &quot;Zero\n&quot;;
+    } else {
+        std::cout &lt;&lt; &quot;Diverso da zero\n&quot;;
+    }
+    return 0;
+}
+</code></pre></details><p><strong>Consegna:</strong> sorgente e tre prove. Spiega la differenza fra il caso con <code>else</code> e il programma che mostra soltanto i positivi.</p></section>
+<section class="lesson-section" aria-labelledby="traccia"><h2 id="traccia">Leggere una selezione senza eseguirla</h2><ol><li>Annota il valore letto.</li><li>Sostituiscilo nella condizione.</li><li>Scrivi vero o falso.</li><li>Segui soltanto il ramo scelto.</li><li>Registra l'output, poi riparti dall'input per la prova successiva.</li></ol><p>Non usare un solo input per verificare una selezione doppia. Scegli almeno un caso per ramo e, quando esiste una soglia, un valore subito sotto, uno uguale e uno subito sopra.</p></section>
+<section class="lesson-section" aria-labelledby="autoverifica"><h2 id="autoverifica">Autoverifica</h2><p>Rispondi prima di aprire le indicazioni.</p><div class="self-check"><details><summary>Il budget uguale al costo è sufficiente?</summary><p>Sì. Per questo il confronto è budget >= totale.</p></details><details><summary>Vengono eseguiti entrambi i rami di if/else?</summary><p>No: per una singola valutazione della condizione viene scelto un solo ramo.</p></details><details><summary>Che cosa succede con 0 nel programma positivo?</summary><p>La condizione numero > 0 è falsa: il messaggio viene saltato.</p></details><details><summary>Che cosa provi per la soglia 12 inclusa?</summary><p>11, 12 e 13: gratuito nei primi due casi, ordinario nel terzo.</p></details></div></section>
+<section class="student-backpack" aria-labelledby="zaino"><div class="student-backpack-header"><p class="eyebrow">Riepilogo finale</p><h2 id="zaino">🎒 Lo zaino dello studente</h2></div><div class="student-backpack-grid"><article class="backpack-card"><h3>Parole da usare</h3><p>Condizione, confronto, true, false, if, else, ramo, soglia.</p></article><article class="backpack-card"><h3>Ripasso in due minuti</h3><p>Spiega il percorso del museo con 12 anni. Il giorno dopo cambia la soglia e ricostruisci i tre test necessari.</p></article></div></section><section class="next-lesson" aria-labelledby="prossimo-passo"><p class="eyebrow">Prossimo passo</p><h2 id="prossimo-passo">Ripetere con while</h2><p>Nella <a href="../04-ripetere-con-while/index.html">Lezione 2.04</a> userai ciò che hai appena eseguito per affrontare il passaggio successivo. Prima completa l’esercizio autonomo e i suoi test.</p></section><nav class="lesson-navigation" aria-label="Navigazione tra le lezioni"><a href="../02-rappresentare-un-algoritmo/index.html">← Lezione 2.02 — Dal diagramma al primo programma</a><a href="../../index.html#secondo-anno">Torna all’indice</a><a href="../04-ripetere-con-while/index.html">Lezione 2.04 — Ripetere con while →</a></nav></main>
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+    </div>
+  </footer>
+</body>
+</html>

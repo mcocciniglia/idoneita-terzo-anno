@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Ripetere con while: lezione di programmazione di base con esempi C/C++, esercizi guidati, sorgenti scaricabili e casi di prova.">
+  <title>2.04 — Ripetere con while</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="stylesheet" href="../../assets/idoneita.css">
+  <link rel="stylesheet" href="../../assets/programmazione.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+</head>
+
+<body class="programming-lesson">
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="course-hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand-line" aria-label="Identificazione del percorso">
+          <span class="course-badge">Informatica</span>
+          <span class="year-badge second">Programma del secondo anno</span>
+        </div>
+        <div class="theme-controls" aria-label="Preferenze di visualizzazione">
+          <button id="themeToggle" class="btn btn-theme" type="button"
+                  aria-pressed="false" aria-label="Cambia tema">
+            <span class="btn-label">Tema</span>
+          </button>
+          <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button"
+                  aria-pressed="false" aria-label="Attiva o disattiva il contrasto alto">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+
+      <nav class="breadcrumb" aria-label="Percorso">
+        <span>Idoneità alla classe terza</span>
+        <span aria-hidden="true">›</span>
+        <span>Secondo anno</span>
+        <span aria-hidden="true">›</span>
+        <span>Lezione 2.04</span>
+      </nav>
+
+      <p class="section-intro">Secondo anno — Lezione 2.04 · Durata prevista: 2 ore</p>
+      <h1>Ripetere con while</h1>
+      <p class="lead">Ripetere istruzioni, seguire i valori e verificare quando il ciclo termina.</p>
+
+      <div class="lesson-meta" aria-label="Informazioni sulla lezione">
+        <span>⏱️ Circa 2 ore</span>
+        <span>📘 Secondo anno</span>
+        <span>🎯 Prerequisito: Lezione 2.03</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow"><section class="progress-card" aria-label="Avanzamento del percorso"><div class="progress-heading"><span>Percorso del secondo anno</span><span>Lezione 4 di 6</span></div></section><nav aria-label="Sezioni della lezione"><p><a href="#ripasso">Ripasso</a> · <a href="#obiettivi">Obiettivi</a> · <a href="#autonomo">Esercizio autonomo</a> · <a href="#autoverifica">Autoverifica</a></p></nav><section class="lesson-section" aria-labelledby="ripasso"><h2 id="ripasso">Prima di iniziare: condizione e aggiornamento</h2><p>Nella 2.03 hai fatto scegliere al programma fra due percorsi. Prima leggi i dati, poi valuti una condizione e segui il ramo vero o quello falso. Nel programma del museo, 12 anni rientra nell'ingresso gratuito perché il confronto include la soglia.</p><p>Riprendi ora un aggiornamento della 2.02: <code>numero = numero + 1;</code>. Se <code>numero</code> vale 2, il nuovo valore è 3. La variabile a sinistra riceve il risultato del calcolo a destra; non stai scrivendo un'uguaglianza matematica.</p><p>Immagina di voler mostrare i numeri da 1 a 5. Puoi scrivere cinque output, ma se il limite diventa 100 devi allungare il programma. Conviene ripetere la stessa coppia di azioni: mostra il numero, poi aumentalo di uno.</p><p>Per decidere quando continuare puoi chiedere: «Il numero è ancora minore o uguale a 5?». La condizione ricorda quella di un <code>if</code>, ma verrà controllata di nuovo dopo ogni ripetizione.</p><p>Prima di leggere il codice, scrivi sul quaderno tre elementi: valore iniziale, condizione per continuare e aggiornamento. Poi prevedi quale valore avrà la variabile quando il programma avrà già mostrato 5. Questa previsione ti aiuterà a distinguere il valore mostrato dal valore finale.</p></section>
+<section class="lesson-section" aria-labelledby="obiettivi"><h2 id="obiettivi">Che cosa imparerai</h2><ul><li>Scrivere un ciclo <code>while</code> e riconoscerne il corpo.</li><li>Usare una variabile di controllo e un accumulatore.</li><li>Provare zero, una e più iterazioni e correggere un aggiornamento mancante.</li></ul><p><strong>Circa due ore:</strong> 15 minuti di raccordo, 25 di conteggio e traccia, 10 di pausa, 45 di laboratorio sulla somma, 25 di esercizio e verifica.</p></section>
+<section class="lesson-section" aria-labelledby="conteggio"><h2 id="conteggio">Mostrare i numeri da 1 a 5</h2><p>Nel programma seguente, dopo ogni output il valore aumenta di uno. Prevedi l'output prima di eseguirlo.</p><p><a href="codice/conteggio-while.cpp" download>Scarica conteggio-while.cpp</a></p><pre class="language-cpp" tabindex="0" aria-label="Programma conteggio-while"><code>#include &lt;iostream&gt;
+
+int main() {
+    int numero = 1;
+    while (numero &lt;= 5) {
+        std::cout &lt;&lt; numero &lt;&lt; &#x27;\n&#x27;;
+        numero = numero + 1;
+    }
+    return 0;
+}
+</code></pre><p>Un <strong>ciclo</strong> ripete un gruppo di istruzioni; ogni esecuzione del corpo è un'<strong>iterazione</strong>. <code>while</code> significa «mentre»: il corpo si esegue finché la condizione è vera.</p><div class="card-grid"><article class="info-card"><h3>Inizializzazione</h3><p><code>int numero = 1;</code> si esegue prima del ciclo, una sola volta.</p></article><article class="info-card"><h3>Controllo</h3><p><code>numero &lt;= 5</code> viene valutata prima di ogni possibile giro.</p></article><article class="info-card"><h3>Aggiornamento</h3><p><code>numero = numero + 1;</code> sta nel corpo, dopo l'output.</p></article></div></section>
+<section class="lesson-section" aria-labelledby="traccia"><h2 id="traccia">Seguire il ciclo un giro alla volta</h2><ol><li>Numero 1: condizione vera, mostra 1, aggiorna a 2.</li><li>Numero 2: condizione vera, mostra 2, aggiorna a 3.</li><li>Numero 3: condizione vera, mostra 3, aggiorna a 4.</li><li>Numero 4: condizione vera, mostra 4, aggiorna a 5.</li><li>Numero 5: condizione vera, mostra 5, aggiorna a 6.</li><li>Numero 6: condizione falsa; esci senza mostrare 6.</li></ol><p>Ci sono cinque iterazioni e sei controlli. Il controllo finale falso non esegue il corpo. Con un valore iniziale pari a 6 il corpo non si eseguirebbe neppure una volta: <code>while</code> ammette <strong>zero iterazioni</strong>.</p><p>Disegna su carta tre colonne: valore prima del controllo, output e valore dopo l'aggiornamento. Compila anche l'ultima riga con la condizione falsa.</p></section>
+<section class="lesson-section" aria-labelledby="somma"><h2 id="somma">Laboratorio guidato: sommare da 1 a N</h2><p>Leggi un intero N fra 0 e 100. Calcola 1 + 2 + … + N. Con N = 4 il risultato atteso è 10; con N = 0 non ci sono numeri da aggiungere e il risultato è 0.</p><p><a href="codice/somma-while.cpp" download>Scarica somma-while.cpp</a></p><pre class="language-cpp" tabindex="0" aria-label="Programma somma-while"><code>#include &lt;iostream&gt;
+
+int main() {
+    int n = 0;
+    std::cin &gt;&gt; n;
+    int numero = 1;
+    int somma = 0;
+    while (numero &lt;= n) {
+        somma = somma + numero;
+        numero = numero + 1;
+    }
+    std::cout &lt;&lt; somma &lt;&lt; &#x27;\n&#x27;;
+    return 0;
+}
+</code></pre><p><code>numero</code> controlla il giro. <code>somma</code> è un <strong>accumulatore</strong>: conserva il totale parziale e parte da zero, che non altera una somma.</p><ol><li>Leggi il programma e distingui input, inizializzazioni, corpo e output finale.</li><li>Con N = 4, scrivi i totali parziali: 1, 3, 6, 10.</li><li>Compila ed esegui con 4, poi confronta il risultato.</li><li>Ripeti con N = 1: un'iterazione, risultato 1.</li><li>Ripeti con N = 0: zero iterazioni, risultato 0.</li><li>Usa il debugger o una traccia su carta per spiegare perché <code>numero</code> arriva a 5 quando N vale 4.</li></ol><p>L'output di <code>somma</code> è dopo il ciclo: mostra il risultato finale una sola volta. Se vuoi osservare i totali parziali, puoi aggiungere temporaneamente un output nel corpo e poi rimuoverlo.</p></section>
+<section class="lesson-section" aria-labelledby="errori"><h2 id="errori">Quando la ripetizione non termina</h2><p>Se elimini l'aggiornamento dal conteggio, <code>numero</code> resta 1 e la condizione rimane vera. Questo ciclo non raggiunge l'uscita. Se lo avvii per errore, usa Interrompi/Stop nell'ambiente oppure Ctrl+C nel terminale.</p><aside class="callout warning"><div class="callout-icon" aria-hidden="true">⚠️</div><div><p class="callout-label">Attenzione</p><h3>Tre controlli prima di avviare</h3><p>Dove parte la variabile? Quale condizione permette un altro giro? Quale istruzione avvicina all’uscita? Per leggere l’esempio non serve avviare un ciclo che sai già non terminare.</p></div></aside><ul><li>Inizializzare <code>somma</code> dentro il ciclo cancella ogni volta il totale precedente.</li><li>Aggiornare il numero prima di aggiungerlo cambia i numeri sommati.</li><li>Con <code>numero &lt; N</code> il valore N non viene sommato.</li><li>Diminuire un numero partito da 1 mentre controlli <code>numero &lt;= 5</code> lo allontana dall'uscita.</li></ul></section>
+<section class="lesson-section" aria-labelledby="autonomo"><h2 id="autonomo">Esercizio autonomo: multipli di 3</h2><p>Leggi un limite intero fra 0 e 100. Mostra tutti i multipli positivi di 3 che non lo superano. Con limite 10 devi mostrare 3, 6, 9; con 2 nessun numero; con 3 soltanto 3.</p><ol><li>Scegli valore iniziale e variabile di controllo.</li><li>Scrivi la condizione includendo il limite.</li><li>Decidi di quanto aumentare il multiplo.</li><li>Prevedi i tre casi indicati, poi compila ed esegui.</li></ol><details><summary>Suggerimento</summary><p>Parti da <code>multiplo = 3</code>, continua mentre <code>multiplo &lt;= limite</code> e aumenta di 3 dopo ogni output.</p></details><details><summary>Controlla una soluzione completa</summary><p><a href="codice/multipli.cpp" download>Scarica multipli.cpp</a></p><pre class="language-cpp" tabindex="0" aria-label="Programma multipli"><code>#include &lt;iostream&gt;
+
+int main() {
+    int limite = 0;
+    std::cin &gt;&gt; limite;
+    int multiplo = 3;
+    while (multiplo &lt;= limite) {
+        std::cout &lt;&lt; multiplo &lt;&lt; &#x27;\n&#x27;;
+        multiplo = multiplo + 3;
+    }
+    return 0;
+}
+</code></pre></details><p><strong>Consegna:</strong> file, tre prove e una breve spiegazione del caso senza output. Assumiamo input numerici validi entro gli intervalli indicati.</p></section>
+<section class="lesson-section" aria-labelledby="autoverifica"><h2 id="autoverifica">Autoverifica</h2><p>Rispondi prima di aprire le indicazioni.</p><div class="self-check"><details><summary>Quante volte può eseguire il corpo un while?</summary><p>Zero o più volte: il controllo precede ogni possibile esecuzione.</p></details><details><summary>Perché somma parte da zero?</summary><p>Zero è l’elemento neutro della somma e permette il risultato corretto anche senza iterazioni.</p></details><details><summary>Con N=4, quanto valgono somma e numero dopo il ciclo?</summary><p>Somma vale 10, numero vale 5. L’ultimo controllo è falso.</p></details><details><summary>Che differenza c’è fra if e while?</summary><p>If sceglie se eseguire un blocco; while torna a controllare la condizione e può ripetere il corpo.</p></details></div></section>
+<section class="student-backpack" aria-labelledby="zaino"><div class="student-backpack-header"><p class="eyebrow">Riepilogo finale</p><h2 id="zaino">🎒 Lo zaino dello studente</h2></div><div class="student-backpack-grid"><article class="backpack-card"><h3>Parole da usare</h3><p>Ciclo, iterazione, corpo, inizializzazione, condizione, aggiornamento, contatore, accumulatore.</p></article><article class="backpack-card"><h3>Ripasso in due minuti</h3><p>Ricostruisci somma e numero con N=3. Il giorno dopo ripeti con N=0 senza avviare subito il programma.</p></article></div></section><section class="next-lesson" aria-labelledby="prossimo-passo"><p class="eyebrow">Prossimo passo</p><h2 id="prossimo-passo">Il ciclo for e le condizioni composte</h2><p>Nella <a href="../05-for-condizioni-composte/index.html">Lezione 2.05</a> userai ciò che hai appena eseguito per affrontare il passaggio successivo. Prima completa l’esercizio autonomo e i suoi test.</p></section><nav class="lesson-navigation" aria-label="Navigazione tra le lezioni"><a href="../03-decisioni-if-else/index.html">← Lezione 2.03 — Prendere decisioni con if e else</a><a href="../../index.html#secondo-anno">Torna all’indice</a><a href="../05-for-condizioni-composte/index.html">Lezione 2.05 — Il ciclo for e le condizioni composte →</a></nav></main>
+  <footer class="course-footer">
+    <div class="container narrow">
+      <p><strong>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</strong></p>
+      <p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+    </div>
+  </footer>
+</body>
+</html>
